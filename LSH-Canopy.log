@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.7.16)  1 AUG 2016 03:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  3 AUG 2016 12:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **LSH-Canopy.tex
 (./LSH-Canopy.tex
-LaTeX2e <2016/02/01>
-Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
+LaTeX2e <2014/05/01>
+Babel <3.9k> and hyphenation patterns for 78 languages loaded.
 (./IEEEtran.cls
 Document Class: IEEEtran 2007/03/05 V1.7a by Michael Shell
 -- See the "IEEEtran_HOWTO" manual for usage information.
@@ -17,7 +17,7 @@ Document Class: IEEEtran 2007/03/05 V1.7a by Michael Shell
 \@IEEEtrantmptoksA=\toks14
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 373.
 
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+(/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 -- Using 8.5in x 11in (letter) paper.
@@ -90,203 +90,224 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
 \@IEEEtmpitemindent=\dimen116
 \c@IEEEbiography=\count90
 \@IEEEtranrubishbin=\box26
-) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
-
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks15
+) (/usr/local/texlive/2014/texmf-dist/tex/latex/arydshln/arydshln.sty
+Package: arydshln 2004/08/31 v1.71 
+\dashlinedash=\dimen117
+\dashlinegap=\dimen118
+\adl@box=\box27
+\adl@height=\dimen119
+\adl@heightsave=\dimen120
+\adl@depth=\dimen121
+\adl@depthsave=\dimen122
+\adl@finaldepth=\dimen123
+\adl@columns=\count91
+\adl@ncol=\count92
+\adl@currentcolumn=\count93
+\adl@currentcolumnsave=\count94
+\adl@totalheight=\count95
+\adl@totalheightsave=\count96
+\adl@dash=\count97
+\adl@gap=\count98
+\adl@cla=\count99
+\adl@clb=\count100
+\adl@everyvbox=\toks15
+\adl@LTpagetotal=\dimen124
 )
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2016/01/03 v1.0q Standard LaTeX Graphics (DPC,SPQR)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/04/25 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
-Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/05/08 v1.15 key=value parser (DPC)
+\KV@toks@=\toks16
 )
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
+(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/graphics.cfg
 File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
-Package graphics Info: Driver file: pdftex.def on input line 95.
+Package graphics Info: Driver file: pdftex.def on input line 91.
 
-(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+(/usr/local/texlive/2014/texmf-dist/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/infwarerr.sty
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
-\Gread@gobject=\count91
+\Gread@gobject=\count101
 ))
-\Gin@req@height=\dimen117
-\Gin@req@width=\dimen118
+\Gin@req@height=\dimen125
+\Gin@req@width=\dimen126
 )
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2016/03/03 v2.15a AMS math features
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2013/01/14 v2.14 AMS math features
 \@mathmargin=\skip44
 
 For additional information on amsmath, use the `?' option.
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
-Package: amstext 2000/06/29 v2.01 AMS text
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
 
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
-File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks16
-\ex@=\dimen119
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks17
+\ex@=\dimen127
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
-Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen120
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen128
 )
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
-\inf@bad=\count92
-LaTeX Info: Redefining \frac on input line 199.
-\uproot@=\count93
-\leftroot@=\count94
-LaTeX Info: Redefining \overline on input line 297.
-\classnum@=\count95
-\DOTSCASE@=\count96
-LaTeX Info: Redefining \ldots on input line 394.
-LaTeX Info: Redefining \dots on input line 397.
-LaTeX Info: Redefining \cdots on input line 518.
-\Mathstrutbox@=\box27
-\strutbox@=\box28
-\big@size=\dimen121
-LaTeX Font Info:    Redeclaring font encoding OML on input line 630.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 631.
-\macc@depth=\count97
-\c@MaxMatrixCols=\count98
+\inf@bad=\count102
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count103
+\leftroot@=\count104
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count105
+\DOTSCASE@=\count106
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box28
+\strutbox@=\box29
+\big@size=\dimen129
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count107
+\c@MaxMatrixCols=\count108
 \dotsspace@=\muskip10
-\c@parentequation=\count99
-\dspbrk@lvl=\count100
-\tag@help=\toks17
-\row@=\count101
-\column@=\count102
-\maxfields@=\count103
-\andhelp@=\toks18
-\eqnshift@=\dimen122
-\alignsep@=\dimen123
-\tagshift@=\dimen124
-\tagwidth@=\dimen125
-\totwidth@=\dimen126
-\lineht@=\dimen127
-\@envbody=\toks19
+\c@parentequation=\count109
+\dspbrk@lvl=\count110
+\tag@help=\toks18
+\row@=\count111
+\column@=\count112
+\maxfields@=\count113
+\andhelp@=\toks19
+\eqnshift@=\dimen130
+\alignsep@=\dimen131
+\tagshift@=\dimen132
+\tagwidth@=\dimen133
+\totwidth@=\dimen134
+\lineht@=\dimen135
+\@envbody=\toks20
 \multlinegap=\skip45
 \multlinetaggap=\skip46
-\mathdisplay@stack=\toks20
-LaTeX Info: Redefining \[ on input line 2735.
-LaTeX Info: Redefining \] on input line 2736.
+\mathdisplay@stack=\toks21
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
 )
-(/usr/share/texlive/texmf-dist/tex/latex/romannum/romannum.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/romannum/romannum.sty
 Package: romannum 2009/09/03 v1.0b roman numerals
 
-(/usr/share/texlive/texmf-dist/tex/latex/stdclsdv/stdclsdv.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/stdclsdv/stdclsdv.sty
 Package: stdclsdv 2009/09/04 v1.1a Sectional divisions
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/algorithms/algorithm.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/algorithms/algorithm.sty
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
 nment
 
-(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count104
-\float@exts=\toks21
-\float@box=\box29
-\@float@everytoks=\toks22
-\@floatcapt=\box30
+\c@float@type=\count114
+\float@exts=\toks22
+\float@box=\box30
+\@float@everytoks=\toks23
+\@floatcapt=\box31
 )
-(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
-Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\@float@every@algorithm=\toks23
-\c@algorithm=\count105
+\@float@every@algorithm=\toks24
+\c@algorithm=\count115
 )
-(/usr/share/texlive/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
 Package: algorithm2e 2013/01/06 v5.00 algorithms environments
-\c@AlgoLine=\count106
-\algocf@hangindent=\skip47
+\c@AlgoLine=\count116
 
-(/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty
-Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/tools/xspace.sty
+Package: xspace 2009/10/20 v1.13 Space after command names (DPC,MH)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/relsize/relsize.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/relsize/relsize.sty
 Package: relsize 2013/03/29 ver 4.1
 )
 ********************************************************
-Package `algorithm2e' Release 5.1 -- october 19 2015 --
+Package `algorithm2e' Release 5.0 -- january 06 2013 --
 - algorithm2e-announce@lirmm.fr mailing list for announcement about releases
 - algorithm2e-discussion@lirmm.fr mailing list for discussion about package
 subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
-- Author: Christophe Fiorio (christophe.fiorio@umontpellier.fr)
+- Author: Christophe Fiorio (cfiorio@um2.fr)
 ********************************************************
-\skiptotal=\skip48
-\skiplinenumber=\skip49
-\skiprule=\skip50
-\skiphlne=\skip51
-\skiptext=\skip52
-\skiplength=\skip53
-\algomargin=\skip54
-\skipalgocfslide=\skip55
-\algowidth=\dimen128
-\inoutsize=\dimen129
-\inoutindent=\dimen130
-\interspacetitleruled=\dimen131
-\interspacealgoruled=\dimen132
-\interspacetitleboxruled=\dimen133
-\algocf@ruledwidth=\skip56
-\algocf@inoutbox=\box31
-\algocf@inputbox=\box32
-\AlCapSkip=\skip57
-\AlCapHSkip=\skip58
-\algoskipindent=\skip59
-\algocf@nlbox=\box33
-\algocf@hangingbox=\box34
-\algocf@untilbox=\box35
-\algocf@skipuntil=\skip60
-\algocf@capbox=\box36
-\algoheightruledefault=\skip61
-\algoheightrule=\skip62
-\algotitleheightruledefault=\skip63
-\algotitleheightrule=\skip64
-\c@algocfline=\count107
-\c@algocfproc=\count108
-\c@algocf=\count109
-\algocf@algoframe=\box37
-\algocf@algobox=\box38
-) (/usr/share/texlive/texmf-dist/tex/latex/subfig/subfig.sty
+\skiptotal=\skip47
+\skiplinenumber=\skip48
+\skiprule=\skip49
+\skiphlne=\skip50
+\skiptext=\skip51
+\skiplength=\skip52
+\algomargin=\skip53
+\skipalgocfslide=\skip54
+\algowidth=\dimen136
+\inoutsize=\dimen137
+\inoutindent=\dimen138
+\interspacetitleruled=\dimen139
+\interspacealgoruled=\dimen140
+\interspacetitleboxruled=\dimen141
+\algocf@inoutbox=\box32
+\algocf@inputbox=\box33
+\AlCapSkip=\skip55
+\AlCapHSkip=\skip56
+\algoskipindent=\skip57
+\algocf@nlbox=\box34
+\algocf@hangingbox=\box35
+\algocf@untilbox=\box36
+\algocf@skipuntil=\skip58
+\algocf@capbox=\box37
+\algoheightruledefault=\skip59
+\algoheightrule=\skip60
+\algotitleheightruledefault=\skip61
+\algotitleheightrule=\skip62
+\c@algocfline=\count117
+\c@algocfproc=\count118
+\c@algocf=\count119
+\algocf@algoframe=\box38
+\algocf@algobox=\box39
+) (/usr/local/texlive/2014/texmf-dist/tex/latex/subfig/subfig.sty
 Package: subfig 2005/06/28 ver: 1.3 subfig package
 
-(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
-Package: caption3 2016/02/04 v1.7-139 caption3 kernel (AR)
-Package caption3 Info: TeX engine: e-TeX on input line 67.
-\captionmargin=\dimen134
-\captionmargin@=\dimen135
-\captionwidth=\dimen136
-\caption@tempdima=\dimen137
-\caption@indent=\dimen138
-\caption@parindent=\dimen139
-\caption@hangindent=\dimen140
+(/usr/local/texlive/2014/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 57.
+\captionmargin=\dimen142
+\captionmargin@=\dimen143
+\captionwidth=\dimen144
+\caption@tempdima=\dimen145
+\caption@indent=\dimen146
+\caption@parindent=\dimen147
+\caption@hangindent=\dimen148
 Package caption Info: Unknown document class (or package),
 (caption)             standard defaults will be used.
 )
-\c@KVtest=\count110
-\sf@farskip=\skip65
-\sf@captopadj=\dimen141
-\sf@capskip=\skip66
-\sf@nearskip=\skip67
-\c@subfigure=\count111
-\c@subfigure@save=\count112
-\c@lofdepth=\count113
-\c@subtable=\count114
-\c@subtable@save=\count115
-\c@lotdepth=\count116
-\sf@top=\skip68
-\sf@bottom=\skip69
+\c@KVtest=\count120
+\sf@farskip=\skip63
+\sf@captopadj=\dimen149
+\sf@capskip=\skip64
+\sf@nearskip=\skip65
+\c@subfigure=\count121
+\c@subfigure@save=\count122
+\c@lofdepth=\count123
+\c@subtable=\count124
+\c@subtable@save=\count125
+\c@lotdepth=\count126
+\sf@top=\skip66
+\sf@bottom=\skip67
 )
-(/usr/share/texlive/texmf-dist/tex/latex/subfloat/subfloat.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/subfloat/subfloat.sty
 Package: subfloat 2003/08/21 version 2.14
 
 Package `subfloat', Version 2.14 of 2003/08/21.
@@ -299,24 +320,23 @@ Package subfloat Warning: Numbers of floats not counted:
 (subfloat)                Please switch on countmax or remove the code using
 (subfloat)                the counter then..
 
-) (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+) (/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
-\bigstrutjot=\dimen142
+(/usr/local/texlive/2014/texmf-dist/tex/latex/multirow/multirow.sty
+\bigstrutjot=\dimen150
 )
-(/usr/share/texlive/texmf-dist/tex/latex/threeparttable/threeparttable.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/threeparttable/threeparttable.sty
 Package: threeparttable 2003/06/13  v 3.0
-\@tempboxb=\box39
-)
-(./LSH-Canopy.aux)
+\@tempboxb=\box40
+) (./LSH-Canopy.aux)
 \openout1 = `LSH-Canopy.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 357.
@@ -332,28 +352,28 @@ LaTeX Font Info:    ... okay on input line 357.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 357.
 LaTeX Font Info:    ... okay on input line 357.
 
-(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+(/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count117
-\scratchdimen=\dimen143
-\scratchbox=\box40
-\nofMPsegments=\count118
-\nofMParguments=\count119
-\everyMPshowfont=\toks24
-\MPscratchCnt=\count120
-\MPscratchDim=\dimen144
-\MPnumerator=\count121
-\makeMPintoPDFobject=\count122
-\everyMPtoPDFconversion=\toks25
-) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+\scratchcounter=\count127
+\scratchdimen=\dimen151
+\scratchbox=\box41
+\nofMPsegments=\count128
+\nofMParguments=\count129
+\everyMPshowfont=\toks25
+\MPscratchCnt=\count130
+\MPscratchDim=\dimen152
+\MPnumerator=\count131
+\makeMPintoPDFobject=\count132
+\everyMPtoPDFconversion=\toks26
+) (/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/ifluatex.sty
 Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
 )
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/ifpdf.sty
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
 Package ifpdf Info: pdfTeX in PDF mode is detected.
 )
@@ -362,22 +382,22 @@ Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/grfext.sty
 Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
 Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
 Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/etexcmds.sty
 Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
 Package etexcmds Info: Could not find \expanded.
 (etexcmds)             That can mean that you are not using pdfTeX 1.50 or
@@ -388,7 +408,7 @@ Package grfext Info: Graphics extension search list:
 (grfext)             [.pdf,.jpeg,.png,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 452.
 
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+(/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
@@ -399,14 +419,14 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 369.
 LaTeX Font Info:    Try loading font information for U+msa on input line 393.
 
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 393.
 
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+) [1{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
@@ -418,88 +438,44 @@ Underfull \hbox (badness 1694) in paragraph at lines 406--407
 []\OT1/ptm/m/n/10 In this study we have in-tro-duced a very fast ini-
  []
 
-[2]
-Underfull \hbox (badness 1960) in paragraph at lines 437--439
-[]\OT1/ptm/m/n/10 LSH func-tion based on ran-dom pro-jec-tion and bit
- []
+[2] <overall.jpg, id=13, 367.3725pt x 911.65594pt>
+File: overall.jpg Graphic file (type jpg)
+ <use overall.jpg>
+Package pdftex.def Info: overall.jpg used on input line 415.
+(pdftex.def)             Requested size: 121.95642pt x 312.97754pt.
 
+<flowchart.png, id=14, 1706.375pt x 2208.25pt>
+File: flowchart.png Graphic file (type png)
+ <use flowchart.png>
+Package pdftex.def Info: flowchart.png used on input line 424.
+(pdftex.def)             Requested size: 243.89pt x 341.43283pt.
+ [3 <./overall.jpg> <./flowchart.png>] <merge.jpg, id=20, 758.08218pt x 440.395
+31pt>
+File: merge.jpg Graphic file (type jpg)
 
-Underfull \hbox (badness 1609) in paragraph at lines 437--439
-\OT1/ptm/m/n/10 This ap-proach works for the Ham-ming dis-tance over
- []
-
-
-Underfull \hbox (badness 1776) in paragraph at lines 437--439
-\OT1/ptm/m/n/10 d-dimensional vec-tors $[]\OMS/cmsy/m/n/10 f\OT1/cmr/m/n/10 0\O
-ML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1\OMS/cmsy/m/n/10 g[]$\OT1/ptm/m/n/10 . Here, 
-the fam-ily
- []
-
-
-Underfull \hbox (badness 1803) in paragraph at lines 437--439
-\OT1/ptm/m/n/10 of points on one of the $[]$ co-or-di-nates, for ex-am-ple
- []
-
-
-Overfull \hbox (19.63435pt too wide) in paragraph at lines 437--439
-[]$\OT1/ptm/m/n/10 ,
- []
-
-
-Underfull \hbox (badness 5475) in paragraph at lines 437--439
-\OT1/ptm/m/n/10 dis-tance cal-cu-la-tions. Af-ter-wards we used Ham-ming
- []
-
-[3]
+<use merge.jpg>
+Package pdftex.def Info: merge.jpg used on input line 433.
+(pdftex.def)             Requested size: 243.90993pt x 142.2599pt.
+ [4 <./merge.jpg>]
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
- <flowchart.png, id=22, 406.51875pt x 564.30824pt>
-File: flowchart.png Graphic file (type png)
- <use flowchart.png>
-Package pdftex.def Info: flowchart.png used on input line 484.
-(pdftex.def)             Requested size: 243.90692pt x 341.44627pt.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/sc' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/sc' tried instead on input line 493.
+(Font)              Font shape `OT1/ptm/b/sc' tried instead on input line 486.
 
-Underfull \hbox (badness 1394) in paragraph at lines 509--510
+Underfull \hbox (badness 1394) in paragraph at lines 502--503
 \OT1/ptm/m/n/10 of our ap-proach and com-par-i-son with other meth-ods.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 509--510
+Underfull \hbox (badness 10000) in paragraph at lines 502--503
 
  []
 
-[4]
-Underfull \hbox (badness 1603) in paragraph at lines 511--516
-| \OT1/ptm/b/n/10 Bokulich[]2 \OT1/ptm/m/n/10 - This dataset was pre-pared us-i
-ng the
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 511--516
-
- []
-
-
-Underfull \vbox (badness 3942) has occurred while \output is active []
-
-
-Underfull \hbox (badness 3701) in paragraph at lines 517--521
-| \OT1/ptm/b/n/10 Global Soil \OT1/ptm/m/n/10 - Ramirez et al.[[]] com-bined da
-ta
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 517--521
-
- []
-
+[5]
 Missing character: There is no â in font ptmb7t!
 Missing character: There is no € in font ptmb7t!
 Missing character: There is no ™ in font ptmb7t!
-[5 <./flowchart.png>]
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
@@ -507,96 +483,111 @@ Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
  [6]
-Underfull \hbox (badness 1789) in paragraph at lines 572--573
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no ™ in font ptmr7t!
+
+Underfull \hbox (badness 1789) in paragraph at lines 578--579
 []\OT1/ptm/m/n/10 Performance of UCLUST [[]], SUMACLUST [[]],
  []
 
-
-Underfull \hbox (badness 4291) in paragraph at lines 576--577
+[7]
+Underfull \hbox (badness 4291) in paragraph at lines 582--583
 \OT1/ptm/m/n/10 of SUMACLUST. From Ta-ble II[] we can see that
  []
 
 
-Overfull \hbox (5.43262pt too wide) in paragraph at lines 640--643
+Overfull \hbox (5.43262pt too wide) in paragraph at lines 656--659
 [][]
  []
 
-[7]
-Underfull \hbox (badness 2409) in paragraph at lines 653--654
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \hbox (badness 2409) in paragraph at lines 669--670
 []\OT1/ptm/m/n/10 We can see a sim-i-lar foot-prints for LSH-Canopy-
  []
 
 
-Underfull \hbox (badness 1931) in paragraph at lines 653--654
+Underfull \hbox (badness 1931) in paragraph at lines 669--670
 \OT1/ptm/m/n/10 SWARM from Ta-ble III[]. SWARM took 128.12 min-
  []
 
-<bokulich_2.png, id=37, 578.16pt x 433.62pt>
+<bokulich_2.png, id=40, 578.16pt x 433.62pt>
 File: bokulich_2.png Graphic file (type png)
  <use bokulich_2.png>
-Package pdftex.def Info: bokulich_2.png used on input line 698.
+Package pdftex.def Info: bokulich_2.png used on input line 714.
 (pdftex.def)             Requested size: 252.94437pt x 199.16988pt.
 
-<bokulich_3.png, id=39, 578.16pt x 433.62pt>
+<bokulich_3.png, id=42, 578.16pt x 433.62pt>
 File: bokulich_3.png Graphic file (type png)
  <use bokulich_3.png>
-Package pdftex.def Info: bokulich_3.png used on input line 702.
+Package pdftex.def Info: bokulich_3.png used on input line 718.
 (pdftex.def)             Requested size: 252.94437pt x 199.16988pt.
 
-<bokulich_6.png, id=40, 578.16pt x 433.62pt>
+<bokulich_6.png, id=43, 578.16pt x 433.62pt>
 File: bokulich_6.png Graphic file (type png)
  <use bokulich_6.png>
-Package pdftex.def Info: bokulich_6.png used on input line 706.
+Package pdftex.def Info: bokulich_6.png used on input line 722.
 (pdftex.def)             Requested size: 252.94437pt x 199.16988pt.
 
-<body_sites.png, id=41, 578.16pt x 433.62pt>
+<body_sites.png, id=44, 578.16pt x 433.62pt>
 File: body_sites.png Graphic file (type png)
  <use body_sites.png>
-Package pdftex.def Info: body_sites.png used on input line 710.
+Package pdftex.def Info: body_sites.png used on input line 726.
 (pdftex.def)             Requested size: 252.94437pt x 199.16988pt.
 
-<canadian_soil.png, id=42, 578.16pt x 433.62pt>
+<canadian_soil.png, id=45, 578.16pt x 433.62pt>
 File: canadian_soil.png Graphic file (type png)
  <use canadian_soil.png>
-Package pdftex.def Info: canadian_soil.png used on input line 714.
+Package pdftex.def Info: canadian_soil.png used on input line 730.
 (pdftex.def)             Requested size: 252.94437pt x 199.16988pt.
 
-<global_soil.png, id=43, 578.16pt x 433.62pt>
+<global_soil.png, id=46, 578.16pt x 433.62pt>
 File: global_soil.png Graphic file (type png)
  <use global_soil.png>
-Package pdftex.def Info: global_soil.png used on input line 718.
+Package pdftex.def Info: global_soil.png used on input line 734.
 (pdftex.def)             Requested size: 252.94437pt x 199.16988pt.
 
-Overfull \hbox (6.99886pt too wide) in paragraph at lines 698--720
+Overfull \hbox (6.99886pt too wide) in paragraph at lines 714--736
 [][] [] 
  []
 
 
-Overfull \hbox (6.99886pt too wide) in paragraph at lines 698--720
+Overfull \hbox (6.99886pt too wide) in paragraph at lines 714--736
 [] [] 
  []
 
 
-Overfull \hbox (6.99886pt too wide) in paragraph at lines 698--720
+Overfull \hbox (6.99886pt too wide) in paragraph at lines 714--736
 [] [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 698--720
+Underfull \hbox (badness 10000) in paragraph at lines 714--736
 
  []
 
 
-LaTeX Warning: Float too large for page by 47.13756pt on input line 722.
+LaTeX Warning: Float too large for page by 47.13756pt on input line 738.
 
-[8] (./LSH-Canopy.bbl [9]
+
+Underfull \vbox (badness 7468) has occurred while \output is active []
+
+ [8]
+Underfull \vbox (badness 2334) has occurred while \output is active []
+
+ [9]
+(./LSH-Canopy.bbl
 Underfull \hbox (badness 1701) in paragraph at lines 127--131
 []\OT1/ptm/m/n/9 Z. Rasheed and H. Rang-wala, \OT1/ptm/m/it/9 MC-MinH:
  []
 
+[10]
 Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no © in font ptmr7t!
-[10])
+ [11])
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -608,38 +599,39 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[11
+[12
 
-] [12 <./bokulich_2.png> <./bokulich_3.png> <./bokulich_6.png> <./body_sites.pn
+] [13 <./bokulich_2.png> <./bokulich_3.png> <./bokulich_6.png> <./body_sites.pn
 g> <./canadian_soil.png> <./global_soil.png>] (./LSH-Canopy.aux) ) 
 Here is how much of TeX's memory you used:
- 5195 strings out of 493029
- 79995 string characters out of 6136234
- 186967 words of memory out of 5000000
- 8621 multiletter control sequences out of 15000+600000
+ 5830 strings out of 493117
+ 87500 string characters out of 6135433
+ 206218 words of memory out of 5000000
+ 9176 multiletter control sequences out of 15000+600000
  51652 words of font info for 101 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 38i,10n,49p,4400b,315s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/t
-exlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr1
-0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times
-/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on LSH-Canopy.pdf (12 pages, 507097 bytes).
+ 38i,12n,47p,4400b,315s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/t
+exlive/2014/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2014/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2014/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2014/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2014/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2014/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2014/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2014/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2014/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2014/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2014/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw
+/times/utmb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utm
+bi8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><
+/usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on LSH-Canopy.pdf (13 pages, 787673 bytes).
 PDF statistics:
- 122 PDF objects out of 1000 (max. 8388607)
- 78 compressed objects within 1 object stream
+ 129 PDF objects out of 1000 (max. 8388607)
+ 81 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -480,7 +480,7 @@ the dot products between each of the rows of matrix $V$ and a data point $a$ wil
 We have used three recent and popular sequence clustering methods as an expensive clustering measure inside canopies in this study. UCLUST \cite{MARuclust}, SUMACLUST \cite{MARSumaclust} and SWARM \cite{MARSwarm} were used for sub-clustering canopies. UCLUST is closed-source software and provides very limited documentations\footnote{http://www.drive5.com/uclust/uclust\_userguide\_1\_1\_579.pdf}. The 32 bit version of UCLUST executable is available for academic usage. But the 64-bit versions which is necessary to handle large datasets, require expensive license. UCLUST follows a greedy process and creates \textit{seeds} of sequences which generate clusters based on percent identity.
 SUMACLUST is an open-source software. It follows similar approach as UCLUST. Based on greedy strategy SUMACLUST incrementally constructs clusters by comparing an abundance-ordered list of input sequences against the representative set of already-chosen sequences. Initially this list is empty. Finally SWARM uses exhaustive single-linkage clustering based on optimal sequence alignment. Sequences that are less than a certain distance from any other other sequence in the cluster are clustered together. SWARM attempts to reduce the impact of clustering parameters on the resulting OTUs by avoiding arbitrary global clustering thresholds and input sequence ordering dependence. At first SWARM builds an initial set of OTUs is constructed by iteratively agglomerating similar amplicons. Then amplicon abundance values are used to reveal OTUs’ internal structures and to break them into sub-OTUs.
 
-\section{Experimental Evaluations}
+\section{Experimental Evaluation}
 \begin{table*}[tb] 
 \centering 
 \caption{\textbf{Dataset Statistics}} \label{table:finaltabledataset} 
@@ -499,37 +499,102 @@ SUMACLUST is an open-source software. It follows similar approach as UCLUST. Bas
 \end{table*} 
 
 \subsection{Dataset Description}
-Different types of previously published mocked and real world genuine datasets were used for extensive evaluation of our approach and comparison with other methods. We have used three different previously published mock community data sets- three of them are 16S rRNA gene mock community data sets (Bokulich\_2, Bokulich\_3, and Bokulich\_6) from \cite{MARmockDatasetRef}. We have also used three previously published natural data sets: a 16S rRNA gene soil data set (canadian\_soil)from \cite{MARcanadianSoil}, a 16S rRNA gene human data set (body\_sites) from \cite{MARbodySites}, and an 18S rRNA gene soil data set (global\_soil) from \cite{MARglobalSoil}. Statistics and relevant information regarding the datasets are provided in Table \ref{table:finaltabledataset}. Description of the various dataset used in this paper is as follows:\\
+
+%HR EDITS 
+
+To evaluate the performance of our developed approach 
+we have used previously published 
+synthetic and real world
+sequence benchmarks. 
+%
+Specifically, 
+we used  three synthetic 16S rRNA gene mock 
+community datasets (Bokulich\_2, Bokulich\_3, and Bokulich\_6) 
+from XXX et. al. \cite{MARmockDatasetRef} and 
+three 
+real data sets: a 16S rRNA gene soil 
+data set (canadian\_soil) \cite{MARcanadianSoil}, a 16S rRNA gene 
+human data set (body\_sites) \cite{MARbodySites} and 
+18S rRNA gene soil data set (global\_soil) \cite{MARglobalSoil}. 
+Key statistics and relevant 
+information regarding these datasets are presented
+in Table \ref{table:finaltabledataset}. 
 
 \textbf{Synthetic Datasets:}
 
 \subsubsection{\textit{Bokulich\_2}}
-This dataset was prepared using the Illumina TruSeq v2 paired--end library preparation kit. It is a 16S rRNA gene mock microbial community data set. It has total 4 samples. For 2 of these samples abundance of mock communities were distributed evenly. For the other 2 samples abundance of mock communities were inserted randomly. This dataset contains 19 taxonomic Families, 19 Genera, 22 Species and 22 Strains in total. This dataset can be found in the QIIME database under the study identifiers 1685.
+This dataset was prepared using the 
+Illumina TruSeq v2 paired--end library
+preparation kit. It is a simulated 16S rRNA gene 
+microbial community data set.
+%It has total 
+%4 samples. For 2 of these samples abundance
+%of mock communities were 
+%distributed evenly. For the other 2 samples 
+%abundance of mock communities were inserted randomly. 
+This 
+dataset contains 19 taxonomic Families, 19 Genera, 22 Species 
+and 22 Strains in total. This dataset can be 
+found in the QIIME database (identifier 1685).
 
 \subsubsection{\textit{Bokulich\_3}}
-Similar to Bokulich\_2 except that it was sequenced in different environment and tool. The dataset was prepared with the TruSeq v1 paired-end library kit at Illumina Cambridge. Available at QIIME database under the study ID 1686.
+Similar to Bokulich\_2 except that it was 
+prepared with the 
+TruSeq v1 paired-end library kit at 
+Illumina Cambridge and is  also available in the 
+QIIME database (identifier 1686).
 
 \subsubsection{\textit{Bokulich\_6}}
-A 16S rRNA dataset which was sequenced at Washington University School of Medicine. It has 1 sample which contains evenly distributed mock microbial community. This dataset contains 13 taxonomic Families, 23 Genera, 44 Species and 48 Strains in total.
-
-All these datasets from Bokulich et al.\cite{MARmockDatasetRef} are available at QIIME database\footnote{http://qiime.org/home\_static/dataFiles.html} under their respective ID's. Since these are mock datasets their taxonomic profile of microbiome are known.
+This  16S rRNA dataset 
+was sequenced at Washington University School of Medicine and 
+contains evenly distributed microbial communities. This 
+dataset contains 13 taxonomic 
+Families, 23 Genera, 44 Species and 48 Strains in total.
+%
+All these datasets from Bokulich et al.\cite{MARmockDatasetRef} are 
+available at QIIME database\footnote{http://qiime.org/home\_static/dataFiles.html} under their respective ID's. Since, these are simulated 
+datasets the taxonomic profile of microbial organisms within them 
+are known.
 
 \textbf{Real World Datasets:}
 
 \subsubsection{Canadian Soil}
-The Canadian Soil dataset\footnote{http://www.cm2bl.org/} contains genomic data of Canadian soil spanning from Arctic Tundra to Agricultural soil suitable for different agricultural products like soi, wheat, corn etc. in different regions of Canada.
+The Canadian Soil dataset\footnote{http://www.cm2bl.org/} contains 
+genomic data of soil spanning from Arctic 
+Tundra to Agricultural soil suitable for different 
+agricultural products.  %etc. in different regions of Canada.
 
 \subsubsection{Body Sites}
-This dataset contains composition of bacterial communities from up to 27 body sites in healthy adults. A collection of 602 samples acquired from different body sites of human subjects are provided with meta-data.
+This dataset contains composition of 
+bacterial communities from up to 27 different 
+body sites in healthy adults. A collection of 602 samples acquired from different body sites of human subjects are provided with meta-data.
 
 \subsubsection{Global Soil}
-Ramirez et al.\cite{MARglobalSoil} combined data representing a range of biomes from Alaska to Antarctica from two previous studies of Dinsdale EA et al.\cite{MARnineBiomes} and Lauber et al.\cite{MARrestOfGlobalSoil} to compare with below-ground diversity in New York City's Central Park.
+Ramirez et al.\cite{MARglobalSoil} combined data 
+representing a range of biomes from Alaska to 
+Antarctica from two previous studies of 
+Dinsdale EA et al.\cite{MARnineBiomes} and 
+Lauber et al.\cite{MARrestOfGlobalSoil} to analyze the 
+ biodiversity under the  in New York City's Central Park.
 
-All of these datasets have been used in previous studies \cite{MARmockDatasetRef},\cite{MARopenDeNovo}. Any analysis on these datasets requires appropriate preprocessing which can significantly affect results of clustering and taxonomic classification based on them \cite{MARmockDatasetRef}. Performance of different open source sequence clustering methods were assessed and compared in \cite{MARopenDeNovo} on these datasets and they have also provided preprocessed and filtered using qiime and provided together (URL: https://github.com/ekopylova/otu-clustering).         
-    
+MD - The above statements do not make sense. Can  you check ? 
+
+All of these datasets have been used in 
+previous studies \cite{MARmockDatasetRef},\cite{MARopenDeNovo}. Any 
+analysis on these datasets requires 
+appropriate preprocessing which can significantly change the 
+results of clustering and taxonomic classification 
+based on them \cite{MARmockDatasetRef}. The performance of 
+different open source sequence clustering methods were 
+assessed and compared in a  study by XXX et. al. \cite{MARopenDeNovo} using 
+these specific datasets. As such, in this paper we use the same 
+benchmarks as done in the prior study and publicly available \footnote{https://github.com/ekopylova/otu-clustering}.
+
 
 \subsection{Evaluation Metrics}
-We have used some standard and popular performance measure to assess our proposed clustering method and compare with other clustering methods.\\ 
+We have used some standard and popular 
+performance measure to assess our proposed clustering
+method and compare with other clustering methods.\\ 
 \hspace*{4mm}\textbf{Faith’s phylogenetic diversity metric (PD)} - Faith’s phylogenetic diversity \cite{MARfaith1992conservation} also known as PD  is based on the Phylogeny tree. It combines all the branch lengths of the tree as a measure of diversity. So, if a new OTU is found and it is closely related to another OTU in the sample, it will be a small increase in diversity. However, if a new OTU is found and it comes from a totally different lineage than anything else in the sample, it will contribute a lot to increasing the diversity:
 
 \hspace*{4mm}\textbf{Shannon Entropy} - Shannon-Wiener diversity index is defined as:
