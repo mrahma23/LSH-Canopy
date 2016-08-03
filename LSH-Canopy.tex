@@ -592,10 +592,20 @@ benchmarks as done in the prior study and publicly available \footnote{https://g
 
 
 \subsection{Evaluation Metrics}
-We have used some standard and popular 
-performance measure to assess our proposed clustering
-method and compare with other clustering methods.\\ 
-\hspace*{4mm}\textbf{Faith’s phylogenetic diversity metric (PD)} - Faith’s phylogenetic diversity \cite{MARfaith1992conservation} also known as PD  is based on the Phylogeny tree. It combines all the branch lengths of the tree as a measure of diversity. So, if a new OTU is found and it is closely related to another OTU in the sample, it will be a small increase in diversity. However, if a new OTU is found and it comes from a totally different lineage than anything else in the sample, it will contribute a lot to increasing the diversity:
+
+We assess the performance of our proposed approach using 
+the following types of  commonly used metrics: (i) that are used 
+for the assessment of biodiversity
+within metagenomic samples, (ii) output of clustering algorithms 
+and (iii) computational run time. 
+
+\hspace*{4mm}\textbf{Faith’s phylogenetic diversity metric (PD)} - Faith’s phylogenetic 
+diversity \cite{MARfaith1992conservation} is based on the Phylogenetic tree. It combines all 
+the branch lengths of the tree as a measure of diversity. So, if a new 
+OTU (cluster)  is found and it is closely related to another OTU in the sample, it will contribute to 
+a small increase to the PD score. However, if a new OTU is found and is 
+from a different lineage than anything else in the sample, it will contribute to a large 
+increase in the PD score. % the diversity:
 
 \hspace*{4mm}\textbf{Shannon Entropy} - Shannon-Wiener diversity index is defined as:
 
@@ -603,7 +613,9 @@ method and compare with other clustering methods.\\
 H={-} \sum_{i=1}^{s} \left( p_i\log_2p_i \right)
 \end{equation}
 
-where s is the number of OTU and $p_i$ is the proportion of the community represented by OTU $i$.
+where s is the number of OTUs and $p_i$ is the proportion of the community represented by OTU $i$.
+
+MD - What is the intution of this metric ? What does it capture ? 
 
 \hspace*{4mm}\textbf{Simpson's Index} - Simpson’s index is defined as ${1-dominance}$ or
 \begin{equation}
@@ -612,7 +624,14 @@ where s is the number of OTU and $p_i$ is the proportion of the community repres
 
 where where $p_i$ is the proportion of the community represented by OTU $i$.
 
-\hspace*{4mm}\textbf{$F$-measure} - For synthetic datasets, false-positive (FP; taxonomy/OTU string exists in observed but not expected), false-negative (FN; taxonomy/OTU string exists in expected but not observed), and true-positive (TP; taxonomy/OTU string exists in both observed and expected) measures were computed from cluster output and the ground truth or expected taxonomic composition. The following definitions were used:
+MD - What is the intution of this metric ? What does it capture ? 
+
+\hspace*{4mm}\textbf{$F$-measure} - In case of 
+synthetic datasets, false-positive (FP; taxonomy/OTU string 
+exists in observed but not expected), false-negative
+(FN; taxonomy/OTU string exists in expected but not observed), and 
+true-positive (TP; taxonomy/OTU string exists in both observed and expected) measures were computed from 
+cluster output and the ground truth or expected taxonomic composition. The following definitions were used:
 
 \begin{equation}
 precision = \frac{TP}{(TP + FP)}
@@ -626,7 +645,9 @@ recall = \frac{TP}{(TP + FN)}
 F Score = \frac{2 \times precision \times recall}{(precision + recall)}
 \end{equation}
 
+
 \subsection{Experimental Details}
+
 For kmers, the value of parameter $k$ was set to 4. Which means occurrences of all possible combination of 4 letter nucleotides were generated from the reads of datasets. Since $k=4$ and there can be 4 possible nucleotide representatives (A,C,G and T), total number of features became $4^4=256$. This way we were able to convert the string representation of nucleotide data in standard FASTA format into numeric. After finding the kmers, each numeric representation of data reads were normalized to range $\left[0-1\right]$.
 
 For Locality Sensitive Hashing the number of Hyperplanes (parameter $d$) was set to 150. One of the motivations of using LSH was fast approximation of distances from one data read to another while reducing feature dimension. Since total number of features became 256 after numeric representation using $kmer$, we wanted to reduce the number of features while maintaining a relatively accurate yet fast distance approximation from LSH. So the value of parameter $d$ should be less than the actual number of feature but not too small because that might lead to wrong distance approximation.
