@@ -666,13 +666,81 @@ After receiving output from all canopy clustering we merged the outputs to make 
 
 \subsection{\textbf{Clustering Performance Comparison}}
 
-Performance of UCLUST \cite{MARuclust}, SUMACLUST \cite{MARSumaclust}, SWARM \cite{MARSwarm} and their respective versions with our proposed approach Locality Sensitive Hashing based Canopy Clustering (LSH-Canopy) is provided in Table \ref{table:performanceTable}. Datasets used in this study contain multiple samples. Performance metrics like Phylogenetic Diversity (PD), Shannon entropy and Simpson index are generated per sample basis for any dataset. To show comparative performance of the clustering methods used in this study we showed the range of values the performance metrics in $\left[min-max\right]$ where $min$ and $max$ represent the minimum and maximum values respectively observed in the whole dataset regardless of samples for a particular clustering method. This represents the range of values a performance metric can take over all samples in a dataset. Performance of 2 clustering methods on same dataset can be assumed similar in terms of biodiversity if their $minimum$ and $maximum$ values for performance metrics are similar. Metrics representing biodiversity can significantly change over clustering methods, their respective data pre-processing pipeline, post processing, range of OTU lengths, number of OTU's etc. Nevertheless, $\left[min-max\right]$ range of a clustering method and it's counterpart with our proposed LSH-Canopy pipeline should be roughly similar. $F$-measure and Pearson Correlation Coefficient ($\rho$-value) can take only one value each for a clustering method on a dataset. And the correlation metric ($\rho$-value) is applicable for clustering methods with our proposed approach only since this is a correlation between the output of a standard clustering method and it's respective LSH-Canopy version. Thus we can interpret a better outcome of this experiment as $(\romannum{1})$  similar range of biodiversity (PD, Shannon and Simpson values), $(\romannum{2})$ higher $F$-measure and Correlation ($\rho$-value) with respect to corresponding clustering without our proposed LSH-Canopy pipeline and finally $(\romannum{3})$ lower running time. 
 
-From Table \ref{table:performanceTable} we can see that UCLUST and LSH-Canopy-UCLUST provide similar range for PD, Shannon and Simpson values for both synthetic and real world datasets. Moreover, LSH-Canopy-UCLUST provided higher $F$-score than UCLUST for all 3 synthetic datasets used in this study. The lowest $F$-score observed by UCLUST was 0.39 for Bokulich\_2 dataset. with LSH-Canopy-UCLUST we achieved 0.42 for the same dataset. For synthetic datasets taxonomic profiles were known as prior. This taxonomic distribution can be taken as ground truth and it can be used to identify whether the cluster representatives actually support this ground truth. A higher $F$-score is an indicator that relevant and important cluster representatives are retained as they support ground truth. Higher $F$-scores of our proposed approach is due to the nature of how canopy is formed. A single data instance can belong to multiple canopies due to the nature of soft threshold $T1$. As a result a single read can contribute to multiple Operational Taxonomic Units (OTU) in metagenome data. As a result even after removing singletons, expensive clustering inside a canopy can bring higher numbers of useful OTU's. For real world datasets LSH-Canopy-UCLUST provided similar range of values for PD, Shannon and Simpson. Correlation of LSH-Canopy-UCLUST with navie UCLUST at the Genus level of assigned taxonomy was observed to be highly correlated. The lowest $\rho$-value was 0.8177 for Canadian Soil metagenomic data which is the largest dataset used in this study containing more than 9 million reads.  
+Table \ref{table:performanceTable} shows the performance of our proposed approach (LSH-Canopy)
+and 
+comparative methods UCLUST \cite{MARuclust}, 
+SUMACLUST \cite{MARSumaclust} and SWARM \cite{MARSwarm}. 
+%
+The benchmarks
+used in this study contain multiple samples and the  performance 
+metrics,   
+Phylogenetic Diversity (PD), Shannon entropy and 
+Simpson index are generated per sample basis for any dataset. To show comparative performance 
+of the clustering methods used in this study we showed the range of values the 
+performance metrics in $\left[min-max\right]$ where
+$min$ and $max$ represent the minimum and maximum values respectively observed in the 
+whole dataset regardless of samples for a particular
+clustering method. 
+%
+This represents the range of values a performance metrics. The  performance of two 
+clustering methods on same dataset can be assumed  to be 
+similar in terms of biodiversity if their $minimum$ and $maximum$ values for performance metrics 
+are similar. Metrics representing biodiversity can significantly change over clustering methods, their respective 
+data pre-processing pipeline, post processing, range of OTU lengths and  number of OTU's. Nevertheless, $\left[min-max\right]$ 
+range of a clustering method and it's counterpart with our 
+proposed LSH-Canopy pipeline should be roughly similar. The 
+$F$-measure and Pearson Correlation Coefficient ($\rho$-value) can take only one 
+value each for a clustering method on a dataset. And the correlation metric ($\rho$-value) is applicable for 
+clustering methods with our proposed approach only since this is a correlation between the 
+output of a standard clustering method and it's respective LSH-Canopy 
+version. Thus we can interpret a better outcome of this 
+experiment as $(\romannum{1})$  similar range of biodiversity 
+(PD, Shannon and Simpson values), $(\romannum{2})$ higher $F$-measure and 
+Correlation ($\rho$-value) with respect to corresponding clustering 
+without our proposed LSH-Canopy pipeline and finally $(\romannum{3})$ lower running time. 
 
-Our proposed approach also improves the outcomes of SUMACLUST. From Table \ref{table:performanceTable} we can see that SUMACLUST provided higher $F$-score than UCLUST for Bokulich\_2 and Bokulich\_3 and same value for Bokulich\_6. After running SUMACLUST with LSH-Canopy we observed same $F$-score as SUMACLUST for Bokulich\_2 and higher for other 2 synthetic datasets. SUMACLUST with our proposed approach outperforms the naive SUMACLUST and UCLUST. Ranges of PD, Shannon and Simpson were similar to naive SUMACLUST for both synthetic and real world datasets. $\rho$-values were higher indicating a strong positive correlation with naive SUMACLUST specially for synthetic datasets. Lowest $\rho$-value was 0.7859 which was observed for larger Canadian Soil real world metagenome dataset.
+MD - This text above is way too long. Please condense. It has info. but summarize.
 
-Finally SWARM with our proposed LSH-Canopy pipeline also showed better results than naive SWARM. We observed the highest $F$-score of 0.56 in this study for Bokulich\_6 dataset from both naive and LSH-Canopy version of SWARM. For the other 2 synthetic datasets our proposed LSH-Canopy version of SWARM outperforms the naive counterpart. Ranges for PD, Shannon and Simpson were similar and correlation values were observed to be high. The lowest $\rho$-value for LSH-Canopy-SWARM was 0.7736 for Canadian Soil dataset.          
+MD - Need results of LSH-Canopy to make any sort of statements. 
+
+MD - For a BIG DATA conference reviewer the above text is too confusing.
+
+From Table \ref{table:performanceTable} we observe 
+that UCLUST and LSH-Canopy-UCLUST provide similar range for PD, Shannon and 
+Simpson values for both, the synthetic 
+and real world datasets. Moreover, LSH-Canopy-UCLUST provided higher $F$-score than UCLUST for all three
+synthetic datasets used in this study. 
+%
+%The lowest $F$-score observed by 
+%UCLUST was 0.39 for Bokulich\_2 dataset. with LSH-Canopy-UCLUST we achieved 0.42 for the same dataset. 
+For synthetic datasets taxonomic profiles were known as prior. This taxonomic distribution 
+can be taken as ground truth and it can be used to 
+identify whether the cluster representatives actually support this 
+ground truth. A higher $F$-score is an indicator that relevant and important cluster representatives are retained 
+as they support ground truth. Higher $F$-scores of our proposed approach is
+due to the nature of how canopy is formed. {{\textbf MD - CHECK THIS -- DOES NOT LOOK CORRECT}} A single data instance can belong 
+to multiple canopies due to the nature of soft threshold $T1$. As a result 
+a single read can contribute to multiple Operational Taxonomic Units (OTUs) in 
+metagenome data. As a result even after removing 
+singletons, expensive clustering inside a canopy can result in 
+higher numbers of useful OTUs. For real world datasets, 
+LSH-Canopy-UCLUST provided similar range of values for PD, Shannon and Simpson. Correlation of LSH-Canopy-UCLUST with naive 
+UCLUST at the Genus level of assigned taxonomy was observed to be highly correlated. {\bf MD - WHAAT DOES THE PREV. SENT MEAN}.  The 
+lowest $\rho$-value was 0.8177 for Canadian Soil metagenomic data which is the 
+largest dataset used in this study containing more than
+9 million reads.  
+
+{\textbf{MD - Compress the two paragraphs below to maybe 2-3 lines total.}}
+
+Our proposed approach also improves the outcomes of 
+SUMACLUST. From Table \ref{table:performanceTable} we 
+see that SUMACLUST provided higher $F$-score than UCLUST for Bokulich\_2 and Bokulich\_3 and same value for Bokulich\_6. After running 
+SUMACLUST with LSH-Canopy we observed same $F$-score as SUMACLUST for Bokulich\_2 and higher for other 
+2 synthetic datasets. SUMACLUST with our proposed approach outperforms the naive SUMACLUST and UCLUST. Ranges of PD, Shannon and Simpson were similar to naive SUMACLUST for both synthetic and real world datasets. $\rho$-values were higher indicating a strong positive correlation with naive SUMACLUST specially for synthetic datasets. Lowest $\rho$-value was 0.7859 which was observed for larger Canadian Soil real world metagenome dataset.
+
+Finally SWARM with our proposed LSH-Canopy pipeline also showed better results than naive SWARM. We observed the highest $F$-score of $0.56$ in this study for 
+Bokulich\_6 dataset from both naive and LSH-Canopy version of SWARM. For the other two synthetic datasets our proposed LSH-Canopy version of SWARM outperforms the naive counterpart. Ranges for PD, Shannon and Simpson were similar and correlation values were observed to be high. The lowest $\rho$-value for LSH-Canopy-SWARM was 0.7736 for Canadian Soil dataset.          
 
 \begin{table*}[t]
 \centering 
