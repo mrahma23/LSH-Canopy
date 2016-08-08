@@ -22,9 +22,8 @@
 \BIBdecl
 
 \bibitem{MARGenomeOr}
-Z.~D. Stephens, S.~Y. Lee, F.~Faghri, R.~H. Campbell, C.~Zhai, M.~J. Efron,
-  R.~Iyer, M.~C. Schatz, S.~Sinha, and G.~E. Robinson, ``Big data: astronomical
-  or genomical?'' \emph{PLoS Biol}, vol.~13, no.~7, p. e1002195, 2015.
+S.~et~al., ``Big data: astronomical or genomical?'' \emph{PLoS Biol}, vol.~13,
+  no.~7, p. e1002195, 2015.
 
 \bibitem{MARSeaMetaGenome}
 J.~C. Venter, K.~Remington, J.~F. Heidelberg, A.~L. Halpern, D.~Rusch, J.~A.
@@ -33,10 +32,8 @@ J.~C. Venter, K.~Remington, J.~F. Heidelberg, A.~L. Halpern, D.~Rusch, J.~A.
   \emph{science}, vol. 304, no. 5667, pp. 66--74, 2004.
 
 \bibitem{MARHumanGut}
-J.~Qin, R.~Li, J.~Raes, M.~Arumugam, K.~S. Burgdorf, C.~Manichanh, T.~Nielsen,
-  N.~Pons, F.~Levenez, T.~Yamada \emph{et~al.}, ``A human gut microbial gene
-  catalogue established by metagenomic sequencing,'' \emph{nature}, vol. 464,
-  no. 7285, pp. 59--65, 2010.
+Q.~et~al., ``A human gut microbial gene catalogue established by metagenomic
+  sequencing,'' \emph{nature}, vol. 464, no. 7285, pp. 59--65, 2010.
 
 \bibitem{MARHumanMicro}
 P.~J. Turnbaugh, R.~E. Ley, M.~Hamady, C.~Fraser-Liggett, R.~Knight, and J.~I.
@@ -45,10 +42,8 @@ P.~J. Turnbaugh, R.~E. Ley, M.~Hamady, C.~Fraser-Liggett, R.~Knight, and J.~I.
   2007.
 
 \bibitem{MARDosphila}
-E.~W. Myers, G.~G. Sutton, A.~L. Delcher, I.~M. Dew, D.~P. Fasulo, M.~J.
-  Flanigan, S.~A. Kravitz, C.~M. Mobarry, K.~H. Reinert, K.~A. Remington
-  \emph{et~al.}, ``A whole-genome assembly of drosophila,'' \emph{Science},
-  vol. 287, no. 5461, pp. 2196--2204, 2000.
+M.~et~al., ``A whole-genome assembly of drosophila,'' \emph{Science}, vol. 287,
+  no. 5461, pp. 2196--2204, 2000.
 
 \bibitem{MARCharuvaka}
 A.~Charuvaka and H.~Rangwala, ``Evaluation of short read metagenomic
@@ -102,11 +97,7 @@ T.~S. Schmidt, J.~F.~M. Rodrigues, and C.~Von~Mering, ``Ecological consistency
   pp. 1501--1506, 2005.
 
 \bibitem{MARMothur}
-\relax{Schloss, Patrick D. and Westcott, Sarah L. and Ryabin, Thomas and Hall,
-  Justine R. and Hartmann, Martin and Hollister, Emily B. and Lesniewski, Ryan
-  A. and Oakley, Brian B. and Parks, Donovan H. and Robinson, Courtney J. and
-  Sahl, Jason W. and Stres, Blaz and Thallinger, Gerhard G. and Van Horn, David
-  J. and Weber, Carolyn F.}, ``Introducing mothur: Open-source,
+\relax{Schloss et al.}, ``Introducing mothur: Open-source,
   platform-independent, community-supported software for describing and
   comparing microbial communities,'' \emph{Applied and Environmental
   Microbiology}, vol.~75, no.~23, pp. 7537--7541, 2009.
@@ -135,9 +126,8 @@ A.~Z. Broder, M.~Charikar, A.~M. Frieze, and M.~Mitzenmacher, ``Min-wise
   vol.~60, no.~3, pp. 630--659, 2000.
 
 \bibitem{MAROtherMinH}
-B.~D. Ondov, T.~J. Treangen, P.~Melsted, A.~B. Mallonee, N.~H. Bergman,
-  S.~Koren, and A.~M. Phillippy, ``Mash: fast genome and metagenome distance
-  estimation using minhash,'' \emph{bioRxiv}, p. 029827, 2016.
+O.~et~al., ``Mash: fast genome and metagenome distance estimation using
+  minhash,'' \emph{bioRxiv}, p. 029827, 2016.
 
 \bibitem{MARToss}
 O.~Tanaseichuk, J.~Borneman, and T.~Jiang, ``Separating metagenomic short reads
@@ -192,10 +182,8 @@ F.~Mah{\'e}, T.~Rognes, C.~Quince, C.~De~Vargas, and M.~Dunthorn, ``Swarm v2:
   https://git.metabarcoding.org/obitools/sumatra/wikis/home}, 2014.
 
 \bibitem{MARDeNovo}
-E.~Kopylova, J.~A. Navas-Molina, C.~Mercier, Z.~Z. Xu, F.~Mah{\'e}, Y.~He,
-  H.-W. Zhou, T.~Rognes, J.~G. Caporaso, and R.~Knight, ``Open-source sequence
-  clustering methods improve the state of the art,'' \emph{mSystems}, vol.~1,
-  no.~1, pp. e00\,003--15, 2016.
+K.~et~al., ``Open-source sequence clustering methods improve the state of the
+  art,'' \emph{mSystems}, vol.~1, no.~1, pp. e00\,003--15, 2016.
 
 \bibitem{MARCanopy}
 \BIBentryALTinterwordspacing
@@ -258,47 +246,22 @@ E.~Kopylova, J.~A. Navas-Molina, C.~Mercier, Z.~Z. Xu, F.~Mah{\'e}, Y.~He,
   vol. 326, no. 5960, pp. 1694--1697, 2009.
 
 \bibitem{MARglobalSoil}
-\relax{Ramirez, Kelly S. and Leff, Jonathan W. and Barber{\'a}n, Albert and
-  Bates, Scott Thomas and Betley, Jason and Crowther, Thomas W. and Kelly,
-  Eugene F. and Oldfield, Emily E. and Shaw, E. Ashley and Steenbock,
-  Christopher and Bradford, Mark A. and Wall, Diana H. and Fierer, Noah},
-  ``Biogeographic patterns in below-ground diversity in new york
-  city{\textquoteright}s central park are similar to those observed globally,''
-  \emph{Proceedings of the Royal Society of London B: Biological Sciences},
-  vol. 281, no. 1795, 2014.
-
-\bibitem{MARnineBiomes}
-\relax{et al. Dinsdale EA}, ``Functional metagenomic profiling of nine
-  biomes,'' \emph{Nature}, vol. 452, pp. 629--632, 2008.
-
-\bibitem{MARrestOfGlobalSoil}
-\relax{Lauber, Christian L. and Hamady, Micah and Knight, Rob and Fierer,
-  Noah}, ``Pyrosequencing-based assessment of soil ph as a predictor of soil
-  bacterial community structure at the continental scale,'' \emph{Applied and
-  Environmental Microbiology}, vol.~75, no.~15, pp. 5111--5120, 2009.
+\relax{Ramirez et al.}, ``Biogeographic patterns in below-ground diversity in
+  new york city{\textquoteright}s central park are similar to those observed
+  globally,'' \emph{Proceedings of the Royal Society of London B: Biological
+  Sciences}, vol. 281, no. 1795, 2014.
 
 \bibitem{MARopenDeNovo}
-\relax{Kopylova, Evguenia and Navas-Molina, Jose A. and Mercier, C{\'e}line and
-  Xu, Zhenjiang Zech and Mah{\'e}, Fr{\'e}d{\'e}ric and He, Yan and Zhou,
-  Hong-Wei and Rognes, Torbj{\o}rn and Caporaso, J. Gregory and Knight, Rob},
-  ``Open-source sequence clustering methods improve the state of the art,''
-  \emph{mSystems}, vol.~1, no.~1, 2016.
+\relax{Kopylova et al.}, ``Open-source sequence clustering methods improve the
+  state of the art,'' \emph{mSystems}, vol.~1, no.~1, 2016.
 
 \bibitem{MARfaith1992conservation}
 \relax{Faith, Daniel P}, ``Conservation evaluation and phylogenetic
   diversity,'' \emph{Biological conservation}, vol.~61, no.~1, pp. 1--10, 1992.
 
 \bibitem{MARQiime}
-\relax{Caporaso, J Gregory and Kuczynski, Justin and Stombaugh, Jesse and
-  Bittinger, Kyle and Bushman, Frederic D and Costello, Elizabeth K and Fierer,
-  Noah and Pena, Antonio Gonzalez and Goodrich, Julia K and Gordon, Jeffrey I
-  and Huttley, Gavin A and Kelley, Scott T and Knights, Dan and Koenig, Jeremy
-  E and Ley, Ruth E and Lozupone, Catherine A and McDonald, Daniel and Muegge,
-  Brian D and Pirrung, Meg and Reeder, Jens and Sevinsky, Joel R and , Peter J
-  and Walters, William A and Widmann, Jeremy and Yatsunenko, Tanya and
-  Zaneveld, Jesse and Knight, Rob}, ``Qiime allows analysis of high-throughput
-  community sequencing data,'' \emph{Nat Meth}, vol.~7, no.~5, pp. 335--336,
-  2010.
+\relax{Caporaso et al.}, ``Qiime allows analysis of high-throughput community
+  sequencing data,'' \emph{Nat Meth}, vol.~7, no.~5, pp. 335--336, 2010.
 
 \bibitem{MARPynast}
 \relax{Caporaso, J. Gregory and Bittinger, Kyle and Bushman, Frederic D. and

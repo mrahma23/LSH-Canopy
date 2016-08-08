@@ -398,17 +398,16 @@ Many Unsupervised and Supervised clustering approaches have been developed and u
 
 \section{Literature Review}
 \label{sec:1}
+Some of the popular and early OTU clustering methods proposed were CD-HIT \cite{MARCDhit}, DOTUR \cite{MARDOTUR}, MOTHUR \cite{MARMothur} and ESPRIT \cite{MAREspirit}. Algorithm used in CD-HIT is a greedy incremental clustering algorithm and performs ordering on sequences based on sequence length. Subsequent comparisons have to fall above the threshold for similarity with all sequences in a cluster. DOTUR, MOTHUR and ESPRIT exclusively use pairwise distance matrix as input and then perform hierarchical clustering clustering on 16S sequences. MOTHUR and DOTUR utilizes global alignment score between all pairs of sequences for pairwise distances computation. 
 
-Analyzing metagenome sequences has poses great computational challenges since current DNA sequencing technologies generate hundreds of gigabytes of data in a single run and many computational methods have been developed over the years \cite{MARmicroMetagenomics}, \cite{MARChallengesMeta}. Both availability of data and recent computational methods have enabled new detailed research into the human microbiome \cite{MARHumanBiome} and characterization of the Earth ecosystem’s microbiome, such as the Earth Microbiome Project (EMP)\footnote{http://www.earthmicrobiome.org/}. Metagenome dataset analysis usually begins with clustering raw biological sequence reads into operational taxonomic units (OTUs) based on sequence similarity. This process frequently referred to as OTU clustering also known as delineating. Focus of study is OTU clustering methods and ways to improve them in terms of OTU quality and runtime.
+Hash based clustering mechanisms have been introduced for metagenome data. MC-LSH \cite{MARMetaLSH} utilizes an efficient locality sensitive based hashing function to approximate the pairwise sequence similarity. Similarity among sequences is computed based on randomly chosen indices that essentially compresses the input sequence. MC-MinH \cite{MARMcMinH} algorithm uses the min-wise \cite{MARMinWise} hashing approach, along with a greedy clustering algorithm to group 16S and whole metagenomic sequences. Mash \cite{MAROtherMinH}, uses MinHash locality sensitive hashing to reduce large sequences to a representative sketch and rapidly estimate pairwise distances. Other methods for clustering whole metagenome sequence reads include TOSS \cite{MARToss}, AbundanceBin \cite{MARAbundant}, and CompostBin \cite{MARCompost}. All unique k-mers are first clustered in TOSS then clusters are merged based on k-mer repetition. In AbundanceBin sequencing reads are modeled as mixture of Poisson distributions. Then Maximization (EM) algorithm is used to infer model parameters and final clustering. Principal component analysis is used in CompostBin to project the data into lower dimensional space and then uses the normalized cut clustering \cite{MARNormalizedCut} algorithm to group sequences into taxa specific clusters. CompostBin also uses phylogenetic markers to assign clusters.
 
-Some of the popular and early OTU clustering methods proposed were CD-HIT \cite{MARCDhit}, DOTUR \cite{MARDOTUR}, MOTHUR \cite{MARMothur} and ESPRIT \cite{MAREspirit}. Algorithm used in CD-HIT is a greedy incremental clustering algorithm and performs ordering on sequences. The ordering used in CD-HIT is determined by sequence length. CD-HIT sorts all sequences by length in decreasing order. The first sequence is considered as the representative of the first cluster. Rest of the sequences are compared with first sequence. If any of the sequences fall above the threshold for similarity, then it is grouped together with the first sequence. Subsequent comparisons have to fall above the threshold for similarity with all sequences in this cluster group. After this first round of cluster, the next ungrouped sequence is set as the representative of the next cluster. This process is repeated untill all sequences are part of a cluster. DOTUR, MOTHUR and ESPRIT exclusively use pairwise distance matrix as input and then perform hierarchical clustering clustering on 16S sequences. MOTHUR and DOTUR utilizes global alignment score between all pairs of sequences for pairwise distances computation. ESPRIT computes k-mer distance for each pair of input sequences, avoiding the expensive global alignment distance calculation. Number of sequence comparisons is also reduced by ESPRIT because of usage of heuristics. Hashing techniques have been utilized in earlier works for clustering metagenomic datasets. MC-LSH \cite{MARMetaLSH} utilizes an efficient locality sensitive based hashing function to approximate the pairwise sequence similarity. Similarity among sequences is computed based on randomly chosen indices that essentially compresses the input sequence. MC-MinH \cite{MARMcMinH} algorithm uses the min-wise \cite{MARMinWise} hashing approach, along with a greedy clustering algorithm to group 16S and whole metagenomic sequences. Unequal length sequences are represented using contiguous subsequences or k-mers, and then pairwise similarity are approximated using independent min-wise hashing. Mash \cite{MAROtherMinH}, uses MinHash locality sensitive hashing to reduce large sequences to a representative sketch and rapidly estimate pairwise distances between genomes or metagenomes. More recent methods for clustering whole metagenome sequence reads include TOSS \cite{MARToss}, AbundanceBin \cite{MARAbundant}, CompostBin \cite{MARCompost}, LikelyBin \cite{MARLikelyBin} and MetaCluster \cite{MARMetaCluster}. All unique k-mers are first clustered in TOSS then clusters are merged based on k-mer repetition.In AbundanceBin sequencing reads are modeled as mixture of Poisson distributions. Then Maximization (EM) algorithm is used to infer model parameters and final clustering. Principal component analysis is used in CompostBin to project the data into lower dimensional space and then uses the normalized cut clustering \cite{MARNormalizedCut} algorithm to group sequences into taxa specific clusters. CompostBin also uses phylogenetic markers to assign clusters. LikelyBin uses an unsupervised, maximum-likelihood approach for clustering based on k-mer distributions of sequences. MetaCluster creates a top-down separation followed by a bottom-up merging for clustering metagenomic fragments based on k-mer frequencies and Spear-man distance computation. UCLUST \cite{MARuclust} follows a greedy process and creates \textit{seeds} of sequences which generate clusters based on percent identity. It is very fast but closed source software. Only the 32 version is made available for free with very limited documentations for academic and non-profit usage. 64-bit version of the software require expensive license. In last 2 years, 2 relatively new clustering methods have been introduced Swarm \cite{MARSwarm}\cite{MARSwarm2} and SUMACLUST \cite{MARSumaclust}. These methods are some of the currently popular, relatively fast \cite{MARDeNovo} and open source softwares. SWARM uses exhaustive single-linkage clustering based on optimal sequence alignment. Sequences that are less than a certain distance from any other other sequence in the cluster are clustered together. SUMACLUST follows a similar approach as UCLUST. Abundance-ordered list of input sequences are compared against the representative set of already-chosen sequences in SUMACLUST.
-
-In this study we have introduced a very fast initial partitioning of large scale metagenomic datasets with Canopy Clustering \cite{MARCanopy} and Locality Sensitive Hashing \cite{MARLshRef1}\cite{MARLshRef2}\cite{MARLshRef3}. This way efficient and scalable parallelism in OTU-clustering can be achieved that is capable of making existing OTU-clustering method multiple times faster by taking advantage of modern multicore CPU architectures. We have used UCLUST, SWARM and SUMACLUST with and without our proposed framework on 6 standard large scale metagenomic datasets to validate and compare our proposed approach. Our proposed framework has shown similar biodiversity metric values, higher $F$-measure values for datasets with known taxonomic profiles as ground truth and significantly less amount of runtime specially for large datasets.  
+UCLUST \cite{MARuclust} follows a greedy process and creates \textit{seeds} of sequences which generate clusters based on percent identity. In last two years, two relatively new clustering methods have been introduced Swarm \cite{MARSwarm}\cite{MARSwarm2} and SUMACLUST \cite{MARSumaclust}. These methods are some of the currently popular, relatively faster \cite{MARDeNovo} and open source softwares for clustering in Metagenome data. SWARM uses exhaustive single-linkage clustering based on optimal sequence alignment. SUMACLUST follows a similar approach as UCLUST. Abundance-ordered list of input sequences are compared against the representative set of already-chosen sequences in SUMACLUST. In this study we have introduced a very fast initial partitioning of large scale metagenomic datasets with Canopy Clustering \cite{MARCanopy} and Locality Sensitive Hashing \cite{MARLshRef1}\cite{MARLshRef2}\cite{MARLshRef3}. This way efficient and scalable parallelism in OTU-clustering can be achieved that is capable of making existing OTU-clustering method multiple times faster by taking advantage of modern multicore CPU architectures. We have used UCLUST, SWARM and SUMACLUST with and without our proposed framework on six standard large scale metagenomic benchmark datasets to validate and compare our proposed approach. Our proposed framework has shown better performance in F-scores, correlation and run time with similar biodiversity.
 
 \section{Methods}
 \label{featMethod}
 \subsection{Overview}
-In this section we provide an overview of our proposed framework. Figure \ref{fig:overall} represents an abstract overview of our proposed approach. At first LSH codes will be created for each sequence reads and fast approximate distances will be calculated from these LSH codes to find Canopy memberships of each read. Then this membership information will be used to partition the large dataset for parallel sub-clustering using more expensive and accurate sequence clustering methods. Finally OTUs from these clusters will be merged by running a final clustering to eliminate repetitions due Canopies.
+In this section we provide an overview of our proposed framework. Figure \ref{fig:overall} represents an abstract overview of our proposed approach.
 
 \begin{figure}
 	\centering
@@ -417,7 +416,7 @@ In this section we provide an overview of our proposed framework. Figure \ref{fi
 	\label{fig:overall}
 \end{figure} 
 
-Figure \ref{fig:flowchart} shows more detailed overview of our proposed LSH-Canopy clustering approach for metagenomic data. After computing the kmers and LSH code our proposed method will start canopy clustering based on the hamming distances between the binary representations of data points created by LSH. Once all reads in datasets are assigned to canopies, our method will create multiple partitions from original dataset based on canopy membership information. This will give one smaller input file per canopy for the subsequent expensive cluster methods. This way larger dataset will be partitioned and new smaller datasets will be created for those partitions. Finally each smaller input files representing a canopy will be provided as input to more accurate sequence clustering methods in parallel. In this study UCLUST, SUMACLUST and SWARM will be used as accurate clustering methods for canopies.
+Figure \ref{fig:flowchart} shows more detailed overview of our proposed LSH-Canopy clustering approach for metagenomic data. After computing the kmers and LSH code our proposed method will start canopy clustering based on the hamming distances between the binary representations of data points created by LSH. Once all reads in datasets are assigned to canopies, our method will create multiple partitions from original dataset based on canopy membership information. Finally each smaller partitions representing a canopy will be provided as input to more accurate sequence clustering methods in parallel. In this study UCLUST, SUMACLUST and SWARM will be used as accurate clustering methods for canopies which are briefly discussed in Section \ref{sub-cluster}.
 
 \begin{figure}
 	\centering
@@ -430,7 +429,7 @@ The final step of our proposed framework is to merge the clustered outputs from 
 
 \begin{figure}
 	\centering
-	\includegraphics[width=\linewidth,height=5cm]{merge.jpg}	
+	\includegraphics[width=\linewidth,height=4.5cm]{merge.jpg}	
 	\caption{Same OTUs Occurring in Multiple Canopies}
 	\label{fig:merge}
 \end{figure}  
@@ -439,44 +438,23 @@ In next sections we provide a brief description of Canopy Clustering, Locality S
 
 \subsection{Canopy Clustering}
 
-Canopy Clustering was introduced by  Andrew et al. \cite{MARCanopy}. It is often used as preprocessing step for other accurate and expensive clustering methods like K-means algorithm or the Hierarchical clustering algorithm. It is intended to speed up clustering operations on large data sets, where using another algorithm directly may be impractical in terms of run time and memory consumption for large number of pairwise distance calculations due to the size of the data set.
-
-Canopy algorithm can greatly reduce the number of distance computations required for clustering by roughly partitioning the data into overlapping subsets. Then more accurate clustering can be performed inside the formed canopies by only measuring distances between pairs of data points that belong to same canopies. Points outside a canopy will not participate in clustering for that canopy. If a dataset contains total $N$ instances then worst case calculations without canopy clustering is $N^2$. After canopy clustering if the number of canopies is $k$ then worst case calculations with canopy clustering is $\sum_{i=1}^{k}(c_i)^2$ where $c_i$ is the number of instances in $i$th canopy. The total difference $g$ in pairwise distance calculations:
+Canopy Clustering was introduced by  Andrew et al. \cite{MARCanopy}. It is often used as preprocessing step for other accurate and expensive clustering methods like K-means algorithm or the Hierarchical clustering algorithm. It is intended to speed up clustering operations on large data sets, where using another algorithm directly may be impractical in terms of run time and memory consumption for large number of pairwise distance calculations due to the size of the data set. If a dataset contains total $N$ instances then worst case calculations without canopy clustering is $N^2$. After canopy clustering if the number of canopies is $k$ then worst case calculations with canopy clustering is $\sum_{i=1}^{k}(c_i)^2$ where $c_i$ is the number of instances in $i$th canopy. The total difference $g$ in pairwise distance calculations:
 
 \begin{equation}
 g=N^2-\sum_{i=1}^{k}(c_i)^2
 \end{equation} 
 
-Canopy clustering uses two basic distance thresholds namely \textit{soft} threshold $T1$ and \textit{tight} threshold $T2$. If data point $p_1$ is within the soft distance threshold $T1$ with another data point $p_2$ then $p_1$ will reside in same canopy as $p_2$ but $p_1$ may belong to other canopies too assuming that it has only met soft threshold and best match is yet to be found. Thus one data point may belong to multiple canopies in Canopy clustering. On the other hand if data point $p_1$ is within the tight distance threshold $T2$ with another data point $p_2$ then canopy clustering assigns $p_1$ to the same canopy as $p_2$ and stops assigning $p_1$ to any other canopy assuming that tight threshold has been met and best canopy assignment for $p_1$ has been found. In this case $p_1$ will not be repeated in other canopies.
-The process of canopy clustering begins with all the data points to be clustered. A point is randomly removed from the set, beginning a new canopy. All other data points are tested and assigned to the new canopy if the distance less than the soft threshold ${\displaystyle T_{1}}$. Moreover if the distance of the point is less than the tight threshold ${\displaystyle T_{2}}$ then it is removed from the original set. This process is repeated until there are no more data points in the set to cluster. These relatively cheaply clustered canopies can be clustered using a more expensive but accurate algorithm. A fast approximation which is discussed in next section will be used for Canopy membership identification. Once the dataset is partitioned other popular metagenome clustering can be used to sub-cluster canopies in parallel achieving both advantages of reduced calculations due to canopies and lower runtime due to proper utilization of parallel processing. 
+Canopy clustering uses two basic distance thresholds namely \textit{soft} threshold $T1$ and \textit{tight} threshold $T2$. If data point $p_1$ is within the soft distance threshold $T1$ with another data point $p_2$ then $p_1$ will reside in same canopy as $p_2$ but $p_1$ may belong to other canopies too assuming that it has only met soft threshold and best match is yet to be found. Thus one data point may belong to multiple canopies in Canopy clustering. On the other hand if data point $p_1$ is within the tight distance threshold $T2$ with another data point $p_2$ then canopy clustering assigns $p_1$ to the same canopy as $p_2$ and stops assigning $p_1$ to any other canopy assuming that tight threshold has been met and best canopy assignment for $p_1$ has been found. In this case $p_1$ will not be repeated in other canopies. Canopy centroids are selected randomly. Then all other data points are tested for canopy assignment based on $T1$ and $T2$. New canopies are selected until all data points are assigned to canopies. A fast approximation which is discussed in next section will be used for Canopy membership identification.
 
 
 \subsection{Locality Sensitive Hashing}
 
-A Locality Sensitive Hashing (LSH) \cite{MARLshRef1}\cite{MARLshRef2}\cite{MARLshRef3} scheme is a distribution on a family ${\displaystyle {\mathcal {F}}}$ is defined for a metric space ${\displaystyle {\mathcal{M}}=(M,d)}$ a threshold ${\displaystyle R>0}$ and an approximation factor ${\displaystyle c>1}$. This family ${\displaystyle {\mathcal {F}}}$ is a family of functions ${\displaystyle h:{\mathcal {M}}\to S}$ which map elements from the metric space to a bucket ${\displaystyle s\in S}$. The LSH family satisfies the following conditions for any two points ${\displaystyle p,q\in {\mathcal {M}}}$, using a function ${\displaystyle h\in {\mathcal {F}}}$ which is chosen uniformly at random:
+A Locality Sensitive Hashing (LSH) \cite{MARLshRef1}\cite{MARLshRef2}\cite{MARLshRef3} is a distribution on a family ${\displaystyle {\mathcal {F}}}$ is defined for a metric space ${\displaystyle {\mathcal{M}}=(M,d)}$ a threshold ${\displaystyle R>0}$ and an approximation factor ${\displaystyle c>1}$. This family ${\displaystyle {\mathcal {F}}}$ is a family of functions ${\displaystyle h:{\mathcal {M}}\to S}$ which map elements from the metric space to a bucket ${\displaystyle s\in S}$. The LSH family either satisfies ${\displaystyle h(p)=h(q)}$ with probability at least ${\displaystyle P_{1}}$ if ${\displaystyle d(p,q)\leq R}$ or satisfies ${\displaystyle h(p)=h(q)}$ with probability at most ${\displaystyle P_{2}}$ if ${\displaystyle d(p,q)\geq R}$ for any two points ${\displaystyle p,q\in {\mathcal {M}}}$, using a function ${\displaystyle h\in {\mathcal {F}}}$ which is chosen randomly. A family is interesting when ${\displaystyle P_{1}>P_{2}}$. Such a family ${\displaystyle {\mathcal {F}}}$ is called ${\displaystyle (R,cR,P_{1},P_{2})}$-sensitive. LSH has been used for fast comparison between points in very high dimensional space \cite{MARLshRef3}. To preserve approximate cosine distance, data points are often randomly projected to low dimensional bit signatures \cite{MARLshRef4}. LSH provides a convenient way of projecting high dimensional data points into low dimensional space and compute fast approximate distance between pairs of data points. These characteristics make it appropriate to be used as a fast distance calculation mechanism between two reads in large scale metagenomic datasets.
 
-$(\romannum{1})$ If ${\displaystyle d(p,q)\leq R}$, then ${\displaystyle h(p)=h(q)}$ with probability at least ${\displaystyle P_{1}}$.
- 
-$(\romannum{2})$ If ${\displaystyle d(p,q)\geq R}$, then ${\displaystyle h(p)=h(q)}$ with probability at most ${\displaystyle P_{2}}$.
-
-A family is interesting when ${\displaystyle P_{1}>P_{2}}$. Such a family ${\displaystyle {\mathcal {F}}}$ is called ${\displaystyle (R,cR,P_{1},P_{2})}$-sensitive. LSH has been used for fast comparison between points in very high dimensional space \cite{MARLshRef3}. In \cite{MARLshRef4} data points were randomly projected to low dimensional bit signatures such that cosine distance is approximately preserved. LSH provides a convenient way of projecting high dimensional data points into low dimensional space and compute fast approximate distance between pairs of data points in this transformed low dimensional space. These characteristics of LSH make it appropriate to be used as a fast distance calculation mechanism between two reads in large scale metagenomic datasets.
-
-LSH function based on random projection and bit sampling for hamming distance was introduced in \cite{MARLshRef3}. This approach works for the Hamming distance over d-dimensional vectors $\{0,1\}^{d}$. Here, the family $\mathcal{F}$ of hash functions is the family of all the projections of points on one of the $d$ coordinates, for example $\mathcal {F}=\{h:\{0,1\}^{d}\to \{0,1\}\mid h(x)=x_{i}{\text{ for some }}i\in \{1,...,d\}\}$, where ${\displaystyle x_{i}}$ is the ${\displaystyle i}$th coordinate of ${\displaystyle x}$. A random function ${\displaystyle h}$ from ${\displaystyle {\mathcal {F}}}$ selects a random bit from the input point. This family has the following parameters: ${\displaystyle P_{1}=1-R/d}$, ${\displaystyle P_{2}=1-cR/d}$. In this study we have chosen a similar random projection based hashing function that projects a $d$ dimensional data point into a $n$ dimensional bit representation where $n<d$. The intuition behind choosing $n<d$ is to reduce the actual data dimension for faster distance calculations. Afterwards we used Hamming distance between two projected data points with reduced dimensions to get approximate distance between them.
-
-Given a random projection matrix $v'$ of size $1 \times d$ and a vector $a$ of size $1 \times d$ representing a single data point in dataset the dot product of these two vectors provides a scalar value. The sign of this value represents which side of the random hyperplane does the data point exist. This information can be represented with a bit. This way a single data with higher dimension can be represented with limited number of bits, one for each random hyperplane. Given these binary representations of two data points, the hamming distance between them says the number of hyperplanes that pass through the two data points. In other words this hamming distance says about the \textit{disagreements} between any two data points which can be used for a rough and fast distance approximation. Considering matrix $V$ of size $n \times d$ as a collection all random weights :    
-
-\begin{equation*}
-\begin{bmatrix}
-w_{1,1} & w_{1,2} & \cdots & w_{1,d} \\
-w_{2,1} & w_{2,2} & \cdots & w_{2,d} \\
-\vdots  & \vdots  & \ddots & \vdots  \\
-w_{n,1} & w_{n,2} & \cdots & w_{n,d} 
-\end{bmatrix}
-\end{equation*}
-
-the dot products between each of the rows of matrix $V$ and a data point $a$ will result in a collection of $n$ bits for that data point. In other words the $d$-dimensional data point will take the form of $\{0,1\}^n$. Hamming distance between 2 such binary number indicates the number of randomly generated hyperplanes for which 2 corresponding data points reside in opposing sides. This is the approximate distance measure that will be used for Canopy Clustering.  
+In this study we have chosen a random projection based hashing function that projects a $d$ dimensional data point into a $n$ dimensional bit representation where $n<d$. The intuition behind choosing $n<d$ is to reduce the actual data dimension for faster distance calculations. Given a random projection matrix $v'$ of size $1 \times d$ and a vector $a$ of size $1 \times d$ representing a single data point in dataset the dot product of these two vectors provides a scalar value. The sign of this value represents which side of the random hyperplane does the data point exist. This information can be represented with a bit. This way a single data with higher dimension can be represented with limited number of bits, one for each random hyperplane. Given these binary representations of two data points, the hamming distance between them says the number of hyperplanes that pass through the two data points. In other words this hamming distance says about the \textit{disagreements} between any two data points which can be used for fast distance approximation.
 
 \subsection{Sub-Clustering Inside Canopies}
+\label{sub-cluster}
 We have used three recent and popular sequence clustering methods as an expensive clustering measure inside canopies in this study. UCLUST \cite{MARuclust}, SUMACLUST \cite{MARSumaclust} and SWARM \cite{MARSwarm} were used for sub-clustering canopies. UCLUST is closed-source software and provides very limited documentations\footnote{http://www.drive5.com/uclust/uclust\_userguide\_1\_1\_579.pdf}. The 32 bit version of UCLUST executable is available for academic usage. But the 64-bit versions which is necessary to handle large datasets, require expensive license. UCLUST follows a greedy process and creates \textit{seeds} of sequences which generate clusters based on percent identity.
 SUMACLUST is an open-source software. It follows similar approach as UCLUST. Based on greedy strategy SUMACLUST incrementally constructs clusters by comparing an abundance-ordered list of input sequences against the representative set of already-chosen sequences. Initially this list is empty. Finally SWARM uses exhaustive single-linkage clustering based on optimal sequence alignment. Sequences that are less than a certain distance from any other other sequence in the cluster are clustered together. SWARM attempts to reduce the impact of clustering parameters on the resulting OTUs by avoiding arbitrary global clustering thresholds and input sequence ordering dependence. At first SWARM builds an initial set of OTUs is constructed by iteratively agglomerating similar amplicons. Then amplicon abundance values are used to reveal OTUs’ internal structures and to break them into sub-OTUs.
 
@@ -510,12 +488,12 @@ sequence benchmarks.
 Specifically, 
 we used  three synthetic 16S rRNA gene mock 
 community datasets (Bokulich\_2, Bokulich\_3, and Bokulich\_6) 
-from XXX et. al. \cite{MARmockDatasetRef} and 
+from Bokulich et. al. \cite{MARmockDatasetRef} and 
 three 
 real data sets: a 16S rRNA gene soil 
-data set (canadian\_soil) \cite{MARcanadianSoil}, a 16S rRNA gene 
-human data set (body\_sites) \cite{MARbodySites} and 
-18S rRNA gene soil data set (global\_soil) \cite{MARglobalSoil}. 
+data set (Canadian Soil) \cite{MARcanadianSoil}, a 16S rRNA gene 
+human data set (Body Sites) \cite{MARbodySites} and 
+18S rRNA gene soil data set (Global Soil) \cite{MARglobalSoil}. 
 Key statistics and relevant 
 information regarding these datasets are presented
 in Table \ref{table:finaltabledataset}. 
@@ -527,11 +505,6 @@ This dataset was prepared using the
 Illumina TruSeq v2 paired--end library
 preparation kit. It is a simulated 16S rRNA gene 
 microbial community data set.
-%It has total 
-%4 samples. For 2 of these samples abundance
-%of mock communities were 
-%distributed evenly. For the other 2 samples 
-%abundance of mock communities were inserted randomly. 
 This 
 dataset contains 19 taxonomic Families, 19 Genera, 22 Species 
 and 22 Strains in total. This dataset can be 
@@ -570,14 +543,7 @@ bacterial communities from up to 27 different
 body sites in healthy adults. A collection of 602 samples acquired from different body sites of human subjects are provided with meta-data.
 
 \subsubsection{Global Soil}
-Ramirez et al.\cite{MARglobalSoil} combined data 
-representing a range of biomes from Alaska to 
-Antarctica from two previous studies of 
-Dinsdale EA et al.\cite{MARnineBiomes} and 
-Lauber et al.\cite{MARrestOfGlobalSoil} to analyze the 
- biodiversity under the  in New York City's Central Park.
-
-MD - The above statements do not make sense. Can  you check ? 
+The global soil data was taken from Ramirez et al. \cite{MARglobalSoil} which is a study of the below-ground diversity in New York City's Central Park. 
 
 All of these datasets have been used in 
 previous studies \cite{MARmockDatasetRef},\cite{MARopenDeNovo}. Any 
@@ -586,7 +552,7 @@ appropriate preprocessing which can significantly change the
 results of clustering and taxonomic classification 
 based on them \cite{MARmockDatasetRef}. The performance of 
 different open source sequence clustering methods were 
-assessed and compared in a  study by XXX et. al. \cite{MARopenDeNovo} using 
+assessed and compared in a  study by Kopylova et. al. \cite{MARopenDeNovo} using 
 these specific datasets. As such, in this paper we use the same 
 benchmarks as done in the prior study and publicly available \footnote{https://github.com/ekopylova/otu-clustering}.
 
@@ -613,20 +579,16 @@ increase in the PD score. % the diversity:
 H={-} \sum_{i=1}^{s} \left( p_i\log_2p_i \right)
 \end{equation}
 
-where s is the number of OTUs and $p_i$ is the proportion of the community represented by OTU $i$.
-
-MD - What is the intution of this metric ? What does it capture ? 
+where s is the number of OTUs and $p_i$ is the proportion of the community represented by OTU $i$. Since by definition $p_i$ will be between zero and one, the natural log makes all of the terms of the summation negative, which is why we take the inverse of the sum. The Shannon index increases as both the richness and evenness of the community increase. The fact that the index incorporates both components of biodiversity can be seen as both a strength and a weakness. It is a strength because it provides a simple summary, but it is a weakness because it makes it difficult to compare communities that differ greatly in richness.
 
 \hspace*{4mm}\textbf{Simpson's Index} - Simpson’s index is defined as ${1-dominance}$ or
 \begin{equation}
 1 - \sum p_i^2
 \end{equation}
 
-where where $p_i$ is the proportion of the community represented by OTU $i$.
+where where $p_i$ is the proportion of the community represented by OTU $i$. Simpsonʼs index is based on the probability of any two individuals drawn at random from an infinitely large community belonging to the same species. It measures \textit{evenness} of the community from 0 to 1. Higher value of this index refers higher similarity and relatively lower diversity of microorganisms.
 
-MD - What is the intution of this metric ? What does it capture ? 
-
-\hspace*{4mm}\textbf{$F$-measure} - In case of 
+\hspace*{4mm}\textbf{F-measure} - In case of 
 synthetic datasets, false-positive (FP; taxonomy/OTU string 
 exists in observed but not expected), false-negative
 (FN; taxonomy/OTU string exists in expected but not observed), and 
@@ -645,103 +607,31 @@ recall = \frac{TP}{(TP + FN)}
 F Score = \frac{2 \times precision \times recall}{(precision + recall)}
 \end{equation}
 
-MD - DEFIN p-value %The above statements do not make sense. Can  you check ? 
+
+\hspace*{4mm}\textbf{Pearson Coefficient Correlation ($\rho$-value)} - After getting Operational Taxonomic Units (OTU) from a clustering method we created the taxonomic profile at Genus level. Pearson’s correlation coefficient was computed to measure the relatedness of taxonomic assignment between a pair of tools. Values can range between -1 and 1, with -1 indicating a negative correlation, 0 indicating no correlation, and 1 indicating a positive correlation or strong relationship.
+
+
 \subsection{Experimental Details}
 
-For kmers, the value of parameter $k$ was set to 4. Which means occurrences of
-all possible combination of 4 letter nucleotides were generated
-from the reads of datasets. Since $k=4$ and there can be 4 possible nucleotide representatives (A,C,G and T), total number of features became $4^4=256$. This way we were able to convert the string representation of nucleotide data in standard FASTA format into numeric. After finding the kmers, each numeric representation of data reads were normalized to range $\left[0-1\right]$.
+For kmers, the value of parameter K was set to 4. There are 4 possible nucleotide representatives (A,C,G and T) and the total number of features became $4^4=256$. This way we were able to convert the string representation into numeric. For Locality Sensitive Hashing the number of Hyperplanes (parameter $d$) was set to 150. We wanted to reduce the number of features while maintaining a relatively accurate distance approximation. So value of $d$ was chosen to be less than 256. For performance analysis and comparison we have chosen $T1=0.46$ and $T2=0.34$.         
 
-For Locality Sensitive Hashing the number of Hyperplanes (parameter $d$) was set to 150. One of the motivations of using LSH was fast approximation of distances from one data read to another while reducing feature dimension. Since total number of features became 256 after numeric representation using $kmer$, we wanted to reduce the number of features while maintaining a relatively accurate yet fast distance approximation from LSH. So the value of parameter $d$ should be less than the actual number of feature but not too small because that might lead to wrong distance approximation.
-
-The two parameters of Canopy clustering namely $T1$ (loose threshold) and $T2$ (tight threshold) based on the reduced feature space provided by LSH and normalized hamming distance measure define which data reads will be grouped initially before the preferred expensive clustering begins. For this experiment and comparison we have chosen $T1=0.46$ and $T2=0.34$. For parameter $d=150$, canopy threshold $T1=0.46$ refers that a data read can belong to a canopy if the hamming distance is $150\times0.46=69$ or less. And threshold $T2=0.34$ refers that if the hamming distance between randomly chosen canopy centroid and data read is $150\times0.34=51$ or less then the read should not be included in any other canopy assuming that we have found a stable canopy membership for the read. Once canopy memberships of all reads were found we created multiple smaller data files in standard FASTA format from actual dataset to be used by expensive cluster.          
-
-We performed all the experiments on computers with Intel 5th generation Core i7 2.70GHz 64bit processor with 8 core CPUs and 12GB memory. For implementation we used Python 2.7.12 and QIIME \cite{MARQiime} version 1.9.0 - a popular open source Bioinformatics pipeline that combines many metagenome clustering methods including the ones which has been used in this work. One important aspect our proposed approach is parallelism. Each canopy can be clustered in parallel. To take full advantage of today's multi-core CPU based computing systems we utilized Python's \textit{multiprocessing} module instead of \textit{threading} module. According to Python's documentation\footnote{https://docs.python.org/2/library/multiprocessing.html} \textit{multiprocessing} module allows the programmer to fully leverage multiple processors on a given machine by spawning subprocesses instead of threads. In our experiment these subprocesses are independent Python programs running more accurate and expensive clustering on smaller datasets created by canopy clusterings. In our experiment the number of parallel processes was set equal to the number of CPU cores (which is 8 in our case) with an expectation that OS will deploy each of those processes in separate cores unlike threading. This is convenient since it utilizes 100\% of the CPU in most cases. 
-
-After receiving output from all canopy clustering we merged the outputs to make a single clustering result. Some performance metric used in this study like Faith’s Phylogenetic Diversity (PD) metric require sequence alignment. We used PyNast\footnote{http://biocore.github.io/pynast/} \cite{MARPynast} open source sequence aligner for aligning clustered output.    
+We performed all the experiments on computers with Intel 5th generation Core i7 2.70GHz 64bit processor with 8 core CPUs and 12GB memory. For implementation we used Python 2.7.12 and QIIME \cite{MARQiime} version 1.9.0 - a popular open source Bioinformatics pipeline that combines many metagenome clustering methods including the ones which has been used in this work. One important aspect our proposed approach is parallelism. Each canopy can be clustered in parallel. To take full advantage of today's multi-core CPU based computing systems we utilized Python's \textit{multiprocessing} module instead of \textit{threading} module. According to Python's documentation\footnote{https://docs.python.org/2/library/multiprocessing.html} \textit{multiprocessing} module allows the programmer to fully leverage multiple processors on a given machine by spawning subprocesses instead of threads. After receiving output from all canopy clustering we merged the outputs to make a single clustering results. Some performance metric used in this study like Faith’s Phylogenetic Diversity (PD) metric require sequence alignment. We used PyNast\footnote{http://biocore.github.io/pynast/} \cite{MARPynast} open source sequence aligner for aligning clustered output.    
 
 
 \section{Results Discussion} 
 \label{sec:results}
 
 \subsection{\textbf{Clustering Performance Comparison}}
+Table \ref{table:performanceTable} shows the performance of  UCLUST \cite{MARuclust}, 
+SUMACLUST \cite{MARSumaclust} and SWARM \cite{MARSwarm} and their corresponding versions with our proposed approach. Table \ref{table:performanceTable} compares F-scores and Pearson Correlation Coefficient ($\rho$). F-scores are only available for synthetic benchmarks since taxanomic profile for them is known as ground truth. But F-scores are not available for real benchmarks as no ground truth is available for them. Correlation values were generated based on taxonomic profiles at Genus level generated from outputs from clustering methods. From Table \ref{table:performanceTable} we can see that F-scores obtained from a clustering method and its corresponding LSH-Canopy version are very closer, in some cases better. We got higher F-score for Bokulich\_2 benchmark from LSH-Canopy-SUMACLUST. LSH-Canopy-UCLUST and LSH-Canopy-SWARM provided same F-scores as their respective naive versions for Bokulich\_2. For Bokulich\_3 benchmark we observed higher F-scores for all LSH based Canopy clustering methods. Finally for Bokulich\_6 benchmark F-scores of UCLUST and SWARM were improved comparing to respective naive versions.
 
+For all benchmarks we got very strong correlations between taxonomic profiles at genus level from UCLUST, SUMACLUST, SWARM and their respective LSH based Canopy counterparts. The highest correlation was observed for Bokulich\_6 benchmark between UCLUST and LSH-Canopy-UCLUST with 0.9831 and the lowest was observed for Canadian Soil metagenome data between SUMACLUST and LSH-Canopy-SUMACLUST with 0.7581. From observed F-scores and correlation values we can say that running a sequence clustering method with our proposed LSH based Canopy cluster framework can bring similar or better results. Next we will discuss about Runtime Comparisons.
 
-Table \ref{table:performanceTable} shows the performance of our proposed approach (LSH-Canopy)
-and 
-comparative methods UCLUST \cite{MARuclust}, 
-SUMACLUST \cite{MARSumaclust} and SWARM \cite{MARSwarm}. 
-%
-The benchmarks
-used in this study contain multiple samples and the  performance 
-metrics,   
-Phylogenetic Diversity (PD), Shannon entropy and 
-Simpson index are generated per sample basis for any dataset. To show comparative performance 
-of the clustering methods used in this study we showed the range of values the 
-performance metrics in $\left[min-max\right]$ where
-$min$ and $max$ represent the minimum and maximum values respectively observed in the 
-whole dataset regardless of samples for a particular
-clustering method. 
-%
-This represents the range of values a performance metrics. The  performance of two 
-clustering methods on same dataset can be assumed  to be 
-similar in terms of biodiversity if their $minimum$ and $maximum$ values for performance metrics 
-are similar. Metrics representing biodiversity can significantly change over clustering methods, their respective 
-data pre-processing pipeline, post processing, range of OTU lengths and  number of OTU's. Nevertheless, $\left[min-max\right]$ 
-range of a clustering method and it's counterpart with our 
-proposed LSH-Canopy pipeline should be roughly similar. The 
-$F$-measure and Pearson Correlation Coefficient ($\rho$-value) can take only one 
-value each for a clustering method on a dataset. And the correlation metric ($\rho$-value) is applicable for 
-clustering methods with our proposed approach only since this is a correlation between the 
-output of a standard clustering method and it's respective LSH-Canopy 
-version. Thus we can interpret a better outcome of this 
-experiment as $(\romannum{1})$  similar range of biodiversity 
-(PD, Shannon and Simpson values), $(\romannum{2})$ higher $F$-measure and 
-Correlation ($\rho$-value) with respect to corresponding clustering 
-without our proposed LSH-Canopy pipeline and finally $(\romannum{3})$ lower running time. 
+\subsection{\textbf{Runtime Comparison}} Table \ref{table:Runtime} shows the runtime in minutes of UCLUST, SUMACLUST, SWARM and their respective versions with our proposed LSH-Canopy pipeline. Time information in Table \ref{table:Runtime} was recorded while populating performance metric values for Table \ref{table:performanceTable} for the parameter setting mentioned in Experimental Details section. Improving runtime while maintaining similar or better clustering results was one of the major motivations of our proposed approach. We can see from Table \ref{table:Runtime} that LSH-Canopy-UCLUST outperforms UCLUST for all datasets. The highest speed up for UCLUST was observed for Bokulich\_2 dataset where UCLUST was 2.10 times faster with LSH based Canopy than the naive version. For SUMACLUST we can see from Table \ref{table:Runtime} that LSH-Canopy-SUMACLUST outperforms naive SUMACLUST in most cases. Major improvement in runtime was observed in large scale real world metagenome datasets specially Canadian Soil and Global Soil datasets. The highest speed-up for SUMACLUST with LSH-Canopy was observed to be 7.70x for Global Soil dataset.
 
-MD - This text above is way too long. Please condense. It has info. but summarize.
+We can see a similar footprints for LSH-Canopy-SWARM from Table \ref{table:Runtime}. The highest reduction in runtime for SWARM with LSH-Canopy was observed to be 4.79x for Global Soil dataset. From these observations we can conclude that LSH based Canopy clustering not only reduces the runtime of an expensive clustering method but also scales well and performs better for larger benchmarks comparing to the smaller ones.   
 
-MD - Need results of LSH-Canopy to make any sort of statements. 
-
-MD - For a BIG DATA conference reviewer the above text is too confusing.
-
-From Table \ref{table:performanceTable} we observe 
-that UCLUST and LSH-Canopy-UCLUST provide similar range for PD, Shannon and 
-Simpson values for both, the synthetic 
-and real world datasets. Moreover, LSH-Canopy-UCLUST provided higher $F$-score than UCLUST for all three
-synthetic datasets used in this study. 
-%
-%The lowest $F$-score observed by 
-%UCLUST was 0.39 for Bokulich\_2 dataset. with LSH-Canopy-UCLUST we achieved 0.42 for the same dataset. 
-For synthetic datasets taxonomic profiles were known as prior. This taxonomic distribution 
-can be taken as ground truth and it can be used to 
-identify whether the cluster representatives actually support this 
-ground truth. A higher $F$-score is an indicator that relevant and important cluster representatives are retained 
-as they support ground truth. Higher $F$-scores of our proposed approach is
-due to the nature of how canopy is formed. {{\textbf MD - CHECK THIS -- DOES NOT LOOK CORRECT}} A single data instance can belong 
-to multiple canopies due to the nature of soft threshold $T1$. As a result 
-a single read can contribute to multiple Operational Taxonomic Units (OTUs) in 
-metagenome data. As a result even after removing 
-singletons, expensive clustering inside a canopy can result in 
-higher numbers of useful OTUs. For real world datasets, 
-LSH-Canopy-UCLUST provided similar range of values for PD, Shannon and Simpson. Correlation of LSH-Canopy-UCLUST with naive 
-UCLUST at the Genus level of assigned taxonomy was observed to be highly correlated. {\bf MD - WHAAT DOES THE PREV. SENT MEAN}.  The 
-lowest $\rho$-value was 0.8177 for Canadian Soil metagenomic data which is the 
-largest dataset used in this study containing more than
-9 million reads.  
-
-{\textbf{MD - Compress the two paragraphs below to maybe 2-3 lines total.}}
-
-Our proposed approach also improves the outcomes of 
-SUMACLUST. From Table \ref{table:performanceTable} we 
-see that SUMACLUST provided higher $F$-score than UCLUST for Bokulich\_2 and Bokulich\_3 and same value for Bokulich\_6. After running 
-SUMACLUST with LSH-Canopy we observed same $F$-score as SUMACLUST for Bokulich\_2 and higher for other 
-2 synthetic datasets. SUMACLUST with our proposed approach outperforms the naive SUMACLUST and UCLUST. Ranges of PD, Shannon and Simpson were similar to naive SUMACLUST for both synthetic and real world datasets. $\rho$-values were higher indicating a strong positive correlation with naive SUMACLUST specially for synthetic datasets. Lowest $\rho$-value was 0.7859 which was observed for larger Canadian Soil real world metagenome dataset.
-
-Finally SWARM with our proposed LSH-Canopy pipeline also showed better results than naive SWARM. We observed the highest $F$-score of $0.56$ in this study for 
-Bokulich\_6 dataset from both naive and LSH-Canopy version of SWARM. For the other two synthetic datasets our proposed LSH-Canopy version of SWARM outperforms the naive counterpart. Ranges for PD, Shannon and Simpson were similar and correlation values were observed to be high. The lowest $\rho$-value for LSH-Canopy-SWARM was 0.7736 for Canadian Soil dataset.
-
+\subsection{\textbf{Biodiversity Comparison}} Clustering sequences in metagenome data will provide OTUs that represent biodiversity contained in the samples from which data is collected. Hence we also need to compare the biodiversity represented by OTUs from naive methods and their respective LSH-Canopy variations used in this study. Table \ref{table:bioDiversityTable} shows Faith’s phylogenetic diversity metric (PD), Shannon and Simpson index after clustering with different methods. These metrics are some of the popular Alpha Diversity metrics meaning that they measure species diversity in sites or habitats at a local scale. These metric values are generated per sample basis. In order to show the full range of a metric value that a sample in benchmark datasets can take we have shown the minimum and maximum of a diversity metric values in dataset as $[minimum-maximum]$ in Table \ref{table:bioDiversityTable}. Table \ref{table:bioDiversityTable} also contains mean diversity values over all samples for easy comparisons. Diversity metric values from a method without LSH-Canopy and with LSH-Canopy should be similar. We can see from Table \ref{table:bioDiversityTable} that LSH-Canopy based methods produce similar mean values and ranges as their naive counterparts. No significant changes in diversity metric values were observed which indicates an expensive clustering method is capable of conserving relevant and stable biodiversity using LSH based Canopy as preprocessing.           
 
 
 
@@ -760,9 +650,9 @@ Bokulich\_6 dataset from both naive and LSH-Canopy version of SWARM. For the oth
 			
 			\cline{3-8}
 			
-			& & \multicolumn{3}{c:}{\textit{Synthetic}} & \multicolumn{3}{c|}{\textit{Real World}}\\ 
+			& & \multicolumn{3}{c|}{\textit{Synthetic}} & \multicolumn{3}{c|}{\textit{Real World}}\\ 
 			
-			\hline{3-8}
+			\cline{3-8}
 			
 			&  & Bokulich\_2 & Bokulich\_3 & Bokulich\_6 & Body Sites & Canadian Soil & Global Soil\\
 			
@@ -866,7 +756,7 @@ Bokulich\_6 dataset from both naive and LSH-Canopy version of SWARM. For the oth
 
  & & \multicolumn{3}{c|}{\textit{Synthetic}} & \multicolumn{3}{c|}{\textit{Real World}}\\ 
 
-\hline{3-8}
+\cline{3-8}
 
  &  & Bokulich\_2 & Bokulich\_3 & Bokulich\_6 & Body Sites & Canadian Soil & Global Soil\\
  
@@ -887,8 +777,6 @@ Bokulich\_6 dataset from both naive and LSH-Canopy version of SWARM. For the oth
  & \textit{Mean Shannon} & 3.19 & 3.14 & 6.41 & 4.03 & 7.81 & 6.84\\
 & Simpson Range & $\left[0.64-0.87\right]$ & $\left[0.56-0.93\right]$ & $\left[0.96-0.96\right]$ & $\left[0.081-0.99\right]$ & $\left[0.84-0.99\right]$ & $\left[0.21-0.99\right]$\\
  & \textit{Mean Simpson} & 0.76 & 0.74 & 0.96 & 0.81 & 0.95 & 0.88\\
-
-
 
 \hline
 
@@ -947,13 +835,7 @@ Bokulich\_6 dataset from both naive and LSH-Canopy version of SWARM. For the oth
 \end{table*} 
 
 
-\subsection{\textbf{Runtime Comparison}} Table \ref{table:Runtime} shows the runtime in minutes of UCLUST, SUMACLUST, SWARM and their respective version with our proposed LSH-Canopy pipeline. Time information in Table \ref{table:Runtime} was recorded while populating performance metric values for Table \ref{table:performanceTable} for the parameter setting mentioned in Experimental Details section. Improving runtime was one of the major motivations of our proposed approach - fast distance approximation using LSH, using this approximation for initial canopy clustering to reduce pairwise comparison and finally utilize parallelism in multi-core CPU. We can see from Table \ref{table:Runtime} that LSH-Canopy-UCLUST outperforms UCLUST for all datasets. In fact LSH-Canopy-UCLUST took nearly half the time or less of naive UCLUST for all datasets. This improvement in runtime is due to efficient parallelization of expensive clustering in canopies. For Canadian Soil dataset which is the largest dataset used in this study and contains more than 9 million reads, UCLUST takes 72.47 minutes whereas LSH-Canopy-UCLUST takes only 41.92 minutes.
-
-For SUMACLUST we can see from Table \ref{table:Runtime} that LSH-Canopy-SUMACLUST outperforms naive SUMACLUST in most cases. Major improvement in runtime was observed in large scale real world datasets specially Canadian Soil and Global Soil datasets. The highest amount of time taken by naive SUMACLUST is 510.92 minutes where LSH-Canopy-SUMACLUST performs a similar job in just 64.58 minutes. Which is almost 8 times faster than the naive version. But LSH-Canopy-SUMACLUST took more time than SUMACLUST for Bokulich\_6 dataset which is the smallest dataset used in this study with only 250,903 number of reads. This gives the intuition that for relatively smaller datasets applying Locality Sensitive Hashing followed Canopy clustering might be unnecessary and may incur more time than the naive version of the clustering methods. A greedy clustering is enough and faster than a modified or added pipeline.
-
-We can see a similar footprints for LSH-Canopy-SWARM from Table \ref{table:Runtime}. SWARM took 128.12 minutes for Bokulich\_2 dataset whereas LSH-Canopy-SWARM took 37.87 minutes only. SWARM was relatively faster for Bokulich\_3, Bokulich\_6 and Body Site datasets than SUMACLUST and LSH-Canopy-SWARM was faster than the corresponding naive version. But again major improvement in runtime was observed for larger real world datasets namely Canadian Soil and Global Soil datasets. LSH-Canopy-SWARM was nearly 3 times faster than naive SWARM for Canadian Soil dataset and \textbf{??} faster than Global Soil dataset. These observations refers to the fact that our proposed LSH-Canopy pipeline scale well with larger datasets and performs better in such case comparing to medium or smaller datasets.     
    
-
 \begin{figure}[t]
 	
 	\begin{minipage}[t]{0.5\linewidth}
@@ -1023,16 +905,18 @@ We can see a similar footprints for LSH-Canopy-SWARM from Table \ref{table:Runti
 
 
 
-
-
 \subsection{\textbf{Effect of Varying Number of Multi-processes}}
-Figure \ref{fig:bokulich_2}-\ref{fig:global_soil} shows how the number of multiprocess can affect runtime of the LSH-Canopy version of UCLUST, SUMACLUST and SWARM on 6 datasets that we have used in this study. We can see that increasing the number of multiprocess to perform expensive clustering inside canopies in parallel can significantly reduce total runtime. The steepest curve showing reduction in runtime can be found in Figure \ref{fig:canadian_soil} for LSH-Canopy-SUMACLUST on Canadian Soil dataset. For single process version LSH-Canopy-SUMACLUST is slower in most cases except Bokulich\_2 dataset where it's runtime is better comparing to SWARM with LSH-Canopy. For Body Site dataset (Figure \ref{fig:body_sites}) the LSH-Canopy version of SWARM and UCLUST have closer runtime with respect to increasing number of multiprocess. Figure \ref{fig:global_soil} shows reduction in runtime for the largest dataset used in this study namely Global Soil with more than 9 million reads. Even though there are significant difference in the runtime of single process version, LSH-Canopy reduces runtime to closer interval for UCLUST, SWARM and SUMACLUST with increasing number of multiprocess.                
+Figure \ref{fig:bokulich_2}-\ref{fig:global_soil} shows how the number of multiprocess can affect runtime of the LSH-Canopy version of UCLUST, SUMACLUST and SWARM on 6 datasets that we have used in this study. We can see that increasing the number of multiprocess to perform expensive clustering inside canopies in parallel can significantly reduce total runtime. The steepest curve showing reduction in runtime can be found in Figure \ref{fig:canadian_soil} for LSH-Canopy-SUMACLUST on Canadian Soil dataset. For single process version LSH-Canopy-SUMACLUST is slower in most cases except Bokulich\_2 dataset where it's runtime is better comparing to SWARM with LSH-Canopy. For Body Site dataset (Figure \ref{fig:body_sites}) the LSH-Canopy version of SWARM and UCLUST have closer runtime with respect to increasing number of multiprocess. Figure \ref{fig:global_soil} shows reduction in runtime for the largest dataset used in this study namely Global Soil with more than 9 million reads. Even though there are significant difference in the runtime of single process version, LSH-Canopy reduces runtime to closer interval for UCLUST, SWARM and SUMACLUST with increasing number of multiprocess. 
+
+\subsection{\textbf{Effect of Varying T1 and T2 Parameter of Canopy Clustering}}
+to be completed                
 
 
 
 \section{Conclusion and future work}
 
 We propose a framework that can be used as pre-clustering for any accurate and relatively expensive clustering on large scale metagenomic datasets. Our proposed approach scales well with large datasets and provide significant reduction in computation time. We demonstrate that our approach provides similar outcome in terms of biodiversity metrics used in this study, scores based on ground truth and taxonomic correlation with corresponding relatively expensive cluster. Our approach takes advantage of the multi-core CPU systems by partitioning the large dataset roughly with fast and cheaper pairwise distance measure and then deploying comparatively expensive clustering in parallel which considers only data points that are inside the partition. We plan to develop standalone cluster mechanism for the canopies in future.   
+
 
 %\renewcommand{\bibfont}{\footnotesize}
 \bibliographystyle{./IEEEtranBST/IEEEtran}
