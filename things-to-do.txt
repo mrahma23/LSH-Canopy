@@ -1,0 +1,20 @@
+1. Fix All Tables so that things are consistent:
+---> Call Canopy\_UCLUST as CC\_UCLUST for example.
+
+2. Results for CC\_MST (Minimum Spanning Tree?)
+
+3. Results needed for whole metagenomic sequences. 
+
+4. In text all references of Canopy\_ should be CC. 
+
+5. Table IV -- Move back to the range for the diversity measures as you had before. Mean does not make sense given the variance of the samples. 
+
+6. Figures 5 and 6 just choose the largest dataset you have so it will be just one figure with 2 subplots --one with T1 fixed and one with T2 fixed. 
+
+7. Figure 4-- just show for 2 of the largest datasets only. 
+
+8. Fig1 and Fig2 combine. Don't show things that are easy to discuss with text.  See Zeehasham's flowchar in MC-MinH paper. 
+
+9. Great work. If you can get this done by Monday early morning that will help me. 
+
+
