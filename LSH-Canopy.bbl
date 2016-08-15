@@ -21,10 +21,6 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
-\bibitem{MARGenomeOr}
-S.~et~al., ``Big data: astronomical or genomical?'' \emph{PLoS Biol}, vol.~13,
-  no.~7, p. e1002195, 2015.
-
 \bibitem{MARSeaMetaGenome}
 J.~C. Venter, K.~Remington, J.~F. Heidelberg, A.~L. Halpern, D.~Rusch, J.~A.
   Eisen, D.~Wu, I.~Paulsen, K.~E. Nelson, W.~Nelson \emph{et~al.},
@@ -70,20 +66,6 @@ A.~F. Koeppel and M.~Wu, ``Surprisingly extensive mixed phylogenetic and
 T.~S. Schmidt, J.~F.~M. Rodrigues, and C.~Von~Mering, ``Ecological consistency
   of ssu rrna-based operational taxonomic units at a global scale,'' \emph{PLoS
   Comput Biol}, vol.~10, no.~4, p. e1003594, 2014.
-
-\bibitem{MARmicroMetagenomics}
-\relax{Hugenholtz, Philip and Tyson, Gene W.}, ``Microbiology: Metagenomics,''
-  \emph{Nature}, vol. 455, no. 0028-0836, pp. 481--483, 2008.
-
-\bibitem{MARChallengesMeta}
-\relax{Pop, Mihai and Salzberg, Steven L.}, ``Bioinformatics challenges of new
-  sequencing technology,'' \emph{Trends in Genetics}, vol.~24, no. 0168-9525,
-  pp. 142--149, 2008.
-
-\bibitem{MARHumanBiome}
-\relax{The Human Microbiome Project Consortium}, ``A framework for human
-  microbiome research,'' \emph{Nature}, vol. 486, no. 0028-0836, pp. 215--221,
-  2012.
 
 \bibitem{MARCDhit}
 \relax{Li, Weizhong and Godzik, Adam}, ``Cd-hit: a fast program for clustering
@@ -145,18 +127,6 @@ S.~Chatterji, I.~Yamazaki, Z.~Bai, and J.~A. Eisen, ``Compostbin: A dna
   \emph{Annual International Conference on Research in Computational Molecular
   Biology}.\hskip 1em plus 0.5em minus 0.4em\relax Springer, 2008, pp. 17--28.
 
-\bibitem{MARLikelyBin}
-A.~Kislyuk, S.~Bhatnagar, J.~Dushoff, and J.~S. Weitz, ``Unsupervised
-  statistical clustering of environmental shotgun sequences,'' \emph{BMC
-  bioinformatics}, vol.~10, no.~1, p.~1, 2009.
-
-\bibitem{MARMetaCluster}
-B.~Yang, Y.~Peng, H.~Leung, S.-M. Yiu, J.~Qin, R.~Li, and F.~Y. Chin,
-  ``Metacluster: unsupervised binning of environmental genomic fragments and
-  taxonomic annotation,'' in \emph{Proceedings of the first ACM international
-  conference on bioinformatics and computational biology}.\hskip 1em plus 0.5em
-  minus 0.4em\relax ACM, 2010, pp. 170--179.
-
 \bibitem{MARNormalizedCut}
 M.~Van Den~Heuvel, R.~Mandl, and H.~H. Pol, ``Normalized cut group clustering
   of resting-state fmri data,'' \emph{PloS one}, vol.~3, no.~4, p. e2001, 2008.
@@ -217,6 +187,20 @@ K.~et~al., ``Open-source sequence clustering methods improve the state of the
   1em plus 0.5em minus 0.4em\relax New York, NY, USA: ACM, 1998, pp. 604--613.
   [Online]. Available: \url{http://doi.acm.org/10.1145/276698.276876}
 \BIBentrySTDinterwordspacing
+
+\bibitem{MARMstCluster}
+P.~K. Jana and A.~Naik, ``An efficient minimum spanning tree based clustering
+  algorithm,'' pp. 1--5, 2009.
+
+\bibitem{MARMstClustering2}
+M.~Laszlo and S.~Mukherjee, ``Minimum spanning tree partitioning algorithm for
+  microaggregation,'' \emph{IEEE Transactions on Knowledge and Data
+  Engineering}, vol.~17, no.~7, pp. 902--911, 2005.
+
+\bibitem{MARMstClustering3}
+Y.~Xu, V.~Olman, and D.~Xu, ``Clustering gene expression data using a
+  graph-theoretic approach: an application of minimum spanning trees,''
+  \emph{Bioinformatics}, vol.~18, no.~4, pp. 536--545, 2002.
 
 \bibitem{MARLshRef4}
 \BIBentryALTinterwordspacing

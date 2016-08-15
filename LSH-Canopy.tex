@@ -407,7 +407,7 @@ UCLUST \cite{MARuclust} follows a greedy process and creates \textit{seeds} of s
 
 \section{Methods}
 \label{featMethod}
-\subsection{Overview}
+\subsection{\textbf{Overview}}
 In this section we provide an overview of our proposed framework. Figure \ref{fig:overall} represents an abstract overview of our proposed approach.
 
 \begin{figure}
@@ -417,7 +417,7 @@ In this section we provide an overview of our proposed framework. Figure \ref{fi
 	\label{fig:overall}
 \end{figure} 
 
-Figure \ref{fig:flowchart} shows a more detailed overview of our proposed Canopy clustering approach for metagenomic data. After computing the kmers and LSH codes our proposed method will start canopy clustering based on the hamming distances between the binary representations of data points created by LSH. Once all reads in datasets are assigned to canopies, our method will create multiple partitions from original dataset based on canopy membership information. Finally each smaller partitions representing a canopy will be provided as input to more accurate sequence clustering methods in parallel. In this study UCLUST, SUMACLUST and SWARM will be used as accurate clustering methods for canopies which are briefly discussed in Section \ref{sub-cluster}.
+Figure \ref{fig:flowchart} shows a more detailed overview of our proposed Canopy clustering approach for metagenomic data. After computing the kmers and LSH codes our proposed method will start canopy clustering based on the hamming distances between the binary representations of data points created by LSH. Once all reads in datasets are assigned to canopies, our method will create multiple partitions from original dataset based on canopy membership information. Finally each smaller partitions representing a canopy will be provided as input to more accurate sequence clustering methods in parallel. In this study UCLUST, SUMACLUST, SWARM and Minimum Spanning Tree (MST) based clustering will be used as accurate clustering methods for canopies which are briefly discussed in Section \ref{sub-cluster}.
 
 \begin{figure}
 	\centering
@@ -426,7 +426,15 @@ Figure \ref{fig:flowchart} shows a more detailed overview of our proposed Canopy
 	\label{fig:flowchart}
 \end{figure}
 
-The final step of our proposed framework is to merge the clustered outputs from each canopy provided by more accurate and expensive clustering methods. There is a potential concern in this scenario. According to Canopy cluster algorithm a single data point may belong to multiple canopies as long as the soft threshold is met. As a result same sequence or collection of sequences in a metagenomic dataset can contribute may belong to multiple canopies thus contributing to multiple OTUs even though they are essentially same. This scenario is depicted in Figure \ref{fig:merge}. The dashed circles titled OTU-A, B, C and D represent \textit{potential OTUs}. Soild outer circles represent canopies titled Canopy-1, 2 and 3. OTU-A and C are shared by Canopy-1 and 2. OTU-B and D are shared by Canopy-2 and 3. The smaller triangles, stars, hexagons and rectangles represent sequence reads in metagenome data. Because of this repetitions another final clustering on resulting OTUs is required which will remove repetitions in OTU. We have chosen UCLUST for merging step since UCLUST is one of the fastest greedy sequence clustering methods. We chose 99\% identity for merging UCLUST. Since we will be running this final clustering on already clustered OTU and subsequent taxonomy assignment is sensitive to minor changes in OTU, higher identity of UCLUST in this step will ensure that nearly same OTUs will be merged and variation is preserved.
+The final step of our proposed framework is to merge the clustered outputs from each canopy provided by more accurate and expensive clustering methods. There is a potential concern in this scenario. According to Canopy cluster algorithm a single data point may belong to multiple canopies as long as the soft threshold is met. As a result same or very similar OTUs will be generated from multiple canopies. This scenario is depicted in Figure \ref{fig:merge}. The dashed circles titled OTU-A, B, C and D represent \textit{potential OTUs}. Soild outer circles represent canopies titled Canopy-1, 2 and 3. OTU-A and C are shared by Canopy-1 and 2. OTU-B and D are shared by Canopy-2 and 3. The smaller triangles, stars, hexagons and rectangles represent sequence reads in metagenome data. Because of this repetitions another final clustering on resulting OTUs is required which will remove repetitions in OTU. We are proposing two solutions to this scenario.
+
+
+\subsubsection{\textit{Merging with Greedy Clustering Algorithm}}
+We have chosen UCLUST for merging step since UCLUST is one of the fastest greedy sequence clustering methods. We chose 90\% identity threshold for UCLUST in this step. Other sequence clustering algorithm can also be applied in this step. Since number of sequences is already reduced by Canopy and accurate clustering, this merging step is very fast. Greedy clustering methods like UCLUST always converges to local minima. Thus this approach does not require number of OTUs as prior. 
+
+\subsubsection{\textit{Merging with Minimum Spanning Tree}}
+\label{MST}
+We developed a Minimum Spanning Tree and Locality Sensitive Hashing (LSH) distance based metagenome sequence clustering method to be used in merging step as well as inside Canopies for accurate clustering. A brief description of MST based clustering is given in Section \ref{sub-cluster}. Unlike merging with greedy clustering methods, this approach requires number of edges to remove as prior which indicates the number of OTUs.    
 
 \begin{figure}
 	\centering
@@ -437,7 +445,7 @@ The final step of our proposed framework is to merge the clustered outputs from 
 
 In next sections we provide a brief description of Canopy Clustering, Locality Sensitive Hashing, their potential in metagenome data clustering, sub-clustering methods used in this study and our motivation for using them.  
 
-\subsection{Canopy Clustering}
+\subsection{\textbf{Canopy Clustering}}
 
 Canopy Clustering \cite{MARCanopy} is an efficient approximate clustering algorithm often used as preprocessing step for other accurate and expensive clustering methods like the K-means algorithm or the Hierarchical clustering algorithm. It is intended to speed up clustering operations on large data sets, where standard clustering algorithms may be impractical in terms of run time and memory consumptions due to the large number of pairwise distance calculations. For a dataset with $N$ instances, worst case calculations without canopy clustering is $N^2$. After canopy clustering if the number of canopies is $k$ then worst case calculations with canopy clustering is $\sum_{i=1}^{k}(c_i)^2$ where $c_i$ is the number of instances in $i$th canopy. The total difference $g$ in pairwise distance calculations:
 
@@ -448,16 +456,29 @@ g=N^2-\sum_{i=1}^{k}(c_i)^2
 Canopy clustering uses two basic distance thresholds namely \textit{soft} threshold $T1$ and \textit{tight} threshold $T2$. If data point $p_1$ is within the soft distance threshold $T1$ with another data point $p_2$ then $p_1$ will reside in same canopy as $p_2$ but $p_1$ may belong to other canopies too assuming that it has only met soft threshold and best match is yet to be found. Thus one data point may belong to multiple canopies in Canopy clustering. On the other hand if data point $p_1$ is within the tight distance threshold $T2$ with another data point $p_2$ then canopy clustering assigns $p_1$ to the same canopy as $p_2$ and stops assigning $p_1$ to any other canopy assuming that tight threshold has been met and best canopy assignment for $p_1$ has been found. In this case $p_1$ will not be repeated in other canopies. Canopy centroids are selected randomly. Then all other data points are tested for canopy assignment based on $T1$ and $T2$. New canopies are selected until all data points are assigned to canopies. A fast approximation based on Locality Sensitive Hashing (LSH) will be used for Canopy membership identification.
 
 
-\subsection{Locality Sensitive Hashing}
+\subsection{\textbf{Locality Sensitive Hashing}}
 
 A Locality Sensitive Hashing (LSH) \cite{MARLshRef1}\cite{MARLshRef2}\cite{MARLshRef3} is a distribution on a family ${\displaystyle {\mathcal {F}}}$ is defined for a metric space ${\displaystyle {\mathcal{M}}=(M,d)}$ a threshold ${\displaystyle R>0}$ and an approximation factor ${\displaystyle c>1}$. This family ${\displaystyle {\mathcal {F}}}$ is a family of functions ${\displaystyle h:{\mathcal {M}}\to S}$ which map elements from the metric space to a bucket ${\displaystyle s\in S}$. The LSH family either satisfies ${\displaystyle h(p)=h(q)}$ with probability at least ${\displaystyle P_{1}}$ if ${\displaystyle d(p,q)\leq R}$ or satisfies ${\displaystyle h(p)=h(q)}$ with probability at most ${\displaystyle P_{2}}$ if ${\displaystyle d(p,q)\geq R}$ for any two points ${\displaystyle p,q\in {\mathcal {M}}}$, using a function ${\displaystyle h\in {\mathcal {F}}}$ which is chosen randomly. A family is interesting when ${\displaystyle P_{1}>P_{2}}$. Such a family ${\displaystyle {\mathcal {F}}}$ is called ${\displaystyle (R,cR,P_{1},P_{2})}$-sensitive. LSH has been used for fast comparison between points in very high dimensional space \cite{MARLshRef3}. To preserve approximate cosine distance, data points are often randomly projected to low dimensional bit signatures \cite{MARLshRef4}.
 
 In this study we have chosen a random projection based hashing function that projects a $d$ dimensional data point into a $n$ dimensional bit representation where $n<d$. The intuition behind choosing $n<d$ is to reduce dimension of data. Given a random projection $v'$ of size $1 \times d$ and a data vector $a$ of size $1 \times d$, the dot product between them provides a scalar value. Sign of this scalar value represents which side of the random hyperplane does the data point exist. This information can be represented with a bit. This way a single data point can be represented with limited number of bits. Hamming distance between these binary representations indicates \textit{disagreements} between two data points.
 
-\subsection{Sub-Clustering Inside Canopies}
+\subsection{\textbf{Sub-Clustering Inside Canopies}}
 \label{sub-cluster}
-We have used three recent and popular sequence clustering methods as the expensive clustering measure inside canopies in this study. UCLUST \cite{MARuclust}, SUMACLUST \cite{MARSumaclust} and SWARM \cite{MARSwarm} were used for sub-clustering canopies. UCLUST is closed-source software and provides very limited documentations\footnote{http://www.drive5.com/uclust/uclust\_userguide\_1\_1\_579.pdf}. The 32 bit version of UCLUST executable is available for academic usage. But the 64-bit versions which is necessary to handle large datasets, require expensive license. UCLUST follows a greedy process and creates \textit{seeds} of sequences which generate clusters based on percent identity.
-SUMACLUST is an open-source software. It follows similar approach as UCLUST. Based on greedy strategy SUMACLUST incrementally constructs clusters by comparing an abundance-ordered list of input sequences against the representative set of already-chosen sequences. Initially this list is empty. Finally SWARM uses exhaustive single-linkage clustering based on optimal sequence alignment. Sequences that are less than a certain distance from any other other sequence in the cluster are clustered together. SWARM attempts to reduce the impact of clustering parameters on the resulting OTUs by avoiding arbitrary global clustering thresholds and input sequence ordering dependence. At first SWARM builds an initial set of OTUs is constructed by iteratively agglomerating similar amplicons. Then amplicon abundance values are used to reveal OTUs’ internal structures and to break them into sub-OTUs.
+We have used three recent and popular sequence clustering methods as the expensive clustering measure inside canopies in this study. UCLUST \cite{MARuclust}, SUMACLUST \cite{MARSumaclust} and SWARM \cite{MARSwarm} were used for sub-clustering canopies. 
+
+\subsubsection{\textit{UCLUST}}
+It is a closed-source software and provides very limited documentations\footnote{http://www.drive5.com/uclust/uclust\_userguide\_1\_1\_579.pdf}. The 32 bit version of UCLUST executable is available for academic usage. But the 64-bit versions which is necessary to handle large datasets, require expensive license. UCLUST follows a greedy process and creates \textit{seeds} of sequences which generate clusters based on percent identity.
+
+\subsubsection{\textit{SUMACLUST}}
+An open-source software. It follows similar approach as UCLUST. Based on greedy strategy SUMACLUST incrementally constructs clusters by comparing an abundance-ordered list of input sequences against the representative set of already-chosen sequences. Initially this list is empty.
+
+\subsubsection{\textit{SWARM}}
+SWARM uses exhaustive single-linkage clustering based on optimal sequence alignment. Sequences that are less than a certain distance from any other other sequence in the cluster are clustered together. SWARM attempts to reduce the impact of clustering parameters on the resulting OTUs by avoiding arbitrary global clustering thresholds and input sequence ordering dependence. At first SWARM builds an initial set of OTUs is constructed by iteratively agglomerating similar amplicons. Then amplicon abundance values are used to reveal OTUs’ internal structures and to break them into sub-OTUs.
+
+\subsubsection{\textit{Minimum Spanning Tree (MST)}}
+To evaluate Canopy as a standalone clustering method along with UCLUST, SUMACLUST and SWARM, we used Minimum Spanning Tree (MST) based clustering method as an accurate and expensive clustering inside canopies. Minimum Spanning Tree (MST) produces a connected spanning tree of undirected graph. It connects all vertices together such that the total weight of edges remains minimum. This property has been used for clustering \cite{MARMstCluster}\cite{MARMstClustering2}\cite{MARMstClustering3}. We represented edges with Locality Sensitive Hashing based distances. Then edges with highest distances were removed from MST to generate OTUs.
+
+In the following Sections UCLUST, SUMACLUST, SWARM and MST with Canopy clustering approach are represented as CC$_{UCLUST}$, CC$_{SUMACLUST}$, CC$_{SWARM}$ and CC$_{MST}$ respectively where the term CC stands for Canopy Clustering. 
 
 \section{Experimental Evaluation}
 \begin{table*}[tb] 
@@ -477,7 +498,7 @@ SUMACLUST is an open-source software. It follows similar approach as UCLUST. Bas
 \end{tabular}
 \end{table*} 
 
-\subsection{Dataset Description}
+\subsection{\textbf{Dataset Description}}
 
 %HR EDITS 
 
@@ -558,7 +579,7 @@ these specific datasets. As such, in this paper we use the same
 benchmarks as done in the prior study and publicly available \footnote{https://github.com/ekopylova/otu-clustering}.
 
 
-\subsection{Evaluation Metrics}
+\subsection{\textbf{Evaluation Metrics}}
 
 We assess the performance of our proposed approach using 
 the following types of  commonly used metrics: (i) that are used 
@@ -566,15 +587,18 @@ for the assessment of biodiversity
 within metagenomic samples, (ii) output of clustering algorithms 
 and (iii) computational run time. 
 
-\hspace*{4mm}\textbf{Faith’s phylogenetic diversity metric (PD)} - Faith’s phylogenetic 
-diversity \cite{MARfaith1992conservation} is based on the Phylogenetic tree. It combines all 
+
+\subsubsection{\textit{Faith’s phylogenetic diversity metric (PD)}}
+Faith’s phylogenetic diversity \cite{MARfaith1992conservation} is based on the Phylogenetic tree. It combines all 
 the branch lengths of the tree as a measure of diversity. So, if a new 
 OTU (cluster)  is found and it is closely related to another OTU in the sample, it will contribute to 
 a small increase to the PD score. However, if a new OTU is found and is 
 from a different lineage than anything else in the sample, it will contribute to a large 
 increase in the PD score. % the diversity:
 
-\hspace*{4mm}\textbf{Shannon Entropy} - Shannon-Wiener diversity index is defined as:
+\subsubsection{\textit{Shannon Entropy}}
+
+Shannon-Wiener diversity index is defined as:
 
 \begin{equation}
 H={-} \sum_{i=1}^{s} \left( p_i\log_2p_i \right)
@@ -582,19 +606,23 @@ H={-} \sum_{i=1}^{s} \left( p_i\log_2p_i \right)
 
 where s is the number of OTUs and $p_i$ is the proportion of the community represented by OTU $i$. Since by definition $p_i$ will be between zero and one, the natural log makes all of the terms of the summation negative, which is why we take the inverse of the sum. The Shannon index increases as both the richness and evenness of the community increase. The fact that the index incorporates both components of biodiversity can be seen as both a strength and a weakness. It is a strength because it provides a simple summary, but it is a weakness because it makes it difficult to compare communities that differ greatly in richness.
 
-\hspace*{4mm}\textbf{Simpson's Index} - Simpson’s index is defined as ${1-dominance}$ or
+
+\subsubsection{\textit{Simpson's Index}}
+Simpson’s index is defined as ${1-dominance}$ or
+
 \begin{equation}
 1 - \sum p_i^2
 \end{equation}
 
 where where $p_i$ is the proportion of the community represented by OTU $i$. Simpsonʼs index is based on the probability of any two individuals drawn at random from an infinitely large community belonging to the same species. It measures \textit{evenness} of the community from 0 to 1. Higher value of this index refers higher similarity and relatively lower diversity of microorganisms.
 
-\hspace*{4mm}\textbf{F-measure} - In case of 
-synthetic datasets, false-positive (FP; taxonomy/OTU string 
+
+\subsubsection{\textit{F-measure}}
+In case of synthetic datasets, false-positive (FP; taxonomy/OTU string 
 exists in observed but not expected), false-negative
 (FN; taxonomy/OTU string exists in expected but not observed), and 
 true-positive (TP; taxonomy/OTU string exists in both observed and expected) measures were computed from 
-cluster output and the ground truth or expected taxonomic composition. The following definitions were used:
+cluster output and the ground truth which is the expected taxonomic composition. The following definitions were used:
 
 \begin{equation}
 precision = \frac{TP}{(TP + FP)}
@@ -608,13 +636,13 @@ recall = \frac{TP}{(TP + FN)}
 F Score = \frac{2 \times precision \times recall}{(precision + recall)}
 \end{equation}
 
+\subsubsection{\textit{Pearson Coefficient Correlation ($\rho$-value)}}
+After getting Operational Taxonomic Units (OTU) from a clustering method we created the taxonomic profile at Genus level. Pearson’s correlation coefficient was computed to measure the relatedness of taxonomic assignment between a pair of tools. Values can range between -1 and 1, with -1 indicating a negative correlation, 0 indicating no correlation, and 1 indicating a positive correlation or strong relationship.
 
-\hspace*{4mm}\textbf{Pearson Coefficient Correlation ($\rho$-value)} - After getting Operational Taxonomic Units (OTU) from a clustering method we created the taxonomic profile at Genus level. Pearson’s correlation coefficient was computed to measure the relatedness of taxonomic assignment between a pair of tools. Values can range between -1 and 1, with -1 indicating a negative correlation, 0 indicating no correlation, and 1 indicating a positive correlation or strong relationship.
 
+\subsection{\textbf{Experimental Details}}
 
-\subsection{Experimental Details}
-
-For kmers, the value of parameter K was set to 4. There are 4 possible nucleotide representatives (A,C,G and T) and the total number of features became $4^4=256$. This way we were able to convert the string representation into numeric. For Locality Sensitive Hashing the number of Hyperplanes (parameter $d$) was set to 150. We wanted to reduce the number of features while maintaining a relatively accurate distance approximation. So value of $d$ was chosen to be less than 256. For performance analysis and comparison we have chosen $T1=0.46$ and $T2=0.34$.         
+For kmers, the value of parameter K was set to 4. There are 4 possible nucleotide representatives (A,C,G and T) and the total number of features became $4^4=256$. This way we were able to convert the string representation into numeric. For Locality Sensitive Hashing the number of Hyperplanes (parameter $d$) was set to 150. We wanted to reduce the number of features while maintaining a relatively accurate distance approximation. So value of $d$ was chosen to be less than 256. For performance analysis and comparison we have chosen $T1=0.45$ and $T2=0.34$.         
 
 We performed all the experiments on computers with Intel 5th generation Core i7 2.70GHz 64bit processor with 8 core CPUs and 12GB memory. For implementation we used Python 2.7.12 and QIIME \cite{MARQiime} version 1.9.0 - a popular open source Bioinformatics pipeline that combines many metagenome clustering methods including the ones which has been used in this work. One important aspect our proposed approach is parallelism. Each canopy can be clustered in parallel. To take full advantage of today's multi-core CPU based computing systems we utilized Python's \textit{multiprocessing} module instead of \textit{threading} module. According to Python's documentation\footnote{https://docs.python.org/2/library/multiprocessing.html} \textit{multiprocessing} module allows the programmer to fully leverage multiple processors on a given machine by spawning subprocesses instead of threads. After receiving output from all canopy clustering we merged the outputs to make a single clustering results. Some performance metric used in this study like Faith’s Phylogenetic Diversity (PD) metric require sequence alignment. We used PyNast\footnote{http://biocore.github.io/pynast/} \cite{MARPynast} open source sequence aligner for aligning clustered output.    
 
@@ -624,15 +652,15 @@ We performed all the experiments on computers with Intel 5th generation Core i7 
 
 \subsection{\textbf{Clustering Performance Comparison}}
 Table \ref{table:performanceTable} shows the performance of  UCLUST \cite{MARuclust}, 
-SUMACLUST \cite{MARSumaclust} and SWARM \cite{MARSwarm} and their corresponding versions with our proposed approach. Table \ref{table:performanceTable} compares F-scores and Pearson Correlation Coefficient ($\rho$). F-scores are only available for synthetic benchmarks since taxanomic profile for them is known as ground truth. But F-scores are not available for real benchmarks as no ground truth is available for them. Correlation values were generated based on taxonomic profiles at Genus level generated from outputs from clustering methods. From Table \ref{table:performanceTable} we can see that F-scores obtained from a clustering method and its corresponding Canopy Clustering version are very closer, in some cases better. We got higher F-score for Bokulich$_2$ benchmark from Canopy$_{SUMACLUST}$. Canopy$_{UCLUST}$ and Canopy$_{SWARM}$ provided same F-scores as their respective naive versions for Bokulich$_2$. For Bokulich$_3$ benchmark we observed higher F-scores for all LSH based Canopy clustering methods. Finally for Bokulich$_6$ benchmark F-scores of UCLUST and SWARM were improved comparing to respective naive versions.
+SUMACLUST \cite{MARSumaclust} and SWARM \cite{MARSwarm} and their corresponding versions with our proposed approach. Table \ref{table:performanceTable} compares F-scores and Pearson Correlation Coefficient ($\rho$). F-scores are only available for synthetic benchmarks since taxanomic profile for them is known as ground truth. But F-scores are not available for real benchmarks as no ground truth is available for them. Correlation values were generated based on taxonomic profiles at Genus level generated from outputs from clustering methods. From Table \ref{table:performanceTable} we can see that F-scores obtained from a clustering method and its corresponding Canopy clustering version are very closer, in some cases better. We got higher F-score for Bokulich$_2$ benchmark from CC$_{SUMACLUST}$. CC$_{UCLUST}$ and CC$_{SWARM}$ provided same F-scores as their respective naive versions for Bokulich$_2$. For Bokulich$_3$ benchmark we observed higher F-scores for all LSH based Canopy clustering methods. Finally for Bokulich$_6$ benchmark F-scores of UCLUST and SWARM were improved comparing to respective naive versions.
 
-For all benchmarks we got very strong correlations between taxonomic profiles at genus level from UCLUST, SUMACLUST, SWARM and their respective LSH based Canopy counterparts. The highest correlation was observed for Bokulich$_6$ benchmark between UCLUST and Canopy$_{UCLUST}$ with 0.9831 and the lowest was observed for Canadian Soil metagenome data between SUMACLUST and Canopy$_{SUMACLUST}$ with 0.7581. From observed F-scores and correlation values we can say that running a sequence clustering method with our proposed LSH based Canopy cluster framework can bring similar or better results. Next we will discuss about Runtime Comparisons.
+For all benchmarks we got very strong correlations between taxonomic profiles at genus level from UCLUST, SUMACLUST, SWARM and their respective LSH based Canopy counterparts. The highest correlation was observed for Bokulich$_6$ benchmark between UCLUST and CC$_{UCLUST}$ with 0.9831 and the lowest was observed for Canadian Soil metagenome data between SUMACLUST and CC$_{SUMACLUST}$ with 0.7581. From observed F-scores and correlation values we can say that running a sequence clustering method with our proposed LSH based Canopy cluster framework can bring similar or better results. Next we will discuss about Runtime Comparisons. CC$_{MST}$ provided relatively similar F-scores and high $\rho$ values indicating strong correlations of taxonomic outcomes with other methods. 
 
-\subsection{\textbf{Runtime Comparison}} Table \ref{table:Runtime} shows the runtime in minutes of UCLUST, SUMACLUST, SWARM and their respective versions with our proposed Canopy clustering pipeline. Time information in Table \ref{table:Runtime} was recorded while populating performance metric values for Table \ref{table:performanceTable} for the parameter setting mentioned in Experimental Details section. Improving runtime while maintaining similar or better clustering results was one of the major motivations of our proposed approach. We can see from Table \ref{table:Runtime} that Canopy$_{UCLUST}$ outperforms UCLUST for all datasets. The highest speed up for UCLUST was observed for Bokulich$_2$ dataset where UCLUST was 2.10 times faster with LSH based Canopy than the naive version. For SUMACLUST we can see from Table \ref{table:Runtime} that Canopy$_{SUMACLUST}$ outperforms naive SUMACLUST in most cases. Major improvement in runtime was observed in large scale real world metagenome datasets specially Canadian Soil and Global Soil datasets. The highest speed-up for SUMACLUST with Canopy clustering was observed to be 7.70x for Global Soil dataset.
+\subsection{\textbf{Runtime Comparison}} Table \ref{table:Runtime} shows the runtime in minutes of UCLUST, SUMACLUST, SWARM and their respective versions with our proposed Canopy clustering pipeline. Time information in Table \ref{table:Runtime} was recorded while populating performance metric values for Table \ref{table:performanceTable} for the parameter setting mentioned in Experimental Details section. Improving runtime while maintaining similar or better clustering results was one of the major motivations of our proposed approach. We can see from Table \ref{table:Runtime} that CC$_{UCLUST}$ outperforms UCLUST for all datasets. The highest speed up for UCLUST was observed for Bokulich$_2$ dataset where UCLUST was 2.10 times faster with LSH based Canopy than the naive version. For SUMACLUST we can see from Table \ref{table:Runtime} that CC$_{SUMACLUST}$ outperforms naive SUMACLUST in most cases. Major improvement in runtime was observed in large scale real world metagenome datasets specially Canadian Soil and Global Soil datasets. The highest speed-up for SUMACLUST with Canopy clustering was observed to be 7.70x for Global Soil dataset.
 
-We can see a similar footprints for Canopy$_{SWARM}$ from Table \ref{table:Runtime}. The highest reduction in runtime for SWARM with Canopy clustering was observed to be 4.79x for Global Soil dataset. From these observations we can conclude that LSH based Canopy clustering not only reduces the runtime of an expensive clustering method but also scales well and performs better for larger benchmarks comparing to the smaller ones.   
+We can see a similar footprints for CC$_{SWARM}$ from Table \ref{table:Runtime}. The highest reduction in runtime for SWARM with Canopy clustering was observed to be 4.79x for Global Soil dataset. From these observations we can conclude that LSH based Canopy clustering not only reduces the runtime of an expensive clustering method but also scales well and performs better for larger benchmarks comparing to the smaller ones.   
 
-\subsection{\textbf{Biodiversity Comparison}} Clustering sequences in metagenome data will provide OTUs that represent biodiversity contained in the samples from which data is collected. Hence we also need to compare the biodiversity represented by OTUs from naive methods and their respective Canopy clustering variations used in this study. Table \ref{table:bioDiversityTable} shows Faith’s phylogenetic diversity metric (PD), Shannon and Simpson index after clustering with different methods. These metrics are some of the popular Alpha Diversity metrics meaning that they measure species diversity in sites or habitats at a local scale. These metric values are generated per sample basis. Table \ref{table:bioDiversityTable} contains mean diversity values over all samples for convenient comparisons. Diversity metric values from a method with and without Canopy clustering should be similar. We can see from Table \ref{table:bioDiversityTable} that Canopy clustering based methods produce similar mean values as their naive counterparts. No significant changes in diversity metric values were observed which indicates an expensive clustering method is capable of conserving relevant and stable biodiversity using LSH based Canopy as preprocessing.           
+\subsection{\textbf{Biodiversity Comparison}} Clustering sequences in metagenome data will provide OTUs that represent biodiversity contained in the samples from which data is collected. Hence we also need to compare the biodiversity represented by OTUs from naive methods and their respective Canopy clustering variations used in this study. Table \ref{table:bioDiversityTable} shows Faith’s phylogenetic diversity metric (PD), Shannon and Simpson index after clustering with different methods. These metrics are some of the popular Alpha Diversity metrics meaning that they measure species diversity in sites or habitats at a local scale. These metric values are generated per sample basis. Table \ref{table:bioDiversityTable} shows ranges of metric values in $[minimum-maximum]$ format provided by methods with and without Canopy clustering. Any sample of a dataset will take value from this range. These ranges may not be same since OTUs vary over clustering methods. But they should be similar. We can see from Table \ref{table:bioDiversityTable} that Canopy clustering based methods produce similar ranges of values as their naive counterparts. No significant changes in diversity metric values were observed which indicates that Canopy based approaches reproduce similar biodiversity while reducing runtime.          
 
 
 \begin{table*}[t]
@@ -640,7 +668,7 @@ We can see a similar footprints for Canopy$_{SWARM}$ from Table \ref{table:Runti
 	\caption{\textbf{Performance Comparison [$F$-Score and Pearson Correlation Coefficient ($\rho$)]}} 
 	\label{table:performanceTable}
 	
-	\scalebox{0.90}{
+	\scalebox{0.95}{
 		
 		\begin{tabular}{|l|c c c c| c c c|}
 			
@@ -662,7 +690,7 @@ We can see a similar footprints for Canopy$_{SWARM}$ from Table \ref{table:Runti
 			
 			\hdashline
 			
-			\multirow{2}{*}{Canopy$_{UCLUST}$} & $F$-Measure & \textit{\textbf{0.39}} & \textit{\textbf{0.41}} & \textit{\textbf{0.52}} & $N/A$ & $N/A$ & $N/A$\\
+			\multirow{2}{*}{CC$_{UCLUST}$} & $F$-Measure & \textit{\textbf{0.39}} & \textit{\textbf{0.41}} & \textit{\textbf{0.52}} & $N/A$ & $N/A$ & $N/A$\\
 			& Correlation ($\rho$) with Respect to UCLUST & \textit{\textbf{0.9831}} & \textit{\textbf{0.9753}} & \textit{\textbf{0.9831}} & \textit{\textbf{0.9682}} & \textit{\textbf{0.8419}} & \textit{\textbf{0.9824}}\\
 			
 			\hline 
@@ -671,7 +699,7 @@ We can see a similar footprints for Canopy$_{SWARM}$ from Table \ref{table:Runti
 						
 			\hdashline
 			
-			\multirow{2}{*}{Canopy$_{SUMACLUST}$} & $F$-Measure & \textit{\textbf{0.41}} & \textit{\textbf{0.42}} & \textit{\textbf{0.51}} & $N/A$ & $N/A$ & $N/A$\\
+			\multirow{2}{*}{CC$_{SUMACLUST}$} & $F$-Measure & \textit{\textbf{0.41}} & \textit{\textbf{0.42}} & \textit{\textbf{0.51}} & $N/A$ & $N/A$ & $N/A$\\
 			& Correlation ($\rho$) with Respect to SUMACLUST & \textit{\textbf{0.9709}} & \textit{\textbf{0.9813}} & \textit{\textbf{0.9538}} & \textit{\textbf{0.9518}} & \textit{\textbf{0.7643}} & \textit{\textbf{0.8714}}\\ 
 			
 			\hline
@@ -680,13 +708,13 @@ We can see a similar footprints for Canopy$_{SWARM}$ from Table \ref{table:Runti
 						
 			\hdashline
 			
-			\multirow{2}{*}{Canopy$_{SWARM}$} & $F$-Measure & \textit{\textbf{0.46}} & \textit{\textbf{0.49}} & \textit{\textbf{0.56}} & $N/A$ & $N/A$ & $N/A$\\
+			\multirow{2}{*}{CC$_{SWARM}$} & $F$-Measure & \textit{\textbf{0.46}} & \textit{\textbf{0.49}} & \textit{\textbf{0.56}} & $N/A$ & $N/A$ & $N/A$\\
 			& Correlation ($\rho$) with Respect to SWARM & \textit{\textbf{0.9817}} & \textit{\textbf{0.97861}} & \textit{\textbf{0.9251}} & \textit{\textbf{0.9648}} & \textit{\textbf{0.7581}} & \textit{\textbf{0.9143}}\\
 			
 			\hline
 			
-			\multirow{4}{*}{Canopy$_{MSP}$} & $F$-Measure & ?? & ?? & ?? & $N/A$ & $N/A$ & $N/A$\\
-			& Correlation ($\rho$) with Respect to UCLUST & ?? & ?? & ?? & ?? & ?? & ?? \\ & Correlation ($\rho$) with Respect to SUMACLUST & ?? & ?? & ?? & ?? & ?? & ?? \\  & Correlation ($\rho$) with Respect to SWARM & ?? & ?? & ?? & ?? & ?? & ??  \\
+			\multirow{4}{*}{CC$_{MST}$} & $F$-Measure & 0.41 & 0.42 & 0.52 & $N/A$ & $N/A$ & $N/A$\\
+			& Correlation ($\rho$) with respect to UCLUST & 0.7461 & 0.8143 & 0.8272 & 0.7417 & 0.6935 & 0.7974 \\ & Correlation ($\rho$) with respect to SUMACLUST & 0.7182 & 0.6903 & 0.8613 & 0.8293 & 0.6791 & 0.8213 \\  & Correlation ($\rho$) with respect to SWARM & 0.7914 & 0.7352 & 0.8904 & 0.7619 & 0.7372 & 0.8502  \\
 			
 			\hline
 			
@@ -740,77 +768,77 @@ We can see a similar footprints for Canopy$_{SWARM}$ from Table \ref{table:Runti
           
 
 \begin{table*}[t]
-\centering 
-\caption{\textbf{Biodiversity Comparison [Faith’s phylogenetic diversity metric (PD), Shannon and Simpson]}} 
-\label{table:bioDiversityTable}
-
-\scalebox{1.02}{
+	\centering 
+	\caption{\textbf{Biodiversity Comparison [Faith’s phylogenetic diversity metric (PD), Shannon and Simpson]}} 
+	\label{table:bioDiversityTable}
 	
-\begin{tabular}{|c|c c c c| c c c|}
-
-\hline
-
-\textbf{Methods} & \textbf{Comparison Metric} & \multicolumn{6}{c|}{\textbf{Datasets}}\\
-
-\cline{3-8}
-
- & & \multicolumn{3}{c|}{\textit{Synthetic}} & \multicolumn{3}{c|}{\textit{Real World}}\\ 
-
-\cline{3-8}
-
- &  & Bokulich$_2$ & Bokulich$_3$ & Bokulich$_6$ & Body Sites & Canadian Soil & Global Soil\\
- 
-\hline
-
-\multirow{4}{*}{UCLUST} & \textit{Mean PD} & 194.98 & 201.55 & 104.51 & 16.89 & 630.52 & 3.02\\
-& \textit{Mean Shannon} & 3.02 & 2.95 & 5.87 & 3.89 & 7.90 & 6.11\\
-& \textit{Mean Simpson} & 0.66 & 0.67 & 0.96 & 0.75 & 0.94 & 0.86 \\
-
- & & & & & & & \\
-
-\multirow{4}{*}{Canopy$_{UCLUST}$} & \textit{Mean PD} & 191.67 & 187.90 & 109.33 & 15.94 & 617.19 & 3.11\\
-& \textit{Mean Shannon} & 3.19 & 3.14 & 6.41 & 4.03 & 7.81 & 6.84\\
-& \textit{Mean Simpson} & 0.76 & 0.74 & 0.96 & 0.81 & 0.95 & 0.88\\
-
-\hline
-
-\multirow{3}{*}{SUMACLUST} & \textit{Mean PD} & 136.06 & 155.99 & 89.22 & 13.94 & 604.79 & 3.01\\ 
-& \textit{Mean Shannon} & 2.60  & 2.89 & 5.48 & 3.54 & 7.31 & 5.85\\
-& \textit{Mean Simpson} & 0.63 & 0.65 & 0.95 & 0.73 & 0.96 & 0.89\\
-
- & & & & & & & \\
-
-\multirow{3}{*}{Canopy$_{SUMACLUST}$} & \textit{Mean PD} & 146.40 & 158.73 & 93.81 & 12.68 & 626.29 & 2.98\\
-& \textit{Mean Shannon} & 3.12 & 3.06 & 5.94 & 3.81 & 7.89 & 6.08\\
-& \textit{Mean Simpson} & 0.73 & 0.66 & 0.96 & 0.76 & 0.94 & 0.84\\
-
-\hline
-
-\multirow{3}{*}{SWARM} & \textit{Mean PD} & 21.14 & 18.87 & 30.84 & 16.51 & 432.23 & 5.81\\
-& \textit{Mean Shannon} & 3.40 & 2.55 & 5.03 & 4.10 & 7.82 & 5.98\\
-& \textit{Mean Simpson} & 0.78 & 0.64 & 0.95 & 0.78 & 0.94 & 0.89\\
- 
- & & & & & & & \\
-
-\multirow{3}{*}{Canopy$_{SWARM}$} & \textit{Mean PD} & 23.20 & 20.91 & 31.48 & 15.19 & 489.17 & 5.73\\
-& \textit{Mean Shannon} & 3.18 & 2.71 & 6.03 & 4.81 & 7.97 & 6.10\\
-& \textit{Mean Simpson} & 0.77 & 0.66 & 0.91 & 0.81 & 0.91 & 0.90\\
-
-\hline
-
-\multirow{3}{*}{Canopy$_{MSP}$} & \textit{Mean PD} & ?? & ?? & ?? & ?? & ?? & ??\\
-& \textit{Mean Shannon} & ?? & ?? & ?? & ?? & ?? & ??\\
-& \textit{Mean Simpson} & ?? & ?? & ?? & ?? & ?? & ??\\
-
-\hline
-
-\end{tabular}
-}
-\small
-\begin{tablenotes}
-	\item Table shows mean values of Faith’s Phylogeny Diversity (PD), Shannon and Simpson coefficient over all samples in a dataset.      
-\end{tablenotes}
-
+	\scalebox{0.88}{
+		
+		\begin{tabular}{|c|c c c c| c c c|}
+			
+			\hline
+			
+			\textbf{Methods} & \textbf{Comparison Metric} & \multicolumn{6}{c|}{\textbf{Datasets}}\\
+			
+			\cline{3-8}
+			
+			& & \multicolumn{3}{c|}{\textit{Synthetic}} & \multicolumn{3}{c|}{\textit{Real World}}\\ 
+			
+			\cline{3-8}
+			
+			&  & Bokulich$_2$ & Bokulich$_3$ & Bokulich$_6$ & Body Sites & Canadian Soil & Global Soil\\
+			
+			\hline
+			
+			\multirow{3}{*}{UCLUST} & PD Range & $\left[171.95-221.85\right]$ & $\left[186.90-212.84\right]$ & $\left[104.51-104.51\right]$ & $\left[1.46-46.79\right]$ & $\left[0.30-1352.73\right]$ & $\left[2.98-3.29\right]$\\ 
+			& Shannon Range & $\left[2.52-3.51\right]$ & $\left[2.43-3.54\right]$ & $\left[5.87-5.87\right]$ & $\left[0.29-7.67\right]$ & $\left[2.32-10.85\right]$ & $\left[1.84-8.30\right]$\\
+			& Simpson Range & $\left[0.55-0.75\right]$ & $\left[0.55-0.76\right]$ & $\left[0.96-0.96\right]$ & $\left[0.049-0.98\right]$ & $\left[0.80-0.99\right]$ & $\left[0.0-0.98\right]$\\
+			
+			& & & & & & & \\
+			
+			\multirow{3}{*}{CC$_{UCLUST}$} & PD Range & $\left[164.79-217.72\right]$ & $\left[169.41-198.36\right]$ & $\left[109.33-109.33\right]$ & $\left[2.37-47.13\right]$ & $\left[0.52-1419.31\right]$ & $\left[3.02-3.81\right]$\\
+			& Shannon Range & $\left[2.61-3.83\right]$ & $\left[2.92-3.91\right]$ & $\left[6.41-6.41\right]$ & $\left[0.93-7.13\right]$ & $\left[3.26-7.61\right]$ & $\left[3.72-7.38\right]$\\
+			& Simpson Range & $\left[0.64-0.87\right]$ & $\left[0.56-0.93\right]$ & $\left[0.96-0.96\right]$ & $\left[0.081-0.99\right]$ & $\left[0.84-0.99\right]$ & $\left[0.21-0.99\right]$\\
+			
+			\hline
+			
+			\multirow{3}{*}{SUMACLUST} & PD Range & $\left[106.00-162.78\right]$ & $\left[142.85-174.19\right]$ & $\left[89.22-89.22\right]$ & $\left[0.93-39.47\right]$ & $\left[0.59-1279.29\right]$ & $\left[2.98-3.29\right]$\\
+			& Shannon Range & $\left[2.00-3.01\right]$ & $\left[2.19-3.28\right]$ & $\left[5.48-5.48\right]$ & $\left[0.16-7.43\right]$ & $\left[2.32-7.32\right]$ & $\left[1.00-7.89\right]$\\
+			& Simpson Range & $\left[0.52-0.73\right]$ & $\left[0.54-0.75\right]$ & $\left[0.95-0.95\right]$ & $\left[0.027-0.98\right]$ & $\left[0.80-0.99\right]$ & $\left[0.40-0.98\right]$\\
+			
+			& & & & & & & \\
+			
+			\multirow{3}{*}{CC$_{SUMACLUST}$} & PD Range & $\left[114.96-171.57\right]$ & $\left[147.85-187.91\right]$ & $\left[93.81-93.81\right]$ & $\left[0.86-41.63\right]$ & $\left[0.81-1292.34\right]$ & $\left[1.37-4.89\right]$\\
+			& Shannon Range & $\left[2.51-3.94\right]$ & $\left[2.96-4.11\right]$ & $\left[5.94-5.94\right]$ & $\left[1.21-7.13\right]$ & $\left[3.12-7.79\right]$ & $\left[2.17-7.25\right]$\\
+			& Simpson Range & $\left[0.68-0.79\right]$ & $\left[0.51-0.74\right]$ & $\left[0.96-0.96\right]$ & $\left[0.06-0.99\right]$ & $\left[0.88-0.99\right]$ & $\left[0.23-0.98\right]$\\
+			
+			\hline
+			
+			\multirow{3}{*}{SWARM} & PD Range & $\left[18.37-24.73\right]$ & $\left[17.36-19.81\right]$ & $\left[30.84-30.84\right]$ & $\left[1.44-28.66\right]$ & $\left[0.54-706.57\right]$ & $\left[5.79-6.18\right]$\\ 
+			& Shannon Range & $\left[2.98-3.91\right]$ & $\left[2.01-3.04\right]$ & $\left[5.03-5.03\right]$ & $\left[0.28-7.63\right]$ & $\left[1.0-7.79\right]$ & $\left[1.66-7.81\right]$\\
+			& Simpson Range & $\left[0.70-0.82\right]$ & $\left[0.53-0.74\right]$ & $\left[0.95-0.95\right]$ & $\left[0.05-0.98\right]$ & $\left[0.50-0.99\right]$ & $\left[0.00-0.99\right]$\\
+			
+			& & & & & & & \\
+			
+			\multirow{3}{*}{CC$_{SWARM}$} & PD Range & $\left[19.18-26.87\right]$ & $\left[18.43-22.61\right]$ & $\left[31.48-31.48\right]$ & $\left[2.34-29.97\right]$ & $\left[1.37-748.71\right]$ & $\left[2.34-8.46\right]$\\
+			& Shannon Range & $\left[1.66-4.87\right]$ & $\left[1.19-4.13\right]$ & $\left[6.03-6.03\right]$ & $\left[0.89-7.13\right]$ & $\left[2.81-8.06\right]$ & $\left[2.81-7.87\right]$\\
+			& Simpson Range & $\left[0.66-0.88\right]$ & $\left[0.41-0.81\right]$ & $\left[0.91-0.91\right]$ & $\left[0.11-0.99\right]$ & $\left[0.74-0.99\right]$ & $\left[0.14-0.99\right]$\\
+			
+			\hline
+			
+			\multirow{3}{*}{CC$_{MST}$} & PD Range & $\left[10.43-89.61\right]$ & $\left[12.83-92.41\right]$ & $\left[63.21-63.21\right]$ & $\left[1.46-34.15\right]$ & $\left[2.73-824.62\right]$ & $\left[1.81-5.37\right]$\\ 
+			& Shannon Range & $\left[0.96-3.91\right]$ & $\left[1.21-3.16\right]$ & $\left[4.91-4.91\right]$ & $\left[2.02-6.51\right]$ & $\left[2.72-7.83\right]$ & $\left[2.17-6.29\right]$\\
+			& Simpson Range & $\left[0.14-0.68\right]$ & $\left[0.32-0.73\right]$ & $\left[0.92-0.92\right]$ & $\left[0.07-0.94\right]$ & $\left[0.58-0.94\right]$ & $\left[0.14-0.98\right]$\\
+			
+			\hline
+			
+		\end{tabular}
+	}
+	\small
+	\begin{tablenotes}
+		\item Table shows ranges of values for Faith’s Phylogeny Diversity (PD), Shannon and Simpson coefficient over all samples in a dataset in the format $[minimum-maximum]$. Most of these datasets contain multiple samples and Alpha diversity metrics like PD, Shannon and Simpson values are generated for each of these samples separately. Biodiversity metric values changes significantly over samples e.g. diversity from hair samples and teeth cavity are supposedly different. So instead of mean values this Table represents $[minimum-maximum]$  ranges of values a sample can take. Similar ranges reflect similar diversity.      
+	\end{tablenotes}
+	
 \end{table*} 
 
 
@@ -858,8 +886,7 @@ We can see a similar footprints for Canopy$_{SWARM}$ from Table \ref{table:Runti
 \end{figure}
 
 
-\begin{figure}[t]
-	
+\begin{figure}[t]	
 	\begin{minipage}[t]{0.5\linewidth}
 		\subfloat[]{
 			\includegraphics[width=\linewidth]{bokulich_2_T1.png}
@@ -868,52 +895,18 @@ We can see a similar footprints for Canopy$_{SWARM}$ from Table \ref{table:Runti
 	\hfill%
 	\begin{minipage}[t]{0.5\linewidth}
 		\subfloat[]{
-			\includegraphics[width=\linewidth]{bokulich_3_T1.png}
-			\label{fig:bokulich_3_T1}}
-	\end{minipage} \\
-	
-	\begin{minipage}[t]{0.5\linewidth}
-		\subfloat[]{
-			\includegraphics[width=\linewidth]{bokulich_6_T1.png}
-			\label{fig:bokulich_6_T1}}
-	\end{minipage}
-	
-	\caption{Effect of varying $T1$ on $F$-scores while $T2$ is fixed at 0.34}
-	
-\end{figure}
-
-
-\begin{figure}[t]
-	
-	\begin{minipage}[t]{0.5\linewidth}
-		\subfloat[]{
 			\includegraphics[width=\linewidth]{bokulich_2_T2.png}
 			\label{fig:bokulich_2_T2}}
-	\end{minipage}%
-	\hfill%
-	\begin{minipage}[t]{0.5\linewidth}
-		\subfloat[]{
-			\includegraphics[width=\linewidth]{bokulich_3_T2.png}
-			\label{fig:bokulich_3_T2}}
-	\end{minipage} \\
-	
-	\begin{minipage}[t]{0.5\linewidth}
-		\subfloat[]{
-			\includegraphics[width=\linewidth]{bokulich_6_T2.png}
-			\label{fig:bokulich_6_T2}}
 	\end{minipage}
-	
-	\caption{Effect of varying $T2$ on $F$-scores while $T1$ is fixed at 0.45}
-	
+	\caption{ \ref{fig:bokulich_2_T1} and \ref{fig:bokulich_2_T2} show effect of varying $T1$ and $T2$ on $F$-scores for the largest synthetic dataset Bokulich$_2$ }	
 \end{figure}
 
 
 \subsection{\textbf{Effect of Varying Number of Multi-processes}}
-Figure \ref{fig:bokulich_2}-\ref{fig:global_soil} shows how the number of multiprocess can affect runtime of Canopy$_{UCLUST}$, Canopy$_{SUMACLUST}$ and Canopy$_{SWARM}$ on six benchmarks used in this study. We observed that increasing the number of multiprocess can reduce total runtime. The steepest curve showing reduction in runtime can be found in Figure \ref{fig:canadian_soil} for Canopy$_{SUMACLUST}$ on Canadian Soil dataset. For single process version Canopy$_{SUMACLUST}$ is slower in most cases except Bokulich$_2$ dataset where it's runtime is better comparing to Canopy$_{SWARM}$. For Body Site dataset (Figure \ref{fig:body_sites}) the Canopy$_{UCLUST}$ and Canopy$_{SWARM}$ have closer runtime with respect to increasing number of multiprocess. Figure \ref{fig:global_soil} shows reduction in runtime for the largest dataset used in this study namely Global Soil with more than nine million reads. 
+Figure \ref{fig:bokulich_2}-\ref{fig:global_soil} shows how the number of multiprocess can affect runtime of CC$_{UCLUST}$, CC$_{SUMACLUST}$ and CC$_{SWARM}$ on six benchmarks used in this study. We observed that increasing the number of multiprocess can reduce total runtime. The steepest curve showing reduction in runtime can be found in Figure \ref{fig:canadian_soil} for CC$_{SUMACLUST}$ on Canadian Soil dataset. For single process version CC$_{SUMACLUST}$ is slower in most cases except Bokulich$_2$ dataset where it's runtime is better comparing to CC$_{SWARM}$. For Body Site dataset (Figure \ref{fig:body_sites}) the CC$_{UCLUST}$ and CC$_{SWARM}$ have closer runtime with respect to increasing number of multiprocess. Figure \ref{fig:global_soil} shows reduction in runtime for the largest dataset used in this study namely Global Soil with more than nine million reads. 
 
 \subsection{\textbf{Effect of Varying T1 and T2 Parameter of Canopy Clustering}}
-Figure \ref{fig:bokulich_2_T1}-\ref{fig:bokulich_6_T1} shows effect of varying $T1$ parameter of Canopy cluster on F-Scores when parameter $T2$ is fixed at 0.34. Figure \ref{fig:bokulich_2_T2}-\ref{fig:bokulich_6_T2} shows effect of varying $T2$ parameter on F-Scores when parameter $T1$ is fixed at 0.45. Reducing $T1$ means comparatively \textit{tighter} soft-threshold which will reduce repetitions of instances in multiple canopies. For a fixed $T2$ this means lower $T1$ will yield better canopy assignment. From \ref{fig:bokulich_2_T1}-\ref{fig:bokulich_6_T1} we can see that when $T1$'s range is in 0.4 to 0.6 our proposed approach provides better F-Scores. On the hand, increasing $T2$ means comparatively \textit{softer} tight-threshold for canopies. As a result instances will be prematurely assigned to canopies without waiting for best match. From \ref{fig:bokulich_2_T2}-\ref{fig:bokulich_6_T2} we can see that when $T2$'s range  is in 0.2 to 0.35 our proposed approach provides better F-Scores. Lower $T2$ may cause higher runtime since instances will continue to reappear until $T2$ is met.                   
-
+Figure \ref{fig:bokulich_2_T1}-\ref{fig:bokulich_2_T2} shows effect of varying $T1$ ($T2$ fixed at 0.34) and $T2$ ($T1$ fixed at 0.45) on F-scores for the largest synthetic dataset Bokulich$_2$. Reducing $T1$ means comparatively \textit{tighter} soft-threshold which will reduce repetitions of instances in multiple canopies. For a fixed $T2$ this means lower $T1$ will yield better canopy assignment. From Figure \ref{fig:bokulich_2_T1} we can see that when $T1$'s range is in 0.4 to 0.6 our proposed approach provides better F-Scores. On the other hand, increasing $T2$ means comparatively \textit{softer} tight-threshold for canopies. As a result instances will be prematurely assigned to canopies without waiting for best match. From Figure \ref{fig:bokulich_2_T2} we can see that when $T2$'s range  is in 0.2 to 0.35 our proposed approach provides better F-Scores. Lower $T2$ may cause higher runtime since instances will continue to reappear until $T2$ is met.                   
 
 
 \section{Conclusion and future work}
