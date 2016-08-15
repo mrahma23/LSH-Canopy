@@ -397,13 +397,85 @@ Instead of producing whole genomic sequences of the members of communities in ho
 
 Clustering approaches have been developed and used for the rapid analysis of large sets of whole and targeted 16S rRNA metagenomic sequences which are discussed in Section \ref{sec:1} - Literature Review. Analysis of microbiome datasets typically begins by clustering raw sequence reads and creating potential OTUs. Proper clustering of sequence reads assists in the metagenome assembly problem, allows computation of different species diversity metrics and allows further analysis with phenotype inferences. In this study we have proposed and evaluated a pre-clustering technique based on Canopy cluster method and Locality Sensitive Hashing. Our proposed framework can reduce pairwise comparison between sequences for similarity measure in large scale metagenome datasets by partitioning the dataset with fast LSH based approximation. These initial partitions can be considered independent of each other. More accurate and expensive clustering methods can be deployed for each partition in parallel utilizing multi-core architechture of modern CPUs. Only the sequences inside a canopy will be considered for further sub-clustering not the sequences outside that canopy. This characteristic of Canopy clustering reduces expensive pairwise comparison significantly.       
 
+
+
 \section{Literature Review}
 \label{sec:1}
-Some of the popular and early clustering methods for metagenomic clustering are CD-HIT \cite{MARCDhit}, DOTUR \cite{MARDOTUR}, MOTHUR \cite{MARMothur} and ESPRIT \cite{MAREspirit}. Algorithm used in CD-HIT is a greedy incremental clustering algorithm and performs ordering on sequences based on sequence length. Subsequent comparisons have to fall above the threshold for similarity with all sequences in a cluster. DOTUR, MOTHUR and ESPRIT exclusively use pairwise distance matrix as input and then perform hierarchical clustering clustering on 16S sequences. MOTHUR and DOTUR utilize global alignment score between all pairs of sequences for pairwise distances computation. 
 
-Hash based clustering mechanisms have been introduced for metagenome data. MC-LSH \cite{MARMetaLSH} utilizes an efficient locality sensitive based hashing function to approximate the pairwise sequence similarity. Similarity among sequences is computed based on randomly chosen indices that essentially compresses the input sequence. MC-MinH \cite{MARMcMinH} algorithm uses the min-wise \cite{MARMinWise} hashing approach, along with a greedy clustering algorithm to group 16S and whole metagenomic sequences. Mash \cite{MAROtherMinH}, uses MinHash locality sensitive hashing to reduce large sequences to a representative sketch and rapidly estimate pairwise distances. Other methods for clustering whole metagenome sequence reads include TOSS \cite{MARToss}, AbundanceBin \cite{MARAbundant}, and CompostBin \cite{MARCompost}. All unique k-mers are first clustered in TOSS then clusters are merged based on k-mer repetition. In AbundanceBin sequencing reads are modeled as mixture of Poisson distributions. Then Maximization (EM) algorithm is used to infer model parameters and final clustering. Principal component analysis is used in CompostBin to project the data into lower dimensional space and then uses the normalized cut clustering \cite{MARNormalizedCut} algorithm to group sequences into taxa specific clusters. CompostBin also uses phylogenetic markers to assign clusters.
+%HR Makes EDITS.
 
-UCLUST \cite{MARuclust} follows a greedy process and creates \textit{seeds} of sequences which generate clusters based on percent identity. In last two years, two relatively new clustering methods have been introduced Swarm \cite{MARSwarm}\cite{MARSwarm2} and SUMACLUST \cite{MARSumaclust}. These methods are some of the currently popular, relatively faster \cite{MARDeNovo} and open source softwares for clustering in Metagenome data. SWARM uses exhaustive single-linkage clustering based on optimal sequence alignment. SUMACLUST follows a similar approach as UCLUST. Abundance-ordered list of input sequences are compared against the representative set of already-chosen sequences in SUMACLUST. In this study we have introduced a very fast initial partitioning of large scale metagenomic datasets with Canopy Clustering \cite{MARCanopy} and Locality Sensitive Hashing \cite{MARLshRef1}\cite{MARLshRef2}\cite{MARLshRef3}. This way efficient and scalable parallelism in OTU-clustering can be achieved that is capable of making existing OTU-clustering method multiple times faster by taking advantage of modern multicore CPU architectures. We have used UCLUST, SWARM and SUMACLUST with and without our proposed framework and brief descriptions of these methods are provided in Section \ref{sub-cluster}.
+Over the years several sequence clustering methods have been developed 
+and used widely for metagenomic sequence data. A comprehensive 
+survey by XXX et. al. \cite{xxx} benhcmarks these clustering algorithms  including 
+CD-HIT \cite{MARCDhit}, DOTUR \cite{MARDOTUR}, MOTHUR \cite{MARMothur}, UCLUST \cite{xx} 
+and ESPRIT \cite{MAREspirit}. 
+
+
+CD-HIT \cite{XXX} is general purpose sequence clustering algorithm that 
+follows an incremental, greedy approach. CD-HIT uses pairwise sequence alignment 
+to find similar sequences. UCLUST \cite{XXX} is similar to CD-HIT but achieves 
+a signficant speedup over CD-HIT by using 
+seeds (fixed length gapless subsequences) 
+for performing pairwise sequence comparisons. 
+%
+MC-LSH \cite{MARMetaLSH} utilizes an efficient 
+locality sensitive based hashing function 
+to approximate the pairwise sequence similarity. Pairwise similarity 
+among sequences is computed based on 
+randomly chosen indices that essentially compresses the 
+input sequences. The 
+MC-MinH \cite{MARMcMinH} algorithm uses 
+the min-wise \cite{MARMinWise} hashing along with the 
+greedy clustering algorithm to group
+16S and whole metagenomic sequences. Mash \cite{MAROtherMinH}, uses 
+MinHash locality sensitive hashing to 
+reduce large sequences to a representative sketch 
+and rapidly estimate pairwise distances. Other
+methods for clustering whole metagenome sequence
+reads include TOSS \cite{MARToss}, AbundanceBin \cite{MARAbundant}
+and CompostBin \cite{MARCompost}. All unique k-mers are 
+first clustered in TOSS and then 
+clusters are merged based on k-mer repetitions. In AbundanceBin 
+reads are modeled as mixture of Poisson distributions. Then 
+Expectation Maximization (EM) algorithm is used to 
+infer model parameters for the 
+final clustering. Principal component analysis is used within
+CompostBin to project the data into a 
+lower dimensional space and followed with a graph partitioning 
+approach %CompostBin also uses phylogenetic markers to assign clusters.
+%
+
+DOTUR \cite{XXX} and   
+MOTHUR \cite{YYY} are 
+use a pairwise distance matrix as input and 
+perform hierarchical clustering.
+%
+The pairwise distances are
+computed based on an expensive 
+sequence alignment 
+ between all pairs of input sequences.
+
+
+%and compute i and performs ordering on sequences based on sequence length. Subsequent comparisons have to fall above the threshold for similarity with all sequences in a cluster. DOTUR, MOTHUR and ESPRIT exclusively use pairwise distance matrix as input and then perform hierarchical clustering clustering on 16S sequences. MOTHUR and DOTUR utilize global alignment score between all pairs of sequences for pairwise distances computation. 
+
+UCLUST \cite{xx}, SWARM \cite{MARSwarm}\cite{MARSwarm2} and 
+SUMACLUST \cite{MARSumaclust}  are considered to be the state-of-the-art 
+metagenomic sequence 
+clustering methods by a recent benchmarking study \cite{MARDeNovo}. 
+%
+SWARM uses an  exhaustive single-linkage 
+clustering approach using a fast pairwise 
+sequence alignment. SUMACLUST is similar to UCLUST. Abundance ordered 
+list of input sequences are compared against the 
+representative set of already chosen sequences in SUMACLUST. 
+
+
+In 
+this study introduced a  fast initial partitioning of 
+large scale metagenomic datasets using canopies  \cite{MARCanopy} and locality sensitive hashing 
+\cite{MARLshRef1}. This way efficient and scalable parallelism in OTU-clustering can be achieved that
+is capable of making existing OTU-clustering
+method multiple times faster by taking advantage of modern multicore CPU architectures. We have used UCLUST, SWARM and SUMACLUST with and without our proposed framework and brief descriptions of these methods are provided in Section \ref{sub-cluster}.
 
 \section{Methods}
 \label{featMethod}
