@@ -406,7 +406,8 @@ Clustering approaches have been developed and used for the rapid analysis of lar
 
 Over the years several sequence clustering methods have been developed 
 and used widely for metagenomic sequence data. A comprehensive 
-survey by XXX et. al. \cite{xxx} benhcmarks these clustering algorithms  including 
+survey by XXX et. al. \cite{xxx} benhcmarks various  open source sequence 
+clustering algorithms  including 
 CD-HIT \cite{MARCDhit}, DOTUR \cite{MARDOTUR}, MOTHUR \cite{MARMothur}, UCLUST \cite{xx} 
 and ESPRIT \cite{MAREspirit}. 
 
@@ -420,13 +421,14 @@ for performing pairwise sequence comparisons.
 %
 MC-LSH \cite{MARMetaLSH} utilizes an efficient 
 locality sensitive based hashing function 
-to approximate the pairwise sequence similarity. Pairwise similarity 
-among sequences is computed based on 
-randomly chosen indices that essentially compresses the 
-input sequences. The 
-MC-MinH \cite{MARMcMinH} algorithm uses 
-the min-wise \cite{MARMinWise} hashing along with the 
-greedy clustering algorithm to group
+to approximate the pairwise sequence similarity. 
+%Pairwise similarity 
+%among sequences is computed based on 
+%randomly chosen indices that essentially compresses the 
+%input sequences. The 
+MC-MinH \cite{MARMcMinH} uses 
+min-wise \cite{MARMinWise} hashing along with the 
+greedy clustering to group
 16S and whole metagenomic sequences. Mash \cite{MAROtherMinH}, uses 
 MinHash locality sensitive hashing to 
 reduce large sequences to a representative sketch 
@@ -441,8 +443,8 @@ Expectation Maximization (EM) algorithm is used to
 infer model parameters for the 
 final clustering. Principal component analysis is used within
 CompostBin to project the data into a 
-lower dimensional space and followed with a graph partitioning 
-approach %CompostBin also uses phylogenetic markers to assign clusters.
+lower dimensional space, followed with a graph partitioning 
+approach.  %CompostBin also uses phylogenetic markers to assign clusters.
 %
 
 DOTUR \cite{XXX} and   
@@ -458,7 +460,7 @@ sequence alignment
 
 %and compute i and performs ordering on sequences based on sequence length. Subsequent comparisons have to fall above the threshold for similarity with all sequences in a cluster. DOTUR, MOTHUR and ESPRIT exclusively use pairwise distance matrix as input and then perform hierarchical clustering clustering on 16S sequences. MOTHUR and DOTUR utilize global alignment score between all pairs of sequences for pairwise distances computation. 
 
-UCLUST \cite{xx}, SWARM \cite{MARSwarm}\cite{MARSwarm2} and 
+UCLUST \cite{xx} and recently developed,  SWARM \cite{MARSwarm}\cite{MARSwarm2} and 
 SUMACLUST \cite{MARSumaclust}  are considered to be the state-of-the-art 
 metagenomic sequence 
 clustering methods by a recent benchmarking study \cite{MARDeNovo}. 
@@ -471,11 +473,13 @@ representative set of already chosen sequences in SUMACLUST.
 
 
 In 
-this study introduced a  fast initial partitioning of 
-large scale metagenomic datasets using canopies  \cite{MARCanopy} and locality sensitive hashing 
-\cite{MARLshRef1}. This way efficient and scalable parallelism in OTU-clustering can be achieved that
-is capable of making existing OTU-clustering
-method multiple times faster by taking advantage of modern multicore CPU architectures. We have used UCLUST, SWARM and SUMACLUST with and without our proposed framework and brief descriptions of these methods are provided in Section \ref{sub-cluster}.
+this study we developed an approximate but highly efficient 
+sequence clustering algorithm  using canopies \cite{MARCanopy}. 
+%
+The developed approach can be used as a pre-processing step with other 
+sequence clustering algorithms. Specifically, we show the 
+performance of our developed approach in conjunction with UCLUST, 
+SWARM and SUMACLUST as detailed in Section \ref{sub-cluster}.
 
 \section{Methods}
 \label{featMethod}

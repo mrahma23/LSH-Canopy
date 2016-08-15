@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  7 AUG 2016 15:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  15 AUG 2016 10:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -417,217 +417,251 @@ Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 369.
-LaTeX Font Info:    Try loading font information for U+msa on input line 393.
+
+
+LaTeX Warning: Citation `xxx' on page i undefined on input line 409.
+
+
+LaTeX Warning: Citation `xx' on page i undefined on input line 410.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [1{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+
+]
+
+LaTeX Warning: Citation `XXX' on page ii undefined on input line 414.
+
+
+LaTeX Warning: Citation `XXX' on page ii undefined on input line 416.
+
+
+LaTeX Warning: Citation `XXX' on page ii undefined on input line 448.
+
+
+LaTeX Warning: Citation `YYY' on page ii undefined on input line 449.
+
+
+LaTeX Warning: Citation `xx' on page ii undefined on input line 461.
+
+<overall.jpg, id=10, 367.3725pt x 911.65594pt>
+File: overall.jpg Graphic file (type jpg)
+ <use overall.jpg>
+Package pdftex.def Info: overall.jpg used on input line 487.
+(pdftex.def)             Requested size: 121.95642pt x 312.97754pt.
+
+<flowchart.png, id=11, 1706.375pt x 2208.25pt>
+File: flowchart.png Graphic file (type png)
+ <use flowchart.png>
+Package pdftex.def Info: flowchart.png used on input line 496.
+(pdftex.def)             Requested size: 243.89pt x 341.43283pt.
+ [2 <./overall.jpg>] <merge.jpg, id=15, 758.08218pt x 440.39531pt>
+File: merge.jpg Graphic file (type jpg)
+ <use merge.jpg>
+Package pdftex.def Info: merge.jpg used on input line 513.
+(pdftex.def)             Requested size: 243.90993pt x 128.03392pt.
+LaTeX Font Info:    Try loading font information for U+msa on input line 522.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 393.
+LaTeX Font Info:    Try loading font information for U+msb on input line 522.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
-
-
-]
+) [3 <./flowchart.png> <./merge.jpg>]
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
 
-Underfull \hbox (badness 1694) in paragraph at lines 406--407
-[]\OT1/ptm/m/n/10 In this study we have in-tro-duced a very fast ini-
+Underfull \hbox (badness 1762) in paragraph at lines 548--549
+ \OT1/ptm/m/it/10 3) SWARM: [][] \OT1/ptm/m/n/10 SWARM uses ex-haus-tive single
+-linkage
  []
 
-[2] <overall.jpg, id=13, 367.3725pt x 911.65594pt>
-File: overall.jpg Graphic file (type jpg)
- <use overall.jpg>
-Package pdftex.def Info: overall.jpg used on input line 415.
-(pdftex.def)             Requested size: 121.95642pt x 312.97754pt.
 
-<flowchart.png, id=14, 1706.375pt x 2208.25pt>
-File: flowchart.png Graphic file (type png)
- <use flowchart.png>
-Package pdftex.def Info: flowchart.png used on input line 424.
-(pdftex.def)             Requested size: 243.89pt x 341.43283pt.
- [3 <./overall.jpg> <./flowchart.png>] <merge.jpg, id=20, 758.08218pt x 440.395
-31pt>
-File: merge.jpg Graphic file (type jpg)
+Underfull \hbox (badness 2119) in paragraph at lines 553--554
+[]\OT1/ptm/m/n/10 In the fol-low-ing Sec-tions UCLUST, SUMACLUST,
+ []
 
-<use merge.jpg>
-Package pdftex.def Info: merge.jpg used on input line 433.
-(pdftex.def)             Requested size: 243.90993pt x 142.2599pt.
- [4 <./merge.jpg>]
-Missing character: There is no â in font ptmr7t!
-Missing character: There is no € in font ptmr7t!
-Missing character: There is no ™ in font ptmr7t!
 LaTeX Font Info:    Font shape `OT1/ptm/bx/sc' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/sc' tried instead on input line 486.
+(Font)              Font shape `OT1/ptm/b/sc' tried instead on input line 558.
+[4]
+Underfull \vbox (badness 1005) has occurred while \output is active []
 
-Underfull \hbox (badness 2020) in paragraph at lines 505--522
-\OT1/ptm/m/n/10 Bokulich[]3, and Bokulich[]6) from XXX et. al. [[]]
+Missing character: There is no â in font ptmri7t!
+Missing character: There is no € in font ptmri7t!
+Missing character: There is no ™ in font ptmri7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no ™ in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no ™ in font ptmr7t!
+
+Underfull \hbox (badness 2538) in paragraph at lines 683--684
+ \OT1/ptm/m/it/10 3) Simp-son's In-dex: [][] \OT1/ptm/m/n/10 Simp-sons in-dex i
+s de-fined as
  []
 
+Missing character: There is no Ê in font ptmr7t!
+Missing character: There is no ¼ in font ptmr7t!
 [5]
-Missing character: There is no â in font ptmb7t!
-Missing character: There is no € in font ptmb7t!
-Missing character: There is no ™ in font ptmb7t!
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
- [6]
-Missing character: There is no â in font ptmr7t!
-Missing character: There is no € in font ptmr7t!
-Missing character: There is no ™ in font ptmr7t!
- [7]
-Underfull \hbox (badness 10000) in paragraph at lines 804--807
-[][]
+
+Underfull \hbox (badness 1681) in paragraph at lines 726--728
+[]\OT1/ptm/m/n/10 Table II[] shows the per-for-mance of UCLUST [[]],
  []
 
 
-Overfull \hbox (2.44798pt too wide) in paragraph at lines 848--849
- [][] 
+Underfull \hbox (badness 1762) in paragraph at lines 729--730
+\OT1/ptm/m/n/10 Canopy coun-ter-parts. The high-est cor-re-la-tion was ob-
+ []
+
+[6]
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no ™ in font ptmr7t!
+
+Overfull \hbox (4.03513pt too wide) in paragraph at lines 794--797
+[][]
  []
 
 Missing character: There is no â in font ptmbc7t!
 Missing character: There is no € in font ptmbc7t!
 Missing character: There is no ™ in font ptmbc7t!
 
-Underfull \hbox (badness 10000) in paragraph at lines 941--944
+Underfull \hbox (badness 10000) in paragraph at lines 908--911
 [][]
  []
 
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
-
-Underfull \hbox (badness 2409) in paragraph at lines 954--955
-[]\OT1/ptm/m/n/10 We can see a sim-i-lar foot-prints for LSH-Canopy-
- []
-
-
-Underfull \hbox (badness 1931) in paragraph at lines 954--955
-\OT1/ptm/m/n/10 SWARM from Ta-ble III[]. SWARM took 128.12 min-
- []
-
-[8] <bokulich_2.png, id=43, 578.16pt x 433.62pt>
+<bokulich_2.png, id=37, 578.16pt x 433.62pt>
 File: bokulich_2.png Graphic file (type png)
  <use bokulich_2.png>
-Package pdftex.def Info: bokulich_2.png used on input line 962.
+Package pdftex.def Info: bokulich_2.png used on input line 923.
 (pdftex.def)             Requested size: 121.95563pt x 91.46649pt.
 
-Overfull \hbox (7.00012pt too wide) in paragraph at lines 962--963
+Overfull \hbox (7.00012pt too wide) in paragraph at lines 923--924
 [][] 
  []
 
-<bokulich_3.png, id=45, 578.16pt x 433.62pt>
+<bokulich_3.png, id=39, 578.16pt x 433.62pt>
 File: bokulich_3.png Graphic file (type png)
  <use bokulich_3.png>
-Package pdftex.def Info: bokulich_3.png used on input line 968.
+Package pdftex.def Info: bokulich_3.png used on input line 929.
 (pdftex.def)             Requested size: 121.95563pt x 91.46649pt.
 
-Overfull \hbox (7.00012pt too wide) in paragraph at lines 968--969
+Overfull \hbox (7.00012pt too wide) in paragraph at lines 929--930
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 959--970
+Underfull \hbox (badness 10000) in paragraph at lines 920--931
 
  []
 
-<bokulich_6.png, id=46, 578.16pt x 433.62pt>
+<bokulich_6.png, id=40, 578.16pt x 433.62pt>
 File: bokulich_6.png Graphic file (type png)
  <use bokulich_6.png>
-Package pdftex.def Info: bokulich_6.png used on input line 974.
+Package pdftex.def Info: bokulich_6.png used on input line 935.
 (pdftex.def)             Requested size: 121.95563pt x 91.46649pt.
 
-Overfull \hbox (7.00012pt too wide) in paragraph at lines 974--975
+Overfull \hbox (7.00012pt too wide) in paragraph at lines 935--936
 [][] 
  []
 
-<body_sites.png, id=47, 578.16pt x 433.62pt>
+<body_sites.png, id=41, 578.16pt x 433.62pt>
 File: body_sites.png Graphic file (type png)
  <use body_sites.png>
-Package pdftex.def Info: body_sites.png used on input line 980.
+Package pdftex.def Info: body_sites.png used on input line 941.
 (pdftex.def)             Requested size: 121.95563pt x 91.46649pt.
 
-Overfull \hbox (7.00012pt too wide) in paragraph at lines 980--981
+Overfull \hbox (7.00012pt too wide) in paragraph at lines 941--942
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 971--982
+Underfull \hbox (badness 10000) in paragraph at lines 932--943
 
  []
 
-<canadian_soil.png, id=48, 578.16pt x 433.62pt>
+<canadian_soil.png, id=42, 578.16pt x 433.62pt>
 File: canadian_soil.png Graphic file (type png)
  <use canadian_soil.png>
-Package pdftex.def Info: canadian_soil.png used on input line 986.
+Package pdftex.def Info: canadian_soil.png used on input line 947.
 (pdftex.def)             Requested size: 121.95563pt x 91.46649pt.
 
-Overfull \hbox (7.00012pt too wide) in paragraph at lines 986--987
+Overfull \hbox (7.00012pt too wide) in paragraph at lines 947--948
 [][] 
  []
 
-<global_soil.png, id=49, 578.16pt x 433.62pt>
+<global_soil.png, id=43, 578.16pt x 433.62pt>
 File: global_soil.png Graphic file (type png)
  <use global_soil.png>
-Package pdftex.def Info: global_soil.png used on input line 992.
+Package pdftex.def Info: global_soil.png used on input line 953.
 (pdftex.def)             Requested size: 121.95563pt x 91.46649pt.
 
-Overfull \hbox (7.00012pt too wide) in paragraph at lines 992--993
+Overfull \hbox (7.00012pt too wide) in paragraph at lines 953--954
 [][] 
  []
 
-<bokulich_2_T2.png, id=50, 578.16pt x 433.62pt>
+
+Underfull \hbox (badness 1953) in paragraph at lines 956--956
+\OT1/ptm/m/n/8 Figure 4.   Run-time com-par-i-son of Canopy clus-ter-ing frame-
+work
+ []
+
+<bokulich_2_T1.png, id=44, 578.16pt x 433.62pt>
+File: bokulich_2_T1.png Graphic file (type png)
+ <use bokulich_2_T1.png>
+Package pdftex.def Info: bokulich_2_T1.png used on input line 965.
+(pdftex.def)             Requested size: 121.95563pt x 91.46649pt.
+
+Overfull \hbox (7.00012pt too wide) in paragraph at lines 965--966
+[][] 
+ []
+
+<bokulich_2_T2.png, id=45, 578.16pt x 433.62pt>
 File: bokulich_2_T2.png Graphic file (type png)
  <use bokulich_2_T2.png>
-Package pdftex.def Info: bokulich_2_T2.png used on input line 1005.
+Package pdftex.def Info: bokulich_2_T2.png used on input line 971.
 (pdftex.def)             Requested size: 121.95563pt x 91.46649pt.
 
-Overfull \hbox (7.00012pt too wide) in paragraph at lines 1005--1006
-[][] 
- []
-
-<bokulich_3_T2.png, id=51, 578.16pt x 433.62pt>
-File: bokulich_3_T2.png Graphic file (type png)
- <use bokulich_3_T2.png>
-Package pdftex.def Info: bokulich_3_T2.png used on input line 1011.
-(pdftex.def)             Requested size: 121.95563pt x 91.46649pt.
-
-Overfull \hbox (7.00012pt too wide) in paragraph at lines 1011--1012
+Overfull \hbox (7.00012pt too wide) in paragraph at lines 971--972
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1002--1013
-
+Underfull \hbox (badness 2717) in paragraph at lines 978--979
+[]\OT1/ptm/m/n/10 Figure 4a[]-4f[] shows how the num-ber of mul-ti-pro-
  []
 
-<bokulich_6_T2.png, id=52, 578.16pt x 433.62pt>
-File: bokulich_6_T2.png Graphic file (type png)
- <use bokulich_6_T2.png>
-Package pdftex.def Info: bokulich_6_T2.png used on input line 1017.
-(pdftex.def)             Requested size: 121.95563pt x 91.46649pt.
 
-Overfull \hbox (7.00012pt too wide) in paragraph at lines 1017--1018
-[][] 
+Underfull \hbox (badness 1412) in paragraph at lines 978--979
+\OT1/ptm/m/n/10 We ob-served that in-creas-ing the num-ber of mul-ti-pro-
  []
 
-(./LSH-Canopy.bbl [9] [10]
-Underfull \hbox (badness 1701) in paragraph at lines 127--131
+[7 <./bokulich_2.png> <./bokulich_3.png> <./bokulich_6.png> <./body_sites.png> 
+<./canadian_soil.png> <./global_soil.png> <./bokulich_2_T1.png> <./bokulich_2_T
+2.png>] (./LSH-Canopy.bbl [8]
+Underfull \hbox (badness 1701) in paragraph at lines 100--104
 []\OT1/ptm/m/n/9 Z. Rasheed and H. Rang-wala, \OT1/ptm/m/it/9 MC-MinH:
  []
 
-[11 <./bokulich_2.png> <./bokulich_3.png> <./bokulich_6.png> <./body_sites.png>
- <./canadian_soil.png> <./global_soil.png> <./bokulich_2_T2.png> <./bokulich_3_
-T2.png> <./bokulich_6_T2.png>]
+[9]
 Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no © in font ptmr7t!
- [12])
+)
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -639,43 +673,42 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[13
+[10] (./LSH-Canopy.aux)
 
-] (./LSH-Canopy.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 5853 strings out of 493117
- 87976 string characters out of 6135433
- 239498 words of memory out of 5000000
- 9196 multiletter control sequences out of 15000+600000
+ 5845 strings out of 493117
+ 87762 string characters out of 6135433
+ 219474 words of memory out of 5000000
+ 9189 multiletter control sequences out of 15000+600000
  51652 words of font info for 101 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 38i,12n,47p,4400b,357s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,13n,47p,1683b,357s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/te
 xlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
-live/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texli
-ve/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive
-/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2
-014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/201
-4/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2014/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2014/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2014/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2014/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2014/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2014/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2014/texmf-dist/fon
-ts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/u
-rw/times/utmbi8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/
-utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmri8a.pf
-b>
-Output written on LSH-Canopy.pdf (13 pages, 905258 bytes).
+live/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texli
+ve/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive
+/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2
+014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/201
+4/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2014/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2014/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2014/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2014/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2014/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2014/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2014/texmf-dist/font
+s/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2014/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2014/texmf-dist/fonts/ty
+pe1/urw/times/utmb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/ti
+mes/utmbi8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmr8
+a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on LSH-Canopy.pdf (10 pages, 881025 bytes).
 PDF statistics:
- 139 PDF objects out of 1000 (max. 8388607)
- 84 compressed objects within 1 object stream
+ 135 PDF objects out of 1000 (max. 8388607)
+ 83 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 61 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 56 words of extra memory for PDF output out of 10000 (max. 10000000)
 
