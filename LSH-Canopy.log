@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.7.16)  18 AUG 2016 00:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.7.16)  22 AUG 2016 20:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -535,7 +535,7 @@ Overfull \hbox (4.03513pt too wide) in paragraph at lines 764--767
  []
 
 
-Overfull \hbox (38.03577pt too wide) in paragraph at lines 808--809
+Overfull \hbox (8.7638pt too wide) in paragraph at lines 808--809
  [][] 
  []
 
@@ -737,9 +737,9 @@ ype1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/ur
 w/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a
 .pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on LSH-Canopy.pdf (10 pages, 799308 bytes).
+Output written on LSH-Canopy.pdf (10 pages, 802454 bytes).
 PDF statistics:
- 587 PDF objects out of 1000 (max. 8388607)
+ 594 PDF objects out of 1000 (max. 8388607)
  153 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  51 words of extra memory for PDF output out of 10000 (max. 10000000)
