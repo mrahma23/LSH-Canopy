@@ -67,16 +67,29 @@ T.~S. Schmidt, J.~F.~M. Rodrigues, and C.~Von~Mering, ``Ecological consistency
   of ssu rrna-based operational taxonomic units at a global scale,'' \emph{PLoS
   Comput Biol}, vol.~10, no.~4, p. e1003594, 2014.
 
-\bibitem{MARCDhit}
-\relax{Li, Weizhong and Godzik, Adam}, ``Cd-hit: a fast program for clustering
-  and comparing large sets of protein or nucleotide sequences,''
-  \emph{Bioinformatics}, vol.~22, no.~13, pp. 1658--1659, 2006.
+\bibitem{MARopenDeNovo}
+\relax{Kopylova et al.}, ``Open-source sequence clustering methods improve the
+  state of the art,'' \emph{mSystems}, vol.~1, no.~1, 2016.
 
-\bibitem{MARDOTUR}
-\relax{Schloss, Patrick D. and Handelsman, Jo}, ``Introducing dotur, a computer
-  program for defining operational taxonomic units and estimating species
-  richness,'' \emph{Applied and Environmental Microbiology}, vol.~71, no.~3,
-  pp. 1501--1506, 2005.
+\bibitem{MARuclust}
+\relax{Edgar, Robert C.}, ``Search and clustering orders of magnitude faster
+  than blast,'' \emph{Bioinformatics}, vol.~26, no.~19, pp. 2460--2461, 2010.
+
+\bibitem{MARSwarm}
+\relax{F, Mahé and T, Rognes and C, Quince and C, de Vargas and M, Dunthorn},
+  ``Swarm: robust and fast clustering method for amplicon-based studies,''
+  \emph{PeerJ}, vol. 2:e593, 2014.
+
+\bibitem{MARSwarm2}
+F.~Mah{\'e}, T.~Rognes, C.~Quince, C.~De~Vargas, and M.~Dunthorn, ``Swarm v2:
+  highly-scalable and high-resolution amplicon clustering,'' \emph{PeerJ,
+  volume={3}, pages={e1420}, year={2015}, publisher={PeerJ Inc.}}
+
+\bibitem{MARSumaclust}
+\relax{C, Mercier and F, Boyer and A, Bonin and E, Coissac}, ``Sumatra and
+  sumaclust: fast and exact comparison and clustering of sequences [submitted
+  for publication],'' \emph{Available at
+  https://git.metabarcoding.org/obitools/sumatra/wikis/home}, 2014.
 
 \bibitem{MARMothur}
 \relax{Schloss et al.}, ``Introducing mothur: Open-source,
@@ -84,11 +97,10 @@ T.~S. Schmidt, J.~F.~M. Rodrigues, and C.~Von~Mering, ``Ecological consistency
   comparing microbial communities,'' \emph{Applied and Environmental
   Microbiology}, vol.~75, no.~23, pp. 7537--7541, 2009.
 
-\bibitem{MAREspirit}
-\relax{Sun, Yijun and Cai, Yunpeng and Liu, Li and Yu, Fahong and Farrell,
-  Michael L. and McKendree, William and Farmerie, William}, ``Esprit:
-  estimating species richness using large collections of 16s rrna
-  pyrosequences,'' \emph{Nucleic Acids Research}, 2009.
+\bibitem{MARCDhit}
+\relax{Li, Weizhong and Godzik, Adam}, ``Cd-hit: a fast program for clustering
+  and comparing large sets of protein or nucleotide sequences,''
+  \emph{Bioinformatics}, vol.~22, no.~13, pp. 1658--1659, 2006.
 
 \bibitem{MARMetaLSH}
 Z.~Rasheed, H.~Rangwala, and D.~Barbara, ``Efficient clustering of metagenomic
@@ -127,30 +139,6 @@ S.~Chatterji, I.~Yamazaki, Z.~Bai, and J.~A. Eisen, ``Compostbin: A dna
   \emph{Annual International Conference on Research in Computational Molecular
   Biology}.\hskip 1em plus 0.5em minus 0.4em\relax Springer, 2008, pp. 17--28.
 
-\bibitem{MARNormalizedCut}
-M.~Van Den~Heuvel, R.~Mandl, and H.~H. Pol, ``Normalized cut group clustering
-  of resting-state fmri data,'' \emph{PloS one}, vol.~3, no.~4, p. e2001, 2008.
-
-\bibitem{MARuclust}
-\relax{Edgar, Robert C.}, ``Search and clustering orders of magnitude faster
-  than blast,'' \emph{Bioinformatics}, vol.~26, no.~19, pp. 2460--2461, 2010.
-
-\bibitem{MARSwarm}
-\relax{F, Mahé and T, Rognes and C, Quince and C, de Vargas and M, Dunthorn},
-  ``Swarm: robust and fast clustering method for amplicon-based studies,''
-  \emph{PeerJ}, vol. 2:e593, 2014.
-
-\bibitem{MARSwarm2}
-F.~Mah{\'e}, T.~Rognes, C.~Quince, C.~De~Vargas, and M.~Dunthorn, ``Swarm v2:
-  highly-scalable and high-resolution amplicon clustering,'' \emph{PeerJ,
-  volume={3}, pages={e1420}, year={2015}, publisher={PeerJ Inc.}}
-
-\bibitem{MARSumaclust}
-\relax{C, Mercier and F, Boyer and A, Bonin and E, Coissac}, ``Sumatra and
-  sumaclust: fast and exact comparison and clustering of sequences [submitted
-  for publication],'' \emph{Available at
-  https://git.metabarcoding.org/obitools/sumatra/wikis/home}, 2014.
-
 \bibitem{MARDeNovo}
 K.~et~al., ``Open-source sequence clustering methods improve the state of the
   art,'' \emph{mSystems}, vol.~1, no.~1, pp. e00\,003--15, 2016.
@@ -165,10 +153,6 @@ K.~et~al., ``Open-source sequence clustering methods improve the state of the
   [Online]. Available: \url{http://doi.acm.org/10.1145/347090.347123}
 \BIBentrySTDinterwordspacing
 
-\bibitem{MARLshRef1}
-\relax{Rajaraman, A. and Ullman, J}, \emph{Mining of Massive Datasets, Ch. 3},
-  2010.
-
 \bibitem{MARLshRef2}
 \BIBentryALTinterwordspacing
 \relax{Gionis, Aristides and Indyk, Piotr and Motwani, Rajeev}, ``Similarity
@@ -177,6 +161,15 @@ K.~et~al., ``Open-source sequence clustering methods improve the state of the
   plus 0.5em minus 0.4em\relax San Francisco, CA, USA: Morgan Kaufmann
   Publishers Inc., 1999, pp. 518--529. [Online]. Available:
   \url{http://dl.acm.org/citation.cfm?id=645925.671516}
+\BIBentrySTDinterwordspacing
+
+\bibitem{MARLshRef4}
+\BIBentryALTinterwordspacing
+\relax{Charikar, Moses S.}, ``Similarity estimation techniques from rounding
+  algorithms,'' in \emph{Proceedings of the Thiry-fourth Annual ACM Symposium
+  on Theory of Computing}, ser. STOC '02.\hskip 1em plus 0.5em minus
+  0.4em\relax New York, NY, USA: ACM, 2002, pp. 380--388. [Online]. Available:
+  \url{http://doi.acm.org/10.1145/509907.509965}
 \BIBentrySTDinterwordspacing
 
 \bibitem{MARLshRef3}
@@ -196,20 +189,6 @@ P.~K. Jana and A.~Naik, ``An efficient minimum spanning tree based clustering
 M.~Laszlo and S.~Mukherjee, ``Minimum spanning tree partitioning algorithm for
   microaggregation,'' \emph{IEEE Transactions on Knowledge and Data
   Engineering}, vol.~17, no.~7, pp. 902--911, 2005.
-
-\bibitem{MARMstClustering3}
-Y.~Xu, V.~Olman, and D.~Xu, ``Clustering gene expression data using a
-  graph-theoretic approach: an application of minimum spanning trees,''
-  \emph{Bioinformatics}, vol.~18, no.~4, pp. 536--545, 2002.
-
-\bibitem{MARLshRef4}
-\BIBentryALTinterwordspacing
-\relax{Charikar, Moses S.}, ``Similarity estimation techniques from rounding
-  algorithms,'' in \emph{Proceedings of the Thiry-fourth Annual ACM Symposium
-  on Theory of Computing}, ser. STOC '02.\hskip 1em plus 0.5em minus
-  0.4em\relax New York, NY, USA: ACM, 2002, pp. 380--388. [Online]. Available:
-  \url{http://doi.acm.org/10.1145/509907.509965}
-\BIBentrySTDinterwordspacing
 
 \bibitem{MARmockDatasetRef}
 \relax{Bokulich, NA and Subramanian, S and Faith JJ and Gevers, D and Gordon,
@@ -235,10 +214,6 @@ Y.~Xu, V.~Olman, and D.~Xu, ``Clustering gene expression data using a
   globally,'' \emph{Proceedings of the Royal Society of London B: Biological
   Sciences}, vol. 281, no. 1795, 2014.
 
-\bibitem{MARopenDeNovo}
-\relax{Kopylova et al.}, ``Open-source sequence clustering methods improve the
-  state of the art,'' \emph{mSystems}, vol.~1, no.~1, 2016.
-
 \bibitem{MARfaith1992conservation}
 \relax{Faith, Daniel P}, ``Conservation evaluation and phylogenetic
   diversity,'' \emph{Biological conservation}, vol.~61, no.~1, pp. 1--10, 1992.
@@ -252,5 +227,24 @@ Y.~Xu, V.~Olman, and D.~Xu, ``Clustering gene expression data using a
   DeSantis, Todd Z. and Andersen, Gary L. and Knight, Rob}, ``Pynast: a
   flexible tool for aligning sequences to a template alignment,''
   \emph{Bioinformatics}, vol.~26, no.~2, pp. 266--267, 2010.
+
+\bibitem{MARRdp}
+Q.~Wang, G.~M. Garrity, J.~M. Tiedje, and J.~R. Cole, ``Naive bayesian
+  classifier for rapid assignment of rrna sequences into the new bacterial
+  taxonomy,'' \emph{Applied and environmental microbiology}, vol.~73, no.~16,
+  pp. 5261--5267, 2007.
+
+\bibitem{MARGreen1}
+T.~Z. DeSantis, P.~Hugenholtz, N.~Larsen, M.~Rojas, E.~L. Brodie, K.~Keller,
+  T.~Huber, D.~Dalevi, P.~Hu, and G.~L. Andersen, ``Greengenes, a
+  chimera-checked 16s rrna gene database and workbench compatible with arb,''
+  \emph{Applied and environmental microbiology}, vol.~72, no.~7, pp.
+  5069--5072, 2006.
+
+\bibitem{MARSilva}
+E.~Pruesse, C.~Quast, K.~Knittel, B.~M. Fuchs, W.~Ludwig, J.~Peplies, and F.~O.
+  Gl{\"o}ckner, ``Silva: a comprehensive online resource for quality checked
+  and aligned ribosomal rna sequence data compatible with arb,'' \emph{Nucleic
+  acids research}, vol.~35, no.~21, pp. 7188--7196, 2007.
 
 \end{thebibliography}
