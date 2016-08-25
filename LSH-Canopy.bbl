@@ -21,46 +21,33 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
-\bibitem{MARSeaMetaGenome}
-J.~C. Venter, K.~Remington, J.~F. Heidelberg, A.~L. Halpern, D.~Rusch, J.~A.
-  Eisen, D.~Wu, I.~Paulsen, K.~E. Nelson, W.~Nelson \emph{et~al.},
-  ``Environmental genome shotgun sequencing of the sargasso sea,''
-  \emph{science}, vol. 304, no. 5667, pp. 66--74, 2004.
-
 \bibitem{MARHumanGut}
-Q.~et~al., ``A human gut microbial gene catalogue established by metagenomic
-  sequencing,'' \emph{nature}, vol. 464, no. 7285, pp. 59--65, 2010.
+\relax{Qin et al.}, ``A human gut microbial gene catalogue established by
+  metagenomic sequencing,'' \emph{nature}, vol. 464, no. 7285, pp. 59--65,
+  2010.
 
 \bibitem{MARHumanMicro}
-P.~J. Turnbaugh, R.~E. Ley, M.~Hamady, C.~Fraser-Liggett, R.~Knight, and J.~I.
-  Gordon, ``The human microbiome project: exploring the microbial part of
-  ourselves in a changing world,'' \emph{Nature}, vol. 449, no. 7164, p. 804,
-  2007.
+\relax{Turnbaugh et al.}, ``The human microbiome project: exploring the
+  microbial part of ourselves in a changing world,'' \emph{Nature}, vol. 449,
+  no. 7164, p. 804, 2007.
 
 \bibitem{MARDosphila}
-M.~et~al., ``A whole-genome assembly of drosophila,'' \emph{Science}, vol. 287,
-  no. 5461, pp. 2196--2204, 2000.
+\relax{Myers et al.}, ``A whole-genome assembly of drosophila,''
+  \emph{Science}, vol. 287, no. 5461, pp. 2196--2204, 2000.
 
 \bibitem{MARCharuvaka}
 A.~Charuvaka and H.~Rangwala, ``Evaluation of short read metagenomic
   assembly,'' \emph{BMC genomics}, vol.~12, no.~2, p.~1, 2011.
 
 \bibitem{MAR16S}
-S.~Chakravorty, D.~Helb, M.~Burday, N.~Connell, and D.~Alland, ``A detailed
-  analysis of 16s ribosomal rna gene segments for the diagnosis of pathogenic
-  bacteria,'' \emph{Journal of microbiological methods}, vol.~69, no.~2, pp.
-  330--339, 2007.
+\relax{Chakravorty et al.}, ``A detailed analysis of 16s ribosomal rna gene
+  segments for the diagnosis of pathogenic bacteria,'' \emph{Journal of
+  microbiological methods}, vol.~69, no.~2, pp. 330--339, 2007.
 
 \bibitem{MAROTU}
-M.~Blaxter, J.~Mann, T.~Chapman, F.~Thomas, C.~Whitton, R.~Floyd, and E.~Abebe,
-  ``Defining operational taxonomic units using dna barcode data,''
-  \emph{Philosophical Transactions of the Royal Society B: Biological
-  Sciences}, vol. 360, no. 1462, pp. 1935--1943, 2005.
-
-\bibitem{MAROTU2}
-A.~F. Koeppel and M.~Wu, ``Surprisingly extensive mixed phylogenetic and
-  ecological signals among bacterial operational taxonomic units,''
-  \emph{Nucleic acids research}, p. gkt241, 2013.
+\relax{Blaxter et al.}, ``Defining operational taxonomic units using dna
+  barcode data,'' \emph{Philosophical Transactions of the Royal Society B:
+  Biological Sciences}, vol. 360, no. 1462, pp. 1935--1943, 2005.
 
 \bibitem{MAROTUConsistant}
 T.~S. Schmidt, J.~F.~M. Rodrigues, and C.~Von~Mering, ``Ecological consistency
@@ -75,15 +62,9 @@ T.~S. Schmidt, J.~F.~M. Rodrigues, and C.~Von~Mering, ``Ecological consistency
 \relax{Edgar, Robert C.}, ``Search and clustering orders of magnitude faster
   than blast,'' \emph{Bioinformatics}, vol.~26, no.~19, pp. 2460--2461, 2010.
 
-\bibitem{MARSwarm}
-\relax{F, Mahé and T, Rognes and C, Quince and C, de Vargas and M, Dunthorn},
-  ``Swarm: robust and fast clustering method for amplicon-based studies,''
-  \emph{PeerJ}, vol. 2:e593, 2014.
-
 \bibitem{MARSwarm2}
-F.~Mah{\'e}, T.~Rognes, C.~Quince, C.~De~Vargas, and M.~Dunthorn, ``Swarm v2:
-  highly-scalable and high-resolution amplicon clustering,'' \emph{PeerJ,
-  volume={3}, pages={e1420}, year={2015}, publisher={PeerJ Inc.}}
+M.~et~al., ``Swarm v2: highly-scalable and high-resolution amplicon
+  clustering,'' \emph{PeerJ}, vol.~3, p. e1420, 2015.
 
 \bibitem{MARSumaclust}
 \relax{C, Mercier and F, Boyer and A, Bonin and E, Coissac}, ``Sumatra and
@@ -92,10 +73,10 @@ F.~Mah{\'e}, T.~Rognes, C.~Quince, C.~De~Vargas, and M.~Dunthorn, ``Swarm v2:
   https://git.metabarcoding.org/obitools/sumatra/wikis/home}, 2014.
 
 \bibitem{MARMothur}
-\relax{Schloss et al.}, ``Introducing mothur: Open-source,
-  platform-independent, community-supported software for describing and
-  comparing microbial communities,'' \emph{Applied and Environmental
-  Microbiology}, vol.~75, no.~23, pp. 7537--7541, 2009.
+S.~et~al., ``Introducing mothur: Open-source, platform-independent,
+  community-supported software for describing and comparing microbial
+  communities,'' \emph{Applied and Environmental Microbiology}, vol.~75,
+  no.~23, pp. 7537--7541, 2009.
 
 \bibitem{MARCDhit}
 \relax{Li, Weizhong and Godzik, Adam}, ``Cd-hit: a fast program for clustering
@@ -108,11 +89,8 @@ Z.~Rasheed, H.~Rangwala, and D.~Barbara, ``Efficient clustering of metagenomic
   0.5em minus 0.4em\relax SIAM, 2012, pp. 1023--1034.
 
 \bibitem{MARMcMinH}
-\BIBentryALTinterwordspacing
 Z.~Rasheed and H.~Rangwala, \emph{MC-MinH: Metagenome Clustering using Minwise
-  based Hashing}, ch.~74, pp. 677--685. [Online]. Available:
-  \url{http://epubs.siam.org/doi/abs/10.1137/1.9781611972832.75}
-\BIBentrySTDinterwordspacing
+  based Hashing}, ch.~74, pp. 677--685.
 
 \bibitem{MARMinWise}
 A.~Z. Broder, M.~Charikar, A.~M. Frieze, and M.~Mitzenmacher, ``Min-wise
@@ -144,42 +122,18 @@ K.~et~al., ``Open-source sequence clustering methods improve the state of the
   art,'' \emph{mSystems}, vol.~1, no.~1, pp. e00\,003--15, 2016.
 
 \bibitem{MARCanopy}
-\BIBentryALTinterwordspacing
 \relax{McCallum, Andrew and Nigam, Kamal and Ungar, Lyle H.}, ``Efficient
   clustering of high-dimensional data sets with application to reference
   matching,'' in \emph{Proceedings of the Sixth ACM SIGKDD International
   Conference on Knowledge Discovery and Data Mining}, ser. KDD '00.\hskip 1em
   plus 0.5em minus 0.4em\relax New York, NY, USA: ACM, 2000, pp. 169--178.
-  [Online]. Available: \url{http://doi.acm.org/10.1145/347090.347123}
-\BIBentrySTDinterwordspacing
 
 \bibitem{MARLshRef2}
-\BIBentryALTinterwordspacing
 \relax{Gionis, Aristides and Indyk, Piotr and Motwani, Rajeev}, ``Similarity
   search in high dimensions via hashing,'' in \emph{Proceedings of the 25th
   International Conference on Very Large Data Bases}, ser. VLDB '99.\hskip 1em
   plus 0.5em minus 0.4em\relax San Francisco, CA, USA: Morgan Kaufmann
-  Publishers Inc., 1999, pp. 518--529. [Online]. Available:
-  \url{http://dl.acm.org/citation.cfm?id=645925.671516}
-\BIBentrySTDinterwordspacing
-
-\bibitem{MARLshRef4}
-\BIBentryALTinterwordspacing
-\relax{Charikar, Moses S.}, ``Similarity estimation techniques from rounding
-  algorithms,'' in \emph{Proceedings of the Thiry-fourth Annual ACM Symposium
-  on Theory of Computing}, ser. STOC '02.\hskip 1em plus 0.5em minus
-  0.4em\relax New York, NY, USA: ACM, 2002, pp. 380--388. [Online]. Available:
-  \url{http://doi.acm.org/10.1145/509907.509965}
-\BIBentrySTDinterwordspacing
-
-\bibitem{MARLshRef3}
-\BIBentryALTinterwordspacing
-\relax{Indyk, Piotr and Motwani, Rajeev}, ``Approximate nearest neighbors:
-  Towards removing the curse of dimensionality,'' in \emph{Proceedings of the
-  Thirtieth Annual ACM Symposium on Theory of Computing}, ser. STOC '98.\hskip
-  1em plus 0.5em minus 0.4em\relax New York, NY, USA: ACM, 1998, pp. 604--613.
-  [Online]. Available: \url{http://doi.acm.org/10.1145/276698.276876}
-\BIBentrySTDinterwordspacing
+  Publishers Inc., 1999, pp. 518--529.
 
 \bibitem{MARMstCluster}
 P.~K. Jana and A.~Naik, ``An efficient minimum spanning tree based clustering
@@ -197,8 +151,7 @@ M.~Laszlo and S.~Mukherjee, ``Minimum spanning tree partitioning algorithm for
   Methods}, vol.~10, pp. 57--59, 2013.
 
 \bibitem{MARcanadianSoil}
-\relax{JD, Neufeld and K, Engel and J, Cheng and G, Moreno-Hagelsieb and DR,
-  Rose and TC,Charles}, ``Open resource metagenomics: a model for sharing
+\relax{Neufeld et al.}, ``Open resource metagenomics: a model for sharing
   metagenomic libraries,'' \emph{Standards in Genomic Sciences}, vol.~5, pp.
   203--210, 2011.
 
@@ -222,12 +175,6 @@ M.~Laszlo and S.~Mukherjee, ``Minimum spanning tree partitioning algorithm for
 \relax{Caporaso et al.}, ``Qiime allows analysis of high-throughput community
   sequencing data,'' \emph{Nat Meth}, vol.~7, no.~5, pp. 335--336, 2010.
 
-\bibitem{MARPynast}
-\relax{Caporaso, J. Gregory and Bittinger, Kyle and Bushman, Frederic D. and
-  DeSantis, Todd Z. and Andersen, Gary L. and Knight, Rob}, ``Pynast: a
-  flexible tool for aligning sequences to a template alignment,''
-  \emph{Bioinformatics}, vol.~26, no.~2, pp. 266--267, 2010.
-
 \bibitem{MARRdp}
 Q.~Wang, G.~M. Garrity, J.~M. Tiedje, and J.~R. Cole, ``Naive bayesian
   classifier for rapid assignment of rrna sequences into the new bacterial
@@ -235,16 +182,13 @@ Q.~Wang, G.~M. Garrity, J.~M. Tiedje, and J.~R. Cole, ``Naive bayesian
   pp. 5261--5267, 2007.
 
 \bibitem{MARGreen1}
-T.~Z. DeSantis, P.~Hugenholtz, N.~Larsen, M.~Rojas, E.~L. Brodie, K.~Keller,
-  T.~Huber, D.~Dalevi, P.~Hu, and G.~L. Andersen, ``Greengenes, a
-  chimera-checked 16s rrna gene database and workbench compatible with arb,''
-  \emph{Applied and environmental microbiology}, vol.~72, no.~7, pp.
-  5069--5072, 2006.
+\relax{DeSantis et al.}, ``Greengenes, a chimera-checked 16s rrna gene database
+  and workbench compatible with arb,'' \emph{Applied and environmental
+  microbiology}, vol.~72, no.~7, pp. 5069--5072, 2006.
 
 \bibitem{MARSilva}
-E.~Pruesse, C.~Quast, K.~Knittel, B.~M. Fuchs, W.~Ludwig, J.~Peplies, and F.~O.
-  Gl{\"o}ckner, ``Silva: a comprehensive online resource for quality checked
-  and aligned ribosomal rna sequence data compatible with arb,'' \emph{Nucleic
-  acids research}, vol.~35, no.~21, pp. 7188--7196, 2007.
+\relax{Pruesse et al.}, ``Silva: a comprehensive online resource for quality
+  checked and aligned ribosomal rna sequence data compatible with arb,''
+  \emph{Nucleic acids research}, vol.~35, no.~21, pp. 7188--7196, 2007.
 
 \end{thebibliography}
