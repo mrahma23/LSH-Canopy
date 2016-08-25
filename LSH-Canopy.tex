@@ -394,20 +394,104 @@ Clustering, Canopy, LSH, MST, Metagenome
 \label{intro}
 
 % Microorganism and it's Importance + what is metagenome
+% HR Editing [Nice work Mohammad]
 
-A large portion of Earth's biomass comprises microorganisms that exhibit remarkable genetic diversity and play important role in Earth's ecosystem. Microorganisms reside as interacting communities. Existence, interaction and evolution of microorganisms in the hosting environment is crucial to nutrient recycling, nitrogen cycle, precipitation, weather and moreover, environmental stability. But certain microbial abundance and interaction may cause unwanted conditions like disease in hosting sites. Analysis of microbial community can reveal interesting relationships between the microbial community and the host. For example analyzing metagenomic data from human gut microbiome can reveal the role of microbes in human health \cite{MARHumanMicro}. Phenotype inferences like which bacteria are responsible for ulcerative colitis and how a patient is most likely to get the abnormal abundance of such bacteria, can be made. Metagenomics has created the opportunity to study genome sequences of microbiomes as interacting communities. It is the study of genetic material recovered directly from environmental samples. These samples can be taken from sea, soil and the human body \cite{MARHumanGut}.
+A large portion of the  earth's 
+biomass comprises large volume of 
+tiny  microorganisms with varying  biodiversity; and play a crucial  role in ensuring the stability of environment.%
+%
+Communities of interacting microbes  exists in several ecosystems varying from the soil, ocean and human body \cite{MARHumanMicro}; and though, most beneficial to the host 
+some are known to cause unwanted conditions and can be linked to cause of diseases in the host. 
+%
+\emph{Metagenomics} is  defined as the sequencing of the collective DNA  of microbial communities. Analzying metagenomes has provided an unprecedented opportunity to understand 
+the diversity, role and function 
+of these organisms within clincial and ecological environments \cite{MARHumanGut,xxxCITEMihaiPop}. 
+
+% But certain microbial abundance and interaction may cause unwanted conditions like disease in hosting sites. Analysis of microbial 
+%community can reveal interesting relationships between the microbial community and the host. For example analyzing metagenomic data from human gut
+%microbiome can reveal the role of microbes in human health \cite{MARHumanMicro}. Phenotype inferences like which 
+%bacteria are responsible for ulcerative colitis and how a patient is most likely to get the abnormal abundance of such bacteria, can be made. Metagenomics has 
+%created the opportunity to study genome sequences of microbiomes as interacting communities. It is the study of 
+%genetic material recovered directly from environmental samples. These samples can be taken from sea, soil and the human body \cite{MARHumanGut}.
 
 % What is read + 16S/18S + OTU + OTU-Clustering 
 
-State-of-the-art sequencing technologies produce short contiguous subsequences called \textit{reads} from random positions of actual whole genome. In whole metagenome sequencing these reads from different organisms are combined together posing fundamental challenge for further analysis. Similar sequence reads are needed to be clustered prior to further analysis. Metagenome data can be based on targeted 16S and 18S rRNA gene sequences. 16S and 18S sequences are marker genes, which exists in most microbial species but have variations in their sequences that allow them to be separated into different taxonomic groups \cite{MAR16S}. These sequences are highly repetitive in metagenome data. Hence clustering is required for binning similar sequences based on similarity among them. These clusters of similar sequences are called Operational Taxonomic Units (OTUs). OTUs are used to classify groups of closely related individuals from similar or different taxonomic levels \cite{MAROTU}. Each of these clusters may represent taxonomic units of bacteria depending on the sequence similarity threshold. Microbial OTUs are generally ecologically consistent across the hosts regardless of OTU clustering approaches \cite{MAROTUConsistant}. For this reason 16S/18S gene sequencing and OTU clustering have been widely used for the analysis of genetic diversity within complex microbial communities.
 
-% What is the problem in OTU-Clustering
+State-of-the-art genome 
+sequencing technologies do not deliver the complete genome of an organism (million in length), but large number of 
+short 
+contiguous subsequences called \emph{reads} of length 75 to 500 (based on technology) in random order. 
+%
+Sequencing communities of genomes exacerbates the problem since 
+reads from different microbes are mixed together and upfront  the composition of a community in terms of abundance and identity of bacteria is unknown \cite{XXX}.  Further, 
+sequencing technologies produce datasets that range from Gigabytes (GB) to Terabytes (TB) with their own slight
+idiosyncracies.  Alternatively, targeted metagenomic sequencing  that involves 
+sequencing of 
+\emph{marker genes} 
+has been popular for the characterization of these communities. 
+%
+16S and 18S sequences are repetitive marker genes witin micrbial genomes 
+but have variations in their sequences that allow them to be separated 
+into different taxonomic groups \cite{MAR16S}. 
+%
 
-Metagenome data contains large number of reads, repetitions, ambiguity and missing sequence fragments. These characteristics of the data make OTU clustering a time consuming and challenging task. OTU clustering approaches have been developed for the analysis of microorganisms, some of which are discussed in Section \ref{sec:Literature}. Hence improving scalability and efficiency of OTU clustering methods on metagenome data still remain as a challenge and active area of research.    
+Over the years, several unsupervised clustering 
+algorithms have been developed and used for the analysis of large-scale targeted and 
+whole metagenomic sequences (reviewed in Section \ref{sec:Literature}). The unsupervised 
+grouping   of similar sequences from the 16S genes is referred as \emph{binning} and allows 
+for the estimation of biodiversity within a sample. Binning leads to assignment of similar 
+  sequences within groups called \emph{Operational Taxonomical Units (OTUs)} \cite{MAROTU}. 
+%
+Microbial OTUs are generally ecologically consistent
+across the hosts regardless of OTU clustering approaches \cite{MAROTUConsistant}. 
+
+
+%These sequences are highly repetitive in
+%metagenome data. Hence clustering is required for binning similar sequences based on 
+%similarity among them. These clusters of similar sequences are called 
+%Operational Taxonomic Units (OTUs). OTUs are used to classify groups of 
+%closely related individuals from similar or different taxonomic levels \cite{MAROTU}. Each of these 
+%clusters may represent taxonomic units of bacteria depending on the
+%sequence similarity threshold. 
+
+%Microbial OTUs are generally ecologically consistent
+%across the hosts regardless of OTU clustering approaches \cite{MAROTUConsistant}. For this reason 16S/18S gene 
+%sequencing and OTU clustering have been widely used for the 
+%analysis of genetic diversity within complex microbial communities.
 
 % What have we done and how it is better
 
-In this study we propose and evaluate a pre-clustering technique based on the Canopy clustering and Locality Sensitive Hashing. Canopy clustering method reduces pairwise distance calculations between sequences by approximately partitioning the data. Only the sequences inside a canopy will be considered for further sub-clustering within that canopy. More accurate and expensive clustering methods can be used for sub-clustering within each partition in parallel. This way our proposed approach can improve the scalability and efficiency of clustering in large scale metagenome data.            
+In this paper we develop an efficient but, approximate 
+clustering algorithm based on Canopy Clustering \cite{xxx} which 
+can be used as a pre-clustering  step with any state-of-the-art 
+sequence clustering algorithms. 
+%
+Specifically, our approach identifies canopies with a greedy procedure and a fast sequence 
+distance metric based on locality sensitive hashing \cite{xxx}. Sequences within the canopies 
+are considered as the initial partion (or grouping) of data which can be further refined by applying 
+expensive and accurate clustering algorithms. Our developed approach 
+treats each canopies independently allowing for easy parallelization. We present 
+experimental results on real and synthetic metagenomic sequence bencmarks and show that use of Canopy Clustering (CC) in combination 
+with UCLUST \cite{xxx}, SWARM \cite{XXX} and XX \cite{XXX} leads to improved run time efficieny with accurate clustering results. 
+%
+We also show the performance of our developed approach is scalable for large datasets with increased number of processors. 
+%
+The clustering algorithm developed is freely available for public use and available on Github \footnote{XXX}. 
+
+
+%scale real world 
+
+
+
+
+
+%a pre-clustering 
+%technique based on the Canopy clustering and Locality Sensitive Hashing. Canopy 
+%clustering method reduces pairwise distance calculations between sequences by 
+%approximately partitioning the data. Only the sequences inside a canopy will be 
+%considered for further sub-clustering within that canopy. More accurate and expensive clustering
+%methods can be used for sub-clustering within each partition in parallel. This way our 
+%proposed approach can improve the scalability and efficiency of clustering in large scale metagenome data.            
 
 \section{Literature Review}
 \label{sec:Literature}
