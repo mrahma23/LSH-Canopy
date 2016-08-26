@@ -421,7 +421,6 @@ to run time when combined with three
 different state-of-the-art sequence clustering algorithms. 
 
 
-Source Code: XXX Link Here.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -877,7 +876,7 @@ For all benchmarks we observe strong correlations between taxonomic profiles at 
 			\includegraphics[width=\linewidth]{global_soil.pdf}
 			\label{fig:global_soil}}
 	\end{minipage}	
-	\caption{Effect of number of multiprocessor on Runtime of CC$_{UCLUST}$, CC$_{SUMACLUST}$, CC$_{SWARM}$ and CC$_{MST}$ for Bokulich$_2$ and GLobal Soil datasets, two of the largest datasets used in this study.}
+	\caption{Effect of number of processors on Runtime of CC$_{UCLUST}$, CC$_{SUMACLUST}$, CC$_{SWARM}$ and CC$_{MST}$ for Bokulich$_2$ and GLobal Soil datasets, two of the largest datasets used in this study.}
 \end{figure}
 
 
@@ -897,8 +896,8 @@ For all benchmarks we observe strong correlations between taxonomic profiles at 
 \end{figure}
 
 
-\subsection{\textbf{Effect of Varying Number of Multi-processes}}
-Figure \ref{fig:bokulich_2}-\ref{fig:global_soil} shows the runtime of CC$_{UCLUST}$, CC$_{SUMACLUST}$, CC$_{SWARM}$ and CC$_{MST}$ on two largest benchmarks titled Bokulich$_2$ and Global Soil. We observe that increasing the number of multiprocessors reduces the total runtime. Steeper curves show reduction in runtime with increasing number of multiprocessors. Significant reductions in run time were observed CC$_{MST}$, CC$_{SUMACLUST}$ and CC$_{SUMACLUST}$ compared to CC$_{UCLUST}$.   
+\subsection{\textbf{Effect of Varying Number of Processors}}
+Figure \ref{fig:bokulich_2}-\ref{fig:global_soil} shows the runtime of CC$_{UCLUST}$, CC$_{SUMACLUST}$, CC$_{SWARM}$ and CC$_{MST}$ on two largest benchmarks titled Bokulich$_2$ and Global Soil. We observe that increasing the number of iprocessors reduces the total runtime. Steeper curves show reduction in runtime with increasing number of processors. Significant reductions in run time were observed CC$_{MST}$, CC$_{SUMACLUST}$ and CC$_{SUMACLUST}$ compared to CC$_{UCLUST}$.   
 
 \subsection{\textbf{Sensitivity Analysis (Varying T1 and T2)}}
 Figure \ref{fig:bokulich_2_T1}-\ref{fig:bokulich_2_T2} shows effect of varying $T1$ ($T2$ fixed at 0.34) and $T2$ ($T1$ fixed at 0.45) on F-scores for the largest synthetic dataset Bokulich$_2$. Reducing $T1$ leads to comparatively \textit{strict} soft-threshold which will reduce repetitions of instances in multiple canopies. For a fixed $T2$ this implies that lower $T1$ will yield better canopy assignment. From Figure \ref{fig:bokulich_2_T1} we can say that when $T1$'s range is in 0.4 to 0.6 our proposed approach provides better F-Scores. On the other hand, increasing $T2$ leads to comparatively \textit{relaxed} tight-threshold for canopies. As a result instances will be prematurely assigned to canopies without waiting for best match. From Figure \ref{fig:bokulich_2_T2} we can say that when $T2$'s range  is in 0.25 to 0.35 our proposed approach achieves better F-Scores. Lower $T2$ may lead to higher runtime since instances will continue to reappear until the $T2$ is met.                   
