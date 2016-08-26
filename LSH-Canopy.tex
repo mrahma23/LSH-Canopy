@@ -358,7 +358,7 @@
 
 \begin{document}
 
-\title{Clustering Metagenomic Sequences Using Canopies}
+\title{Clustering Metagenome Sequences Using Canopies}
 
 \author{\IEEEauthorblockN{Mohammad Arifur Rahman, Nathan LaPierre, Huzefa Rangwala and Daniel Barbara}
 \IEEEauthorblockA{
@@ -384,9 +384,13 @@ different organisms
 within these communities. 
 %
 As an example,  metagenomics allows for the analysis 
-of the pathogenic role played by the microbial organisms within the human host. 
+of the pathogenic role played by the microbial organisms within the 
+human host and has implications for betterment of health and drug discovery. 
 
-We have developed a novel and efficient clustering algorithm
+
+We present 
+an approximate  but fast 
+clustering algorithm
 for analyzing 
 large-scale metagenomic data. Our approach 
 achieves efficiency 
@@ -394,24 +398,27 @@ by first partitioning the large number of sequence reads into
 groups (called canopies) using a fast locality sensitive hashing based 
 distance function. This 
 initial approximate assignment of reads to 
-canopies is refined by using state-of-the-art sequence clustering algorithms. This
+canopies is refined by using 
+state-of-the-art
+sequence clustering algorithms. This
 two-phase 
 approach allows for the
 use  of 
 our developed algorithms as a pre-processing phase for computationally expensive 
 clustering 
 algorithms. Using the clusters as surrogates for 
-Operational Taxonomic Units (OTUs) we provide 
-an estimate of the biodiversity within 
+Operational Taxonomic Units (OTUs) we 
+can estimate  the biodiversity within 
 a community sample.
 
 The Canopy-based clustering algorithm is evaluated on synthetic and real 
 world 16S 
 metagenome  benchmarks. We demonstrate the ability 
-of our proposed approach to efficiently 
-determine meaningful OTU assignments and report 
+of our proposed approach to  
+determine meaningful OTU assignments and observe
 significant speedup with regards 
-to run time when combined with three different state-of-the-art sequence clustering algorithms. 
+to run time when combined with three 
+different state-of-the-art sequence clustering algorithms. 
 
 
 Source Code: XXX Link Here.

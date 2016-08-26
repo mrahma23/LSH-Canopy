@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  25 AUG 2016 21:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  26 AUG 2016 09:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -417,12 +417,53 @@ Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 371.
-LaTeX Font Info:    Try loading font information for U+msa on input line 446.
 
+
+LaTeX Warning: Citation `MARHumanMicro' on page i undefined on input line 440.
+
+
+LaTeX Warning: Citation `MARTurnbaugh' on page i undefined on input line 440.
+
+
+LaTeX Warning: Citation `MARHumanGut' on page i undefined on input line 442.
+
+
+LaTeX Warning: Citation `MARMihaiPop' on page i undefined on input line 442.
+
+
+LaTeX Warning: Citation `MARMetaChallenge' on page i undefined on input line 44
+7.
+
+
+LaTeX Warning: Citation `MAR16S' on page i undefined on input line 447.
+
+
+LaTeX Warning: Citation `MAROTU' on page i undefined on input line 450.
+
+
+LaTeX Warning: Citation `MAROTUConsistant' on page i undefined on input line 45
+0.
+
+
+LaTeX Warning: Citation `MARCanopy' on page i undefined on input line 454.
+
+
+LaTeX Warning: Citation `MARLshRef2' on page i undefined on input line 454.
+
+
+LaTeX Warning: Citation `MARuclust' on page i undefined on input line 456.
+
+
+LaTeX Warning: Citation `MARSwarm2' on page i undefined on input line 456.
+
+
+LaTeX Warning: Citation `MARSumaclust' on page i undefined on input line 456.
+
+LaTeX Font Info:    Try loading font information for U+msa on input line 456.
 (/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 446.
+LaTeX Font Info:    Try loading font information for U+msb on input line 456.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -430,34 +471,108 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 
 ]
+
+LaTeX Warning: Citation `MARopenDeNovo' on page ii undefined on input line 462.
+
+
+
+LaTeX Warning: Citation `MARuclust' on page ii undefined on input line 462.
+
+
+LaTeX Warning: Citation `MARSwarm2' on page ii undefined on input line 462.
+
+
+LaTeX Warning: Citation `MARSumaclust' on page ii undefined on input line 462.
+
+
+LaTeX Warning: Citation `MARMothur' on page ii undefined on input line 462.
+
+
+LaTeX Warning: Citation `MARCDhit' on page ii undefined on input line 464.
+
+
+LaTeX Warning: Citation `MARuclust' on page ii undefined on input line 464.
+
+
+LaTeX Warning: Citation `MARMetaLSH' on page ii undefined on input line 464.
+
+
+LaTeX Warning: Citation `MARMcMinH' on page ii undefined on input line 464.
+
+
+LaTeX Warning: Citation `MARMinWise' on page ii undefined on input line 464.
+
+
+LaTeX Warning: Citation `MAROtherMinH' on page ii undefined on input line 464.
+
+
+LaTeX Warning: Citation `MARToss' on page ii undefined on input line 464.
+
+
+LaTeX Warning: Citation `MARAbundant' on page ii undefined on input line 464.
+
+
+LaTeX Warning: Citation `MARCompost' on page ii undefined on input line 464.
+
+
+LaTeX Warning: Citation `MARMothur' on page ii undefined on input line 464.
+
+
+LaTeX Warning: Citation `MARuclust' on page ii undefined on input line 466.
+
+
+LaTeX Warning: Citation `MARSwarm2' on page ii undefined on input line 466.
+
+
+LaTeX Warning: Citation `MARSumaclust' on page ii undefined on input line 466.
+
+
+LaTeX Warning: Citation `MARDeNovo' on page ii undefined on input line 466.
+
+
+LaTeX Warning: Citation `MARCanopy' on page ii undefined on input line 468.
+
 <flowchart.pdf, id=10, 549.25201pt x 592.61403pt>
 File: flowchart.pdf Graphic file (type pdf)
  <use flowchart.pdf>
-Package pdftex.def Info: flowchart.pdf used on input line 468.
+Package pdftex.def Info: flowchart.pdf used on input line 478.
 (pdftex.def)             Requested size: 243.90933pt x 284.53288pt.
- [2 <./flowchart.pdf>]
-Underfull \hbox (badness 1546) in paragraph at lines 488--489
-\OT1/ptm/m/n/10 se-quence clus-ter-ing method for ac-cu-rate sub-clustering
- []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 494--495
+LaTeX Warning: Citation `MARCanopy' on page ii undefined on input line 485.
+
+[2 <./flowchart.pdf>]
+
+LaTeX Warning: Citation `MARLshRef2' on page iii undefined on input line 492.
+
+
+LaTeX Warning: Citation `MARuclust' on page iii undefined on input line 498.
+
+
+LaTeX Warning: Citation `MARSumaclust' on page iii undefined on input line 498.
+
+
+
+LaTeX Warning: Citation `MARSwarm2' on page iii undefined on input line 498.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 504--505
  \OT1/ptm/m/it/10 2) SUMACLUST: [][] \OT1/ptm/m/n/10 It fol-lows sim-i-lar ap-p
 roach as
  []
 
 
-Underfull \hbox (badness 8075) in paragraph at lines 494--495
+Underfull \hbox (badness 8075) in paragraph at lines 504--505
 \OT1/ptm/m/n/10 UCLUST. Based on greedy strat-egy SUMACLUST
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 494--495
+Underfull \hbox (badness 10000) in paragraph at lines 504--505
 \OT1/ptm/m/n/10 in-cre-men-tally con-structs clus-ters by com-par-ing an
  []
 
 
-Underfull \hbox (badness 1968) in paragraph at lines 494--495
+Underfull \hbox (badness 1968) in paragraph at lines 504--505
 \OT1/ptm/m/n/10 abundance-ordered list of in-put se-quences against the
  []
 
@@ -465,21 +580,71 @@ Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
 
-Underfull \hbox (badness 1762) in paragraph at lines 497--498
+Underfull \hbox (badness 1762) in paragraph at lines 507--508
  \OT1/ptm/m/it/10 3) SWARM: [][] \OT1/ptm/m/n/10 SWARM uses ex-haus-tive single
 -linkage
  []
 
 
-Underfull \hbox (badness 2119) in paragraph at lines 506--507
+LaTeX Warning: Citation `MARMstCluster' on page iii undefined on input line 510
+.
+
+
+LaTeX Warning: Citation `MARMstClustering2' on page iii undefined on input line
+ 510.
+
+
+Underfull \hbox (badness 2119) in paragraph at lines 516--517
 []\OT1/ptm/m/n/10 In the fol-low-ing Sec-tions UCLUST, SUMACLUST,
  []
 
 [3]
-LaTeX Font Info:    Font shape `OT1/ptm/bx/sc' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/sc' tried instead on input line 520.
 
-Underfull \hbox (badness 10000) in paragraph at lines 604--607
+LaTeX Warning: Citation `MARopenDeNovo' on page iv undefined on input line 525.
+
+
+
+LaTeX Warning: Citation `MARmockDatasetRef' on page iv undefined on input line 
+525.
+
+
+LaTeX Warning: Citation `MARcanadianSoil' on page iv undefined on input line 52
+5.
+
+
+LaTeX Warning: Citation `MARbodySites' on page iv undefined on input line 525.
+
+
+LaTeX Warning: Citation `MARglobalSoil' on page iv undefined on input line 525.
+
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/sc' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/sc' tried instead on input line 530.
+
+LaTeX Warning: Citation `MARmockDatasetRef' on page iv undefined on input line 
+546.
+
+
+LaTeX Warning: Citation `MARmockDatasetRef' on page iv undefined on input line 
+546.
+
+
+LaTeX Warning: Citation `MARmockDatasetRef' on page iv undefined on input line 
+546.
+
+
+LaTeX Warning: Citation `MARcanadianSoil' on page iv undefined on input line 54
+6.
+
+
+LaTeX Warning: Citation `MARbodySites' on page iv undefined on input line 546.
+
+
+LaTeX Warning: Citation `MARglobalSoil' on page iv undefined on input line 546.
+
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 614--617
 [][]
  []
 
@@ -487,24 +652,36 @@ Missing character: There is no â in font ptmbc7t!
 Missing character: There is no € in font ptmbc7t!
 Missing character: There is no ™ in font ptmbc7t!
 
-Underfull \hbox (badness 10000) in paragraph at lines 685--688
+Underfull \hbox (badness 10000) in paragraph at lines 695--698
 [][]
  []
 
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
+
+LaTeX Warning: Citation `MARmockDatasetRef' on page iv undefined on input line 
+767.
+
+
+LaTeX Warning: Citation `MARglobalSoil' on page iv undefined on input line 786.
+
+
 Missing character: There is no â in font ptmri7t!
 Missing character: There is no € in font ptmri7t!
 Missing character: There is no ™ in font ptmri7t!
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
+
+LaTeX Warning: Citation `MARfaith1992conservation' on page iv undefined on inpu
+t line 798.
+
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
 
-Underfull \hbox (badness 2538) in paragraph at lines 805--806
+Underfull \hbox (badness 2538) in paragraph at lines 815--816
  \OT1/ptm/m/it/10 3) Simp-son's In-dex: [][] \OT1/ptm/m/n/10 Simp-sons in-dex i
 s de-fined as
  []
@@ -516,17 +693,30 @@ Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
 
-Underfull \hbox (badness 10000) in paragraph at lines 842--843
+
+LaTeX Warning: Citation `MARQiime' on page v undefined on input line 846.
+
+
+LaTeX Warning: Citation `MARRdp' on page v undefined on input line 846.
+
+
+LaTeX Warning: Citation `MARGreen1' on page v undefined on input line 846.
+
+
+LaTeX Warning: Citation `MARSilva' on page v undefined on input line 846.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 852--853
 []\OT1/ptm/m/n/10 Table II[] shows the per-for-mance of UCLUST,
  []
 
 
-Underfull \hbox (badness 2495) in paragraph at lines 842--843
+Underfull \hbox (badness 2495) in paragraph at lines 852--853
 \OT1/ptm/m/n/10 SUMACLUST and SWARM with their cor-re-spond-ing
  []
 
 
-Underfull \hbox (badness 3690) in paragraph at lines 842--843
+Underfull \hbox (badness 3690) in paragraph at lines 852--853
 \OT1/ptm/m/n/10 clus-ter-ing meth-ods. Fi-nally for Bokulich$[]$ bench-mark
  []
 
@@ -537,70 +727,49 @@ Missing character: There is no ™ in font ptmr7t!
  [6] <bokulich_2.pdf, id=100, 578.16pt x 433.62pt>
 File: bokulich_2.pdf Graphic file (type pdf)
  <use bokulich_2.pdf>
-Package pdftex.def Info: bokulich_2.pdf used on input line 855.
+Package pdftex.def Info: bokulich_2.pdf used on input line 865.
 (pdftex.def)             Requested size: 121.95563pt x 91.46649pt.
 
-Overfull \hbox (7.00012pt too wide) in paragraph at lines 855--856
+Overfull \hbox (7.00012pt too wide) in paragraph at lines 865--866
 [][] 
  []
 
 <global_soil.pdf, id=101, 578.16pt x 433.62pt>
 File: global_soil.pdf Graphic file (type pdf)
  <use global_soil.pdf>
-Package pdftex.def Info: global_soil.pdf used on input line 861.
-(pdftex.def)             Requested size: 121.95563pt x 91.46649pt.
-
-Overfull \hbox (7.00012pt too wide) in paragraph at lines 861--862
-[][] 
- []
-
-<bokulich_2_T1.pdf, id=102, 578.16pt x 433.62pt>
-File: bokulich_2_T1.pdf Graphic file (type pdf)
- <use bokulich_2_T1.pdf>
-Package pdftex.def Info: bokulich_2_T1.pdf used on input line 871.
+Package pdftex.def Info: global_soil.pdf used on input line 871.
 (pdftex.def)             Requested size: 121.95563pt x 91.46649pt.
 
 Overfull \hbox (7.00012pt too wide) in paragraph at lines 871--872
 [][] 
  []
 
+<bokulich_2_T1.pdf, id=102, 578.16pt x 433.62pt>
+File: bokulich_2_T1.pdf Graphic file (type pdf)
+ <use bokulich_2_T1.pdf>
+Package pdftex.def Info: bokulich_2_T1.pdf used on input line 881.
+(pdftex.def)             Requested size: 121.95563pt x 91.46649pt.
+
+Overfull \hbox (7.00012pt too wide) in paragraph at lines 881--882
+[][] 
+ []
+
 <bokulich_2_T2.pdf, id=103, 578.16pt x 433.62pt>
 File: bokulich_2_T2.pdf Graphic file (type pdf)
  <use bokulich_2_T2.pdf>
-Package pdftex.def Info: bokulich_2_T2.pdf used on input line 877.
+Package pdftex.def Info: bokulich_2_T2.pdf used on input line 887.
 (pdftex.def)             Requested size: 121.95563pt x 91.46649pt.
 
-Overfull \hbox (7.00012pt too wide) in paragraph at lines 877--878
+Overfull \hbox (7.00012pt too wide) in paragraph at lines 887--888
 [][] 
  []
 
 
-Underfull \hbox (badness 6428) in paragraph at lines 884--885
+Underfull \hbox (badness 6428) in paragraph at lines 894--895
 []\OT1/ptm/m/n/10 Figure 2a[]-2b[] shows the run-time of CC$[]$,
  []
 
-(./LSH-Canopy.bbl
-Missing character: There is no â in font ptmr7t!
-Missing character: There is no € in font ptmr7t!
-Missing character: There is no ” in font ptmr7t!
- [7 <./bokulich_2.pdf> <./global_soil.pdf
-
-pdfTeX warning: pdflatex (file ./global_soil.pdf): PDF inclusion: multiple pdfs
- with page group included in a single page
-> <./bokulich_2_T1.pdf
-
-pdfTeX warning: pdflatex (file ./bokulich_2_T1.pdf): PDF inclusion: multiple pd
-fs with page group included in a single page
-> <./bokulich_2_T2.pdf
-
-pdfTeX warning: pdflatex (file ./bokulich_2_T2.pdf): PDF inclusion: multiple pd
-fs with page group included in a single page
->]
-Underfull \hbox (badness 2452) in paragraph at lines 97--101
-[]\OT1/ptm/m/n/9 S. et al., ``In-tro-duc-ing mothur: Open-source, platform-
- []
-
-[8])
+(./LSH-Canopy.bbl)
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -612,41 +781,54 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[9
+[7 <./bokulich_2.pdf> <./global_soil.pdf
 
-] (./LSH-Canopy.aux) ) 
+pdfTeX warning: pdflatex (file ./global_soil.pdf): PDF inclusion: multiple pdfs
+ with page group included in a single page
+> <./bokulich_2_T1.pdf
+
+pdfTeX warning: pdflatex (file ./bokulich_2_T1.pdf): PDF inclusion: multiple pd
+fs with page group included in a single page
+> <./bokulich_2_T2.pdf
+
+pdfTeX warning: pdflatex (file ./bokulich_2_T2.pdf): PDF inclusion: multiple pd
+fs with page group included in a single page
+>] (./LSH-Canopy.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 5793 strings out of 493117
- 86995 string characters out of 6135433
- 217157 words of memory out of 5000000
- 9145 multiletter control sequences out of 15000+600000
- 51652 words of font info for 101 fonts, out of 8000000 for 9000
+ 5784 strings out of 493117
+ 86858 string characters out of 6135433
+ 217051 words of memory out of 5000000
+ 9137 multiletter control sequences out of 15000+600000
+ 50516 words of font info for 100 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 38i,13n,47p,1607b,349s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/base/
-8r.enc}</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmex1
-0.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10
-.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.p
-fb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb
-></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><
-/usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></u
-sr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
-/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/lo
-cal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local
-/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/te
-xlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texli
-ve/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texliv
-e/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/
-2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/20
-14/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2014
-/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2014/texmf-dis
-t/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/t
-ype1/urw/times/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/t
-imes/utmri8a.pfb>
-Output written on LSH-Canopy.pdf (9 pages, 488447 bytes).
+ 38i,13n,47p,1608b,349s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
+exlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/te
+xlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
+live/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texli
+ve/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive
+/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2
+014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/201
+4/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2014/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2014/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2014/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2014/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2014/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2014/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2014/texmf-dist/font
+s/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2014/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2014/texmf-dist/fonts/ty
+pe1/urw/times/utmb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/ti
+mes/utmbi8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmr8
+a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on LSH-Canopy.pdf (7 pages, 481467 bytes).
 PDF statistics:
- 367 PDF objects out of 1000 (max. 8388607)
- 119 compressed objects within 2 object streams
+ 361 PDF objects out of 1000 (max. 8388607)
+ 115 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
