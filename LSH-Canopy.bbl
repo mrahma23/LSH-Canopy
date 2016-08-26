@@ -21,23 +21,30 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
-\bibitem{MARHumanGut}
-\relax{Qin et al.}, ``A human gut microbial gene catalogue established by
-  metagenomic sequencing,'' \emph{nature}, vol. 464, no. 7285, pp. 59--65,
-  2010.
-
 \bibitem{MARHumanMicro}
 \relax{Turnbaugh et al.}, ``The human microbiome project: exploring the
   microbial part of ourselves in a changing world,'' \emph{Nature}, vol. 449,
   no. 7164, p. 804, 2007.
 
-\bibitem{MARDosphila}
-\relax{Myers et al.}, ``A whole-genome assembly of drosophila,''
-  \emph{Science}, vol. 287, no. 5461, pp. 2196--2204, 2000.
+\bibitem{MARTurnbaugh}
+P.~J. Turnbaugh, R.~E. Ley, M.~Hamady, C.~Fraser-Liggett, R.~Knight, and J.~I.
+  Gordon, ``The human microbiome project: exploring the microbial part of
+  ourselves in a changing world,'' \emph{Nature}, vol. 449, no. 7164, p. 804,
+  2007.
 
-\bibitem{MARCharuvaka}
-A.~Charuvaka and H.~Rangwala, ``Evaluation of short read metagenomic
-  assembly,'' \emph{BMC genomics}, vol.~12, no.~2, p.~1, 2011.
+\bibitem{MARHumanGut}
+\relax{Qin et al.}, ``A human gut microbial gene catalogue established by
+  metagenomic sequencing,'' \emph{nature}, vol. 464, no. 7285, pp. 59--65,
+  2010.
+
+\bibitem{MARMihaiPop}
+M.~Pop and S.~L. Salzberg, ``Bioinformatics challenges of new sequencing
+  technology,'' \emph{Trends in Genetics}, vol.~24, no.~3, pp. 142--149, 2008.
+
+\bibitem{MARMetaChallenge}
+H.~Teeling and F.~O. Gl{\"o}ckner, ``Current opportunities and challenges in
+  microbial metagenome analysis—a bioinformatic perspective,''
+  \emph{Briefings in bioinformatics}, p. bbs039, 2012.
 
 \bibitem{MAR16S}
 \relax{Chakravorty et al.}, ``A detailed analysis of 16s ribosomal rna gene
@@ -54,9 +61,19 @@ T.~S. Schmidt, J.~F.~M. Rodrigues, and C.~Von~Mering, ``Ecological consistency
   of ssu rrna-based operational taxonomic units at a global scale,'' \emph{PLoS
   Comput Biol}, vol.~10, no.~4, p. e1003594, 2014.
 
-\bibitem{MARopenDeNovo}
-\relax{Kopylova et al.}, ``Open-source sequence clustering methods improve the
-  state of the art,'' \emph{mSystems}, vol.~1, no.~1, 2016.
+\bibitem{MARCanopy}
+\relax{McCallum, Andrew and Nigam, Kamal and Ungar, Lyle H.}, ``Efficient
+  clustering of high-dimensional data sets with application to reference
+  matching,'' in \emph{Proceedings of the Sixth ACM SIGKDD International
+  Conference on Knowledge Discovery and Data Mining}, ser. KDD '00.\hskip 1em
+  plus 0.5em minus 0.4em\relax New York, NY, USA: ACM, 2000, pp. 169--178.
+
+\bibitem{MARLshRef2}
+\relax{Gionis, Aristides and Indyk, Piotr and Motwani, Rajeev}, ``Similarity
+  search in high dimensions via hashing,'' in \emph{Proceedings of the 25th
+  International Conference on Very Large Data Bases}, ser. VLDB '99.\hskip 1em
+  plus 0.5em minus 0.4em\relax San Francisco, CA, USA: Morgan Kaufmann
+  Publishers Inc., 1999, pp. 518--529.
 
 \bibitem{MARuclust}
 \relax{Edgar, Robert C.}, ``Search and clustering orders of magnitude faster
@@ -71,6 +88,10 @@ M.~et~al., ``Swarm v2: highly-scalable and high-resolution amplicon
   sumaclust: fast and exact comparison and clustering of sequences [submitted
   for publication],'' \emph{Available at
   https://git.metabarcoding.org/obitools/sumatra/wikis/home}, 2014.
+
+\bibitem{MARopenDeNovo}
+\relax{Kopylova et al.}, ``Open-source sequence clustering methods improve the
+  state of the art,'' \emph{mSystems}, vol.~1, no.~1, 2016.
 
 \bibitem{MARMothur}
 S.~et~al., ``Introducing mothur: Open-source, platform-independent,
@@ -120,20 +141,6 @@ S.~Chatterji, I.~Yamazaki, Z.~Bai, and J.~A. Eisen, ``Compostbin: A dna
 \bibitem{MARDeNovo}
 K.~et~al., ``Open-source sequence clustering methods improve the state of the
   art,'' \emph{mSystems}, vol.~1, no.~1, pp. e00\,003--15, 2016.
-
-\bibitem{MARCanopy}
-\relax{McCallum, Andrew and Nigam, Kamal and Ungar, Lyle H.}, ``Efficient
-  clustering of high-dimensional data sets with application to reference
-  matching,'' in \emph{Proceedings of the Sixth ACM SIGKDD International
-  Conference on Knowledge Discovery and Data Mining}, ser. KDD '00.\hskip 1em
-  plus 0.5em minus 0.4em\relax New York, NY, USA: ACM, 2000, pp. 169--178.
-
-\bibitem{MARLshRef2}
-\relax{Gionis, Aristides and Indyk, Piotr and Motwani, Rajeev}, ``Similarity
-  search in high dimensions via hashing,'' in \emph{Proceedings of the 25th
-  International Conference on Very Large Data Bases}, ser. VLDB '99.\hskip 1em
-  plus 0.5em minus 0.4em\relax San Francisco, CA, USA: Morgan Kaufmann
-  Publishers Inc., 1999, pp. 518--529.
 
 \bibitem{MARMstCluster}
 P.~K. Jana and A.~Naik, ``An efficient minimum spanning tree based clustering
