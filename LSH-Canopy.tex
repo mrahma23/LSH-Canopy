@@ -373,36 +373,46 @@ Email: mrahma23@gmu.edu, nlapier2@gmu.edu, rangwala@cs.gmu.edu and dbarbara@gmu.
 \begin{abstract}
 	
 The advancement in genome technologies has allowed for the 
-collective sequencing of co-existing microbial communities omnipresent 
+collective sequencing of co-existing microbial communities (Metagenomics), omnipresent 
 across various environments like the soil, ocean and human body.
 %
-The collective sequencing process commonly referred by Metagenomics has 
-spurred the development of various bioinformatics approaches for analyzing 
-the diversity, abundance, function and role of the different organisms 
+ Metagenomics has 
+spurred the development of several 
+bioinformatics approaches for analyzing 
+the diversity, abundance, function and role of the 
+different organisms 
 within these communities. 
 %
-With regards to 
-human health and disease, metagenomics allows for the analysis 
-of the role played by the microbial organisms within the human host. 
+As an example,  metagenomics allows for the analysis 
+of the pathogenic role played by the microbial organisms within the human host. 
 
 We have developed a novel and efficient clustering algorithm
 for analyzing 
-large-scale metagenomic data. Our approach achieves efficiency 
+large-scale metagenomic data. Our approach 
+achieves efficiency 
 by first partitioning the large number of sequence reads into 
 groups (called canopies) using a fast locality sensitive hashing based 
-distance function. The initial approximate assignment of reads to 
-canopies is refined by using state-of-the-art sequence clustering algorithms. This two-phase 
-approach of approximate assignment and refinement allows us to use 
-our developed algorithms as a pre-processing phase with expensive clustering 
+distance function. This 
+initial approximate assignment of reads to 
+canopies is refined by using state-of-the-art sequence clustering algorithms. This
+two-phase 
+approach allows for the
+use  of 
+our developed algorithms as a pre-processing phase for computationally expensive 
+clustering 
 algorithms. Using the clusters as surrogates for 
-Operational Taxonomic Units (OTUs) we can estimate standard biodiversity metrics of a community sample.
+Operational Taxonomic Units (OTUs) we provide 
+an estimate of the biodiversity within 
+a community sample.
 
 The Canopy-based clustering algorithm is evaluated on synthetic and real 
 world 16S 
-metagenome  benchmarks popular in the nature. With thorough experimental 
-evaluation we demonstrate the ability of our proposed approach to efficiently 
-determine meaningful OTU assignments and report significant speedups with regards 
+metagenome  benchmarks. We demonstrate the ability 
+of our proposed approach to efficiently 
+determine meaningful OTU assignments and report 
+significant speedup with regards 
 to run time when combined with three different state-of-the-art sequence clustering algorithms. 
+
 
 Source Code: XXX Link Here.
 \end{abstract}
