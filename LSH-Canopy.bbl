@@ -137,14 +137,13 @@ S.~Chatterji, I.~Yamazaki, Z.~Bai, and J.~A. Eisen, ``Compostbin: A dna
   \emph{Annual International Conference on Research in Computational Molecular
   Biology}.\hskip 1em plus 0.5em minus 0.4em\relax Springer, 2008, pp. 17--28.
 
-\bibitem{MARMstCluster}
-P.~K. Jana and A.~Naik, ``An efficient minimum spanning tree based clustering
-  algorithm,'' pp. 1--5, 2009.
+\bibitem{indyk1998approximate}
+P.~Indyk and R.~Motwani, ``Approximate nearest neighbors: towards removing the
+  curse of dimensionality,'' pp. 604--613, 1998.
 
-\bibitem{MARMstClustering2}
-M.~Laszlo and S.~Mukherjee, ``Minimum spanning tree partitioning algorithm for
-  microaggregation,'' \emph{IEEE Transactions on Knowledge and Data
-  Engineering}, vol.~17, no.~7, pp. 902--911, 2005.
+\bibitem{broder1997resemblance}
+A.~Z. Broder, ``On the resemblance and containment of documents,'' pp. 21--29,
+  1997.
 
 \bibitem{MARmockDatasetRef}
 \relax{Bokulich et al.}, ``Quality-filtering vastly improves diversity
@@ -166,6 +165,10 @@ M.~Laszlo and S.~Mukherjee, ``Minimum spanning tree partitioning algorithm for
   new york city{\textquoteright}s central park are similar to those observed
   globally,'' \emph{Proceedings of the Royal Society of London B: Biological
   Sciences}, vol. 281, no. 1795, 2014.
+
+\bibitem{qin2014alterations}
+N.~et~al., ``Alterations of the human gut microbiome in liver cirrhosis,''
+  \emph{Nature}, vol. 513, no. 7516, pp. 59--64, 2014.
 
 \bibitem{MARfaith1992conservation}
 \relax{Faith, Daniel P}, ``Conservation evaluation and phylogenetic

@@ -469,7 +469,9 @@ Over the years several sequence clustering methods have been developed and used 
 
 CD-HIT \cite{MARCDhit} is general purpose sequence clustering algorithm that follows an incremental, greedy approach. CD-HIT uses pairwise sequence alignment to find similar sequences. UCLUST \cite{MARuclust} is similar to CD-HIT but achieves a significant speedup over CD-HIT by using seeds (fixed length gapless subsequences) for performing pairwise sequence comparisons. MC-LSH \cite{MARMetaLSH} utilizes an efficient locality sensitive based hashing function to approximate the pairwise sequence similarity. MC-MinH \cite{MARMcMinH} uses min-wise \cite{MARMinWise} hashing along with the greedy clustering to group 16S and whole metagenome sequences. Mash \cite{MAROtherMinH}, uses MinHash locality sensitive hashing to reduce large sequences to a representative sketch and estimate pairwise distances. Other methods for clustering sequence reads include TOSS \cite{MARToss}, AbundanceBin \cite{MARAbundant} and CompostBin \cite{MARCompost}. All unique kmers are first grouped in TOSS and then clusters are merged based on kmer repetitions. In AbundanceBin, reads are modeled as a mixture of Poisson distributions. Expectation Maximization (EM) algorithm is used to infer model parameters for the final clustering. Principal component analysis is used within CompostBin to project the data into a lower dimensional space, followed with a graph partitioning approach. MOTHUR \cite{MARMothur} uses a pairwise distance matrix as input and performs hierarchical clustering. An expensive sequence alignment is used between all pairs of input sequences for computing distances.
 
-UCLUST \cite{MARuclust} and recently developed, SWARM \cite{MARSwarm2} and SUMACLUST \cite{MARSumaclust}  are considered to be the state-of-the-art metagenome sequence clustering methods by a benchmarking study \cite{MARopenDeNovo}. SWARM uses an  exhaustive single-linkage clustering approach with a fast pairwise sequence alignment. SUMACLUST is similar to UCLUST. Abundance ordered list of input sequences are compared against the representative set of already chosen sequences in SUMACLUST. 
+SWARM \cite{MARSwarm2} uses exhaustive single-linkage clustering based on optimal sequence alignment. Sequences that are less than a certain distance from any other other sequence in the cluster are clustered together. SWARM attempts to reduce the impact of clustering parameters on the resulting OTUs by avoiding arbitrary global clustering thresholds and input sequence ordering dependence. At first SWARM builds an initial set of OTUs is constructed by iteratively agglomerating similar amplicons. Then amplicon abundance values are used to reveal OTUs’ internal structures and to break them into sub-OTUs.
+
+SUMACLUST \cite{MARSumaclust} follows similar approach as UCLUST. Based on greedy strategy SUMACLUST incrementally constructs clusters by comparing an abundance-ordered list of input sequences against the representative set of already-chosen sequences. Initially this list is empty. UCLUST and recently developed, SWARM and SUMACLUST are considered to be the state-of-the-art metagenome sequence clustering methods by a benchmarking study \cite{MARopenDeNovo}. 
 
 In this study we developed an approximate but highly efficient sequence clustering algorithm  using Canopies \cite{MARCanopy}. The developed approach can be used as a pre-processing step for other state-of-art sequence clustering algorithms to improve efficiency and also retains correctness in clustering.
 
@@ -495,29 +497,24 @@ Canopy clustering uses two distance thresholds, (\romannum{1}) \textit{soft} thr
 
 \subsection{\textbf{Locality Sensitive Hashing}}
 
-Canopies are intended to reduce pairwise distance calculations. Canopy clustering itself should be efficient which requires a fast and approximate distance measure for Canopy assignments. Locality Sensitive Hashing (LSH) \cite{MARLshRef2} is an algorithm for solving the approximate or exact Near Neighbor Search in high dimensional spaces. LSH reduces data dimensionality by randomly projecting data points to low dimensional bit signatures and provides approximate distance measure. These characteristics make LSH appropriate for dimensionality reduction and relatively accurate distance measure for Canopy clustering in metagenome data.
+Canopies are intended to reduce pairwise distance calculations. Canopy clustering itself should be efficient which requires a fast and approximate distance measure for Canopy assignments. Locality Sensitive Hashing (LSH) \cite{MARLshRef2} is an algorithm for solving the approximate or exact near neighbors search. Suppose we have a space S of points with a distance measure $d(x,y)$. A family H of hash functions is said to be $(d1, d2, p1, p2)$-sensitive for any x and y in S: if $d(x, y)<d1$, then the probability over all $h\in{H}$, that $h(x)=h(y)$ is at least $p1$ and if $d(x, y)>d2$ , then the probability over all $h\in{H}$, that $h(x)=h(y)$ is at most $p2$. LSH provides a fast approximate distance measure while reducing data dimensionality which makes LSH appropriate for Canopy clustering in 16S and metagenomic data.
 
-In this study we have chosen a random projection based hashing function that projects a $d$ dimensional data point into a $n$ dimensional bit representation where $n<d$ and reduces dimensionality. Given a random projection $v'$ of size $1 \times d$ and a data vector $a$ of size $1 \times d$, the dot product between them provides a scalar value. Sign of this scalar value represents which side of the random hyperplane does the data point exist. This information can be represented with a single bit. This way a single data point can be represented with limited number of bits. Hamming distance between these binary representations indicates \textit{disagreements} between two data points.
+
+\subsection{\textbf{Projection of Sequence Reads in LSH}}
+
+We constructed the LSH family with bit sampling \cite{indyk1998approximate}. The normalized kmers frequency based feature vectors of sequence reads were first projected into $d$ dimensional vectors in $\{0,1\}^d$ space. Given an input vector $v$ and a random hyperplane defined by $r$, we let $h(v)=\{0,1\}$ based on $sgn(v\cdot{r})=\pm{1}$ that indicates on which side of the hyperplane $v$ lies. Each possible choice of $r$ defines a single function. Let $H$ be the set of all such functions. For any $h_i\in{H}$ and for any two data $x,y$ the probability that $x$ and $y$ \emph{agree} on $i^{th}$ positions of their respective $d$-length binary vector is
+\begin{equation}
+P[h_i(x)=h_i(y)]=1-\frac{distance(h_i(x),h_i(y))}{d} 
+\end{equation}
+Where \emph{distance} is the hamming distance and $d$ is the number of bits. Hence $H=\{h_1,h_2,...,h_d\}$ is a $(d_1,d_2,1-d_1/d,1-d2/d)$ sensitive LSH family. Both the random projection and hamming distance calculation is cheap and fast which makes this scheme appropriate for our purpose - fast partitioning of large scale genome sequences so that more expensive clustering can be done in parallel. Moreover, this projection and distance scheme is computationally inexpensive than another popular alternative for LSH known as MinHash \cite{broder1997resemblance}. MinHash provides $n!$ choices for hash functions in LSH family where $n$ is the total number of kgrams. Whereas our scheme generates only $d<<n!$ hash functions where $d$ can be easily estimated by sampling and validation based on 16S and metagenomic data.  
 
 \subsection{\textbf{Sub-Clustering Inside Canopies}}
 \label{sub-cluster}
-We have used three recent and popular sequence clustering methods as the expensive clustering measure inside canopies in this study. UCLUST \cite{MARuclust}, SUMACLUST \cite{MARSumaclust} and SWARM \cite{MARSwarm2} were used for sub-clustering canopies. We also implemented a Minimum Spanning Tree (MST) based sequence clustering method for accurate sub-clustering within canopies. 
-
-\subsubsection{\textit{UCLUST}}
-UCLUST follows a greedy process and creates \textit{seeds} of sequences which generate clusters based on percent identity.
-
-\subsubsection{\textit{SUMACLUST}}
-It follows similar approach as UCLUST. Based on greedy strategy SUMACLUST incrementally constructs clusters by comparing an abundance-ordered list of input sequences against the representative set of already-chosen sequences. Initially this list is empty.
-
-\subsubsection{\textit{SWARM}}
-SWARM uses exhaustive single-linkage clustering based on optimal sequence alignment. Sequences that are less than a certain distance from any other other sequence in the cluster are clustered together. SWARM attempts to reduce the impact of clustering parameters on the resulting OTUs by avoiding arbitrary global clustering thresholds and input sequence ordering dependence. At first SWARM builds an initial set of OTUs is constructed by iteratively agglomerating similar amplicons. Then amplicon abundance values are used to reveal OTUs’ internal structures and to break them into sub-OTUs.
-
-\subsubsection{\textit{Minimum Spanning Tree (MST)}}
- Minimum Spanning Tree (MST) produces a connected spanning tree of undirected graph. It connects all vertices together such that the total weight of edges remains minimum. This property has been used for clustering \cite{MARMstCluster} \cite{MARMstClustering2}. We represent edges with LSH based distances. Then edges with highest distances were removed from MST to generate OTUs.
+We have used three recent and popular sequence clustering methods as the expensive clustering measure inside canopies in this study. UCLUST \cite{MARuclust}, SUMACLUST \cite{MARSumaclust} and SWARM \cite{MARSwarm2} were used for sub-clustering canopies. We also implemented and evaluated a LSH based Minimum Spanning Tree (MST) sequence clustering method as an accurate sub-clustering within canopies.
 
 \subsection{\textbf{Merging results from Canopies}}
 
-Each cluster (OTU) is represented by the Longest Common Subsequence of all member sequences. The final step of our proposed framework is to merge OTU representations generated by canopies. According to Canopy cluster algorithm a single data point may belong to multiple canopies as long as the soft threshold is met. As a result similar OTU representations may appear from multiple canopies. To eliminate redundancy we run UCLUST on the OTU representations. We also use Minimum Spanning Tree and Locality Sensitive Hashing (LSH) distance based clustering method to cluster OTU representations. A brief description of MST based clustering is given in Section \ref{sub-cluster}. Unlike merging with greedy clustering methods like UCLUST, this approach requires number of edges to remove as prior information.    
+Each cluster (OTU) is represented by the Longest Common Subsequence of all member sequences. The final step of our proposed framework is to merge OTU representations generated by canopies. According to Canopy cluster algorithm a single data point may belong to multiple canopies as long as the soft threshold is met. As a result similar OTU representations may appear from multiple canopies. To eliminate redundancy we run UCLUST on the OTU representations. We also use Minimum Spanning Tree and Locality Sensitive Hashing (LSH) distance based clustering method to merge OTU representations.  
  
 In the following Sections UCLUST, SUMACLUST, SWARM and MST with Canopy clustering approach are represented as CC$_{UCLUST}$, CC$_{SUMACLUST}$, CC$_{SWARM}$ and CC$_{MST}$ respectively where the term CC stands for Canopy Clustering. 
 
@@ -528,7 +525,7 @@ In the following Sections UCLUST, SUMACLUST, SWARM and MST with Canopy clusterin
 
 %HR EDITS 
 
-To evaluate the performance of our proposed approach we use previously published synthetic and real world sequence benchmarks \cite{MARopenDeNovo} which are publicly available\footnote{https://github.com/ekopylova/otu-clustering}. We used three synthetic 16S rRNA gene mock community datasets (Bokulich$_2$, Bokulich$_3$, and Bokulich$_6$) from Bokulich et. al. \cite{MARmockDatasetRef} and three real data sets: a 16S rRNA gene soil data set (Canadian Soil) \cite{MARcanadianSoil}, a 16S rRNA gene human data set (Body Sites) \cite{MARbodySites} and 18S rRNA gene soil data set (Global Soil) \cite{MARglobalSoil}. Key statistics and relevant information regarding these datasets are presented in Table \ref{table:finaltabledataset}. 
+To evaluate the performance of our proposed approach we use previously published synthetic and real world sequence benchmarks \cite{MARopenDeNovo} which are publicly available\footnote{https://github.com/ekopylova/otu-clustering}. We used three synthetic 16S rRNA gene mock community datasets (Bokulich$_2$, Bokulich$_3$, and Bokulich$_6$) from Bokulich et. al. \cite{MARmockDatasetRef} and three real data sets: a 16S rRNA gene soil data set (Canadian Soil) \cite{MARcanadianSoil}, a 16S rRNA gene human data set (Body Sites) \cite{MARbodySites} and 18S rRNA gene soil data set (Global Soil) \cite{MARglobalSoil}. We have also used a whole metagenomic sequence dataset containing whole gut microbiome wide association study result of Liver Cirrhosis disease from \cite{qin2014alterations} to evaluate the performance of our approach on metagenomic sequence data. Key statistics and relevant information regarding these datasets are presented in Table \ref{table:finaltabledataset}. 
 
 
 \begin{table}[htb] 
@@ -536,17 +533,18 @@ To evaluate the performance of our proposed approach we use previously published
 	\caption{\textbf{Dataset Statistics}}
 	\label{table:finaltabledataset}
 	\resizebox{\columnwidth}{!}{%
-	\begin{tabular}{|l| c c c c c|} 
+	\begin{tabular}{|l| c c c c|} 
 		\hline
-		\multirow{2}{*}{{\bf{Datasets}}} & \multirow{2}{*}{{\bf{Type}}} & {\bf{\# of}} & {\bf{\# of}} & {\bf{Read}} & \multirow{2}{*}{\bf{Platform}}\\
-		 & & \bf{Reads} & \bf{Samples} & \bf{Length} & \\
+		\multirow{2}{*}{{\bf{Datasets}}} & \multirow{2}{*}{{\bf{Type}}} & {\bf{\# of}} & {\bf{\# of}}  & \multirow{2}{*}{\bf{Platform}}\\
+		 & & \bf{Reads} & \bf{Samples} & \\
 		\hline
-		{Bokulich$_2$} \cite{MARmockDatasetRef} & M & 6,938,836 & 4 & 189--251 & H\\
-		{Bokulich$_3$} \cite{MARmockDatasetRef} & M & 3,594,237 & 4 & 114--151 & H\\
-		{Bokulich$_6$} \cite{MARmockDatasetRef} & M & 250,903 & 1 & 114--150 & H\\
-		{Canadian Soil} \cite{MARcanadianSoil} & R & 2,966,053 & 13 & 76--10 & H\\
-		{Body Sites} \cite{MARbodySites} & R & 886,630 & 602 & 117--351 & G\\
-		{Global Soil} \cite{MARglobalSoil} & R & 9,252,764 & 57 & 119--151 & H\\
+		{Bokulich$_2$} \cite{MARmockDatasetRef} & M & 6,938,836 & 4 & H\\
+		{Bokulich$_3$} \cite{MARmockDatasetRef} & M & 3,594,237 & 4 & H\\
+		{Bokulich$_6$} \cite{MARmockDatasetRef} & M & 250,903 & 1 & H\\
+		{Canadian Soil} \cite{MARcanadianSoil} & R & 2,966,053 & 13 & H\\
+		{Body Sites} \cite{MARbodySites} & R & 886,630 & 602 & G\\
+		{Global Soil} \cite{MARglobalSoil} & R & 9,252,764 & 57 & H\\
+		{Liver Cirrhosis} \cite{qin2014alterations} & R & 6117,828,130 & 232 & H\\ 
 		\hline
 	\end{tabular}
 	}
@@ -765,31 +763,23 @@ QIIME database (identifier 1686).
 
 \subsubsection{\textit{Bokulich$_6$}}
 This  16S rRNA dataset 
-was sequenced at Washington University School of Medicine and 
-contains evenly distributed microbial communities. This 
-dataset contains 13 taxonomic 
-Families, 23 Genera, 44 Species and 48 Strains in total.
-%
-All these datasets from Bokulich et al. \cite{MARmockDatasetRef} are 
-available at QIIME database\footnote{http://qiime.org/home\_static/dataFiles.html} under their respective ID's. Since, these are simulated 
-datasets the taxonomic profile of microbial organisms within them 
-are known.
+was sequenced at Washington University School of Medicine and contains evenly distributed microbial communities. This dataset contains 13 taxonomic Families, 23 Genera, 44 Species and 48 Strains in total.
+
+All these datasets from Bokulich et al. \cite{MARmockDatasetRef} are available at QIIME database\footnote{http://qiime.org/home\_static/dataFiles.html} under their respective ID's. Since, these are simulated datasets the taxonomic profile of microbial organisms within them are known.
 
 \textbf{Real World Datasets:}
 
 \subsubsection{Canadian Soil}
-The Canadian Soil dataset\footnote{http://www.cm2bl.org/} contains 
-genomic data of soil spanning from Arctic 
-Tundra to Agricultural soil suitable for different 
-agricultural products.  %etc. in different regions of Canada.
+The Canadian Soil dataset\footnote{http://www.cm2bl.org/} contains genomic data of soil spanning from Arctic Tundra to Agricultural soil suitable for different agricultural products.  
 
 \subsubsection{Body Sites}
-This dataset contains composition of 
-bacterial communities from up to 27 different 
-body sites in healthy adults. A collection of 602 samples acquired from different body sites of human subjects are provided with meta-data.
+This dataset contains composition of bacterial communities from up to 27 different body sites in healthy adults. A collection of 602 samples acquired from different body sites of human subjects are provided with meta-data.
 
 \subsubsection{Global Soil}
-The global soil data was taken from Ramirez et al. \cite{MARglobalSoil} which is a study of the below-ground diversity in New York City's Central Park. 
+The global soil data was taken from Ramirez et al. \cite{MARglobalSoil} which is a study of the below-ground diversity in New York City's Central Park.
+
+\subsubsection{Liver Cirrhosis}
+The Liver Cirrhosis dataset was taken from the study \cite{qin2014alterations} which is a whole gut microbiome wide association study of stool samples from 98 liver cirrhosis patients and 83 healthy controls to characterize the fecal microbial communities and their functional composition. In total, 860 Gb of high-quality sequence data was generated in this study. Because of the high volume of sequence reads in this dataset, we used random sampling for feasible clustering performance evaluations. Three million and thirty million sequence reads were randomly chosen from original dataset regardless of sample labels (disease or control). These two sampled datasets reflects clustering scalability with increasing size of metagenomic data.   
 
 
 \subsection{\textbf{Evaluation Metrics}}
