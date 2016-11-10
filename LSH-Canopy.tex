@@ -459,7 +459,7 @@ Over the years, several unsupervised clustering algorithms have been developed a
 
 In this paper we develop an approximate but efficient clustering algorithm based on Canopy Clustering \cite{MARCanopy} which can be used as a pre-clustering  step with any state-of-the-art sequence clustering algorithms. Specifically, our approach identifies canopies with a greedy procedure and a fast sequence distance metric based on locality sensitive hashing \cite{MARLshRef2}. Sequences within the canopies are considered as an initial partition (or grouping) of data which can be further refined by applying expensive and accurate clustering algorithms. Our developed approach treats each canopies independently allowing for easy parallelization.
 
-We present experimental results on real and synthetic metagenome sequence benchmarks and show that use of Canopy Clustering (CC) in combination with UCLUST \cite{MARuclust}, SWARM \cite{MARSwarm2}, SUMACLUST \cite{MARSumaclust} and Minimum Spanning Tree (MST) based clustering leads to improved run time efficiency with accurate clustering results. We also show the performance of our developed approach is scalable for large datasets with increased number of processors. The source code is freely available on Github\footnote{https://github.com/mrahma23/LSH-Canopy} for public use. 
+We present experimental results on real and synthetic metagenome sequence benchmarks and show that use of Canopy Clustering (CC) in combination with UCLUST \cite{MARuclust}, SWARM \cite{MARSwarm2} and SUMACLUST \cite{MARSumaclust} leads to improved run time efficiency with accurate clustering results. We also show the performance of our developed approach is scalable for large datasets with increased number of processors. The source code is freely available on Github\footnote{https://github.com/mrahma23/LSH-Canopy} for public use. 
           
 
 \section{Literature Review}
@@ -479,7 +479,7 @@ In this study we developed an approximate but highly efficient sequence clusteri
 \label{sec:Methods}
 \subsection{\textbf{Overview}}
 
-Figure \ref{fig:flowchart} shows an overview of our proposed canopy clustering approach for metagenome sequences. Sequence reads are represented with \textit{kmers} defined as contiguous subsequence of length k. We select a read randomly as the canopy centroid. Then we compute the distances of other reads to this canopy centroid. Two thresholds are used in Canopy clustering algorithm. If the a distance is less than a \emph{tight} threshold ($T2$) we assign the read to the canopy and that read will not be considered for another canopy. Otherwise, if a distance is less than a \emph{soft} threshold ($T1$) we assign the read to the canopy but that read will be available for another canopy. This process continues until all sequence reads is assigned to at least one canopy. For fast canopy assignment we use a random projection based technique. Specifically, we use Locality Sensitive Hash (LSH) to compute pairwise distances. More accurate clustering methods are used to sub-cluster each canopy in parallel. Sub-clustering method considers only the members within the canopy which reduces pairwise distance calculations. In this study UCLUST, SUMACLUST, SWARM and Minimum Spanning Tree (MST) based clustering are used as more accurate sub-clustering methods for canopies which are briefly discussed in Section \ref{sub-cluster}.
+Figure \ref{fig:flowchart} shows an overview of our proposed canopy clustering approach for metagenome sequences. Sequence reads are represented with \textit{kmers} defined as contiguous subsequence of length k. We select a read randomly as the canopy centroid. Then we compute the distances of other reads to this canopy centroid. Two thresholds are used in Canopy clustering algorithm. If the a distance is less than a \emph{tight} threshold ($T2$) we assign the read to the canopy and that read will not be considered for another canopy. Otherwise, if a distance is less than a \emph{soft} threshold ($T1$) we assign the read to the canopy but that read will be available for another canopy. This process continues until all sequence reads is assigned to at least one canopy. For fast canopy assignment we use a random projection based technique. Specifically, we use Locality Sensitive Hash (LSH) to compute pairwise distances. More accurate clustering methods are used to sub-cluster each canopy in parallel. Sub-clustering method considers only the members within the canopy which reduces pairwise distance calculations.
 
 \begin{figure}
 	\centering
@@ -510,13 +510,13 @@ Where \emph{distance} is the hamming distance and $d$ is the number of bits. Hen
 
 \subsection{\textbf{Sub-Clustering Inside Canopies}}
 \label{sub-cluster}
-We have used three recent and popular sequence clustering methods as the expensive clustering measure inside canopies in this study. UCLUST \cite{MARuclust}, SUMACLUST \cite{MARSumaclust} and SWARM \cite{MARSwarm2} were used for sub-clustering canopies. We also implemented and evaluated a LSH based Minimum Spanning Tree (MST) sequence clustering method as an accurate sub-clustering within canopies.
+We have used three recent and popular sequence clustering methods as more accurate and expensive sub-clustering measure inside canopies in this study. UCLUST \cite{MARuclust}, SUMACLUST \cite{MARSumaclust} and SWARM \cite{MARSwarm2} were used for sub-clustering canopies.
 
 \subsection{\textbf{Merging results from Canopies}}
 
 Each cluster (OTU) is represented by the Longest Common Subsequence of all member sequences. The final step of our proposed framework is to merge OTU representations generated by canopies. According to Canopy cluster algorithm a single data point may belong to multiple canopies as long as the soft threshold is met. As a result similar OTU representations may appear from multiple canopies. To eliminate redundancy we run UCLUST on the OTU representations. We also use Minimum Spanning Tree and Locality Sensitive Hashing (LSH) distance based clustering method to merge OTU representations.  
  
-In the following Sections UCLUST, SUMACLUST, SWARM and MST with Canopy clustering approach are represented as CC$_{UCLUST}$, CC$_{SUMACLUST}$, CC$_{SWARM}$ and CC$_{MST}$ respectively where the term CC stands for Canopy Clustering. 
+In the following Sections UCLUST, SUMACLUST and SWARM with Canopy clustering approach are represented as CC$_{UCLUST}$, CC$_{SUMACLUST}$ and CC$_{SWARM}$ respectively where the term CC stands for Canopy Clustering. 
 
 \section{Experimental Evaluation}
 \label{sec:Experimental}
@@ -544,7 +544,7 @@ To evaluate the performance of our proposed approach we use previously published
 		{Canadian Soil} \cite{MARcanadianSoil} & R & 2,966,053 & 13 & H\\
 		{Body Sites} \cite{MARbodySites} & R & 886,630 & 602 & G\\
 		{Global Soil} \cite{MARglobalSoil} & R & 9,252,764 & 57 & H\\
-		{Liver Cirrhosis} \cite{qin2014alterations} & R & 6117,828,130 & 232 & H\\ 
+		{Liver Cirrhosis} \cite{qin2014alterations} & R & 6,117,828,130 & 232 & H\\ 
 		\hline
 	\end{tabular}
 	}
@@ -559,58 +559,54 @@ To evaluate the performance of our proposed approach we use previously published
 	\caption{\textbf{Performance Comparison [$F$-Score and Pearson Correlation Coefficient ($\rho$)]}} 
 	\label{table:performanceTable}
 	
-	\scalebox{0.99}{
+	\scalebox{0.82}{
 		
-		\begin{tabular}{|l|c c c c| c c c|}
+		\begin{tabular}{|l|c c c c| c c c c c|}
 			
 			\hline
 			
-			\textbf{Methods} & \textbf{Comparison Metric} & \multicolumn{6}{c|}{\textbf{Datasets}}\\
+			\textbf{Methods} & \textbf{Comparison Metric} & \multicolumn{8}{c|}{\textbf{Datasets}}\\
 			
-			\cline{3-8}
+			\cline{3-10}
 			
-			& & \multicolumn{3}{c|}{\textit{Synthetic}} & \multicolumn{3}{c|}{\textit{Real World}}\\ 
+			& & \multicolumn{3}{c|}{\textit{Synthetic}} & \multicolumn{5}{c|}{\textit{Real World}}\\ 
 			
-			\cline{3-8}
+			\cline{3-10}
 			
-			&  & Bokulich$_2$ & Bokulich$_3$ & Bokulich$_6$ & Body Sites & Canadian Soil & Global Soil\\
+			%&  & Bokulich$_2$ & Bokulich$_3$ & Bokulich$_6$ & Body Sites & Canadian Soil & Global Soil\\
+			
+			&  &  &  & & & & & Liver Cirrhosis & Liver Cirrhosis\\
+			
+			& & Bokulich$_2$ & Bokulich$_3$ & Bokulich$_6$ & Body Sites & Canadian Soil & Global Soil & Metagenome & Metagenome\\
+			
+			& & & & & & & & (Sampled 3M) & (Sampled 30M)\\
 			
 			\hline
 			
-			\multirow{1}{*}{UCLUST} & $F$-Measure & 0.39 & 0.40 & 0.51 & $N/A$ & $N/A$ & $N/A$\\
+			\multirow{1}{*}{UCLUST} & $F$-Measure & 0.39 & 0.40 & 0.51 & $N/A$ & $N/A$ & $N/A$ & $N/A$ & $N/A$\\
 			
 			\hdashline
 			
-			\multirow{2}{*}{CC$_{UCLUST}$} & $F$-Measure & \textit{\textbf{0.39}} & \textit{\textbf{0.41}} & \textit{\textbf{0.52}} & $N/A$ & $N/A$ & $N/A$\\
-			& ($\rho$) with Respect to UCLUST & \textit{\textbf{0.9831}} & \textit{\textbf{0.9753}} & \textit{\textbf{0.9831}} & \textit{\textbf{0.9682}} & \textit{\textbf{0.8419}} & \textit{\textbf{0.9824}}\\
+			\multirow{2}{*}{CC$_{UCLUST}$} & $F$-Measure & \textit{\textbf{0.39}} & \textit{\textbf{0.41}} & \textit{\textbf{0.52}} & $N/A$ & $N/A$ & $N/A$ & $N/A$ & $N/A$\\
+			& ($\rho$) with Respect to UCLUST & \textit{\textbf{0.9831}} & \textit{\textbf{0.9753}} & \textit{\textbf{0.9831}} & \textit{\textbf{0.9682}} & \textit{\textbf{0.8419}} & \textit{\textbf{0.9824}} & \textit{\textbf{0.9216}} & \textit{\textbf{0.9072}}\\
 			
 			\hline 
 			
-			\multirow{1}{*}{SUMACLUST} & $F$-Measure & 0.40 & 0.41 & 0.51 & $N/A$ & $N/A$ & $N/A$\\
+			\multirow{1}{*}{SUMACLUST} & $F$-Measure & 0.40 & 0.41 & 0.51 & $N/A$ & $N/A$ & $N/A$ & $N/A$ & $N/A$\\
 			
 			\hdashline
 			
-			\multirow{2}{*}{CC$_{SUMACLUST}$} & $F$-Measure & \textit{\textbf{0.41}} & \textit{\textbf{0.42}} & \textit{\textbf{0.51}} & $N/A$ & $N/A$ & $N/A$\\
-			& ($\rho$) with Respect to SUMACLUST & \textit{\textbf{0.9709}} & \textit{\textbf{0.9813}} & \textit{\textbf{0.9538}} & \textit{\textbf{0.9518}} & \textit{\textbf{0.7643}} & \textit{\textbf{0.8714}}\\ 
+			\multirow{2}{*}{CC$_{SUMACLUST}$} & $F$-Measure & \textit{\textbf{0.41}} & \textit{\textbf{0.42}} & \textit{\textbf{0.51}} & $N/A$ & $N/A$ & $N/A$ & $N/A$ & $N/A$\\
+			& ($\rho$) with Respect to SUMACLUST & \textit{\textbf{0.9709}} & \textit{\textbf{0.9813}} & \textit{\textbf{0.9538}} & \textit{\textbf{0.9518}} & \textit{\textbf{0.7643}} & \textit{\textbf{0.8714}} & \textit{\textbf{0.9281}} & \textit{\textbf{0.8614}}\\ 
 			
 			\hline
 			
-			\multirow{1}{*}{SWARM} & $F$-Measure & 0.46 & 0.48 & 0.55 & $N/A$ & $N/A$ & $N/A$\\
+			\multirow{1}{*}{SWARM} & $F$-Measure & 0.46 & 0.48 & 0.55 & $N/A$ & $N/A$ & $N/A$ & $N/A$ & $N/A$\\
 			
 			\hdashline
 			
-			\multirow{2}{*}{CC$_{SWARM}$} & $F$-Measure & \textit{\textbf{0.46}} & \textit{\textbf{0.49}} & \textit{\textbf{0.56}} & $N/A$ & $N/A$ & $N/A$\\
-			& ($\rho$) with Respect to SWARM & \textit{\textbf{0.9817}} & \textit{\textbf{0.97861}} & \textit{\textbf{0.9251}} & \textit{\textbf{0.9648}} & \textit{\textbf{0.7581}} & \textit{\textbf{0.9143}}\\
-			
-			\hline
-			
-			\multirow{1}{*}{MST} & $F$-Measure & 0.40 & 0.42 & 0.52 & $N/A$ & $N/A$ & $N/A$\\
-			
-			\hdashline
-			
-			\multirow{5}{*}{CC$_{MST}$} & $F$-Measure & 0.41 & 0.42 & 0.52 & $N/A$ & $N/A$ & $N/A$\\& ($\rho$) with respect to MST & 0.9301 & 0.9173 & 0.9081 & 0.8906 & 0.8132 & 0.8719  \\
-			& ($\rho$) with respect to UCLUST & 0.7461 & 0.8143 & 0.8272 & 0.7417 & 0.6935 & 0.7974 \\ & ($\rho$) with respect to SUMACLUST & 0.7182 & 0.6903 & 0.8613 & 0.8293 & 0.6791 & 0.8213 \\  & ($\rho$) with respect to SWARM & 0.7914 & 0.7352 & 0.8904 & 0.7619 & 0.7372 & 0.8502 \\ 
-			
+			\multirow{2}{*}{CC$_{SWARM}$} & $F$-Measure & \textit{\textbf{0.46}} & \textit{\textbf{0.49}} & \textit{\textbf{0.56}} & $N/A$ & $N/A$ & $N/A$ & $N/A$ & $N/A$\\
+			& ($\rho$) with Respect to SWARM & \textit{\textbf{0.9817}} & \textit{\textbf{0.97861}} & \textit{\textbf{0.9251}} & \textit{\textbf{0.9648}} & \textit{\textbf{0.7581}} & \textit{\textbf{0.9143}} & \textit{\textbf{0.9263}} & \textit{\textbf{0.8533}}\\
 			
 			\hline
 			
@@ -618,7 +614,7 @@ To evaluate the performance of our proposed approach we use previously published
 	}
 	\small
 	\begin{tablenotes}
-		\item Table shows values of $F$-measures and Pearson Correlation Coefficient ($\rho$-value) of UCLUST, SUMACLUST, SWARM, MST and their respective versions with Canopy clustering. $F$-measures is only available for synthetic datasets but not for real world datasets since no ground truths like known taxonomic profiles are available for them. $\rho$-value was calculated based on the taxonomy profiles at Genus level generated from clustered OTUs provided by a method and it's corresponding Canopy counterpart. Higher $F$-measures reflect better clustering by adhering to ground truth. Higher $\rho$-values reflect stronger correlation between taxonomic profiles. Higher F-scores and $\rho$ values are represented with bold and italic letters.         
+		\item Table shows values of $F$-measures and Pearson Correlation Coefficient ($\rho$-value) of UCLUST, SUMACLUST, SWARM and their respective versions with Canopy clustering. $F$-measures is only available for synthetic datasets but not for real world datasets since no ground truths like known taxonomic profiles are available for them. $\rho$-value was calculated based on the taxonomy profiles at Genus level generated from clustered OTUs provided by a method and it's corresponding Canopy counterpart. Higher $F$-measures reflect better clustering by adhering to ground truth. Higher $\rho$-values reflect stronger correlation between taxonomic profiles. Higher F-scores and $\rho$ values are represented with bold and italic letters.         
 	\end{tablenotes}
 	
 \end{table*}
@@ -629,69 +625,61 @@ To evaluate the performance of our proposed approach we use previously published
 	\caption{\textbf{Biodiversity Comparison [Faith’s phylogenetic diversity metric (PD), Shannon and Simpson]}} 
 	\label{table:bioDiversityTable}
 	
-	\scalebox{0.88}{
+	\scalebox{0.80}{
 		
-		\begin{tabular}{|c|c c c c| c c c|}
+		\begin{tabular}{|c|c c c c| c c c c|}
 			
 			\hline
 			
-			\textbf{Methods} & \textbf{Comparison Metric} & \multicolumn{6}{c|}{\textbf{Datasets}}\\
+			\textbf{Methods} & \textbf{Comparison Metric} & \multicolumn{7}{c|}{\textbf{Datasets}}\\
 			
-			\cline{3-8}
+			\cline{3-9}
 			
-			& & \multicolumn{3}{c|}{\textit{Synthetic}} & \multicolumn{3}{c|}{\textit{Real World}}\\ 
+			& & \multicolumn{3}{c|}{\textit{Synthetic}} & \multicolumn{4}{c|}{\textit{Real World}}\\ 
 			
-			\cline{3-8}
+			\cline{3-9}
 			
-			&  & Bokulich$_2$ & Bokulich$_3$ & Bokulich$_6$ & Body Sites & Canadian Soil & Global Soil\\
+			&  &  &  & & & & & Liver Cirrhosis\\
 			
-			\hline
+			& & Bokulich$_2$ & Bokulich$_3$ & Bokulich$_6$ & Body Sites & Canadian Soil & Global Soil & Metagenome\\
 			
-			\multirow{3}{*}{UCLUST} & PD Range & $\left[171.95-221.85\right]$ & $\left[186.90-212.84\right]$ & $\left[104.51-104.51\right]$ & $\left[1.46-46.79\right]$ & $\left[0.30-1352.73\right]$ & $\left[2.98-3.29\right]$\\ 
-			& Shannon Range & $\left[2.52-3.51\right]$ & $\left[2.43-3.54\right]$ & $\left[5.87-5.87\right]$ & $\left[0.29-7.67\right]$ & $\left[2.32-7.86\right]$ & $\left[1.84-8.30\right]$\\
-			& Simpson Range & $\left[0.55-0.75\right]$ & $\left[0.55-0.76\right]$ & $\left[0.96-0.96\right]$ & $\left[0.049-0.98\right]$ & $\left[0.80-0.99\right]$ & $\left[0.0-0.98\right]$\\
-			
-			& & & & & & & \\
-			
-			\multirow{3}{*}{CC$_{UCLUST}$} & PD Range & $\left[164.79-217.72\right]$ & $\left[169.41-198.36\right]$ & $\left[109.33-109.33\right]$ & $\left[2.37-47.13\right]$ & $\left[0.52-1419.31\right]$ & $\left[3.02-3.81\right]$\\
-			& Shannon Range & $\left[2.61-3.83\right]$ & $\left[2.92-3.91\right]$ & $\left[6.41-6.41\right]$ & $\left[0.93-7.13\right]$ & $\left[3.26-7.61\right]$ & $\left[3.72-7.38\right]$\\
-			& Simpson Range & $\left[0.64-0.87\right]$ & $\left[0.56-0.93\right]$ & $\left[0.96-0.96\right]$ & $\left[0.081-0.99\right]$ & $\left[0.84-0.99\right]$ & $\left[0.21-0.99\right]$\\
+			& & & & & & & & (Sampled 3M)\\
 			
 			\hline
 			
-			\multirow{3}{*}{SUMACLUST} & PD Range & $\left[106.00-162.78\right]$ & $\left[142.85-174.19\right]$ & $\left[89.22-89.22\right]$ & $\left[0.93-39.47\right]$ & $\left[0.59-1279.29\right]$ & $\left[2.98-3.29\right]$\\
-			& Shannon Range & $\left[2.00-3.01\right]$ & $\left[2.19-3.28\right]$ & $\left[5.48-5.48\right]$ & $\left[0.16-7.43\right]$ & $\left[2.32-7.32\right]$ & $\left[1.00-7.89\right]$\\
-			& Simpson Range & $\left[0.52-0.73\right]$ & $\left[0.54-0.75\right]$ & $\left[0.95-0.95\right]$ & $\left[0.027-0.98\right]$ & $\left[0.80-0.99\right]$ & $\left[0.40-0.98\right]$\\
+			\multirow{3}{*}{UCLUST} & PD Range & $\left[171.95-221.85\right]$ & $\left[186.90-212.84\right]$ & $\left[104.51-104.51\right]$ & $\left[1.46-46.79\right]$ & $\left[0.30-1352.73\right]$ & $\left[2.98-3.29\right]$ & $\left[3.14-51.47\right]$\\ 
+			& Shannon Range & $\left[2.52-3.51\right]$ & $\left[2.43-3.54\right]$ & $\left[5.87-5.87\right]$ & $\left[0.29-7.67\right]$ & $\left[2.32-7.86\right]$ & $\left[1.84-8.30\right]$ & $\left[0.27-5.77\right]$\\
+			& Simpson Range & $\left[0.55-0.75\right]$ & $\left[0.55-0.76\right]$ & $\left[0.96-0.96\right]$ & $\left[0.049-0.98\right]$ & $\left[0.80-0.99\right]$ & $\left[0.0-0.98\right]$ & $\left[0.02-0.97\right]$\\
 			
-			& & & & & & & \\
+			& & & & & & & & \\
 			
-			\multirow{3}{*}{CC$_{SUMACLUST}$} & PD Range & $\left[114.96-171.57\right]$ & $\left[147.85-187.91\right]$ & $\left[93.81-93.81\right]$ & $\left[0.86-41.63\right]$ & $\left[0.81-1292.34\right]$ & $\left[1.37-4.89\right]$\\
-			& Shannon Range & $\left[2.51-3.94\right]$ & $\left[2.96-4.11\right]$ & $\left[5.94-5.94\right]$ & $\left[1.21-7.13\right]$ & $\left[3.12-7.79\right]$ & $\left[2.17-7.25\right]$\\
-			& Simpson Range & $\left[0.68-0.79\right]$ & $\left[0.51-0.74\right]$ & $\left[0.96-0.96\right]$ & $\left[0.06-0.99\right]$ & $\left[0.88-0.99\right]$ & $\left[0.23-0.98\right]$\\
-			
-			\hline
-			
-			\multirow{3}{*}{SWARM} & PD Range & $\left[18.37-24.73\right]$ & $\left[17.36-19.81\right]$ & $\left[30.84-30.84\right]$ & $\left[1.44-28.66\right]$ & $\left[0.54-706.57\right]$ & $\left[5.79-6.18\right]$\\ 
-			& Shannon Range & $\left[2.98-3.91\right]$ & $\left[2.01-3.04\right]$ & $\left[5.03-5.03\right]$ & $\left[0.28-7.63\right]$ & $\left[1.0-7.79\right]$ & $\left[1.66-7.81\right]$\\
-			& Simpson Range & $\left[0.70-0.82\right]$ & $\left[0.53-0.74\right]$ & $\left[0.95-0.95\right]$ & $\left[0.05-0.98\right]$ & $\left[0.50-0.99\right]$ & $\left[0.00-0.99\right]$\\
-			
-			& & & & & & & \\
-			
-			\multirow{3}{*}{CC$_{SWARM}$} & PD Range & $\left[19.18-26.87\right]$ & $\left[18.43-22.61\right]$ & $\left[31.48-31.48\right]$ & $\left[2.34-29.97\right]$ & $\left[1.37-748.71\right]$ & $\left[2.34-8.46\right]$\\
-			& Shannon Range & $\left[1.66-4.87\right]$ & $\left[1.19-4.13\right]$ & $\left[6.03-6.03\right]$ & $\left[0.89-7.13\right]$ & $\left[2.81-8.06\right]$ & $\left[2.81-7.87\right]$\\
-			& Simpson Range & $\left[0.66-0.88\right]$ & $\left[0.41-0.81\right]$ & $\left[0.91-0.91\right]$ & $\left[0.11-0.99\right]$ & $\left[0.74-0.99\right]$ & $\left[0.14-0.99\right]$\\
+			\multirow{3}{*}{CC$_{UCLUST}$} & PD Range & $\left[164.79-217.72\right]$ & $\left[169.41-198.36\right]$ & $\left[109.33-109.33\right]$ & $\left[2.37-47.13\right]$ & $\left[0.52-1419.31\right]$ & $\left[3.02-3.81\right]$ & $\left[4.61-53.29\right]$\\
+			& Shannon Range & $\left[2.61-3.83\right]$ & $\left[2.92-3.91\right]$ & $\left[6.41-6.41\right]$ & $\left[0.93-7.13\right]$ & $\left[3.26-7.61\right]$ & $\left[3.72-7.38\right]$ & $\left[0.13-6.17\right]$\\
+			& Simpson Range & $\left[0.64-0.87\right]$ & $\left[0.56-0.93\right]$ & $\left[0.96-0.96\right]$ & $\left[0.081-0.99\right]$ & $\left[0.84-0.99\right]$ & $\left[0.21-0.99\right]$ & $\left[0.09-0.98\right]$\\
 			
 			\hline
 			
-			\multirow{3}{*}{MST} & PD Range & $\left[9.14-91.06\right]$ & $\left[11.43-92.27\right]$ & $\left[60.70-60.70\right]$ & $\left[1.18-33.61\right]$ & $\left[1.92-826.64\right]$ & $\left[2.35-5.81\right]$\\ 
-			& Shannon Range & $\left[0.76-4.08\right]$ & $\left[1.64-2.98\right]$ & $\left[4.72-4.72\right]$ & $\left[1.96-6.11\right]$ & $\left[2.14-7.29\right]$ & $\left[2.38-6.07\right]$\\
-			& Simpson Range & $\left[0.12-0.71\right]$ & $\left[0.21-0.69\right]$ & $\left[0.90-0.90\right]$ & $\left[0.11-0.92\right]$ & $\left[0.49-0.94\right]$ & $\left[0.11-0.98\right]$\\
+			\multirow{3}{*}{SUMACLUST} & PD Range & $\left[106.00-162.78\right]$ & $\left[142.85-174.19\right]$ & $\left[89.22-89.22\right]$ & $\left[0.93-39.47\right]$ & $\left[0.59-1279.29\right]$ & $\left[2.98-3.29\right]$ & $\left[0.28-49.61\right]$\\
+			& Shannon Range & $\left[2.00-3.01\right]$ & $\left[2.19-3.28\right]$ & $\left[5.48-5.48\right]$ & $\left[0.16-7.43\right]$ & $\left[2.32-7.32\right]$ & $\left[1.00-7.89\right]$ & $\left[1.37-7.83\right]$\\
+			& Simpson Range & $\left[0.52-0.73\right]$ & $\left[0.54-0.75\right]$ & $\left[0.95-0.95\right]$ & $\left[0.027-0.98\right]$ & $\left[0.80-0.99\right]$ & $\left[0.40-0.98\right]$ & $\left[0.19-0.91\right]$\\
 			
-			& & & & & & & \\
+			& & & & & & & & \\
 			
-			\multirow{3}{*}{CC$_{MST}$} & PD Range & $\left[10.43-89.61\right]$ & $\left[12.83-92.41\right]$ & $\left[63.21-63.21\right]$ & $\left[1.46-34.15\right]$ & $\left[2.73-824.62\right]$ & $\left[1.81-5.37\right]$\\ 
-			& Shannon Range & $\left[0.96-3.91\right]$ & $\left[1.21-3.16\right]$ & $\left[4.91-4.91\right]$ & $\left[2.02-6.51\right]$ & $\left[2.72-7.83\right]$ & $\left[2.17-6.29\right]$\\
-			& Simpson Range & $\left[0.14-0.68\right]$ & $\left[0.32-0.73\right]$ & $\left[0.92-0.92\right]$ & $\left[0.07-0.94\right]$ & $\left[0.58-0.94\right]$ & $\left[0.14-0.98\right]$\\
+			\multirow{3}{*}{CC$_{SUMACLUST}$} & PD Range & $\left[114.96-171.57\right]$ & $\left[147.85-187.91\right]$ & $\left[93.81-93.81\right]$ & $\left[0.86-41.63\right]$ & $\left[0.81-1292.34\right]$ & $\left[1.37-4.89\right]$ & $\left[0.18-51.35\right]$\\
+			& Shannon Range & $\left[2.51-3.94\right]$ & $\left[2.96-4.11\right]$ & $\left[5.94-5.94\right]$ & $\left[1.21-7.13\right]$ & $\left[3.12-7.79\right]$ & $\left[2.17-7.25\right]$ & $\left[1.91-7.39\right]$\\
+			& Simpson Range & $\left[0.68-0.79\right]$ & $\left[0.51-0.74\right]$ & $\left[0.96-0.96\right]$ & $\left[0.06-0.99\right]$ & $\left[0.88-0.99\right]$ & $\left[0.23-0.98\right]$ & $\left[0.27-0.88\right]$\\
+			
+			\hline
+			
+			\multirow{3}{*}{SWARM} & PD Range & $\left[18.37-24.73\right]$ & $\left[17.36-19.81\right]$ & $\left[30.84-30.84\right]$ & $\left[1.44-28.66\right]$ & $\left[0.54-706.57\right]$ & $\left[5.79-6.18\right]$ & $\left[2.06-39.71\right]$\\ 
+			& Shannon Range & $\left[2.98-3.91\right]$ & $\left[2.01-3.04\right]$ & $\left[5.03-5.03\right]$ & $\left[0.28-7.63\right]$ & $\left[1.0-7.79\right]$ & $\left[1.66-7.81\right]$ & $\left[1.47-6.91\right]$\\
+			& Simpson Range & $\left[0.70-0.82\right]$ & $\left[0.53-0.74\right]$ & $\left[0.95-0.95\right]$ & $\left[0.05-0.98\right]$ & $\left[0.50-0.99\right]$ & $\left[0.00-0.99\right]$ & $\left[0.18-0.89\right]$\\
+			
+			& & & & & & & & \\
+			
+			\multirow{3}{*}{CC$_{SWARM}$} & PD Range & $\left[19.18-26.87\right]$ & $\left[18.43-22.61\right]$ & $\left[31.48-31.48\right]$ & $\left[2.34-29.97\right]$ & $\left[1.37-748.71\right]$ & $\left[2.34-8.46\right]$ & $\left[ 3.18-40.73\right]$\\
+			& Shannon Range & $\left[1.66-4.87\right]$ & $\left[1.19-4.13\right]$ & $\left[6.03-6.03\right]$ & $\left[0.89-7.13\right]$ & $\left[2.81-8.06\right]$ & $\left[2.81-7.87\right]$ & $\left[2.03-6.88\right]$\\
+			& Simpson Range & $\left[0.66-0.88\right]$ & $\left[0.41-0.81\right]$ & $\left[0.91-0.91\right]$ & $\left[0.11-0.99\right]$ & $\left[0.74-0.99\right]$ & $\left[0.14-0.99\right]$ & $\left[0.07-0.86\right]$\\
 			
 			\hline
 			
@@ -708,33 +696,37 @@ To evaluate the performance of our proposed approach we use previously published
 	\centering
 	\caption{\textbf{Runtime Comparison (in minutes)}} 
 	\label{table:Runtime}
-	\scalebox{0.68}{
-		\begin{tabular}{|c c c|c c c|c c c|c c c|c c c|} 
+	\scalebox{0.75}{
+		\begin{tabular}{|c c c|c c c|c c c|c c c|} 
 			
 			\hline
 			
-			\multicolumn{3}{|c|}{\textbf{Datasets}} & \multicolumn{12}{c|}{\textbf{Methods}}\\
+			\multicolumn{3}{|c|}{\textbf{Datasets}} & \multicolumn{9}{c|}{\textbf{Methods}}\\
 			%\cline{3-9}
 			
 			\hline
 			
-			\multirow{1}{*}{Type} & \multirow{1}{*}{Title} & \multirow{1}{*}{\# of Reads} & \multirow{1}{*}{UCLUST} & \multirow{1}{*}{CC$_{UCLUST}$} & \multirow{1}{*}{Speed Up} & \multirow{1}{*}{SUMACLUST} & \multirow{1}{*}{CC$_{SUMACLUST}$} & \multirow{1}{*}{Speed Up} & \multirow{1}{*}{SWARM} & \multirow{1}{*}{CC$_{SWARM}$} & \multirow{1}{*}{Speed Up} & \multirow{1}{*}{MST} & \multirow{1}{*}{CC$_{MST}$} & \multirow{1}{*}{Speed Up}\\
-			
-			%& & & & Canopy Only & with & & & Canopy Only & with & & & Canopy Only & with & & & Canopy Only & with & \\
-			
-			%& & & & & Canopy & & & & Canopy & & & & Canopy & & & & Canopy & \\ 
+			\multirow{1}{*}{Type} & \multirow{1}{*}{Title} & \multirow{1}{*}{\# of Reads} & \multirow{1}{*}{UCLUST} & \multirow{1}{*}{CC$_{UCLUST}$} & \multirow{1}{*}{Speed Up} & \multirow{1}{*}{SUMACLUST} & \multirow{1}{*}{CC$_{SUMACLUST}$} & \multirow{1}{*}{Speed Up} & \multirow{1}{*}{SWARM} & \multirow{1}{*}{CC$_{SWARM}$} & \multirow{1}{*}{Speed Up}\\
 			
 			\hline
 			
-			\multirow{3}{*}{\textit{Synthetic}} & Bokulich$_2$ & 6,938,836 & 12.71 & \textit{\textbf{6.03}} & \textit{\textbf{2.10x}} & 87.53 & \textit{\textbf{33.03}} & \textit{\textbf{2.65x}} & 128.12 & \textit{\textbf{37.87}} & \textit{\textbf{3.38x}} & 564.60 & \textit{\textbf{294.36}} & \textit{\textbf{1.91x}}\\       
-			& Bokulich$_3$ & 3,594,237 & 8.91 & \textit{\textbf{4.89}} & \textit{\textbf{1.82x}} & 11.73 & \textit{\textbf{7.89}} & \textit{\textbf{1.48x}} & 9.10 & \textit{\textbf{6.93}} & \textit{\textbf{1.31x}} & 369.7 & \textit{\textbf{204.61}} & \textit{\textbf{1.80x}}\\       
-			& Bokulich$_6$ & 250,903 & 1.21 &  \textit{\textbf{1.08}} & \textit{\textbf{1.12x}} & \textit{\textbf{1.28}} & 1.34 & 0.96 & 1.97 & \textit{\textbf{1.29}} & \textit{\textbf{1.53x}} & 252.81 & \textit{\textbf{146.41}} & \textit{\textbf{1.73x}}\\ 
+			\multirow{3}{*}{\textit{Synthetic}} & Bokulich$_2$ & 6,938,836 & 12.71 & \textit{\textbf{3.08}} & \textit{\textbf{4.13x}} & 114.53 & \textit{\textbf{13.89}} & \textit{\textbf{8.24x}} & 128.12 & \textit{\textbf{17.24}} & \textit{\textbf{7.43x}}\\ 
+			      
+			& Bokulich$_3$ & 3,594,237 & 10.43 & \textit{\textbf{3.61}} & \textit{\textbf{2.89x}} & 27.73 & \textit{\textbf{5.11}} & \textit{\textbf{5.43x}} & 18.37 & \textit{\textbf{3.39}} & \textit{\textbf{5.41x}}\\ 
+			      
+			& Bokulich$_6$ & 250,903 & 4.47 &  \textit{\textbf{2.09}} & \textit{\textbf{2.14x}} & 5.61 & \textit{\textbf{2.07}} & \textit{\textbf{2.71x}} & 4.17 & \textit{\textbf{1.29}} & \textit{\textbf{3.21x}}\\ 
 			
 			\hline
 			
-			\multirow{3}{*}{\textit{Real World}} & Body Sites & 886,630 & 2.12 & \textit{\textbf{1.51}} & \textit{\textbf{1.40x}} & 15.42 & \textit{\textbf{7.88}} & \textit{\textbf{1.95x}} & 3.64  & \textit{\textbf{1.71}} & \textit{\textbf{2.13x}} & 307.2 & \textit{\textbf{174.27}} & \textit{\textbf{1.76x}}\\
-			& Canadian Soil & 2,966,053 & 9.55 & \textit{\textbf{5.91}} & \textit{\textbf{1.62x}} & 363.96 & \textit{\textbf{81.18}} & \textit{\textbf{4.48x}} & 97.50 & \textit{\textbf{32.16}} & \textit{\textbf{3.03x}}  & 472.43 & \textit{\textbf{254.91}} & \textit{\textbf{1.85x}}\\
-			& Global Soil & 9,252,764 & 72.47 &  \textit{\textbf{43.53}} & \textit{\textbf{1.67x}} & 510.92 & \textit{\textbf{66.27}} & \textit{\textbf{7.70x}} & 269.07 &  \textit{\textbf{56.14}} & \textit{\textbf{4.79x}} & 988.93 & \textit{\textbf{464.29}} & \textit{\textbf{2.13x}}\\
+			\multirow{3}{*}{\textit{Real World}} & Body Sites & 886,630 & 9.46 & \textit{\textbf{3.03}} & \textit{\textbf{3.12x}} & 18.42 & \textit{\textbf{6.02}} & \textit{\textbf{3.06x}} & 16.37  & \textit{\textbf{5.83}} & \textit{\textbf{2.81x}}\\
+			
+			& Canadian Soil & 2,966,053 & 13.65 & \textit{\textbf{4.17}} & \textit{\textbf{3.27x}} & 363.96 & \textit{\textbf{56.61}} & \textit{\textbf{6.43x}} & 117.53 & \textit{\textbf{20.84}} & \textit{\textbf{5.64x}}\\
+			
+			& Global Soil & 9,252,764 & 108.21 &  \textit{\textbf{18.75}} & \textit{\textbf{5.77x}} & 510.92 & \textit{\textbf{45.37}} & \textit{\textbf{11.26x}} & 289.51 &  \textit{\textbf{34.84}} & \textit{\textbf{8.31x}}\\
+			
+			& Liver Cirrhosis Metagenome & 3,000,000 & 14.57 &  \textit{\textbf{4.03}} & \textit{\textbf{3.61x}} & 46.62 & \textit{\textbf{9.02}} & \textit{\textbf{5.17x}} & 41.37 &  \textit{\textbf{8.75}} & \textit{\textbf{4.73x}}\\
+			
+			& Liver Cirrhosis Metagenome & 30,000,000 & 22.41h &  \textit{\textbf{1.84h}} & \textit{\textbf{12.19x}} & 46.62h & \textit{\textbf{2.21h}} & \textit{\textbf{21.09x}} & 37.43h &  \textit{\textbf{2.01h}} & \textit{\textbf{18.61x}}\\		
 			
 			\hline 
 			
@@ -779,7 +771,7 @@ This dataset contains composition of bacterial communities from up to 27 differe
 The global soil data was taken from Ramirez et al. \cite{MARglobalSoil} which is a study of the below-ground diversity in New York City's Central Park.
 
 \subsubsection{Liver Cirrhosis}
-The Liver Cirrhosis dataset was taken from the study \cite{qin2014alterations} which is a whole gut microbiome wide association study of stool samples from 98 liver cirrhosis patients and 83 healthy controls to characterize the fecal microbial communities and their functional composition. In total, 860 Gb of high-quality sequence data was generated in this study. Because of the high volume of sequence reads in this dataset, we used random sampling for feasible clustering performance evaluations. Three million and thirty million sequence reads were randomly chosen from original dataset regardless of sample labels (disease or control). These two sampled datasets reflects clustering scalability with increasing size of metagenomic data.   
+The Liver Cirrhosis dataset was taken from the study \cite{qin2014alterations} which is a whole gut microbiome wide association study of stool samples from 98 liver cirrhosis patients and 83 healthy controls to characterize the fecal microbial communities and their functional composition. In total, 860 Gb of high-quality sequence data was generated in this study. Because of the high volume of sequence reads in this dataset, we used random sampling for feasible clustering performance evaluations. Three million and thirty million sequence reads were randomly chosen from original dataset regardless of sample labels (disease or control) for our study.   
 
 
 \subsection{\textbf{Evaluation Metrics}}
@@ -839,7 +831,35 @@ F Score = \frac{2 \times precision \times recall}{(precision + recall)}
 After getting Operational Taxonomic Units (OTU) from a clustering method we create a taxonomic profile at the Genus level. Pearson’s correlation coefficient was computed to measure the relatedness of taxonomic assignment between a pair of tools. Values range between -1 and 1, with -1 indicating a negative correlation, 0 indicating no correlation, and 1 indicating a positive correlation or strong relationship.
 
 \subsection{\textbf{Parameter Settings}}
-For kmers, the value of parameter k was set to 4. For Locality Sensitive Hashing the number of Hyper-planes (parameter $d$) was set to 150. For performance analysis and comparison we have chosen $T1=0.45$ and $T2=0.34$. We performed all the experiments on computers with Intel 5th generation Core i7 2.70GHz 64bit processor with 8 core CPUs and 12GB memory. Similarity identity of sub-clustering methods were set to default 97\%. For implementation we used Python 2.7.12 and QIIME \cite{MARQiime} version 1.9.0. Taxonomy for reported OTUs was assigned using the RDP Classifier \cite{MARRdp} against the 97\% representative databases for Greengenes \cite{MARGreen1} and Silva \cite{MARSilva} for methods used in this study. We used PyNast\footnote{http://biocore.github.io/pynast/} open source sequence aligner for aligning clustered output. 
+For kmers, the value of parameter k was set to 4. The parameters for bit length of LSH ($d$), canopy's soft ($T1$) and hard ($T2$) thresholds were set by using random sampling and validation. Only ten percent of data was randomly sampled from the dataset of interest. First the parameter for LSH bit length $d$ was estimated. In order to know correctness of our estimation of $d$, we performed Canopy clustering with corresponding sub clustering inside canopies and compared the results corresponding to the bit lengths. For synthetic dataset $F1$-scores and for real world datasets Pearson Coefficient Correlation ($\rho$) with results from corresponding expensive naive sequence clustering. We started with bit length $d$=1 and continued to increase value of $d$ as long as we got better results for sampled data. Initial value of soft ($T1$) and tight ($T2$) threshold  was set to 0.6 and 0.4 respectively where maximum distance is 1.0. These are relaxed initial values for both $T1$ and $T2$, meaning that they allow for higher repetitions of sequence reads in multiple canopies due to higher value of $T1$ and easy final canopy assignment due to higher value of $T2$ which results in rough and fast approximate clusters prior to expensive sub-clustering step. Any bit length $d$ that brings comparatively better results for these relaxed $T1$ and $T2$ on sampled data is expected to bring better results for more strict $T1$ and $T2$ on whole datasets.
+
+Once $d$ is selected we estimated values for $T1$ and $T2$ on the same sampled data. First, hard threshold ($T2$) was estimated with soft threshold ($T1$) fixed at 0.6. $T2$ determines which sequence reads will be retained for next iteration of canopy clustering. Same comparison metrics from the estimation of parameter $d$ were used. We decreased the value of $T2$ from 0.4 (\emph{relaxed}) to 0.1 (\emph{strict}) with a step size of 0.01. The $T2$ corresponding to best result was selected. Then $T2$ was fixed at the best estimation and $T1$ was varied from 0.6 to best estimation for $T2$ with step size of 0.01. The value for $T1$ corresponding to best result was selected. Table \ref{table:parameters} shows the estimated parameter values for our study.   
+
+\begin{table}[htb] 
+	%\centering 
+	\caption{\textbf{Parameter Settings}}
+	\label{table:parameters}
+	\resizebox{\columnwidth}{!}{%
+		\begin{tabular}{|l| c c c c c|} 
+			\hline
+			Datasets & Total \# of & \# of Reads in &  & Parameters & \\
+			\cline{4-6}			
+			 & Reads & Sampled Data & $d$ & $T1$ & $T2$ \\
+			\hline
+			{Bokulich$_2$} & 6,938,836 & 693,884 & 47 & 0.48 & 0.36\\
+			{Bokulich$_3$} & 3,594,237 & 359,428  & 31 & 0.43 & 0.34\\
+			{Bokulich$_6$} & 250,903 & 25,090 & 17 & 0.37 & 0.21\\
+			{Canadian Soil} & 2,966,053 & 296,605 & 29 & 0.46 & 0.37\\
+			{Body Sites} & 886,630 & 88,663 & 22 & 0.39 & 0.22\\
+			{Global Soil} & 9,252,764 & 925,276 & 59 & 0.49 & 0.38\\
+			{Liver Cirrhosis} & 3,000,000 & 300,000 & 48 & 0.42 & 0.35\\
+			{Liver Cirrhosis} & 30,000,000 & 3,000,000 & 67 & 0.51 & 0.39\\ 
+			\hline
+		\end{tabular}
+	}
+\end{table}	     
+
+We performed all the experiments on computers with Intel 5th generation Core i7 2.70GHz 64bit processor with 8 core CPUs and 12GB memory. Similarity identity of sub-clustering methods were set to default 97\%. For implementation we used Python 2.7.12 and QIIME \cite{MARQiime} version 1.9.0. Taxonomy for reported OTUs was assigned using the RDP Classifier \cite{MARRdp} against the 97\% representative databases for Greengenes \cite{MARGreen1} and Silva \cite{MARSilva} for methods used in this study. We used PyNast\footnote{http://biocore.github.io/pynast/} open source sequence aligner for aligning clustered output. 
 
 \section{Results Discussion} 
 \label{sec:Results}
@@ -847,12 +867,12 @@ For kmers, the value of parameter k was set to 4. For Locality Sensitive Hashing
 \subsection{\textbf{Clustering Performance}}
 Table \ref{table:performanceTable} shows the performance of  UCLUST, SUMACLUST and SWARM with their corresponding versions with CC clustering. Table \ref{table:performanceTable} compares F-scores and Pearson Correlation Coefficient ($\rho$). F-scores are only available for synthetic benchmarks since taxonomic profile for them is known as ground truth. Correlation values were generated based on taxonomic profiles at Genus level generated from outputs from clustering methods. From Table \ref{table:performanceTable} we can see that F-scores obtained from a clustering method and its corresponding Canopy clustering version are very similar and in some cases better. We see a higher F-score for Bokulich$_2$ benchmark from CC$_{SUMACLUST}$. CC$_{UCLUST}$ and CC$_{SWARM}$ provided same F-scores as their respective naive versions for Bokulich$_2$. For Bokulich$_3$ benchmark we observed higher F-scores for all Canopy clustering methods. Finally for Bokulich$_6$ benchmark F-scores of CC$_{UCLUST}$ and CC$_{SWARM}$ were improved comparing to respective naive versions.
 
-For all benchmarks we observe strong correlations between taxonomic profiles at genus level. The highest correlation was observed for Bokulich$_6$ benchmark between UCLUST and CC$_{UCLUST}$ with 0.9831. CC$_{MST}$ provided relatively similar F-scores and high $\rho$ values indicating positive correlations of taxonomic outcomes with other methods. From observed F-scores and correlation values we can say that running a sequence clustering method with our proposed LSH based Canopy cluster framework can bring similar or better results.
+For all benchmarks we observe strong correlations between taxonomic profiles at genus level. The highest correlation was observed for Bokulich$_6$ benchmark between UCLUST and CC$_{UCLUST}$ with 0.9831. From observed F-scores and correlation values we can say that running a sequence clustering method with our proposed LSH based Canopy cluster framework can bring similar or better results.
 
 
 \subsection{\textbf{Biodiversity Estimation}} Clustering metagenome sequences outputs OTUs that represent biodiversity contained in the samples from which data is collected. We compare the biodiversity represented by OTUs from naive methods and their respective Canopy clustering variations used in this study. Table \ref{table:bioDiversityTable} shows Faith’s phylogenetic diversity metric (PD), Shannon and Simpson index after clustering with different methods. These metrics are some of the popular Alpha Diversity metrics meaning that they measure species diversity in sites or habitats at a local scale. These metric values are generated per sample basis. Table \ref{table:bioDiversityTable} shows ranges of metric values in $[minimum-maximum]$ format provided by methods with and without Canopy clustering. Any sample of a dataset will take value from this range. These ranges may not be same since OTUs vary over clustering methods. But they should be similar for a method and it's Canopy counterpart. We can see from Table \ref{table:bioDiversityTable} that Canopy clustering based methods produce similar ranges of values as their naive counterparts. No significant changes in diversity metric values were observed which indicates that Canopy based approaches reproduce similar biodiversity while reducing run time.
 
-\subsection{\textbf{Runtime Comparison}} Table \ref{table:Runtime} shows the run time in minutes of UCLUST, SUMACLUST, SWARM, MST and their respective versions with our proposed Canopy clustering pipeline. We see from Table \ref{table:Runtime} that CC$_{UCLUST}$ outperforms UCLUST for all datasets. The highest speed up for UCLUST was observed for Bokulich$_2$ dataset where CC$_{UCLUST}$ was 2.10 times faster than UCLUST. CC$_{SUMACLUST}$ outperforms SUMACLUST in most cases. Major improvement in run time was observed in large scale real world metagenome datasets specially Canadian Soil and Global Soil datasets. The highest speed-up for CC$_{SUMACLUST}$ was observed to be 7.70x for Global Soil dataset. We also see speedups for CC$_{SWARM}$ and CC$_{MST}$ from Table \ref{table:Runtime}. The highest speedups for CC$_{SWARM}$ and CC$_{MST}$ were 4.79x and 2.13x for Global Soil dataset which is the largest benchmark used in this study, respectively. From these observations we conclude that Canopy clustering not only reduces the run time of an expensive clustering method but also scales well for larger benchmark datasets comparing to the smaller ones.   
+\subsection{\textbf{Runtime Comparison}} Table \ref{table:Runtime} shows the run time in minutes of UCLUST, SUMACLUST, SWARM and their respective versions with our proposed Canopy clustering pipeline. We see from Table \ref{table:Runtime} that CC$_{UCLUST}$ outperforms UCLUST for all datasets. The highest speed up for UCLUST was observed for the metagenome data containing 30 million randomly sampled sequence reads where CC$_{UCLUST}$ was 12.19 times faster than UCLUST. CC$_{SUMACLUST}$ outperforms SUMACLUST in all cases. The highest speed-up for CC$_{SUMACLUST}$ was observed to be 21.09x for the large metagenome dataset. The highest speedups for CC$_{SWARM}$ was also observed for the large metagenome dataset with 30 million reads. From these observations we conclude that Canopy clustering not only reduces the run time of an expensive clustering method but also scales well for larger benchmark datasets comparing to the smaller ones.   
 
 \begin{figure}[t]	
 	\begin{minipage}[t]{0.5\linewidth}
@@ -866,7 +886,7 @@ For all benchmarks we observe strong correlations between taxonomic profiles at 
 			\includegraphics[width=\linewidth]{global_soil.pdf}
 			\label{fig:global_soil}}
 	\end{minipage}	
-	\caption{Effect of number of processors on Runtime of CC$_{UCLUST}$, CC$_{SUMACLUST}$, CC$_{SWARM}$ and CC$_{MST}$ for Bokulich$_2$ and GLobal Soil datasets, two of the largest datasets used in this study.}
+	\caption{Effect of number of processors on Runtime of CC$_{UCLUST}$, CC$_{SUMACLUST}$ and CC$_{SWARM}$ for Bokulich$_2$ and GLobal Soil datasets, two of the largest datasets used in this study.}
 \end{figure}
 
 
@@ -887,7 +907,7 @@ For all benchmarks we observe strong correlations between taxonomic profiles at 
 
 
 \subsection{\textbf{Effect of Varying Number of Processors}}
-Figure \ref{fig:bokulich_2}-\ref{fig:global_soil} shows the runtime of CC$_{UCLUST}$, CC$_{SUMACLUST}$, CC$_{SWARM}$ and CC$_{MST}$ on two largest benchmarks titled Bokulich$_2$ and Global Soil. We observe that increasing the number of processors reduces the total runtime. Steeper curves show reduction in runtime with increasing number of processors. Significant reductions in run time were observed CC$_{MST}$, CC$_{SUMACLUST}$ and CC$_{SUMACLUST}$ compared to CC$_{UCLUST}$.   
+Figure \ref{fig:bokulich_2}-\ref{fig:global_soil} shows the runtime of CC$_{UCLUST}$, CC$_{SUMACLUST}$ and CC$_{SWARM}$ on two largest benchmarks titled Bokulich$_2$ and Global Soil. We observe that increasing the number of processors reduces the total runtime. Steeper curves show reduction in runtime with increasing number of processors. Significant reductions in run time were observed CC$_{SUMACLUST}$ and CC$_{SUMACLUST}$ compared to CC$_{UCLUST}$.   
 
 \subsection{\textbf{Sensitivity Analysis (Varying T1 and T2)}}
 Figure \ref{fig:bokulich_2_T1}-\ref{fig:bokulich_2_T2} shows effect of varying $T1$ ($T2$ fixed at 0.34) and $T2$ ($T1$ fixed at 0.45) on F-scores for the largest synthetic dataset Bokulich$_2$. Reducing $T1$ leads to comparatively \textit{strict} soft-threshold which will reduce repetitions of instances in multiple canopies. For a fixed $T2$ this implies that lower $T1$ will yield better canopy assignment. From Figure \ref{fig:bokulich_2_T1} we can say that when $T1$'s range is in 0.4 to 0.6 our proposed approach provides better F-Scores. On the other hand, increasing $T2$ leads to comparatively \textit{relaxed} tight-threshold for canopies. As a result instances will be prematurely assigned to canopies without waiting for best match. From Figure \ref{fig:bokulich_2_T2} we can say that when $T2$'s range  is in 0.25 to 0.35 our proposed approach achieves better F-Scores. Lower $T2$ may lead to higher runtime since instances will continue to reappear until the $T2$ is met.                   

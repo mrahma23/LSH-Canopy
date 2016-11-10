@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.1.21)  30 OCT 2016 18:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.1.21)  10 NOV 2016 04:05
 entering extended mode
 **LSH-Canopy.tex
 (LSH-Canopy.tex
@@ -389,15 +389,11 @@ File: flowchart.pdf Graphic file (type pdf)
 Package pdftex.def Info: flowchart.pdf used on input line 486.
 (pdftex.def)             Requested size: 243.90933pt x 284.53288pt.
  [2]
-Underfull \hbox (badness 2119) in paragraph at lines 519--520
-[]\OT1/ptm/m/n/10 In the fol-low-ing Sec-tions UCLUST, SUMACLUST,
- []
-
 [3 <./flowchart.pdf>]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/sc' in size <8> not available
 (Font)              Font shape `OT1/ptm/b/sc' tried instead on input line 533.
 
-Underfull \hbox (badness 10000) in paragraph at lines 618--621
+Overfull \hbox (4.07959pt too wide) in paragraph at lines 614--617
 [][]
  []
 
@@ -405,7 +401,7 @@ Missing character: There is no â in font ptmbc7t!
 Missing character: There is no € in font ptmbc7t!
 Missing character: There is no ™ in font ptmbc7t!
 
-Underfull \hbox (badness 10000) in paragraph at lines 699--702
+Overfull \hbox (0.56291pt too wide) in paragraph at lines 687--690
 [][]
  []
 
@@ -418,89 +414,88 @@ Missing character: There is no ™ in font ptmri7t!
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
-[4]
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
 
-Underfull \hbox (badness 2538) in paragraph at lines 811--812
+Underfull \hbox (badness 2538) in paragraph at lines 803--804
  \OT1/ptm/m/it/10 3) Simp-son's In-dex: [][] \OT1/ptm/m/n/10 Simp-sons in-dex i
 s de-fined as
  []
 
 Missing character: There is no Ê in font ptmr7t!
 Missing character: There is no ¼ in font ptmr7t!
-Missing character: There is no â in font ptmr7t!
-Missing character: There is no € in font ptmr7t!
-Missing character: There is no ™ in font ptmr7t!
-
-Underfull \hbox (badness 10000) in paragraph at lines 848--849
-[]\OT1/ptm/m/n/10 Table II[] shows the per-for-mance of UCLUST,
- []
-
-
-Underfull \hbox (badness 2495) in paragraph at lines 848--849
-\OT1/ptm/m/n/10 SUMACLUST and SWARM with their cor-re-spond-ing
- []
-
-
-Underfull \hbox (badness 3690) in paragraph at lines 848--849
-\OT1/ptm/m/n/10 clus-ter-ing meth-ods. Fi-nally for Bokulich$[]$ bench-mark
- []
-
-[5]
+[4]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
- [6]
-<bokulich_2.pdf, id=97, 578.16pt x 433.62pt>
+ [5]
+Underfull \hbox (badness 10000) in paragraph at lines 868--869
+[]\OT1/ptm/m/n/10 Table II[] shows the per-for-mance of UCLUST,
+ []
+
+
+Underfull \hbox (badness 2495) in paragraph at lines 868--869
+\OT1/ptm/m/n/10 SUMACLUST and SWARM with their cor-re-spond-ing
+ []
+
+
+Underfull \hbox (badness 3690) in paragraph at lines 868--869
+\OT1/ptm/m/n/10 clus-ter-ing meth-ods. Fi-nally for Bokulich$[]$ bench-mark
+ []
+
+[6]
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no ™ in font ptmr7t!
+ <bokulich_2.pdf, id=97, 578.16pt x 433.62pt>
 File: bokulich_2.pdf Graphic file (type pdf)
  <use bokulich_2.pdf>
-Package pdftex.def Info: bokulich_2.pdf used on input line 861.
+Package pdftex.def Info: bokulich_2.pdf used on input line 881.
 (pdftex.def)             Requested size: 121.95563pt x 91.46649pt.
 
-Overfull \hbox (7.00012pt too wide) in paragraph at lines 861--862
+Overfull \hbox (7.00012pt too wide) in paragraph at lines 881--882
 [][] 
  []
 
 <global_soil.pdf, id=98, 578.16pt x 433.62pt>
 File: global_soil.pdf Graphic file (type pdf)
  <use global_soil.pdf>
-Package pdftex.def Info: global_soil.pdf used on input line 867.
+Package pdftex.def Info: global_soil.pdf used on input line 887.
 (pdftex.def)             Requested size: 121.95563pt x 91.46649pt.
 
-Overfull \hbox (7.00012pt too wide) in paragraph at lines 867--868
+Overfull \hbox (7.00012pt too wide) in paragraph at lines 887--888
 [][] 
  []
 
 <bokulich_2_T1.pdf, id=99, 578.16pt x 433.62pt>
 File: bokulich_2_T1.pdf Graphic file (type pdf)
  <use bokulich_2_T1.pdf>
-Package pdftex.def Info: bokulich_2_T1.pdf used on input line 877.
+Package pdftex.def Info: bokulich_2_T1.pdf used on input line 897.
 (pdftex.def)             Requested size: 121.95563pt x 91.46649pt.
 
-Overfull \hbox (7.00012pt too wide) in paragraph at lines 877--878
+Overfull \hbox (7.00012pt too wide) in paragraph at lines 897--898
 [][] 
  []
 
 <bokulich_2_T2.pdf, id=100, 578.16pt x 433.62pt>
 File: bokulich_2_T2.pdf Graphic file (type pdf)
  <use bokulich_2_T2.pdf>
-Package pdftex.def Info: bokulich_2_T2.pdf used on input line 883.
+Package pdftex.def Info: bokulich_2_T2.pdf used on input line 903.
 (pdftex.def)             Requested size: 121.95563pt x 91.46649pt.
 
-Overfull \hbox (7.00012pt too wide) in paragraph at lines 883--884
+Overfull \hbox (7.00012pt too wide) in paragraph at lines 903--904
 [][] 
  []
 
 
-Underfull \hbox (badness 6428) in paragraph at lines 890--891
+Underfull \hbox (badness 6428) in paragraph at lines 910--911
 []\OT1/ptm/m/n/10 Figure 2a[]-2b[] shows the run-time of CC$[]$,
  []
 
-(LSH-Canopy.bbl [7 <./bokulich_2.pdf> <./global_soil.pdf
+[7 <./bokulich_2.pdf> <./global_soil.pdf
 
 pdfTeX warning: pdflatex.exe (file ./global_soil.pdf): PDF inclusion: multiple 
 pdfs with page group included in a single page
@@ -512,7 +507,7 @@ e pdfs with page group included in a single page
 
 pdfTeX warning: pdflatex.exe (file ./bokulich_2_T2.pdf): PDF inclusion: multipl
 e pdfs with page group included in a single page
->]
+>] (LSH-Canopy.bbl
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ” in font ptmr7t!
@@ -532,10 +527,10 @@ Before submitting the final camera ready copy, remember to:
 
 ] (LSH-Canopy.aux) ) 
 Here is how much of TeX's memory you used:
- 5428 strings out of 493698
- 79726 string characters out of 3144412
- 208225 words of memory out of 3000000
- 8675 multiletter control sequences out of 15000+200000
+ 5429 strings out of 493698
+ 79744 string characters out of 3144412
+ 203947 words of memory out of 3000000
+ 8676 multiletter control sequences out of 15000+200000
  51652 words of font info for 101 fonts, out of 3000000 for 9000
  1028 hyphenation exceptions out of 8191
  36i,13n,47p,1607b,349s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -556,7 +551,7 @@ pe1/public/amsfonts/cm/cmsy9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/t
 imes/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb>
 <C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files
 /MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on LSH-Canopy.pdf (9 pages, 514943 bytes).
+Output written on LSH-Canopy.pdf (9 pages, 515898 bytes).
 PDF statistics:
  359 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
