@@ -1,4 +1,4 @@
-
+	
 %% bare_conf.tex
 %% V1.3
 %% 2007/01/11
@@ -383,9 +383,7 @@ the diversity, abundance, function and role of the
 different organisms 
 within these communities. 
 %
-As an example,  metagenomics allows for the analysis 
-of the pathogenic role played by the microbial organisms within the 
-human host and has implications for betterment of health and drug discovery. 
+%As an example,  metagenomics allows for the analysis of the pathogenic role played by the microbial organisms within the human host and has implications for betterment of health and drug discovery. 
 
 
 We present 
@@ -397,7 +395,7 @@ achieves efficiency
 by first partitioning the large number of sequence reads into 
 groups (called canopies) using a fast locality sensitive hashing based 
 distance function. This 
-initial approximate assignment of reads to 
+initial approximate assignment of sequence reads to 
 canopies is refined by using 
 state-of-the-art
 sequence clustering algorithms. This
@@ -412,7 +410,7 @@ can estimate  the biodiversity within
 a community sample.
 
 The Canopy-based clustering algorithm is evaluated on synthetic and real 
-world 16S 
+world 16S and whole 
 metagenome  benchmarks. We demonstrate the ability 
 of our proposed approach to  
 determine meaningful OTU assignments and observe
@@ -424,7 +422,7 @@ different state-of-the-art sequence clustering algorithms.
 \end{abstract}
 
 \begin{IEEEkeywords}
-Clustering, Canopy, Metagenomes, 16S, Biodiversity 
+Clustering, Canopy, Metagenome, 16S, Biodiversity 
 \end{IEEEkeywords}
 
 % For peer review papers, you can put extra information on the cover
@@ -443,7 +441,7 @@ Clustering, Canopy, Metagenomes, 16S, Biodiversity
 % Microorganism and it's Importance + what is metagenome
 % HR Editing [Nice work Mohammad]
 
-A large portion of the  earth's biomass comprises trillions of tiny  microorganisms with varying  biodiversity and play a crucial role in ensuring the stability of environment. Communities of interacting microbes  exists in several ecosystems varying from the soil, ocean and human body \cite{MARHumanMicro}; and though, most of them are beneficial to the host some are known to cause unwanted conditions and can be linked to cause of diseases in the host \cite{MARTurnbaugh}. 
+A large portion of the  earth's biomass comprises trillions of tiny  microorganisms with varying  biodiversity and plays a crucial role in ensuring the stability of environment. Communities of interacting microbes  exists in several ecosystems varying from the soil, ocean and human body \cite{MARHumanMicro}; and though, most of them are beneficial to the host some are known to cause unwanted conditions and can be linked to cause of diseases in the host \cite{MARTurnbaugh}. 
 
 \emph{Metagenomics} is the sequencing of the collective DNA  of microbial organisms coexisting as communities. Analyzing metagenomes has provided an unprecedented opportunity to understand the diversity, role and function of these organisms within clinical and ecological environments \cite{MARHumanGut}\cite{MARMihaiPop}.
 
@@ -459,7 +457,7 @@ Over the years, several unsupervised clustering algorithms have been developed a
 
 In this paper we develop an approximate but efficient clustering algorithm based on Canopy Clustering \cite{MARCanopy} which can be used as a pre-clustering  step with any state-of-the-art sequence clustering algorithms. Specifically, our approach identifies canopies with a greedy procedure and a fast sequence distance metric based on locality sensitive hashing \cite{MARLshRef2}. Sequences within the canopies are considered as an initial partition (or grouping) of data which can be further refined by applying expensive and accurate clustering algorithms. Our developed approach treats each canopies independently allowing for easy parallelization.
 
-We present experimental results on real and synthetic metagenome sequence benchmarks and show that use of Canopy Clustering (CC) in combination with UCLUST \cite{MARuclust}, SWARM \cite{MARSwarm2} and SUMACLUST \cite{MARSumaclust} leads to improved run time efficiency with accurate clustering results. We also show the performance of our developed approach is scalable for large datasets with increased number of processors. The source code is freely available on Github\footnote{https://github.com/mrahma23/LSH-Canopy} for public use. 
+We present experimental results on real and synthetic metagenome sequence benchmarks and show that use of Canopy Clustering (CC) in combination with UCLUST \cite{MARuclust}, SUMACLUST \cite{MARSumaclust} and SWARM \cite{MARSwarm2} leads to improved run time efficiency by maximum of 12.19, 21.09 and 18.61 times respectively with accurate clustering results. We also show the performance of our developed approach is scalable for large datasets with increased number of processors. The source code is freely available on Github\footnote{https://github.com/mrahma23/LSH-Canopy} for public use. 
           
 
 \section{Literature Review}
@@ -492,29 +490,28 @@ Figure \ref{fig:flowchart} shows an overview of our proposed canopy clustering a
 
 Canopy Clustering \cite{MARCanopy} is an efficient approximate clustering algorithm often used as pre-processing step for other accurate and expensive clustering methods like the K-means algorithm or the Hierarchical clustering algorithm. It is intended to speed up clustering operations on large data sets, where standard clustering algorithms may be impractical in terms of run time and memory consumption due to the large number of pairwise distance calculations. For a dataset with $N$ instances, worst case calculations without canopy clustering is $N^2$. After canopy clustering, if the number of canopies is $k$ then worst case calculations with canopy clustering is $\sum_{i=1}^{k}(c_i)^2$ where $c_i$ is the number of instances within $i$th canopy.
 
-Canopy clustering uses two distance thresholds, (\romannum{1}) \textit{soft} threshold $T1$ and (\romannum{2}) \textit{tight} threshold $T2$. If data point $p_1$ is within the soft distance threshold $T1$ with centroid $p_2$ then $p_1$ will reside in same canopy as $p_2$ but $p_1$ may belong to other canopies assuming that it has only met soft threshold and best match is yet to be found. Thus one data point may belong to multiple canopies in Canopy clustering. On the other hand if data point $p_1$ is within the tight distance threshold $T2$ with centroid $p_2$ then canopy clustering assigns $p_1$ to the same canopy as $p_2$ and stops assigning $p_1$ to any other canopy assuming that tight threshold has been met and best canopy assignment for $p_1$ has been found. Canopy centrists are selected randomly until all data points is assigned to at least one canopy. 
+Canopy clustering uses two distance thresholds, (\romannum{1}) \textit{soft} threshold $T1$ and (\romannum{2}) \textit{tight} threshold $T2$. If data point $p_1$ is within the soft distance threshold $T1$ with centroid $p_2$ then $p_1$ will reside in same canopy as $p_2$ but $p_1$ may belong to other canopies assuming that it has only met soft threshold and best match is yet to be found. Thus one data point may belong to multiple canopies in Canopy clustering. On the other hand if data point $p_1$ is within the tight distance threshold $T2$ with centroid $p_2$ then canopy clustering assigns $p_1$ to the same canopy as $p_2$ and stops assigning $p_1$ to any other canopy assuming that tight threshold has been met and best canopy assignment for $p_1$ has been found. Canopy centroids are selected randomly until all data points is assigned to at least one canopy. 
 
 
 \subsection{\textbf{Locality Sensitive Hashing}}
 
-Canopies are intended to reduce pairwise distance calculations. Canopy clustering itself should be efficient which requires a fast and approximate distance measure for Canopy assignments. Locality Sensitive Hashing (LSH) \cite{MARLshRef2} is an algorithm for solving the approximate or exact near neighbors search. Suppose we have a space S of points with a distance measure $d(x,y)$. A family H of hash functions is said to be $(d1, d2, p1, p2)$-sensitive for any x and y in S: if $d(x, y)<d1$, then the probability over all $h\in{H}$, that $h(x)=h(y)$ is at least $p1$ and if $d(x, y)>d2$ , then the probability over all $h\in{H}$, that $h(x)=h(y)$ is at most $p2$. LSH provides a fast approximate distance measure while reducing data dimensionality which makes LSH appropriate for Canopy clustering in 16S and metagenomic data.
-
-
-\subsection{\textbf{Projection of Sequence Reads in LSH}}
+Canopies are intended to reduce pairwise distance calculations. Canopy clustering itself should be efficient which requires a fast and approximate distance measure for Canopy assignments. Locality Sensitive Hashing (LSH) \cite{MARLshRef2} is an algorithm for solving the approximate or exact near neighbors search. Suppose we have a space S of points with a distance measure $d(x,y)$. A family H of hash functions is said to be $(d1, d2, p1, p2)$-sensitive for any x and y in S: if $d(x, y)<d1$, then the probability over all $h\in{H}$, that $h(x)=h(y)$ is at least $p1$ and if $d(x, y)>d2$ , then the probability over all $h\in{H}$, that $h(x)=h(y)$ is at most $p2$. LSH provides a fast approximate distance measure while reducing data dimensionality which makes LSH appropriate for Canopy clustering in 16S and whole metagenomic data.
 
 We constructed the LSH family with bit sampling \cite{indyk1998approximate}. The normalized kmers frequency based feature vectors of sequence reads were first projected into $d$ dimensional vectors in $\{0,1\}^d$ space. Given an input vector $v$ and a random hyperplane defined by $r$, we let $h(v)=\{0,1\}$ based on $sgn(v\cdot{r})=\pm{1}$ that indicates on which side of the hyperplane $v$ lies. Each possible choice of $r$ defines a single function. Let $H$ be the set of all such functions. For any $h_i\in{H}$ and for any two data $x,y$ the probability that $x$ and $y$ \emph{agree} on $i^{th}$ positions of their respective $d$-length binary vector is
 \begin{equation}
 P[h_i(x)=h_i(y)]=1-\frac{distance(h_i(x),h_i(y))}{d} 
 \end{equation}
-Where \emph{distance} is the hamming distance and $d$ is the number of bits. Hence $H=\{h_1,h_2,...,h_d\}$ is a $(d_1,d_2,1-d_1/d,1-d2/d)$ sensitive LSH family. Both the random projection and hamming distance calculation is cheap and fast which makes this scheme appropriate for our purpose - fast partitioning of large scale genome sequences so that more expensive clustering can be done in parallel. Moreover, this projection and distance scheme is computationally inexpensive than another popular alternative for LSH known as MinHash \cite{broder1997resemblance}. MinHash provides $n!$ choices for hash functions in LSH family where $n$ is the total number of kgrams. Whereas our scheme generates only $d<<n!$ hash functions where $d$ can be easily estimated by sampling and validation based on 16S and metagenomic data.  
+Where \emph{distance} is the hamming distance and $d$ is the number of bits. Hence $H=\{h_1,h_2,...,h_d\}$ is a $(d_1,d_2,1-d_1/d,1-d2/d)$ sensitive LSH family. Both the random projection and hamming distance calculation is cheap and fast which makes this scheme appropriate for our purpose which is fast partitioning of large scale genome sequences so that more expensive clustering can be done in parallel.
+
+%%Moreover, this projection and distance scheme is computationally inexpensive than another popular alternative for LSH known as MinHash \cite{broder1997resemblance}. MinHash provides $n!$ choices for hash functions in LSH family where $n$ is the total number of kgrams. Whereas our scheme generates only $d<<n!$ hash functions where $d$ can be easily estimated by sampling and validation based on 16S and metagenomic data.  
 
 \subsection{\textbf{Sub-Clustering Inside Canopies}}
 \label{sub-cluster}
-We have used three recent and popular sequence clustering methods as more accurate and expensive sub-clustering measure inside canopies in this study. UCLUST \cite{MARuclust}, SUMACLUST \cite{MARSumaclust} and SWARM \cite{MARSwarm2} were used for sub-clustering canopies.
+Canopy clustering  makes initial approximate partitions of the dataset and reduces pairwise distance computations. Each of these partitions can be further sub clustered in parallel with more accurate and expensive clustering methods with lower computational cost since only the points inside canopies are taken into consideration. We have used three recent and popular sequence clustering methods as more accurate and expensive sub-clustering measure inside canopies in this study. UCLUST \cite{MARuclust}, SUMACLUST \cite{MARSumaclust} and SWARM \cite{MARSwarm2} were used for sub-clustering canopies.
 
 \subsection{\textbf{Merging results from Canopies}}
 
-Each cluster (OTU) is represented by the Longest Common Subsequence of all member sequences. The final step of our proposed framework is to merge OTU representations generated by canopies. According to Canopy cluster algorithm a single data point may belong to multiple canopies as long as the soft threshold is met. As a result similar OTU representations may appear from multiple canopies. To eliminate redundancy we run UCLUST on the OTU representations. We also use Minimum Spanning Tree and Locality Sensitive Hashing (LSH) distance based clustering method to merge OTU representations.  
+Each cluster (OTU) is represented by the Longest Common Subsequence of all member sequences. The final step of our proposed framework is to merge OTU representations generated by canopies. According to Canopy cluster algorithm a single data point may belong to multiple canopies as long as the soft threshold is met. As a result similar OTU representations may appear from multiple canopies. To eliminate redundancy we run UCLUST on the OTU representations.
  
 In the following Sections UCLUST, SUMACLUST and SWARM with Canopy clustering approach are represented as CC$_{UCLUST}$, CC$_{SUMACLUST}$ and CC$_{SWARM}$ respectively where the term CC stands for Canopy Clustering. 
 
@@ -523,10 +520,7 @@ In the following Sections UCLUST, SUMACLUST and SWARM with Canopy clustering app
 
 \subsection{\textbf{Dataset Description}}
 
-%HR EDITS 
-
-To evaluate the performance of our proposed approach we use previously published synthetic and real world sequence benchmarks \cite{MARopenDeNovo} which are publicly available\footnote{https://github.com/ekopylova/otu-clustering}. We used three synthetic 16S rRNA gene mock community datasets (Bokulich$_2$, Bokulich$_3$, and Bokulich$_6$) from Bokulich et. al. \cite{MARmockDatasetRef} and three real data sets: a 16S rRNA gene soil data set (Canadian Soil) \cite{MARcanadianSoil}, a 16S rRNA gene human data set (Body Sites) \cite{MARbodySites} and 18S rRNA gene soil data set (Global Soil) \cite{MARglobalSoil}. We have also used a whole metagenomic sequence dataset containing whole gut microbiome wide association study result of Liver Cirrhosis disease from \cite{qin2014alterations} to evaluate the performance of our approach on metagenomic sequence data. Key statistics and relevant information regarding these datasets are presented in Table \ref{table:finaltabledataset}. 
-
+To evaluate the performance of our proposed approach we use previously published synthetic and real world 16S, 18S and metagenome sequence benchmarks. Key statistics and relevant information regarding these datasets are presented in Table \ref{table:finaltabledataset}. 
 
 \begin{table}[htb] 
 	%\centering 
@@ -740,7 +734,7 @@ To evaluate the performance of our proposed approach we use previously published
 This dataset was prepared using the 
 Illumina TruSeq v2 paired--end library
 preparation kit. It is a simulated 16S rRNA gene 
-microbial community data set.
+microbial community dataset.
 This 
 dataset contains 19 taxonomic Families, 19 Genera, 22 Species 
 and 22 Strains in total. This dataset can also be 
@@ -810,10 +804,7 @@ where where $p_i$ is the proportion of the community represented by OTU $i$. Sim
 
 
 \subsubsection{\textit{F-measure}}
-In case of synthetic datasets, false-positive (FP; taxonomy/OTU exists in observed but not expected), false-negative
-(FN; taxonomy/OTU exists in expected but not observed), and 
-true-positive (TP; taxonomy/OTU exists in both observed and expected) measures were computed from 
-cluster output and the ground truth which is the expected taxonomic composition. The following definitions were used:
+In case of synthetic datasets, expected taxonomic composition is known (\emph{ground truth}). False-positive (FP) refers to the number of taxonomy that was found in observed but not expected, false-negative (FN) refers to the number of taxonomy that exists in expected but not observed, and true-positive (TP) refers to the number of taxonomy exists in both observed and expected. The following definitions were used:
 
 \begin{equation}
 precision = \frac{TP}{(TP + FP)}
@@ -831,7 +822,7 @@ F Score = \frac{2 \times precision \times recall}{(precision + recall)}
 After getting Operational Taxonomic Units (OTU) from a clustering method we create a taxonomic profile at the Genus level. Pearson’s correlation coefficient was computed to measure the relatedness of taxonomic assignment between a pair of tools. Values range between -1 and 1, with -1 indicating a negative correlation, 0 indicating no correlation, and 1 indicating a positive correlation or strong relationship.
 
 \subsection{\textbf{Parameter Settings}}
-For kmers, the value of parameter k was set to 4. The parameters for bit length of LSH ($d$), canopy's soft ($T1$) and hard ($T2$) thresholds were set by using random sampling and validation. Only ten percent of data was randomly sampled from the dataset of interest. First the parameter for LSH bit length $d$ was estimated. In order to know correctness of our estimation of $d$, we performed Canopy clustering with corresponding sub clustering inside canopies and compared the results corresponding to the bit lengths. For synthetic dataset $F1$-scores and for real world datasets Pearson Coefficient Correlation ($\rho$) with results from corresponding expensive naive sequence clustering. We started with bit length $d$=1 and continued to increase value of $d$ as long as we got better results for sampled data. Initial value of soft ($T1$) and tight ($T2$) threshold  was set to 0.6 and 0.4 respectively where maximum distance is 1.0. These are relaxed initial values for both $T1$ and $T2$, meaning that they allow for higher repetitions of sequence reads in multiple canopies due to higher value of $T1$ and easy final canopy assignment due to higher value of $T2$ which results in rough and fast approximate clusters prior to expensive sub-clustering step. Any bit length $d$ that brings comparatively better results for these relaxed $T1$ and $T2$ on sampled data is expected to bring better results for more strict $T1$ and $T2$ on whole datasets.
+For kmers, the value of parameter k was set to 4. The parameters for bit length of LSH ($d$), canopy's soft ($T1$) and hard ($T2$) thresholds were set by using random sampling and validation. For validation purpose, only ten percent of data was randomly sampled from the dataset of interest. First the parameter for LSH bit length $d$ was estimated. In order to know correctness of our estimation of $d$, we performed Canopy clustering with corresponding sub clustering inside canopies and compared the results corresponding to the bit lengths. For synthetic dataset $F1$-scores and for real world datasets Pearson Coefficient Correlation ($\rho$) with results from corresponding expensive naive sequence clustering. We started with bit length $d$=1 and continued to increase value of $d$ as long as we got better results for sampled data. Initial value of soft ($T1$) and tight ($T2$) threshold  was set to 0.6 and 0.4 respectively where maximum distance is 1.0. These are relaxed initial values for both $T1$ and $T2$, meaning that they allow for higher repetitions of sequence reads in multiple canopies due to higher value of $T1$ and easy final canopy assignment due to higher value of $T2$ which results in rough and fast approximate clusters prior to expensive sub-clustering step. Any bit length $d$ that brings comparatively better results for these relaxed $T1$ and $T2$ on sampled data is expected to bring better results for more strict $T1$ and $T2$ on whole datasets.
 
 Once $d$ is selected we estimated values for $T1$ and $T2$ on the same sampled data. First, hard threshold ($T2$) was estimated with soft threshold ($T1$) fixed at 0.6. $T2$ determines which sequence reads will be retained for next iteration of canopy clustering. Same comparison metrics from the estimation of parameter $d$ were used. We decreased the value of $T2$ from 0.4 (\emph{relaxed}) to 0.1 (\emph{strict}) with a step size of 0.01. The $T2$ corresponding to best result was selected. Then $T2$ was fixed at the best estimation and $T1$ was varied from 0.6 to best estimation for $T2$ with step size of 0.01. The value for $T1$ corresponding to best result was selected. Table \ref{table:parameters} shows the estimated parameter values for our study.   
 
@@ -859,6 +850,7 @@ Once $d$ is selected we estimated values for $T1$ and $T2$ on the same sampled d
 	}
 \end{table}	     
 
+\subsection{\textbf{Hardware and Software for Experiments}}
 We performed all the experiments on computers with Intel 5th generation Core i7 2.70GHz 64bit processor with 8 core CPUs and 12GB memory. Similarity identity of sub-clustering methods were set to default 97\%. For implementation we used Python 2.7.12 and QIIME \cite{MARQiime} version 1.9.0. Taxonomy for reported OTUs was assigned using the RDP Classifier \cite{MARRdp} against the 97\% representative databases for Greengenes \cite{MARGreen1} and Silva \cite{MARSilva} for methods used in this study. We used PyNast\footnote{http://biocore.github.io/pynast/} open source sequence aligner for aligning clustered output. 
 
 \section{Results Discussion} 
