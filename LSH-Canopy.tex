@@ -532,15 +532,65 @@ source code is freely available on Github\footnote{https://github.com/mrahma23/L
 \section{Literature Review}
 \label{sec:Literature}
 
-Over the years several sequence clustering methods have been developed and used widely for metagenome sequences. A comprehensive survey by Kopylova et. al. \cite{MARopenDeNovo} benchmarks various sequence clustering algorithms  including UCLUST \cite{MARuclust}, SWARM \cite{MARSwarm2}, SUMACLUST \cite{MARSumaclust} and MOTHUR \cite{MARMothur}
+In the past decade, several 
+sequence clustering methods have been developed and
+used widely for metagenome sequences. A comprehensive survey 
+by Kopylova et. al. \cite{MARopenDeNovo} benchmarks 
+various  approaches 
+including UCLUST \cite{MARuclust}, SWARM \cite{MARSwarm2}, 
+SUMACLUST \cite{MARSumaclust} and MOTHUR \cite{MARMothur}. 
 
-CD-HIT \cite{MARCDhit} is general purpose sequence clustering algorithm that follows an incremental, greedy approach. CD-HIT uses pairwise sequence alignment to find similar sequences. UCLUST \cite{MARuclust} is similar to CD-HIT but achieves a significant speedup over CD-HIT by using seeds (fixed length gapless subsequences) for performing pairwise sequence comparisons. MC-LSH \cite{MARMetaLSH} utilizes an efficient locality sensitive based hashing function to approximate the pairwise sequence similarity. MC-MinH \cite{MARMcMinH} uses min-wise \cite{MARMinWise} hashing along with the greedy clustering to group 16S and whole metagenome sequences. Mash \cite{MAROtherMinH}, uses MinHash locality sensitive hashing to reduce large sequences to a representative sketch and estimate pairwise distances. Other methods for clustering sequence reads include TOSS \cite{MARToss}, AbundanceBin \cite{MARAbundant} and CompostBin \cite{MARCompost}. All unique kmers are first grouped in TOSS and then clusters are merged based on kmer repetitions. In AbundanceBin, reads are modeled as a mixture of Poisson distributions. Expectation Maximization (EM) algorithm is used to infer model parameters for the final clustering. Principal component analysis is used within CompostBin to project the data into a lower dimensional space, followed with a graph partitioning approach. MOTHUR \cite{MARMothur} uses a pairwise distance matrix as input and performs hierarchical clustering. An expensive sequence alignment is used between all pairs of input sequences for computing distances.
+CD-HIT \cite{MARCDhit} is a 
+general purpose sequence clustering algorithm that 
+follows an incremental, greedy approach. CD-HIT uses 
+pairwise sequence alignment to find similar 
+sequences. UCLUST \cite{MARuclust} is similar to CD-HIT but 
+achieves a significant speedup over CD-HIT by using seeds (fixed length gapless subsequences) for 
+performing pairwise sequence comparisons. MC-LSH \cite{MARMetaLSH} utilizes 
+an efficient locality sensitive based hashing function to 
+approximate the pairwise sequence similarity. MC-MinH \cite{MARMcMinH} uses 
+min-wise \cite{MARMinWise} hashing along with 
+greedy clustering to group 16S and whole metagenome sequences. Mash \cite{MAROtherMinH}, uses MinHash 
+locality sensitive hashing 
+to reduce large sequences to a representative sketch and 
+estimate
+pairwise distances. Other methods for clustering sequence 
+reads include TOSS \cite{MARToss}, AbundanceBin \cite{MARAbundant} and CompostBin \cite{MARCompost}. All unique 
+kmers are first grouped in TOSS and then clusters are merged 
+based on kmer repetitions. In AbundanceBin, reads are modeled as a 
+mixture of Poisson distributions. Expectation Maximization (EM) algorithm 
+is used to infer model parameters for the final clustering. Principal 
+component analysis is used within CompostBin to project the data into a 
+lower dimensional space
+followed with a graph partitioning approach. MOTHUR \cite{MARMothur} uses a pairwise distance matrix as 
+input and performs hierarchical clustering. 
 
-SWARM \cite{MARSwarm2} uses exhaustive single-linkage clustering based on optimal sequence alignment. Sequences that are less than a certain distance from any other other sequence in the cluster are clustered together. SWARM attempts to reduce the impact of clustering parameters on the resulting OTUs by avoiding arbitrary global clustering thresholds and input sequence ordering dependence. At first SWARM builds an initial set of OTUs is constructed by iteratively agglomerating similar amplicons. Then amplicon abundance values are used to reveal OTUs’ internal structures and to break them into sub-OTUs.
+%
+SWARM \cite{MARSwarm2} uses exhaustive single-linkage clustering 
+based on optimal sequence alignment. Sequences that are less than 
+a certain distance from any other other sequence in the cluster are 
+clustered together. SWARM attempts to reduce the impact of clustering 
+parameters on the resulting OTUs by avoiding arbitrary 
+thresholds and input sequence ordering dependencies. SWARM builds 
+an initial set of OTUs  by 
+iteratively agglomerating similar amplicons. The amplicon abundance values are used to reveal 
+OTUs’ internal structures and 
+break them into sub-OTUs.
+%
+SUMACLUST \cite{MARSumaclust} is similar to UCLUST and uses 
+a  greedy strategy to 
+incrementally construct clusters by comparing an 
+abundance-ordered list of input sequences against the 
+representative set of already-chosen sequences.  UCLUST, SWARM and SUMACLUST are 
+considered to be 
+state-of-the-art metagenome sequence clustering methods by a 
+benchmarking study \cite{MARopenDeNovo}.  As such, we compare the performance of our developed method with these three approaches. 
 
-SUMACLUST \cite{MARSumaclust} follows similar approach as UCLUST. Based on greedy strategy SUMACLUST incrementally constructs clusters by comparing an abundance-ordered list of input sequences against the representative set of already-chosen sequences. Initially this list is empty. UCLUST and recently developed, SWARM and SUMACLUST are considered to be the state-of-the-art metagenome sequence clustering methods by a benchmarking study \cite{MARopenDeNovo}. 
 
-In this study we developed an approximate but highly efficient sequence clustering algorithm  using Canopies \cite{MARCanopy}. The developed approach can be used as a pre-processing step for other state-of-art sequence clustering algorithms to improve efficiency and also retains correctness in clustering.
+%In this study we developed h  using Canopies \cite{MARCanopy}. The 
+%developed approach can be used as a pre-processing step for
+%other state-of-art sequence clustering
+%algorithms to improve efficiency and also retains correctness in clustering.
 
 \section{Methods}
 \label{sec:Methods}
