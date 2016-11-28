@@ -372,9 +372,11 @@ Email: mrahma23@gmu.edu, nlapier2@gmu.edu, rangwala@cs.gmu.edu and dbarbara@gmu.
 
 \begin{abstract}
 	
-The advancement in genome technologies has allowed for the 
-collective sequencing of co-existing microbial communities (Metagenomics), omnipresent 
-across various environments like the soil, ocean and human body.
+Advances in genome technologies 
+has allowed for the 
+collective sequencing of co-existing 
+microbial communities (Metagenomics) that are ubiquitous 
+across environments like the soil, ocean and human body.
 %
 Metagenomics has 
 spurred the development of several 
@@ -387,36 +389,42 @@ within these communities.
 
 
 We present 
-an approximate  but fast 
+a fast and scalable 
 clustering algorithm
 for analyzing 
-large-scale metagenomic data. Our approach 
+large-scale metagenome sequence
+data. Our approach 
 achieves efficiency 
-by first partitioning the large number of sequence reads into 
-groups (called canopies) using a fast locality sensitive hashing based 
-distance function. This 
+by  
+partitioning the large number of sequence reads into 
+groups (called canopies) using locality sensitive 
+hashing.  This 
 initial approximate assignment of sequence reads to 
-canopies is refined by using 
+canopies is then 
+refined by using 
 state-of-the-art
-sequence clustering algorithms. This
+sequence clustering 
+algorithms. This
 two-phase 
 approach allows for the
 use  of 
-our developed algorithms as a pre-processing phase for computationally expensive 
+our developed algorithms as a pre-processing phase for 
+computationally expensive 
 clustering 
 algorithms. Using the clusters as surrogates for 
 Operational Taxonomic Units (OTUs) we 
-can estimate  the biodiversity within 
+estimate  the biodiversity within 
 a community sample.
-
-The Canopy-based clustering algorithm is evaluated on synthetic and real 
+%
+The Canopy-based clustering 
+algorithm is evaluated on synthetic and real 
 world 16S and whole 
 metagenome  benchmarks. We demonstrate the ability 
 of our proposed approach to  
 determine meaningful OTU assignments and observe
 significant speedup with regards 
 to run time when combined with three 
-different state-of-the-art sequence clustering algorithms. 
+different clustering algorithms. 
 
 
 \end{abstract}
@@ -765,7 +773,7 @@ This dataset contains composition of bacterial communities from up to 27 differe
 The global soil data was taken from Ramirez et al. \cite{MARglobalSoil} which is a study of the below-ground diversity in New York City's Central Park.
 
 \subsubsection{Liver Cirrhosis}
-The Liver Cirrhosis dataset was taken from the study \cite{qin2014alterations} which is a whole gut microbiome wide association study of stool samples from 98 liver cirrhosis patients and 83 healthy controls to characterize the fecal microbial communities and their functional composition. In total, 860 Gb of high-quality sequence data was generated in this study. Because of the high volume of sequence reads in this dataset, we used random sampling for feasible clustering performance evaluations. Three million and thirty million sequence reads were randomly chosen from original dataset regardless of sample labels (disease or control) for our study.   
+The Liver Cirrhosis dataset was taken from the study \cite{qin2014alterations} which is a whole gut microbiome wide association study of stool samples from 98 liver cirrhosis patients and 83 healthy controls to characterize the fecal microbial communities and their functional composition. In total, 860 GB of high-quality sequence data was generated in this study. Because of the high volume of sequence reads in this dataset, we used random sampling for feasible clustering performance evaluations. Three million and thirty million sequence reads were randomly chosen from original dataset regardless of sample labels (disease or control) for our study.   
 
 
 \subsection{\textbf{Evaluation Metrics}}
