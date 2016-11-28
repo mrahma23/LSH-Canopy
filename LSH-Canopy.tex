@@ -449,23 +449,84 @@ Clustering, Canopy, Metagenome, 16S, Biodiversity
 % Microorganism and it's Importance + what is metagenome
 % HR Editing [Nice work Mohammad]
 
-A large portion of the  earth's biomass comprises trillions of tiny  microorganisms with varying  biodiversity and plays a crucial role in ensuring the stability of environment. Communities of interacting microbes  exists in several ecosystems varying from the soil, ocean and human body \cite{MARHumanMicro}; and though, most of them are beneficial to the host some are known to cause unwanted conditions and can be linked to cause of diseases in the host \cite{MARTurnbaugh}. 
+A large portion of the  earth's biomass 
+comprises trillions of tiny  microorganisms 
+with varying  biodiversity.  Communities
+of interacting microbes  exists in several 
+ecosystems varying from the soil, ocean 
+and human body \cite{MARHumanMicro}; and though, most of 
+them are beneficial to the host some are known to cause 
+unwanted conditions and can be linked to cause of 
+diseases in the host \cite{MARTurnbaugh}. 
+%
+\emph{Metagenomics} is the 
+sequencing of the collective DNA  of 
+microbial organisms coexisting as communities. Analyzing 
+metagenomes has provided an unprecedented 
+opportunity to understand the diversity, role and 
+function of these organisms within different 
+clinical and ecological environments \cite{MARHumanGut}\cite{MARMihaiPop}.
 
-\emph{Metagenomics} is the sequencing of the collective DNA  of microbial organisms coexisting as communities. Analyzing metagenomes has provided an unprecedented opportunity to understand the diversity, role and function of these organisms within clinical and ecological environments \cite{MARHumanGut}\cite{MARMihaiPop}.
 
-% What is read + 16S/18S + OTU + OTU-Clustering 
+However, sequencing technologies do not deliver the 
+complete genome of an organism (millions in length), but 
+large number of short contiguous 
+subsequences called \emph{reads} of length $75$ to $500$ in 
+random order. Sequencing communities of genomes 
+leads to additional challenges because reads 
+from different microbes are mixed together; and 
+upfront  the composition of a community in terms of 
+abundance and identity of microbial species
+is unknown \cite{MARMetaChallenge}. Sequencing technologies also 
+produce large 
+datasets that range from Gigabytes (GB) to Terabytes (TB).  Alternatively, 
+targeted metagenome sequencing  that 
+involves sequencing of \emph{marker genes} has been 
+popular for the characterization of these communities. 16S and 18S 
+sequences are repetitive marker genes within microbial genomes that 
+are generally conserved but 
+have slight 
+variations in their sequences 
+that allow them to be separated into different 
+taxonomic groups \cite{MAR16S}. 
 
 
-State-of-the-art genome sequencing technologies do not deliver the complete genome of an organism (millions in length), but large number of short contiguous subsequences called \emph{reads} of length 75 to 500 (based on technology) in random order. Sequencing communities of genomes exacerbates the problem since reads from different microbes are mixed together and upfront  the composition of a community in terms of abundance and identity of bacteria is unknown \cite{MARMetaChallenge}. Further, sequencing technologies produce datasets that range from Gigabytes (GB) to Terabytes (TB) with their own idiosyncrasies.  Alternatively, targeted metagenome sequencing  that involves sequencing of \emph{marker genes} has been popular for the characterization of these communities. 16S and 18S sequences are repetitive marker genes within microbial genomes but have variations in their sequences that allow them to be separated into different taxonomic groups \cite{MAR16S}. 
-
-
-Over the years, several unsupervised clustering algorithms have been developed and used for the analysis of large-scale targeted and whole metagenome sequences (reviewed in Section \ref{sec:Literature}). The unsupervised grouping  of similar sequences from the 16S/18S genes is referred as \emph{binning} and allows for the estimation of biodiversity within a sample. Binning leads to assignment of similar sequences within groups called \emph{Operational Taxonomic Units (OTUs)} \cite{MAROTU}. Microbial OTUs are generally ecologically consistent across the hosts regardless of OTU clustering approaches \cite{MAROTUConsistant}. 
+In the past few years, several unsupervised 
+clustering algorithms have been developed and
+used for the analysis of large-scale targeted and whole 
+metagenome sequence reads 
+(reviewed in Section \ref{sec:Literature}). The 
+unsupervised grouping  of similar sequences from the 
+16S/18S genes is referred as \emph{binning} and 
+allows for the estimation of biodiversity within a sample. Binning 
+leads to assignment of similar sequences within groups called \emph{Operational Taxonomic Units (OTUs)} \cite{MAROTU}. Microbial OTUs are generally 
+ecologically consistent across the hosts regardless of the 
+clustering approaches \cite{MAROTUConsistant}. 
 
 % What have we done and how it is better
 
-In this paper we develop an approximate but efficient clustering algorithm based on Canopy Clustering \cite{MARCanopy} which can be used as a pre-clustering  step with any state-of-the-art sequence clustering algorithms. Specifically, our approach identifies canopies with a greedy procedure and a fast sequence distance metric based on locality sensitive hashing \cite{MARLshRef2}. Sequences within the canopies are considered as an initial partition (or grouping) of data which can be further refined by applying expensive and accurate clustering algorithms. Our developed approach treats each canopies independently allowing for easy parallelization.
+In this paper we develop an 
+efficient clustering algorithm based on Canopy Clustering \cite{MARCanopy} which can be used as a pre-clustering  
+step with any state-of-the-art sequence clustering algorithm. Specifically, 
+our approach identifies canopies with a greedy procedure and a 
+fast sequence distance metric based on locality 
+sensitive hashing \cite{MARLshRef2}. Sequences within the canopies are 
+considered as an initial partition (or grouping) of data which can be 
+further refined by applying expensive and accurate clustering 
+algorithms. Our developed approach treats each canopies independently 
+allowing for easy parallelization.
 
-We present experimental results on real and synthetic metagenome sequence benchmarks and show that use of Canopy Clustering (CC) in combination with UCLUST \cite{MARuclust}, SUMACLUST \cite{MARSumaclust} and SWARM \cite{MARSwarm2} leads to improved run time efficiency by maximum of 12.19, 21.09 and 18.61 times respectively with accurate clustering results. We also show the performance of our developed approach is scalable for large datasets with increased number of processors. The source code is freely available on Github\footnote{https://github.com/mrahma23/LSH-Canopy} for public use. 
+We present experimental results on 
+real and synthetic metagenome sequence
+benchmarks. We show that the 
+use of Canopy Clustering (CC) in combination 
+with UCLUST \cite{MARuclust}, SUMACLUST \cite{MARSumaclust} and 
+SWARM \cite{MARSwarm2} leads to improved run 
+time efficiency by 12.19, 21.09 and 18.61 times with accurate clustering results, respectively. We also demonstrate that our 
+developed approach is scalable for large datasets with 
+increased number of processors. The 
+source code is freely available on Github\footnote{https://github.com/mrahma23/LSH-Canopy} for public use. 
+
           
 
 \section{Literature Review}
