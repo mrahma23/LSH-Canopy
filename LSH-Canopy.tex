@@ -1088,14 +1088,50 @@ for methods used in this study. We used PyNast\footnote{http://biocore.github.io
 \label{sec:Results}
 
 \subsection{\textbf{Clustering Performance}}
-Table \ref{table:performanceTable} shows the performance of  UCLUST, SUMACLUST and SWARM with their corresponding versions with CC clustering. Table \ref{table:performanceTable} compares F-scores and Pearson Correlation Coefficient ($\rho$). F-scores are only available for synthetic benchmarks since taxonomic profile for them is known as ground truth. Correlation values were generated based on taxonomic profiles at Genus level generated from outputs from clustering methods. From Table \ref{table:performanceTable} we can see that F-scores obtained from a clustering method and its corresponding Canopy clustering version are very similar and in some cases better. We see a higher F-score for Bokulich$_2$ benchmark from CC$_{SUMACLUST}$. CC$_{UCLUST}$ and CC$_{SWARM}$ provided same F-scores as their respective naive versions for Bokulich$_2$. For Bokulich$_3$ benchmark we observed higher F-scores for all Canopy clustering methods. Finally for Bokulich$_6$ benchmark F-scores of CC$_{UCLUST}$ and CC$_{SWARM}$ were improved comparing to respective naive versions.
+Table \ref{table:performanceTable} shows the performance of  UCLUST, SUMACLUST and SWARM  in comparison to CC clustering versions. Table 
+\ref{table:performanceTable} compares F-scores and Pearson Correlation Coefficient ($\rho$). F-scores 
+are only available for synthetic 
+benchmarks since taxonomic profile for them is known. Correlation values were generated 
+based on taxonomic profiles at the 
+Genus level, 
+generated from outputs of the  clustering methods. We observe 
+that F-scores obtained from a clustering method and its corresponding Canopy clustering version are very similar and in some 
+cases better. We see a higher F-score for Bokulich$_2$ benchmark from CC$_{SUMACLUST}$ in comparison to SUMACLUST.  CC$_{UCLUST}$ and CC$_{SWARM}$ resulted in the 
+same F-scores as their respective naive versions for Bokulich$_2$. For Bokulich$_3$ benchmark we observed higher F-scores for all Canopy 
+clustering methods. Finally for Bokulich$_6$ benchmark, the 
+F-scores of CC$_{UCLUST}$ and CC$_{SWARM}$ were improved comparing to UCLUST and SWARM, respectively.
+%
+For all benchmarks we observe strong correlations between taxonomic profiles at genus level. The highest correlation was observed for 
+Bokulich$_6$ benchmark between UCLUST and CC$_{UCLUST}$ with 0.9831. 
 
-For all benchmarks we observe strong correlations between taxonomic profiles at genus level. The highest correlation was observed for Bokulich$_6$ benchmark between UCLUST and CC$_{UCLUST}$ with 0.9831. From observed F-scores and correlation values we can say that running a sequence clustering method with our proposed LSH based Canopy cluster framework can bring similar or better results.
+%\begin{comment}
+%From the 
+%observed F-scores and correlation values we conclude 
+%that  sequence clustering method with our proposed LSH based Canopy cluster framework can bring similar or better results.
+%\end{comment}
+
+\subsection{\textbf{Biodiversity Estimation}} Clustering metagenome sequences outputs OTUs that represent biodiversity contained in the samples. Table 
+\ref{table:bioDiversityTable} shows Faith’s phylogenetic diversity metric (PD), Shannon and Simpson index after clustering
+with different methods. These metrics are 
+popular Alpha Diversity metrics that measure species diversity in sites or habitats at 
+a local scale. These metric values are generated per sample basis. Table \ref{table:bioDiversityTable} shows ranges of metric values
+in $[minimum-maximum]$ format  for the different 
+methods with and without Canopy clustering. Any sample of a dataset will take value from this range. These ranges may not be same since OTUs vary over clustering methods. From Table  \ref{table:bioDiversityTable}, we observe 
+that Canopy clustering based methods produce similar ranges of values as their naive counterparts. No significant changes in diversity metric values 
+were observed which indicates that the 
+Canopy based approach reproduces similar biodiversity estimates while reducing run time.
 
 
-\subsection{\textbf{Biodiversity Estimation}} Clustering metagenome sequences outputs OTUs that represent biodiversity contained in the samples from which data is collected. We compare the biodiversity represented by OTUs from naive methods and their respective Canopy clustering variations used in this study. Table \ref{table:bioDiversityTable} shows Faith’s phylogenetic diversity metric (PD), Shannon and Simpson index after clustering with different methods. These metrics are some of the popular Alpha Diversity metrics meaning that they measure species diversity in sites or habitats at a local scale. These metric values are generated per sample basis. Table \ref{table:bioDiversityTable} shows ranges of metric values in $[minimum-maximum]$ format provided by methods with and without Canopy clustering. Any sample of a dataset will take value from this range. These ranges may not be same since OTUs vary over clustering methods. But they should be similar for a method and it's Canopy counterpart. We can see from Table \ref{table:bioDiversityTable} that Canopy clustering based methods produce similar ranges of values as their naive counterparts. No significant changes in diversity metric values were observed which indicates that Canopy based approaches reproduce similar biodiversity while reducing run time.
+\subsection{\textbf{Runtime Comparison}} Table \ref{table:Runtime} shows the run time in minutes for 
+UCLUST, SUMACLUST, SWARM and their respective versions with our proposed Canopy clustering pipeline. We observe that  CC$_{UCLUST}$ outperforms 
+UCLUST for all datasets. The highest speed up for UCLUST was observed for the the large 
+metagenome data containing 30 million  sequence reads where CC$_{UCLUST}$ was 12.19 times faster than UCLUST. CC$_{SUMACLUST}$ outperforms 
+SUMACLUST in all cases and showed  the highest speed-up of 
+21.09x for the 30M dataset. From these observations we conclude that 
+Canopy clustering not only reduces the run time of an expensive clustering method but also scales well for larger benchmark datasets comparing to the smaller ones.   
 
-\subsection{\textbf{Runtime Comparison}} Table \ref{table:Runtime} shows the run time in minutes of UCLUST, SUMACLUST, SWARM and their respective versions with our proposed Canopy clustering pipeline. We see from Table \ref{table:Runtime} that CC$_{UCLUST}$ outperforms UCLUST for all datasets. The highest speed up for UCLUST was observed for the metagenome data containing 30 million randomly sampled sequence reads where CC$_{UCLUST}$ was 12.19 times faster than UCLUST. CC$_{SUMACLUST}$ outperforms SUMACLUST in all cases. The highest speed-up for CC$_{SUMACLUST}$ was observed to be 21.09x for the large metagenome dataset. The highest speedups for CC$_{SWARM}$ was also observed for the large metagenome dataset with 30 million reads. From these observations we conclude that Canopy clustering not only reduces the run time of an expensive clustering method but also scales well for larger benchmark datasets comparing to the smaller ones.   
+{\textbf - Mohammad -- Might be better to write the previous 3 lines as one -- can you try. CC outperforms XX, YY and ZZ by ZZZ, YYY and ZZZ, respectively}
+
 
 \begin{figure}[t]	
 	\begin{minipage}[t]{0.5\linewidth}
@@ -1130,10 +1166,21 @@ For all benchmarks we observe strong correlations between taxonomic profiles at 
 
 
 \subsection{\textbf{Effect of Varying Number of Processors}}
-Figure \ref{fig:bokulich_2}-\ref{fig:global_soil} shows the runtime of CC$_{UCLUST}$, CC$_{SUMACLUST}$ and CC$_{SWARM}$ on two largest benchmarks used in this study - Global Soil and the 30M sampled data from Liver Cirrhosis dataset. We observe that increasing the number of processors reduces the total runtime. Steeper curves show reduction in runtime with increasing number of processors. Significant reductions in run time were observed CC$_{SUMACLUST}$ and CC$_{SUMACLUST}$ compared to CC$_{UCLUST}$.   
+Figure \ref{fig:bokulich_2}-\ref{fig:global_soil} shows the runtime of CC$_{UCLUST}$, CC$_{SUMACLUST}$ and CC$_{SWARM}$ on two largest benchmarks used in this study - Global Soil and the 30M Liver Cirrhosis dataset. We observe that increasing the number of processors reduces the total runtime. Significant reductions in run time were observed CC$_{SUMACLUST}$ and CC$_{SUMACLUST}$ as 
+compared to CC$_{UCLUST}$.   
 
 \subsection{\textbf{Sensitivity Analysis (Varying T1 and T2)}}
-Figure \ref{fig:bokulich_2_T1}-\ref{fig:bokulich_2_T2} shows effect of varying $T1$ ($T2$ fixed at 0.34) and $T2$ ($T1$ fixed at 0.45) on F-scores for the largest synthetic dataset Bokulich$_2$. Reducing $T1$ leads to comparatively \textit{strict} soft-threshold which will reduce repetitions of instances in multiple canopies. For a fixed $T2$ this implies that lower $T1$ will yield better canopy assignment. From Figure \ref{fig:bokulich_2_T1} we can say that when $T1$'s range is in 0.4 to 0.6 our proposed approach provides better F-Scores. On the other hand, increasing $T2$ leads to comparatively \textit{relaxed} tight-threshold for canopies. As a result instances will be prematurely assigned to canopies without waiting for best match. From Figure \ref{fig:bokulich_2_T2} we can say that when $T2$'s range  is in 0.25 to 0.35 our proposed approach achieves better F-Scores. Lower $T2$ may lead to higher runtime since instances will continue to reappear until the $T2$ is met.                   
+Figure \ref{fig:bokulich_2_T1}-\ref{fig:bokulich_2_T2} shows the 
+effect of varying $T1$ ($T2$ fixed at 0.34) and $T2$ ($T1$ fixed at 0.45) on F-scores for the Bokulich$_2$ dataset. Reducing $T1$ leads to
+comparatively \textit{strict} soft-threshold which will reduce 
+repetitions of instances in multiple canopies. For a fixed $T2$ this implies that 
+lower $T1$ will yield better canopy assignment. From Figure \ref{fig:bokulich_2_T1} we can say that 
+when $T1$'s range is in 0.4 to 0.6 our proposed approach provides better 
+F-Scores. On the other hand, increasing $T2$ leads to comparatively \textit{relaxed} tight-threshold for canopies. As a result instances will be prematurely assigned to canopies without waiting for best match. From Figure \ref{fig:bokulich_2_T2} we note that 
+when $T2$'  is in between 0.25 to 0.35, 
+our proposed approach achieves better F-Scores. Lowering 
+$T2$ may lead to higher run time since instances will continue to reappear 
+until the $T2$ threshold is satisfied.                   
 
 
 \section{Conclusion and Future Work}
