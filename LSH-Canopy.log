@@ -1,10 +1,12 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.1.21)  27 NOV 2016 23:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  28 NOV 2016 14:04
 entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
 **LSH-Canopy.tex
-(LSH-Canopy.tex
+(./LSH-Canopy.tex
 LaTeX2e <2014/05/01>
-Babel <3.9l> and hyphenation patterns for 68 languages loaded.
-(IEEEtran.cls
+Babel <3.9k> and hyphenation patterns for 78 languages loaded.
+(./IEEEtran.cls
 Document Class: IEEEtran 2007/03/05 V1.7a by Michael Shell
 -- See the "IEEEtran_HOWTO" manual for usage information.
 -- http://www.michaelshell.org/tex/ieeetran/
@@ -15,7 +17,7 @@ Document Class: IEEEtran 2007/03/05 V1.7a by Michael Shell
 \@IEEEtrantmptoksA=\toks14
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 373.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
+(/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 -- Using 8.5in x 11in (letter) paper.
@@ -88,7 +90,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
 \@IEEEtmpitemindent=\dimen116
 \c@IEEEbiography=\count90
 \@IEEEtranrubishbin=\box26
-) ("C:\Program Files\MiKTeX 2.9\tex\latex\arydshln\arydshln.sty"
+) (/usr/local/texlive/2014/texmf-dist/tex/latex/arydshln/arydshln.sty
 Package: arydshln 2004/08/31 v1.71 
 \dashlinedash=\dimen117
 \dashlinegap=\dimen118
@@ -111,31 +113,31 @@ Package: arydshln 2004/08/31 v1.71
 \adl@everyvbox=\toks15
 \adl@LTpagetotal=\dimen124
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
-Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/04/25 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
-Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/05/08 v1.15 key=value parser (DPC)
 \KV@toks@=\toks16
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
-Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
-File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+(/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+(/usr/local/texlive/2014/texmf-dist/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/infwarerr.sty
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count101
@@ -143,24 +145,24 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen125
 \Gin@req@width=\dimen126
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2013/01/14 v2.14 AMS math features
 \@mathmargin=\skip44
 
 For additional information on amsmath, use the `?' option.
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2000/06/29 v2.01
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks17
 \ex@=\dimen127
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen128
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count102
@@ -201,17 +203,17 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\romannum\romannum.sty"
+(/usr/local/texlive/2014/texmf-dist/tex/latex/romannum/romannum.sty
 Package: romannum 2009/09/03 v1.0b roman numerals
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\stdclsdv\stdclsdv.sty"
+(/usr/local/texlive/2014/texmf-dist/tex/latex/stdclsdv/stdclsdv.sty
 Package: stdclsdv 2009/09/04 v1.1a Sectional divisions
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\algorithms\algorithm.sty"
+(/usr/local/texlive/2014/texmf-dist/tex/latex/algorithms/algorithm.sty
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
 nment
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\float\float.sty"
+(/usr/local/texlive/2014/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count114
 \float@exts=\toks22
@@ -219,21 +221,21 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks23
 \@floatcapt=\box31
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\ifthen.sty"
-Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \@float@every@algorithm=\toks24
 \c@algorithm=\count115
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\algorithm2e\algorithm2e.sty"
+(/usr/local/texlive/2014/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
 Package: algorithm2e 2013/01/06 v5.00 algorithms environments
 \c@AlgoLine=\count116
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\tools\xspace.sty"
-Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/tools/xspace.sty
+Package: xspace 2009/10/20 v1.13 Space after command names (DPC,MH)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\ltxmisc\relsize.sty"
-Package: relsize 2003/07/04 ver 3.1
+(/usr/local/texlive/2014/texmf-dist/tex/latex/relsize/relsize.sty
+Package: relsize 2013/03/29 ver 4.1
 )
 ********************************************************
 Package `algorithm2e' Release 5.0 -- january 06 2013 --
@@ -275,10 +277,10 @@ subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
 \c@algocf=\count119
 \algocf@algoframe=\box38
 \algocf@algobox=\box39
-) ("C:\Program Files\MiKTeX 2.9\tex\latex\subfig\subfig.sty"
+) (/usr/local/texlive/2014/texmf-dist/tex/latex/subfig/subfig.sty
 Package: subfig 2005/06/28 ver: 1.3 subfig package
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\caption\caption3.sty"
+(/usr/local/texlive/2014/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 57.
 \captionmargin=\dimen142
@@ -305,7 +307,7 @@ Package caption Info: Unknown document class (or package),
 \sf@top=\skip66
 \sf@bottom=\skip67
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\subfloat\subfloat.sty"
+(/usr/local/texlive/2014/texmf-dist/tex/latex/subfloat/subfloat.sty
 Package: subfloat 2003/08/21 version 2.14
 
 Package `subfloat', Version 2.14 of 2003/08/21.
@@ -318,24 +320,25 @@ Package subfloat Warning: Numbers of floats not counted:
 (subfloat)                Please switch on countmax or remove the code using
 (subfloat)                the counter then..
 
-) ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
+) (/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\multirow\multirow.sty"
+(/usr/local/texlive/2014/texmf-dist/tex/latex/multirow/multirow.sty
 \bigstrutjot=\dimen150
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\threeparttable\threeparttable.sty"
+(/usr/local/texlive/2014/texmf-dist/tex/latex/threeparttable/threeparttable.sty
 Package: threeparttable 2003/06/13  v 3.0
 \@tempboxb=\box40
-)
-(LSH-Canopy.aux)
+) (./LSH-Canopy.aux)
+\openout1 = `LSH-Canopy.aux'.
+
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 359.
 LaTeX Font Info:    ... okay on input line 359.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 359.
@@ -348,7 +351,8 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 359.
 LaTeX Font Info:    ... okay on input line 359.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 359.
 LaTeX Font Info:    ... okay on input line 359.
- ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+
+(/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count127
 \scratchdimen=\dimen151
@@ -361,24 +365,68 @@ LaTeX Font Info:    ... okay on input line 359.
 \MPnumerator=\count131
 \makeMPintoPDFobject=\count132
 \everyMPtoPDFconversion=\toks26
+) (/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
+
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.jpeg,.png,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 371.
-LaTeX Font Info:    Try loading font information for U+msa on input line 460.
- ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+LaTeX Font Info:    Try loading font information for U+msa on input line 474.
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 460.
+LaTeX Font Info:    Try loading font information for U+msb on input line 474.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
+) [1{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
@@ -386,16 +434,16 @@ Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
 
-<flowchart.pdf, id=9, 549.25201pt x 592.61403pt>
+<flowchart.pdf, id=11, 549.25201pt x 592.61403pt>
 File: flowchart.pdf Graphic file (type pdf)
  <use flowchart.pdf>
-Package pdftex.def Info: flowchart.pdf used on input line 484.
+Package pdftex.def Info: flowchart.pdf used on input line 603.
 (pdftex.def)             Requested size: 243.90933pt x 284.53288pt.
- [2]
+ [2 <./flowchart.pdf>]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/sc' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/sc' tried instead on input line 527.
+(Font)              Font shape `OT1/ptm/b/sc' tried instead on input line 646.
 
-Overfull \hbox (4.07959pt too wide) in paragraph at lines 608--611
+Overfull \hbox (4.07959pt too wide) in paragraph at lines 727--730
 [][]
  []
 
@@ -403,14 +451,14 @@ Missing character: There is no â in font ptmbc7t!
 Missing character: There is no € in font ptmbc7t!
 Missing character: There is no ™ in font ptmbc7t!
 
-Overfull \hbox (0.56291pt too wide) in paragraph at lines 681--684
+Overfull \hbox (0.56291pt too wide) in paragraph at lines 800--803
 [][]
  []
 
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
-[3 <./flowchart.pdf>]
+[3]
 Underfull \vbox (badness 3209) has occurred while \output is active []
 
  [4]
@@ -424,7 +472,7 @@ Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
 
-Underfull \hbox (badness 2538) in paragraph at lines 797--798
+Underfull \hbox (badness 2538) in paragraph at lines 916--917
  \OT1/ptm/m/it/10 3) Simp-son's In-dex: [][] \OT1/ptm/m/n/10 Simp-sons in-dex i
 s de-fined as
  []
@@ -435,85 +483,85 @@ Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 860--861
+Underfull \hbox (badness 10000) in paragraph at lines 979--980
 []\OT1/ptm/m/n/10 Table II[] shows the per-for-mance of UCLUST,
  []
 
 
-Underfull \hbox (badness 2495) in paragraph at lines 860--861
+Underfull \hbox (badness 2495) in paragraph at lines 979--980
 \OT1/ptm/m/n/10 SUMACLUST and SWARM with their cor-re-spond-ing
  []
 
 
-Underfull \hbox (badness 3690) in paragraph at lines 860--861
+Underfull \hbox (badness 3690) in paragraph at lines 979--980
 \OT1/ptm/m/n/10 clus-ter-ing meth-ods. Fi-nally for Bokulich$[]$ bench-mark
  []
 
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
-[6] <bokulich_2.pdf, id=97, 578.16pt x 433.62pt>
+[6] <bokulich_2.pdf, id=98, 578.16pt x 433.62pt>
 File: bokulich_2.pdf Graphic file (type pdf)
  <use bokulich_2.pdf>
-Package pdftex.def Info: bokulich_2.pdf used on input line 873.
+Package pdftex.def Info: bokulich_2.pdf used on input line 992.
 (pdftex.def)             Requested size: 121.95563pt x 91.46649pt.
 
-Overfull \hbox (7.00012pt too wide) in paragraph at lines 873--874
+Overfull \hbox (7.00012pt too wide) in paragraph at lines 992--993
 [][] 
  []
 
-<global_soil.pdf, id=98, 578.16pt x 433.62pt>
+<global_soil.pdf, id=99, 578.16pt x 433.62pt>
 File: global_soil.pdf Graphic file (type pdf)
  <use global_soil.pdf>
-Package pdftex.def Info: global_soil.pdf used on input line 879.
+Package pdftex.def Info: global_soil.pdf used on input line 998.
 (pdftex.def)             Requested size: 121.95563pt x 91.46649pt.
 
-Overfull \hbox (7.00012pt too wide) in paragraph at lines 879--880
+Overfull \hbox (7.00012pt too wide) in paragraph at lines 998--999
 [][] 
  []
 
-<bokulich_2_T1.pdf, id=99, 578.16pt x 433.62pt>
+<bokulich_2_T1.pdf, id=100, 578.16pt x 433.62pt>
 File: bokulich_2_T1.pdf Graphic file (type pdf)
  <use bokulich_2_T1.pdf>
-Package pdftex.def Info: bokulich_2_T1.pdf used on input line 889.
+Package pdftex.def Info: bokulich_2_T1.pdf used on input line 1008.
 (pdftex.def)             Requested size: 121.95563pt x 91.46649pt.
 
-Overfull \hbox (7.00012pt too wide) in paragraph at lines 889--890
+Overfull \hbox (7.00012pt too wide) in paragraph at lines 1008--1009
 [][] 
  []
 
-<bokulich_2_T2.pdf, id=100, 578.16pt x 433.62pt>
+<bokulich_2_T2.pdf, id=101, 578.16pt x 433.62pt>
 File: bokulich_2_T2.pdf Graphic file (type pdf)
  <use bokulich_2_T2.pdf>
-Package pdftex.def Info: bokulich_2_T2.pdf used on input line 895.
+Package pdftex.def Info: bokulich_2_T2.pdf used on input line 1014.
 (pdftex.def)             Requested size: 121.95563pt x 91.46649pt.
 
-Overfull \hbox (7.00012pt too wide) in paragraph at lines 895--896
+Overfull \hbox (7.00012pt too wide) in paragraph at lines 1014--1015
 [][] 
  []
 
 
-Underfull \hbox (badness 6428) in paragraph at lines 902--903
+Underfull \hbox (badness 6428) in paragraph at lines 1021--1022
 []\OT1/ptm/m/n/10 Figure 2a[]-2b[] shows the run-time of CC$[]$,
  []
 
-(LSH-Canopy.bbl [7 <./bokulich_2.pdf> <./global_soil.pdf
-
-pdfTeX warning: pdflatex.exe (file ./global_soil.pdf): PDF inclusion: multiple 
-pdfs with page group included in a single page
-> <./bokulich_2_T1.pdf
-
-pdfTeX warning: pdflatex.exe (file ./bokulich_2_T1.pdf): PDF inclusion: multipl
-e pdfs with page group included in a single page
-> <./bokulich_2_T2.pdf
-
-pdfTeX warning: pdflatex.exe (file ./bokulich_2_T2.pdf): PDF inclusion: multipl
-e pdfs with page group included in a single page
->]
+(./LSH-Canopy.bbl
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ” in font ptmr7t!
- [8])
+ [7 <./bokulich_2.pdf> <./global_soil.pdf
+
+pdfTeX warning: pdflatex (file ./global_soil.pdf): PDF inclusion: multiple pdfs
+ with page group included in a single page
+> <./bokulich_2_T1.pdf
+
+pdfTeX warning: pdflatex (file ./bokulich_2_T1.pdf): PDF inclusion: multiple pd
+fs with page group included in a single page
+> <./bokulich_2_T2.pdf
+
+pdfTeX warning: pdflatex (file ./bokulich_2_T2.pdf): PDF inclusion: multiple pd
+fs with page group included in a single page
+>] [8])
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -527,35 +575,41 @@ Before submitting the final camera ready copy, remember to:
 
 [9
 
-] (LSH-Canopy.aux) ) 
+] (./LSH-Canopy.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 5429 strings out of 493698
- 79744 string characters out of 3144412
- 211389 words of memory out of 3000000
- 8676 multiletter control sequences out of 15000+200000
- 51652 words of font info for 101 fonts, out of 3000000 for 9000
- 1028 hyphenation exceptions out of 8191
- 36i,13n,47p,1607b,349s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.en
-c}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Fi
-les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fon
-ts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
-public/amsfonts/cm/cmmi9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/am
-sfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
-/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb>
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Progra
-m Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
-pe1/public/amsfonts/cm/cmsy9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/t
-imes/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb>
-<C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files
-/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on LSH-Canopy.pdf (9 pages, 513014 bytes).
+ 5795 strings out of 493117
+ 87041 string characters out of 6135433
+ 221976 words of memory out of 5000000
+ 9147 multiletter control sequences out of 15000+600000
+ 51652 words of font info for 101 fonts, out of 8000000 for 9000
+ 1144 hyphenation exceptions out of 8191
+ 38i,13n,47p,1498b,349s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
+exlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/te
+xlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
+live/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texli
+ve/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive
+/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2
+014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/201
+4/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2014/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2014/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2014/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2014/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2014/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2014/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2014/texmf-dist/font
+s/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2014/texmf-dist/fonts/
+type1/urw/times/utmb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/
+times/utmbi8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utm
+r8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on LSH-Canopy.pdf (9 pages, 484544 bytes).
 PDF statistics:
- 358 PDF objects out of 1000 (max. 8388607)
+ 361 PDF objects out of 1000 (max. 8388607)
+ 115 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 

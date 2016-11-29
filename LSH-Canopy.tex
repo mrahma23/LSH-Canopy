@@ -596,7 +596,23 @@ benchmarking study \cite{MARopenDeNovo}.  As such, we compare the performance of
 \label{sec:Methods}
 \subsection{\textbf{Overview}}
 
-Figure \ref{fig:flowchart} shows an overview of our proposed canopy clustering approach for metagenome sequences. Sequence reads are represented with \textit{kmers} defined as contiguous subsequence of length k. We select a read randomly as the canopy centroid. Then we compute the distances of other reads to this canopy centroid. Two thresholds are used in Canopy clustering algorithm. If the a distance is less than a \emph{tight} threshold ($T2$) we assign the read to the canopy and that read will not be considered for another canopy. Otherwise, if a distance is less than a \emph{soft} threshold ($T1$) we assign the read to the canopy but that read will be available for another canopy. This process continues until all sequence reads is assigned to at least one canopy. For fast canopy assignment we use a random projection based technique. Specifically, we use Locality Sensitive Hash (LSH) to compute pairwise distances. More accurate clustering methods are used to sub-cluster each canopy in parallel. Sub-clustering method considers only the members within the canopy which reduces pairwise distance calculations.
+% Question - is this repetive ? 
+% HR
+
+Figure \ref{fig:flowchart} shows an overview of our 
+proposed canopy clustering algorithm.  Sequence reads are represented with \textit{kmers} defined as contiguous subsequence of 
+length $k$. One of the input reads is chosen randomly 
+as the canopy centroid. Then we compute the distances of other reads to 
+this canopy centroid. Two thresholds are used in Canopy clustering algorithm. If the 
+distance is less than a \emph{tight} threshold ($T2$) we assign the read to the canopy and that
+read will not be considered for another canopy. Otherwise, if a distance is less than a \emph{soft} threshold ($T1$) we assign the 
+read to the canopy but that read will be available for another 
+canopy. This process continues until all sequence reads are
+assigned to atleast one canopy. For fast canopy assignment we use a random projection based 
+technique. Specifically, we use Locality Sensitive Hash (LSH) to compute pairwise distances. More accurate clustering methods are 
+used to sub-cluster each canopy in parallel. The sub-clustering method considers only the members within 
+the canopy which significantly 
+reduces pairwise distance computations.
 
 \begin{figure}
 	\centering
@@ -607,32 +623,87 @@ Figure \ref{fig:flowchart} shows an overview of our proposed canopy clustering a
 
 \subsection{\textbf{Canopy Clustering}}
 
-Canopy Clustering \cite{MARCanopy} is an efficient approximate clustering algorithm often used as pre-processing step for other accurate and expensive clustering methods like the K-means algorithm or the Hierarchical clustering algorithm. It is intended to speed up clustering operations on large data sets, where standard clustering algorithms may be impractical in terms of run time and memory consumption due to the large number of pairwise distance calculations. For a dataset with $N$ instances, worst case calculations without canopy clustering is $N^2$. After canopy clustering, if the number of canopies is $k$ then worst case calculations with canopy clustering is $\sum_{i=1}^{k}(c_i)^2$ where $c_i$ is the number of instances within $i$th canopy.
+Canopy Clustering \cite{MARCanopy} is an efficient approximate 
+clustering algorithm often used as pre-processing step for other accurate and expensive clustering methods like  K-means or Hierarchical clustering. It
+is intended to speed up the 
+clustering operations for 
+large data sets, where standard clustering algorithms may be 
+impractical due to  run time and memory requirements. 
+%
+For a dataset with $N$ instances, the 
+worst case calculations without canopy 
+clustering is $O(N^2)$. Using canopy clustering, 
+assuming the number of 
+canopies is set to 
+$k$; the 
+worst case calculations with canopy clustering is $\sum_{i=1}^{k}(c_i)^2$ where $c_i$ is the number of instances within $i$-th canopy.
 
-Canopy clustering uses two distance thresholds, (\romannum{1}) \textit{soft} threshold $T1$ and (\romannum{2}) \textit{tight} threshold $T2$. If data point $p_1$ is within the soft distance threshold $T1$ with centroid $p_2$ then $p_1$ will reside in same canopy as $p_2$ but $p_1$ may belong to other canopies assuming that it has only met soft threshold and best match is yet to be found. Thus one data point may belong to multiple canopies in Canopy clustering. On the other hand if data point $p_1$ is within the tight distance threshold $T2$ with centroid $p_2$ then canopy clustering assigns $p_1$ to the same canopy as $p_2$ and stops assigning $p_1$ to any other canopy assuming that tight threshold has been met and best canopy assignment for $p_1$ has been found. Canopy centroids are selected randomly until all data points is assigned to at least one canopy. 
+
+Canopy clustering uses two distance 
+thresholds, (\romannum{1}) \textit{soft} threshold $T1$ and (\romannum{2}) \textit{tight} threshold $T2$. If data point $p_1$ is within the 
+soft distance threshold $T1$ with centroid $p_2$ then $p_1$ will reside in same canopy as $p_2$ but $p_1$ may belong to other 
+canopies assuming that it has only met soft threshold and best match is yet to be found. Thus one data point may belong to multiple canopies. However, 
+if data point $p_1$ is within the tight distance threshold $T2$ with centroid $p_2$ then canopy clustering assigns $p_1$ to the same canopy as $p_2$ and stops 
+  assigning $p_1$ to any other canopy assuming that tight threshold has been met and 
+  best canopy assignment for $p_1$ has been found. Canopy centroids are selected randomly until all data points are
+  assigned to at least one canopy. 
 
 
 \subsection{\textbf{Locality Sensitive Hashing}}
 
-Canopies are intended to reduce pairwise distance calculations. Canopy clustering itself should be efficient which requires a fast and approximate distance measure for Canopy assignments. Locality Sensitive Hashing (LSH) \cite{MARLshRef2} is an algorithm for solving the approximate or exact near neighbors search. Suppose we have a space S of points with a distance measure $d(x,y)$. A family H of hash functions is said to be $(d1, d2, p1, p2)$-sensitive for any x and y in S: if $d(x, y)<d1$, then the probability over all $h\in{H}$, that $h(x)=h(y)$ is at least $p1$ and if $d(x, y)>d2$ , then the probability over all $h\in{H}$, that $h(x)=h(y)$ is at most $p2$. LSH provides a fast approximate distance measure while reducing data dimensionality which makes LSH appropriate for Canopy clustering in 16S and whole metagenomic data.
+Canopies are intended to reduce pairwise distance calculations. As such, canopy clustering 
+should be efficient which requires a fast and approximate distance measure. Locality Sensitive Hashing (LSH) \cite{MARLshRef2} provides a solution 
+for the approximate or exact near neighbors search problem. Given,  a space S of points with a 
+  distance measure $d(x,y)$; a family $H$ of hash functions is said to be $(d1, d2, p1, p2)$-sensitive for any x and 
+  y in S: if $d(x, y)<d1$, then the probability over all $h\in{H}$, that $h(x)=h(y)$ is at least $p1$ and if $d(x, y)>d2$ , then the probability over 
+  all $h\in{H}$, that $h(x)=h(y)$ is at most $p2$. LSH provides a fast approximate distance measure while reducing 
+  data dimensionality making it 
+  appropriate for Canopy clustering for 
+  16S and whole metagenomic data.
 
-We constructed the LSH family with bit sampling \cite{indyk1998approximate}. The normalized kmers frequency based feature vectors of sequence reads were first projected into $d$ dimensional vectors in $\{0,1\}^d$ space. Given an input vector $v$ and a random hyperplane defined by $r$, we let $h(v)=\{0,1\}$ based on $sgn(v\cdot{r})=\pm{1}$ that indicates on which side of the hyperplane $v$ lies. Each possible choice of $r$ defines a single function. Let $H$ be the set of all such functions. For any $h_i\in{H}$ and for any two data $x,y$ the probability that $x$ and $y$ \emph{agree} on $i^{th}$ positions of their respective $d$-length binary vector is
+We construct the LSH family with bit sampling \cite{indyk1998approximate}. The normalized kmers frequency based feature vectors of sequence reads 
+were first projected into $d$ dimensional vectors in $\{0,1\}^d$ space. Given an 
+input vector $v$ and a random hyperplane defined by $r$, we let $h(v)=\{0,1\}$ based on $sgn(v\cdot{r})=\pm{1}$ that indicates on which 
+side of the hyperplane $v$ lies. Each possible choice of $r$ defines a single function. Let $H$ be the set of all 
+such functions. For any $h_i\in{H}$ and for any two data $x,y$ the probability that $x$ and $y$ \emph{agree} on $i^{th}$ positions of their 
+respective $d$-length binary vector is
+
 \begin{equation}
 P[h_i(x)=h_i(y)]=1-\frac{distance(h_i(x),h_i(y))}{d} 
 \end{equation}
-Where \emph{distance} is the hamming distance and $d$ is the number of bits. Hence $H=\{h_1,h_2,...,h_d\}$ is a $(d_1,d_2,1-d_1/d,1-d2/d)$ sensitive LSH family. Both the random projection and hamming distance calculation is cheap and fast which makes this scheme appropriate for our purpose which is fast partitioning of large scale genome sequences so that more expensive clustering can be done in parallel.
+
+where \emph{distance} is the hamming distance and $d$ is the number of bits. Hence $H=\{h_1,h_2,...,h_d\}$ is a $(d_1,d_2,1-d_1/d,1-d2/d)$ sensitive LSH family. The 
+random projection and hamming distance calculation is computationally cheap and efficient making it 
+suitable for fast partitioning of large volume of 
+sequence reads. 
+
+%that more expensive clustering can be done in parallel.
 
 %%Moreover, this projection and distance scheme is computationally inexpensive than another popular alternative for LSH known as MinHash \cite{broder1997resemblance}. MinHash provides $n!$ choices for hash functions in LSH family where $n$ is the total number of kgrams. Whereas our scheme generates only $d<<n!$ hash functions where $d$ can be easily estimated by sampling and validation based on 16S and metagenomic data.  
 
 \subsection{\textbf{Sub-Clustering Inside Canopies}}
 \label{sub-cluster}
-Canopy clustering  makes initial approximate partitions of the dataset and reduces pairwise distance computations. Each of these partitions can be further sub clustered in parallel with more accurate and expensive clustering methods with lower computational cost since only the points inside canopies are taken into consideration. We have used three recent and popular sequence clustering methods as more accurate and expensive sub-clustering measure inside canopies in this study. UCLUST \cite{MARuclust}, SUMACLUST \cite{MARSumaclust} and SWARM \cite{MARSwarm2} were used for sub-clustering canopies.
+
+Canopy clustering  makes initial approximate partitions of the dataset and reduces pairwise
+distance computations. Each of these partitions can be further clustered in parallel and independendtly 
+with  expensive (but accurate)  clustering methods. 
+%
+We use UCLUST \cite{MARuclust}, SUMACLUST \cite{MARSumaclust} or 
+SWARM \cite{MARSwarm2}  as accurate and 
+expensive sub-clustering methods  for the different 
+canopies in this study. 
+
 
 \subsection{\textbf{Merging results from Canopies}}
 
-Each cluster (OTU) is represented by the Longest Common Subsequence of all member sequences. The final step of our proposed framework is to merge OTU representations generated by canopies. According to Canopy cluster algorithm a single data point may belong to multiple canopies as long as the soft threshold is met. As a result similar OTU representations may appear from multiple canopies. To eliminate redundancy we run UCLUST on the OTU representations.
- 
-In the following Sections UCLUST, SUMACLUST and SWARM with Canopy clustering approach are represented as CC$_{UCLUST}$, CC$_{SUMACLUST}$ and CC$_{SWARM}$ respectively where the term CC stands for Canopy Clustering. 
+Each cluster (OTU) is represented by the Longest Common Subsequence of all member sequences. The final step of 
+our proposed framework is to merge the 
+OTU representations generated by the 
+canopies. According to Canopy cluster algorithm a single data point may belong to multiple canopies as long as the soft threshold is met. As a result similar OTU representations may appear from multiple canopies. To eliminate redundancy we run UCLUST on the OTU representations.
+
+In this paper,  the Canopy clustering (CC)  approach 
+integrated with UCLUST, SUMACLUST and SWARM 
+are represented as CC$_{UCLUST}$, CC$_{SUMACLUST}$ and CC$_{SWARM}$, respectively. % where the term CC stands for Canopy Clustering. 
 
 \section{Experimental Evaluation}
 \label{sec:Experimental}
