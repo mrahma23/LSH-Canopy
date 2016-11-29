@@ -1191,9 +1191,18 @@ until the $T2$ threshold is satisfied.
 
 We developed a greedy clustering algorithm 
 that scales to large metagenome sequence datasets. The strengths of our proposed approach is that it can be integrated 
-with state-of-the-art expensive but accurate clustering algorithms allowing them to operate on real world datasets. 
+with state-of-the-art expensive but accurate clustering algorithms allowing them to
+operate on real world datasets. 
 %
-We demonstrate that our 
+Our approach 
+achieves efficiency 
+by  
+partitioning the large number of sequence reads into 
+groups (called canopies) using locality sensitive 
+hashing.  This 
+initial approximate assignment of sequence reads to 
+canopies is then 
+refined. We demonstrate that our 
 approach provides similar outcome in terms of biodiversity metrics, ground truth and taxonomic correlation with corresponding expensive clustering methods.
 %
 We show significant reduction in run times in comparison to previously developed sequence 
