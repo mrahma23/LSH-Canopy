@@ -1186,10 +1186,21 @@ until the $T2$ threshold is satisfied.
 \end{figure}
 
 
-\section{Conclusion and Future Work}
+\section{Conclusion}
 \label{sec:Conclusion}
 
-We developed a greedy approximate clustering process for any accurate and relatively expensive clustering on large scale metagenome datasets. Our approach takes advantage of the multi-core CPU systems by partitioning the large dataset with a fast and cheap pairwise distance measure and then deploying comparatively expensive clustering in parallel which considers only data points that are inside a partition. Our proposed approach scales well with large datasets and provide significant reduction in computation time. We demonstrate that our approach provides similar outcome in terms of biodiversity metrics, ground truth and taxonomic correlation with corresponding expensive clustering methods.
+We developed a greedy clustering algorithm 
+that scales to large metagenome sequence datasets. The strengths of our proposed approach is that it can be integrated 
+with state-of-the-art expensive but accurate clustering algorithms allowing them to operate on real world datasets. 
+%
+We demonstrate that our 
+approach provides similar outcome in terms of biodiversity metrics, ground truth and taxonomic correlation with corresponding expensive clustering methods.
+%
+We show significant reduction in run times in comparison to previously developed sequence 
+clustering algorithms, especially on datasets with millions of sequence reads.
+
+
+
 
 
 %\renewcommand{\bibfont}{\footnotesize}
