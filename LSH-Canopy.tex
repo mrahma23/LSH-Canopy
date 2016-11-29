@@ -1049,35 +1049,20 @@ F Score = \frac{2 \times precision \times recall}{(precision + recall)}
 After getting Operational Taxonomic Units (OTU) from a clustering method we create a taxonomic profile at the Genus level. Pearson’s correlation coefficient was computed to measure the relatedness of taxonomic assignment between a pair of tools. Values range between -1 and 1, with -1 indicating a negative correlation, 0 indicating no correlation, and 1 indicating a positive correlation or strong relationship.
 
 \subsection{\textbf{Parameter Settings}}
-For kmers, the value of parameter k was set to 4. The parameters for bit length of LSH ($d$), canopy's soft ($T1$) and 
+For kmers, the value of parameter $k$ was set to 4. The parameters for bit length of LSH ($d$), 
+canopy's soft ($T1$) and 
 hard ($T2$) thresholds were set by performing a grid search and validation. For validation purposes, 10\%  of the 
-data was randomly sampled. First the parameter for LSH bit length $d$ was estimated. In order to know the 
-correctness of our estimation of $d$, we performed Canopy clustering with corresponding sub clustering methods 
-inside theg 
-canopies and compared the results corresponding to the bit lengths. For synthetic dataset, $F1$-scores and for real world datasets, the 
-Pearson Coefficient Correlation ($\rho$) was compared 
-with results from the 
-corresponding expensive  clustering approaches. We started with bit length $d$=1 and continued to increase value of $d$ as long as we 
-got better results for sampled data. Initial value of soft ($T1$) and tight ($T2$) threshold  were
-set to 0.6 and 0.4, respectively. These are 
-relaxed initial values for 
-$T1$ and $T2$. 
+data was randomly sampled. First, the parameter for LSH 
+bit length $d$ was estimated by fixing 
+the soft ($T1$) and tight ($T2$) thresholds 
+to 0.6 and 0.4, respectively.  $d$ was found to be proportional to the 
+size of the input dataset. 
 %
-as ithey allow for higher repetitions of sequence reads in multiple canopies due to higher value of $T1$ and easy final canopy assignment due to higher value of $T2$ which results in rough and fast approximate clusters prior to 
-expensive sub-clustering step. Any bit length $d$ that performs 
-comparatively better results for these relaxed $T1$ and $T2$ values 
-on sampled data is expected to bring better results for more strict $T1$ and $T2$ on whole datasets.
+Once bit length for 
+LSH  ($d$) was estimated we tuned values for $T1$ and $T2$ by decreasing $T2$ from 0.4 (\emph{relaxed}) to 0.1 (\emph{strict}) in steps of 0.01 and varying 
+$T1$ from 0.6 to 0.1 in steps of 0.01. The parameters showing the best results for the validation sets for different benchmarks are 
+shown in Table \ref{table:parameters}.
 
-Once bit length of LSH projection ($d$) is selected we estimated values for $T1$ and $T2$ on the same sampled data. First, hard threshold ($T2$) was estimated with soft 
-threshold ($T1$) fixed at 0.6. $T2$ determines which sequence reads will be retained for next 
-iteration of canopy clustering. Same comparison metrics from the estimation of parameter $d$ were used. We decreased the value of $T2$
-from 0.4 (\emph{relaxed}) to 0.1 (\emph{strict}) with a step size of 
-0.01. The $T2$ corresponding to best result was selected. Then $T2$ was fixed 
-at the best estimation and $T1$ was varied from 0.6 to best 
-estimation for $T2$ with step size of 0.01. The value for $T1$ corresponding to best 
-result was selected. Table \ref{table:parameters} shows the estimated parameter values for our study.   
-
-%{\textbf{Mohammad the paragraphs above are V. Confusing -- I do not follow them as well.}
 
     
 
