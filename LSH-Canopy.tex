@@ -612,7 +612,7 @@ assigned to atleast one canopy. For fast canopy assignment we use a random proje
 technique. Specifically, we use Locality Sensitive Hash (LSH) to compute pairwise distances. More accurate clustering methods are 
 used to sub-cluster each canopy in parallel. The sub-clustering method considers only the members within 
 the canopy which significantly 
-reduces pairwise distance computations.
+reduces pairwise distance computations. We provide details of these steps below.
 
 \begin{figure}
 	\centering
@@ -653,26 +653,23 @@ if data point $p_1$ is within the tight distance threshold $T2$ with centroid $p
 
 Canopies are intended to reduce pairwise distance calculations. As such, canopy clustering 
 should be efficient which requires a fast and approximate distance measure. Locality Sensitive Hashing (LSH) \cite{MARLshRef2} provides a solution 
-for the approximate or exact near neighbors search problem. Given,  a space S of points with a 
-  distance measure $d(x,y)$; a family $H$ of hash functions is said to be $(d1, d2, p1, p2)$-sensitive for any x and 
-  y in S: if $d(x, y)<d1$, then the probability over all $h\in{H}$, that $h(x)=h(y)$ is at least $p1$ and if $d(x, y)>d2$ , then the probability over 
-  all $h\in{H}$, that $h(x)=h(y)$ is at most $p2$. LSH provides a fast approximate distance measure while reducing 
-  data dimensionality making it 
-  appropriate for Canopy clustering for 
-  16S and whole metagenomic data.
-
-We construct the LSH family with bit sampling \cite{indyk1998approximate}. The normalized kmers frequency based feature vectors of sequence reads 
-were first projected into $d$ dimensional vectors in $\{0,1\}^d$ space. Given an 
-input vector $v$ and a random hyperplane defined by $r$, we let $h(v)=\{0,1\}$ based on $sgn(v\cdot{r})=\pm{1}$ that indicates on which 
+for the approximate or exact near neighbors search problem. 
+  
+We construct the LSH function 
+with bit sampling \cite{indyk1998approximate}. The normalized kmers frequency based feature vectors of sequence reads 
+are first projected into 
+$d$ dimensional vectors in $\{0,1\}^d$ space. Given an 
+input vector $v$ and a random hyperplane defined by $r$; $h(v)=\{0,1\}$ based on $sgn(v\cdot{r})=\pm{1}$ that indicates on which 
 side of the hyperplane $v$ lies. Each possible choice of $r$ defines a single function. Let $H$ be the set of all 
-such functions. For any $h_i\in{H}$ and for any two data $x,y$ the probability that $x$ and $y$ \emph{agree} on $i^{th}$ positions of their 
+such functions. For any $h_i\in{H}$ and for any two data instances $x,y$, 
+the probability that $x$ and $y$ \emph{agree} on the $i^{th}$ positions of their 
 respective $d$-length binary vector is
 
 \begin{equation}
 P[h_i(x)=h_i(y)]=1-\frac{distance(h_i(x),h_i(y))}{d} 
 \end{equation}
 
-where \emph{distance} is the hamming distance and $d$ is the number of bits. Hence $H=\{h_1,h_2,...,h_d\}$ is a $(d_1,d_2,1-d_1/d,1-d2/d)$ sensitive LSH family. The 
+where \emph{distance} is the hamming distance and $d$ is the number of bits. $H=\{h_1,h_2,...,h_d\}$ is a $(d_1,d_2,1-d_1/d,1-d2/d)$ sensitive LSH family. The 
 random projection and hamming distance calculation is computationally cheap and efficient making it 
 suitable for fast partitioning of large volume of 
 sequence reads. 
@@ -703,7 +700,7 @@ canopies. According to Canopy cluster algorithm a single data point may belong t
 
 In this paper,  the Canopy clustering (CC)  approach 
 integrated with UCLUST, SUMACLUST and SWARM 
-are represented as CC$_{UCLUST}$, CC$_{SUMACLUST}$ and CC$_{SWARM}$, respectively. % where the term CC stands for Canopy Clustering. 
+is denoted as  CC$_{UCLUST}$, CC$_{SUMACLUST}$ and CC$_{SWARM}$, respectively. % where the term CC stands for Canopy Clustering. 
 
 \section{Experimental Evaluation}
 \label{sec:Experimental}
