@@ -808,6 +808,178 @@ information regarding these datasets are presented in Table \ref{table:finaltabl
 	}
 \end{table*} 
 
+
+
+\textbf{Synthetic Datasets:}
+
+\subsubsection{\textit{Bokulich$_2$}}
+This dataset was prepared using the 
+Illumina TruSeq v2 paired--end library
+preparation kit. It is a simulated 16S rRNA gene 
+microbial community dataset.
+This 
+dataset contains 19 taxonomic Families, 19 Genera, 22 Species 
+and 22 Strains in total. This dataset can also be 
+found in the QIIME database (identifier 1685).
+
+\subsubsection{\textit{Bokulich$_3$}}
+Similar to Bokulich$_2$ except that it was 
+prepared with the 
+TruSeq v1 paired-end library kit at 
+Illumina Cambridge and is  also available in the 
+QIIME database (identifier 1686).
+
+\subsubsection{\textit{Bokulich$_6$}}
+This  16S rRNA dataset 
+was sequenced at Washington University School of Medicine and contains evenly distributed microbial communities. This dataset contains 13 taxonomic Families, 23 Genera, 44 Species and 48 Strains in total.
+
+All these datasets from Bokulich et al. \cite{MARmockDatasetRef} are available at QIIME database\footnote{http://qiime.org/home\_static/dataFiles.html} under their respective ID's. Since, these are simulated datasets the taxonomic profile of microbial organisms within them are known.
+
+\textbf{Real World Datasets:}
+
+\subsubsection{Canadian Soil}
+The Canadian Soil dataset\footnote{http://www.cm2bl.org/} contains genomic data of soil spanning from Arctic Tundra to Agricultural soil suitable for different agricultural products.  
+
+\subsubsection{Body Sites}
+This dataset contains composition of bacterial communities from up to 27 different body sites in healthy adults. A collection of 602 samples acquired from different body sites of human subjects are provided with meta-data.
+
+\subsubsection{Global Soil}
+The global soil data was taken from Ramirez et al. \cite{MARglobalSoil} which is a study of the below-ground diversity in New York City's Central Park.
+
+\subsubsection{Liver Cirrhosis}
+The Liver Cirrhosis dataset was taken from the study by Qin et al. \cite{qin2014alterations}. This is 
+a whole gut microbiome wide association study of stool samples from 98 liver cirrhosis patients and 83 
+healthy controls to characterize the fecal microbial communities and their functional composition. In total, 
+860 GB of high-quality sequence data was 
+generated in this study. Because of the high volume of sequence reads in this dataset, we used random sampling for 
+feasible clustering performance evaluations. Two samples of 3 million and 30 million sequence reads were extracted 
+from original dataset regardless of sample labels 
+(disease or control) for our study.  
+
+
+\subsection{\textbf{Evaluation Metrics}}
+
+We evaluate the performance of our developed clustering approach using 
+the following commonly used metrics that are used 
+for the assessment of (i) outputs from clustering algorithms, (ii) biodiversity
+within metagenome samples and (iii) computational run time. 
+
+
+\subsubsection{\textit{Faith’s phylogenetic diversity metric (PD)}}
+Faith’s phylogenetic diversity \cite{MARfaith1992conservation} combines all 
+the branch lengths of phylogenetic tree as a measure of diversity. So, if a new 
+OTU is found and it is closely related to another OTU in the sample, it will contribute to 
+a small increase to the PD score. However, if a new OTU from different lineage is found then it will contribute to a large increase in the PD score.
+
+\subsubsection{\textit{Shannon Entropy}}
+
+Shannon-Wiener diversity index is defined as:
+
+\begin{equation}
+H={-} \sum_{i=1}^{s} \left( p_i\log_2p_i \right)
+\end{equation}
+
+where s is the number of OTUs and $p_i$ is the proportion of the community represented by OTU $i$. The Shannon index increases as both the richness and evenness of the community increase. The fact that the index incorporates both components of biodiversity can be seen as both a strength and a weakness. It is a strength because it provides a simple summary, but it is a weakness because it makes it difficult to compare communities that differ greatly in richness.
+
+
+\subsubsection{\textit{Simpson's Index}}
+Simpson’s index is defined as ${1-dominance}$ or
+
+\begin{equation}
+1 - \sum p_i^2
+\end{equation}
+
+where where $p_i$ is the proportion of the community represented by OTU $i$. Simpsonʼs index is based on the probability that any two individuals drawn at random from an infinitely large community belong to the same species. It measures \textit{evenness} of the community from 0 to 1. Higher value of this index implies higher similarity and relatively lower diversity of microorganisms within a sample.
+
+
+\subsubsection{\textit{F-measure}}
+In case of synthetic datasets, expected taxonomic composition is known (\emph{ground truth}). False-positive (FP) refers to the number of taxonomy that was found in observed but not expected, false-negative (FN) refers to the number of taxonomy that exists in expected but not observed, and true-positive (TP) refers to the number of taxonomy exists in both observed and expected. The following definitions were used:
+
+\begin{equation}
+precision = \frac{TP}{(TP + FP)}
+\end{equation}
+
+\begin{equation}
+recall = \frac{TP}{(TP + FN)}
+\end{equation}
+
+\begin{equation}
+F Score = \frac{2 \times precision \times recall}{(precision + recall)}
+\end{equation}
+
+\subsubsection{\textit{Pearson Coefficient Correlation ($\rho$-value)}}
+After getting Operational Taxonomic Units (OTU) from a clustering method we create a taxonomic profile at the Genus level. Pearson’s correlation coefficient was computed to measure the relatedness of taxonomic assignment between a pair of tools. Values range between -1 and 1, with -1 indicating a negative correlation, 0 indicating no correlation, and 1 indicating a positive correlation or strong relationship.
+
+\subsection{\textbf{Parameter Settings}}
+For kmers, the value of parameter $k$ was set to 4. The parameters for bit length of LSH ($d$), 
+canopy's soft ($T1$) and 
+hard ($T2$) thresholds were set by performing a grid search and validation. For validation purposes, 10\%  of the 
+data was randomly sampled. First, the parameter for LSH 
+bit length $d$ was estimated by fixing 
+the soft ($T1$) and tight ($T2$) thresholds 
+to 0.6 and 0.4, respectively.  $d$ was found to be proportional to the 
+size of the input dataset. 
+%
+Once bit length for 
+LSH  ($d$) was estimated we tuned values for $T1$ and $T2$ by decreasing $T2$ from 0.4 (\emph{relaxed}) to 0.1 (\emph{strict}) in steps of 0.01 and varying 
+$T1$ from 0.6 to 0.1 in steps of 0.01. The parameters showing the best results for the validation sets for different benchmarks are 
+shown in Table \ref{table:parameters}.
+
+
+    
+
+\subsection{\textbf{Hardware and Software for Experiments}}
+We performed all the experiments on computers with Intel 5th generation Core i7 2.70GHz 64bit processor with 8 core CPUs and 
+12GB memory. Sequence identity threshold for  
+sub-clustering methods were set to default 97\%. For implementation we 
+used Python 2.7.12 and QIIME \cite{MARQiime} version 1.9.0 (for diversity estimation).  Taxonomy for reported OTUs was assigned 
+using the RDP Classifier \cite{MARRdp} against the 97\% representative databases for Greengenes \cite{MARGreen1} and Silva \cite{MARSilva} 
+for methods used in this study. We used PyNast\footnote{http://biocore.github.io/pynast/} open source sequence aligner
+  for aligning clustered output. 
+
+\section{Results} 
+\label{sec:Results}
+
+\subsection{\textbf{Runtime Comparison}} Table \ref{table:Runtime} shows the run time in minutes for 
+UCLUST, SUMACLUST, SWARM and their respective versions with our proposed Canopy clustering pipeline.
+
+%We observe that  CC$_{UCLUST}$ outperforms UCLUST for all datasets. The highest speed up for UCLUST was observed for the the large metagenome data containing 30 million  sequence reads where CC$_{UCLUST}$ was 12.19 times faster than UCLUST. CC$_{SUMACLUST}$ outperforms SUMACLUST in all cases and showed  the highest speed-up of 21.09x for the 30M dataset. From these observations we conclude that Canopy clustering not only reduces the run time of an expensive clustering method but also scales well for larger benchmark datasets comparing to the smaller ones.   
+
+For the 30M sequence dataset CC outperforms UCLUST, SUMACLUST and SWARM by 12.19, 21.09 and 18.61 times, respectively. For the Global Soil dataset 
+CC outperforms UCLUST, SUMACLUST and SWARM by 5.77, 11.26 and 8.31 times, 
+respectively. The highest gains in run time were found for the 
+larger datasets demonstrating that 
+CC scales well with large scale data.  
+
+%{\textbf - Mohammad -- Might be better to write the previous 3 lines as one -- can you try. CC outperforms XX, YY and ZZ by ZZZ, YYY and ZZZ, respectively}
+
+\subsection{\textbf{Effect of Varying Number of Processors}}
+Figures \ref{fig:bokulich_2}-\ref{fig:global_soil} show the 
+runtime of CC$_{UCLUST}$, CC$_{SUMACLUST}$ and CC$_{SWARM}$ on the 
+two large 
+benchmarks studied here. We observe that 
+increasing the number of processors reduces the 
+total run time. Significant reductions in run time were 
+observed for CC$_{SUMACLUST}$ and CC$_{SWARM}$ as 
+compared to CC$_{UCLUST}$.  
+
+
+\begin{figure}[t]	
+	\begin{minipage}[t]{0.5\linewidth}
+		\subfloat[]{
+			\includegraphics[width=\linewidth]{bokulich_2.pdf}
+		\label{fig:bokulich_2}}
+	\end{minipage}%
+	\hfill%
+	\begin{minipage}[t]{0.5\linewidth}
+		\subfloat[]{
+			\includegraphics[width=\linewidth]{global_soil.pdf}
+			\label{fig:global_soil}}
+	\end{minipage}	
+	\caption{Effect of number of processors on Runtime of CC$_{UCLUST}$, CC$_{SUMACLUST}$ and CC$_{SWARM}$ for 30M sampled dataset and Global Soil dataset, two of the largest datasets used in this study.}
+\end{figure}
+
+
 \begin{table*}[t]
 	\centering 
 	\caption{\textbf{Performance Comparison [$F$-Score and Pearson Correlation Coefficient ($\rho$)]}} 
@@ -948,150 +1120,9 @@ information regarding these datasets are presented in Table \ref{table:finaltabl
 
 
 
-\textbf{Synthetic Datasets:}
-
-\subsubsection{\textit{Bokulich$_2$}}
-This dataset was prepared using the 
-Illumina TruSeq v2 paired--end library
-preparation kit. It is a simulated 16S rRNA gene 
-microbial community dataset.
-This 
-dataset contains 19 taxonomic Families, 19 Genera, 22 Species 
-and 22 Strains in total. This dataset can also be 
-found in the QIIME database (identifier 1685).
-
-\subsubsection{\textit{Bokulich$_3$}}
-Similar to Bokulich$_2$ except that it was 
-prepared with the 
-TruSeq v1 paired-end library kit at 
-Illumina Cambridge and is  also available in the 
-QIIME database (identifier 1686).
-
-\subsubsection{\textit{Bokulich$_6$}}
-This  16S rRNA dataset 
-was sequenced at Washington University School of Medicine and contains evenly distributed microbial communities. This dataset contains 13 taxonomic Families, 23 Genera, 44 Species and 48 Strains in total.
-
-All these datasets from Bokulich et al. \cite{MARmockDatasetRef} are available at QIIME database\footnote{http://qiime.org/home\_static/dataFiles.html} under their respective ID's. Since, these are simulated datasets the taxonomic profile of microbial organisms within them are known.
-
-\textbf{Real World Datasets:}
-
-\subsubsection{Canadian Soil}
-The Canadian Soil dataset\footnote{http://www.cm2bl.org/} contains genomic data of soil spanning from Arctic Tundra to Agricultural soil suitable for different agricultural products.  
-
-\subsubsection{Body Sites}
-This dataset contains composition of bacterial communities from up to 27 different body sites in healthy adults. A collection of 602 samples acquired from different body sites of human subjects are provided with meta-data.
-
-\subsubsection{Global Soil}
-The global soil data was taken from Ramirez et al. \cite{MARglobalSoil} which is a study of the below-ground diversity in New York City's Central Park.
-
-\subsubsection{Liver Cirrhosis}
-The Liver Cirrhosis dataset was taken from the study by Qin et al. \cite{qin2014alterations}. This is 
-a whole gut microbiome wide association study of stool samples from 98 liver cirrhosis patients and 83 
-healthy controls to characterize the fecal microbial communities and their functional composition. In total, 
-860 GB of high-quality sequence data was 
-generated in this study. Because of the high volume of sequence reads in this dataset, we used random sampling for 
-feasible clustering performance evaluations. Two samples of 3 million and 30 million sequence reads were extracted 
-from original dataset regardless of sample labels 
-(disease or control) for our study.  
 
 
-\subsection{\textbf{Evaluation Metrics}}
-
-We evaluate the performance of our developed clustering approach using 
-the following commonly used metrics that are used 
-for the assessment of (i) outputs from clustering algorithms, (ii) biodiversity
-within metagenome samples and (iii) computational run time. 
-
-
-\subsubsection{\textit{Faith’s phylogenetic diversity metric (PD)}}
-Faith’s phylogenetic diversity \cite{MARfaith1992conservation} combines all 
-the branch lengths of phylogenetic tree as a measure of diversity. So, if a new 
-OTU is found and it is closely related to another OTU in the sample, it will contribute to 
-a small increase to the PD score. However, if a new OTU from different lineage is found then it will contribute to a large increase in the PD score.
-
-\subsubsection{\textit{Shannon Entropy}}
-
-Shannon-Wiener diversity index is defined as:
-
-\begin{equation}
-H={-} \sum_{i=1}^{s} \left( p_i\log_2p_i \right)
-\end{equation}
-
-where s is the number of OTUs and $p_i$ is the proportion of the community represented by OTU $i$. The Shannon index increases as both the richness and evenness of the community increase. The fact that the index incorporates both components of biodiversity can be seen as both a strength and a weakness. It is a strength because it provides a simple summary, but it is a weakness because it makes it difficult to compare communities that differ greatly in richness.
-
-
-\subsubsection{\textit{Simpson's Index}}
-Simpson’s index is defined as ${1-dominance}$ or
-
-\begin{equation}
-1 - \sum p_i^2
-\end{equation}
-
-where where $p_i$ is the proportion of the community represented by OTU $i$. Simpsonʼs index is based on the probability that any two individuals drawn at random from an infinitely large community belong to the same species. It measures \textit{evenness} of the community from 0 to 1. Higher value of this index implies higher similarity and relatively lower diversity of microorganisms within a sample.
-
-
-\subsubsection{\textit{F-measure}}
-In case of synthetic datasets, expected taxonomic composition is known (\emph{ground truth}). False-positive (FP) refers to the number of taxonomy that was found in observed but not expected, false-negative (FN) refers to the number of taxonomy that exists in expected but not observed, and true-positive (TP) refers to the number of taxonomy exists in both observed and expected. The following definitions were used:
-
-\begin{equation}
-precision = \frac{TP}{(TP + FP)}
-\end{equation}
-
-\begin{equation}
-recall = \frac{TP}{(TP + FN)}
-\end{equation}
-
-\begin{equation}
-F Score = \frac{2 \times precision \times recall}{(precision + recall)}
-\end{equation}
-
-\subsubsection{\textit{Pearson Coefficient Correlation ($\rho$-value)}}
-After getting Operational Taxonomic Units (OTU) from a clustering method we create a taxonomic profile at the Genus level. Pearson’s correlation coefficient was computed to measure the relatedness of taxonomic assignment between a pair of tools. Values range between -1 and 1, with -1 indicating a negative correlation, 0 indicating no correlation, and 1 indicating a positive correlation or strong relationship.
-
-\subsection{\textbf{Parameter Settings}}
-For kmers, the value of parameter $k$ was set to 4. The parameters for bit length of LSH ($d$), 
-canopy's soft ($T1$) and 
-hard ($T2$) thresholds were set by performing a grid search and validation. For validation purposes, 10\%  of the 
-data was randomly sampled. First, the parameter for LSH 
-bit length $d$ was estimated by fixing 
-the soft ($T1$) and tight ($T2$) thresholds 
-to 0.6 and 0.4, respectively.  $d$ was found to be proportional to the 
-size of the input dataset. 
-%
-Once bit length for 
-LSH  ($d$) was estimated we tuned values for $T1$ and $T2$ by decreasing $T2$ from 0.4 (\emph{relaxed}) to 0.1 (\emph{strict}) in steps of 0.01 and varying 
-$T1$ from 0.6 to 0.1 in steps of 0.01. The parameters showing the best results for the validation sets for different benchmarks are 
-shown in Table \ref{table:parameters}.
-
-
-    
-
-\subsection{\textbf{Hardware and Software for Experiments}}
-We performed all the experiments on computers with Intel 5th generation Core i7 2.70GHz 64bit processor with 8 core CPUs and 
-12GB memory. Sequence identity threshold for  
-sub-clustering methods were set to default 97\%. For implementation we 
-used Python 2.7.12 and QIIME \cite{MARQiime} version 1.9.0 (for diversity estimation).  Taxonomy for reported OTUs was assigned 
-using the RDP Classifier \cite{MARRdp} against the 97\% representative databases for Greengenes \cite{MARGreen1} and Silva \cite{MARSilva} 
-for methods used in this study. We used PyNast\footnote{http://biocore.github.io/pynast/} open source sequence aligner
-  for aligning clustered output. 
-
-\section{Results} 
-\label{sec:Results}
-
-\subsection{\textbf{Runtime Comparison}} Table \ref{table:Runtime} shows the run time in minutes for 
-UCLUST, SUMACLUST, SWARM and their respective versions with our proposed Canopy clustering pipeline.
-
-%We observe that  CC$_{UCLUST}$ outperforms UCLUST for all datasets. The highest speed up for UCLUST was observed for the the large metagenome data containing 30 million  sequence reads where CC$_{UCLUST}$ was 12.19 times faster than UCLUST. CC$_{SUMACLUST}$ outperforms SUMACLUST in all cases and showed  the highest speed-up of 21.09x for the 30M dataset. From these observations we conclude that Canopy clustering not only reduces the run time of an expensive clustering method but also scales well for larger benchmark datasets comparing to the smaller ones.   
-
-For the 30 million sampled data CC outperforms UCLUST, SUMACLUST and SWARM by 12.19x, 21.09x and 18.61x respectively. For the other larger dataset titled Global Soil CC outperforms UCLUST, SUMACLUST and SWARM by 5.77x, 11.26x and 8.31x respectively. The highest gains in runtime in our study were found for the largest dataset which is the 30 million sampled data. This indicates that CC scales well with large scale data.  
-
-%{\textbf - Mohammad -- Might be better to write the previous 3 lines as one -- can you try. CC outperforms XX, YY and ZZ by ZZZ, YYY and ZZZ, respectively}
-
-\subsection{\textbf{Effect of Varying Number of Processors}}
-Figure \ref{fig:bokulich_2}-\ref{fig:global_soil} shows the runtime of CC$_{UCLUST}$, CC$_{SUMACLUST}$ and CC$_{SWARM}$ on two largest benchmarks used in this study - Global Soil and the 30M Liver Cirrhosis dataset. We observe that increasing the number of processors reduces the total runtime. Significant reductions in run time were observed CC$_{SUMACLUST}$ and CC$_{SUMACLUST}$ as 
-compared to CC$_{UCLUST}$.  
-
-\subsection{\textbf{Clustering Performance}}
+\subsection{\textbf{Clustering Correctness Results}}
 Table \ref{table:performanceTable} shows the performance of  UCLUST, SUMACLUST and SWARM  in comparison to CC clustering versions. Table 
 \ref{table:performanceTable} compares F-scores and Pearson Correlation Coefficient ($\rho$). F-scores 
 are only available for synthetic 
@@ -1128,39 +1159,6 @@ Canopy based approach reproduces similar biodiversity estimates while reducing r
 
 
 
-
-\begin{figure}[t]	
-	\begin{minipage}[t]{0.5\linewidth}
-		\subfloat[]{
-			\includegraphics[width=\linewidth]{bokulich_2.pdf}
-		\label{fig:bokulich_2}}
-	\end{minipage}%
-	\hfill%
-	\begin{minipage}[t]{0.5\linewidth}
-		\subfloat[]{
-			\includegraphics[width=\linewidth]{global_soil.pdf}
-			\label{fig:global_soil}}
-	\end{minipage}	
-	\caption{Effect of number of processors on Runtime of CC$_{UCLUST}$, CC$_{SUMACLUST}$ and CC$_{SWARM}$ for 30M sampled dataset and Global Soil dataset, two of the largest datasets used in this study.}
-\end{figure}
-
-
-\begin{figure}[t]	
-	\begin{minipage}[t]{0.5\linewidth}
-		\subfloat[]{
-			\includegraphics[width=\linewidth]{bokulich_2_T1.pdf}
-			\label{fig:bokulich_2_T1}}
-	\end{minipage}%
-	\hfill%
-	\begin{minipage}[t]{0.5\linewidth}
-		\subfloat[]{
-			\includegraphics[width=\linewidth]{bokulich_2_T2.pdf}
-			\label{fig:bokulich_2_T2}}
-	\end{minipage}
-	\caption{ \ref{fig:bokulich_2_T1} and \ref{fig:bokulich_2_T2} show effect of varying $T1$ and $T2$ on $F$-scores for the largest synthetic dataset Bokulich$_2$ }	
-\end{figure}
-
-
  
 
 \subsection{\textbf{Sensitivity Analysis (Varying T1 and T2)}}
@@ -1175,6 +1173,20 @@ when $T2$'  is in between 0.25 to 0.35,
 our proposed approach achieves better F-Scores. Lowering 
 $T2$ may lead to higher run time since instances will continue to reappear 
 until the $T2$ threshold is satisfied.                   
+\begin{figure}[t]	
+	\begin{minipage}[t]{0.5\linewidth}
+		\subfloat[]{
+			\includegraphics[width=\linewidth]{bokulich_2_T1.pdf}
+			\label{fig:bokulich_2_T1}}
+	\end{minipage}%
+	\hfill%
+	\begin{minipage}[t]{0.5\linewidth}
+		\subfloat[]{
+			\includegraphics[width=\linewidth]{bokulich_2_T2.pdf}
+			\label{fig:bokulich_2_T2}}
+	\end{minipage}
+	\caption{ \ref{fig:bokulich_2_T1} and \ref{fig:bokulich_2_T2} show effect of varying $T1$ and $T2$ on $F$-scores for the largest synthetic dataset Bokulich$_2$ }	
+\end{figure}
 
 
 \section{Conclusion and Future Work}
