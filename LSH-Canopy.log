@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.1.21)  29 NOV 2016 11:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.1.21)  29 NOV 2016 11:44
 entering extended mode
 **LSH-Canopy.tex
 (LSH-Canopy.tex
@@ -392,7 +392,7 @@ Package pdftex.def Info: flowchart.pdf used on input line 619.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/sc' in size <8> not available
 (Font)              Font shape `OT1/ptm/b/sc' tried instead on input line 719.
 
-Overfull \hbox (4.07959pt too wide) in paragraph at lines 826--829
+Overfull \hbox (4.07959pt too wide) in paragraph at lines 868--871
 [][]
  []
 
@@ -400,7 +400,7 @@ Missing character: There is no â in font ptmbc7t!
 Missing character: There is no € in font ptmbc7t!
 Missing character: There is no ™ in font ptmbc7t!
 
-Overfull \hbox (0.56291pt too wide) in paragraph at lines 899--902
+Overfull \hbox (0.56291pt too wide) in paragraph at lines 941--944
 [][]
  []
 
@@ -408,23 +408,18 @@ Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
 [3]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \vbox (badness 1048) has occurred while \output is active []
-
- [4]
 Missing character: There is no â in font ptmri7t!
 Missing character: There is no € in font ptmri7t!
 Missing character: There is no ™ in font ptmri7t!
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
+ [4]
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
 
-Underfull \hbox (badness 2538) in paragraph at lines 1022--1023
+Underfull \hbox (badness 2538) in paragraph at lines 1024--1025
  \OT1/ptm/m/it/10 3) Simp-son's In-dex: [][] \OT1/ptm/m/n/10 Simp-sons in-dex i
 s de-fined as
  []
@@ -435,38 +430,38 @@ Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
 [5]
-Underfull \hbox (badness 2922) in paragraph at lines 1099--1100
+Underfull \hbox (badness 2922) in paragraph at lines 1101--1102
 []\OT1/ptm/m/n/10 For the 30 mil-lion sam-pled data CC out-per-forms
  []
 
 
-Underfull \hbox (badness 6428) in paragraph at lines 1104--1106
+Underfull \hbox (badness 6428) in paragraph at lines 1106--1108
 []\OT1/ptm/m/n/10 Figure 2a[]-2b[] shows the run-time of CC$[]$,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1108--1123
-[]\OT1/ptm/m/n/10 Table III[] shows the per-for-mance of UCLUST,
+Underfull \hbox (badness 10000) in paragraph at lines 1110--1125
+[]\OT1/ptm/m/n/10 Table IV[] shows the per-for-mance of UCLUST,
  []
 
 
-Underfull \hbox (badness 6493) in paragraph at lines 1108--1123
+Underfull \hbox (badness 6493) in paragraph at lines 1110--1125
 \OT1/ptm/m/n/10 SUMACLUST and SWARM in com-par-i-son to CC
  []
 
 
-Underfull \hbox (badness 3407) in paragraph at lines 1108--1123
-\OT1/ptm/m/n/10 clus-ter-ing ver-sions. Ta-ble III[] com-pares F-scores and
+Underfull \hbox (badness 3209) in paragraph at lines 1110--1125
+\OT1/ptm/m/n/10 clus-ter-ing ver-sions. Ta-ble IV[] com-pares F-scores and
  []
 
 
-Underfull \hbox (badness 1735) in paragraph at lines 1108--1123
+Underfull \hbox (badness 1735) in paragraph at lines 1110--1125
 \OT1/ptm/m/n/10 Pear-son Cor-re-la-tion Co-ef-fi-cient ($\OML/cmm/m/it/10 $\OT
 1/ptm/m/n/10 ). F-scores are only
  []
 
 
-Underfull \hbox (badness 2351) in paragraph at lines 1108--1123
+Underfull \hbox (badness 2351) in paragraph at lines 1110--1125
 \OT1/ptm/m/n/10 from out-puts of the clus-ter-ing meth-ods. We ob-serve
  []
 
@@ -476,40 +471,40 @@ Missing character: There is no ™ in font ptmr7t!
 [6] <bokulich_2.pdf, id=97, 578.16pt x 433.62pt>
 File: bokulich_2.pdf Graphic file (type pdf)
  <use bokulich_2.pdf>
-Package pdftex.def Info: bokulich_2.pdf used on input line 1149.
+Package pdftex.def Info: bokulich_2.pdf used on input line 1151.
 (pdftex.def)             Requested size: 121.95563pt x 91.46649pt.
 
-Overfull \hbox (7.00012pt too wide) in paragraph at lines 1149--1150
+Overfull \hbox (7.00012pt too wide) in paragraph at lines 1151--1152
 [][] 
  []
 
 <global_soil.pdf, id=98, 578.16pt x 433.62pt>
 File: global_soil.pdf Graphic file (type pdf)
  <use global_soil.pdf>
-Package pdftex.def Info: global_soil.pdf used on input line 1155.
+Package pdftex.def Info: global_soil.pdf used on input line 1157.
 (pdftex.def)             Requested size: 121.95563pt x 91.46649pt.
 
-Overfull \hbox (7.00012pt too wide) in paragraph at lines 1155--1156
+Overfull \hbox (7.00012pt too wide) in paragraph at lines 1157--1158
 [][] 
  []
 
 <bokulich_2_T1.pdf, id=99, 578.16pt x 433.62pt>
 File: bokulich_2_T1.pdf Graphic file (type pdf)
  <use bokulich_2_T1.pdf>
-Package pdftex.def Info: bokulich_2_T1.pdf used on input line 1165.
+Package pdftex.def Info: bokulich_2_T1.pdf used on input line 1167.
 (pdftex.def)             Requested size: 121.95563pt x 91.46649pt.
 
-Overfull \hbox (7.00012pt too wide) in paragraph at lines 1165--1166
+Overfull \hbox (7.00012pt too wide) in paragraph at lines 1167--1168
 [][] 
  []
 
 <bokulich_2_T2.pdf, id=100, 578.16pt x 433.62pt>
 File: bokulich_2_T2.pdf Graphic file (type pdf)
  <use bokulich_2_T2.pdf>
-Package pdftex.def Info: bokulich_2_T2.pdf used on input line 1171.
+Package pdftex.def Info: bokulich_2_T2.pdf used on input line 1173.
 (pdftex.def)             Requested size: 121.95563pt x 91.46649pt.
 
-Overfull \hbox (7.00012pt too wide) in paragraph at lines 1171--1172
+Overfull \hbox (7.00012pt too wide) in paragraph at lines 1173--1174
 [][] 
  []
 
@@ -545,7 +540,7 @@ Before submitting the final camera ready copy, remember to:
 Here is how much of TeX's memory you used:
  5429 strings out of 493698
  79744 string characters out of 3144412
- 216089 words of memory out of 3000000
+ 224891 words of memory out of 3000000
  8676 multiletter control sequences out of 15000+200000
  51652 words of font info for 101 fonts, out of 3000000 for 9000
  1028 hyphenation exceptions out of 8191
@@ -567,7 +562,7 @@ type1/public/amsfonts/cm/cmsy9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw
 /times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pf
 b><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Fil
 es/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on LSH-Canopy.pdf (8 pages, 511696 bytes).
+Output written on LSH-Canopy.pdf (8 pages, 511697 bytes).
 PDF statistics:
  355 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

@@ -766,6 +766,48 @@ information regarding these datasets are presented in Table \ref{table:finaltabl
 \end{table}	 
 
 
+\begin{table*}
+	\centering
+	\caption{\textbf{Runtime Comparison (in minutes)}} 
+	\label{table:Runtime}
+	\scalebox{0.75}{
+		\begin{tabular}{|c c c|c c c|c c c|c c c|} 
+			
+			\hline
+			
+			\multicolumn{3}{|c|}{\textbf{Datasets}} & \multicolumn{9}{c|}{\textbf{Methods}}\\
+			%\cline{3-9}
+			
+			\hline
+			
+			\multirow{1}{*}{Type} & \multirow{1}{*}{Title} & \multirow{1}{*}{\# of Reads} & \multirow{1}{*}{UCLUST} & \multirow{1}{*}{CC$_{UCLUST}$} & \multirow{1}{*}{Speed Up} & \multirow{1}{*}{SUMACLUST} & \multirow{1}{*}{CC$_{SUMACLUST}$} & \multirow{1}{*}{Speed Up} & \multirow{1}{*}{SWARM} & \multirow{1}{*}{CC$_{SWARM}$} & \multirow{1}{*}{Speed Up}\\
+			
+			\hline
+			
+			\multirow{3}{*}{\textit{Synthetic}} & Bokulich$_2$ & 6,938,836 & 12.71 & \textit{\textbf{3.08}} & \textit{\textbf{4.13x}} & 114.53 & \textit{\textbf{13.89}} & \textit{\textbf{8.24x}} & 128.12 & \textit{\textbf{17.24}} & \textit{\textbf{7.43x}}\\ 
+			
+			& Bokulich$_3$ & 3,594,237 & 10.43 & \textit{\textbf{3.61}} & \textit{\textbf{2.89x}} & 27.73 & \textit{\textbf{5.11}} & \textit{\textbf{5.43x}} & 18.37 & \textit{\textbf{3.39}} & \textit{\textbf{5.41x}}\\ 
+			
+			& Bokulich$_6$ & 250,903 & 4.47 &  \textit{\textbf{2.09}} & \textit{\textbf{2.14x}} & 5.61 & \textit{\textbf{2.07}} & \textit{\textbf{2.71x}} & 4.17 & \textit{\textbf{1.29}} & \textit{\textbf{3.21x}}\\ 
+			
+			\hline
+			
+			\multirow{3}{*}{\textit{Real World}} & Body Sites & 886,630 & 9.46 & \textit{\textbf{3.03}} & \textit{\textbf{3.12x}} & 18.42 & \textit{\textbf{6.02}} & \textit{\textbf{3.06x}} & 16.37  & \textit{\textbf{5.83}} & \textit{\textbf{2.81x}}\\
+			
+			& Canadian Soil & 2,966,053 & 13.65 & \textit{\textbf{4.17}} & \textit{\textbf{3.27x}} & 363.96 & \textit{\textbf{56.61}} & \textit{\textbf{6.43x}} & 117.53 & \textit{\textbf{20.84}} & \textit{\textbf{5.64x}}\\
+			
+			& Global Soil & 9,252,764 & 108.21 &  \textit{\textbf{18.75}} & \textit{\textbf{5.77x}} & 510.92 & \textit{\textbf{45.37}} & \textit{\textbf{11.26x}} & 289.51 &  \textit{\textbf{34.84}} & \textit{\textbf{8.31x}}\\
+			
+			& Liver Cirrhosis Metagenome & 3,000,000 & 14.57 &  \textit{\textbf{4.03}} & \textit{\textbf{3.61x}} & 46.62 & \textit{\textbf{9.02}} & \textit{\textbf{5.17x}} & 41.37 &  \textit{\textbf{8.75}} & \textit{\textbf{4.73x}}\\
+			
+			& Liver Cirrhosis Metagenome & 30,000,000 & 22.41h &  \textit{\textbf{1.84h}} & \textit{\textbf{12.19x}} & 46.62h & \textit{\textbf{2.21h}} & \textit{\textbf{21.09x}} & 37.43h &  \textit{\textbf{2.01h}} & \textit{\textbf{18.61x}}\\		
+			
+			\hline 
+			
+		\end{tabular}
+	}
+\end{table*} 
+
 \begin{table*}[t]
 	\centering 
 	\caption{\textbf{Performance Comparison [$F$-Score and Pearson Correlation Coefficient ($\rho$)]}} 
@@ -904,47 +946,7 @@ information regarding these datasets are presented in Table \ref{table:finaltabl
 	
 \end{table*}
 
-\begin{table*}
-	\centering
-	\caption{\textbf{Runtime Comparison (in minutes)}} 
-	\label{table:Runtime}
-	\scalebox{0.75}{
-		\begin{tabular}{|c c c|c c c|c c c|c c c|} 
-			
-			\hline
-			
-			\multicolumn{3}{|c|}{\textbf{Datasets}} & \multicolumn{9}{c|}{\textbf{Methods}}\\
-			%\cline{3-9}
-			
-			\hline
-			
-			\multirow{1}{*}{Type} & \multirow{1}{*}{Title} & \multirow{1}{*}{\# of Reads} & \multirow{1}{*}{UCLUST} & \multirow{1}{*}{CC$_{UCLUST}$} & \multirow{1}{*}{Speed Up} & \multirow{1}{*}{SUMACLUST} & \multirow{1}{*}{CC$_{SUMACLUST}$} & \multirow{1}{*}{Speed Up} & \multirow{1}{*}{SWARM} & \multirow{1}{*}{CC$_{SWARM}$} & \multirow{1}{*}{Speed Up}\\
-			
-			\hline
-			
-			\multirow{3}{*}{\textit{Synthetic}} & Bokulich$_2$ & 6,938,836 & 12.71 & \textit{\textbf{3.08}} & \textit{\textbf{4.13x}} & 114.53 & \textit{\textbf{13.89}} & \textit{\textbf{8.24x}} & 128.12 & \textit{\textbf{17.24}} & \textit{\textbf{7.43x}}\\ 
-			      
-			& Bokulich$_3$ & 3,594,237 & 10.43 & \textit{\textbf{3.61}} & \textit{\textbf{2.89x}} & 27.73 & \textit{\textbf{5.11}} & \textit{\textbf{5.43x}} & 18.37 & \textit{\textbf{3.39}} & \textit{\textbf{5.41x}}\\ 
-			      
-			& Bokulich$_6$ & 250,903 & 4.47 &  \textit{\textbf{2.09}} & \textit{\textbf{2.14x}} & 5.61 & \textit{\textbf{2.07}} & \textit{\textbf{2.71x}} & 4.17 & \textit{\textbf{1.29}} & \textit{\textbf{3.21x}}\\ 
-			
-			\hline
-			
-			\multirow{3}{*}{\textit{Real World}} & Body Sites & 886,630 & 9.46 & \textit{\textbf{3.03}} & \textit{\textbf{3.12x}} & 18.42 & \textit{\textbf{6.02}} & \textit{\textbf{3.06x}} & 16.37  & \textit{\textbf{5.83}} & \textit{\textbf{2.81x}}\\
-			
-			& Canadian Soil & 2,966,053 & 13.65 & \textit{\textbf{4.17}} & \textit{\textbf{3.27x}} & 363.96 & \textit{\textbf{56.61}} & \textit{\textbf{6.43x}} & 117.53 & \textit{\textbf{20.84}} & \textit{\textbf{5.64x}}\\
-			
-			& Global Soil & 9,252,764 & 108.21 &  \textit{\textbf{18.75}} & \textit{\textbf{5.77x}} & 510.92 & \textit{\textbf{45.37}} & \textit{\textbf{11.26x}} & 289.51 &  \textit{\textbf{34.84}} & \textit{\textbf{8.31x}}\\
-			
-			& Liver Cirrhosis Metagenome & 3,000,000 & 14.57 &  \textit{\textbf{4.03}} & \textit{\textbf{3.61x}} & 46.62 & \textit{\textbf{9.02}} & \textit{\textbf{5.17x}} & 41.37 &  \textit{\textbf{8.75}} & \textit{\textbf{4.73x}}\\
-			
-			& Liver Cirrhosis Metagenome & 30,000,000 & 22.41h &  \textit{\textbf{1.84h}} & \textit{\textbf{12.19x}} & 46.62h & \textit{\textbf{2.21h}} & \textit{\textbf{21.09x}} & 37.43h &  \textit{\textbf{2.01h}} & \textit{\textbf{18.61x}}\\		
-			
-			\hline 
-			
-		\end{tabular}
-	}
-\end{table*} 
+
 
 \textbf{Synthetic Datasets:}
 
