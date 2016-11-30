@@ -527,7 +527,7 @@ sensitive hashing \cite{MARLshRef2}. Sequences within the canopies are
 considered as an initial partition (or grouping) of data which can be 
 further refined by applying expensive and accurate clustering 
 algorithms. Our developed approach treats each canopies independently 
-allowing for easy parallelizing (embarassingly parallel). 
+allowing for easy parallelizing (embarrassingly parallel). 
 
 We present experimental results on 
 real and synthetic metagenome sequence
@@ -581,7 +581,7 @@ input and performs hierarchical clustering.
 %
 SWARM \cite{MARSwarm2} uses exhaustive single-linkage clustering 
 based on optimal sequence alignment. Sequences that are less than 
-a certain distance from any other other sequence in the cluster are 
+a certain distance from any other sequences are 
 clustered together. SWARM attempts to reduce the impact of clustering 
 parameters on the resulting OTUs by avoiding arbitrary 
 threshold parameters 
@@ -1060,7 +1060,7 @@ compared to CC$_{UCLUST}$.
 			\hdashline
 			
 			\multirow{2}{*}{CC$_{UCLUST}$} & $F$-Measure & \textit{\textbf{0.39}} & \textit{\textbf{0.41}} & \textit{\textbf{0.52}} & $N/A$ & $N/A$ & $N/A$ & $N/A$ & $N/A$\\
-			& ($\rho$) with Respect to UCLUST & \textit{\textbf{0.9831}} & \textit{\textbf{0.9753}} & \textit{\textbf{0.9831}} & \textit{\textbf{0.9682}} & \textit{\textbf{0.8419}} & \textit{\textbf{0.9824}} & \textit{\textbf{0.9216}} & \textit{\textbf{0.9072}}\\
+			& ($\rho$) with Respect to UCLUST & \textit{\textbf{0.9807}} & \textit{\textbf{0.9753}} & \textit{\textbf{0.9831}} & \textit{\textbf{0.9682}} & \textit{\textbf{0.8419}} & \textit{\textbf{0.9824}} & \textit{\textbf{0.9216}} & \textit{\textbf{0.9072}}\\
 			
 			\hline 
 			
@@ -1218,10 +1218,10 @@ Figure \ref{fig:bokulich_2_T1}-\ref{fig:bokulich_2_T2} shows the
 effect of varying $T1$ ($T2$ fixed at 0.34) and $T2$ ($T1$ fixed at 0.45) on F-scores for the Bokulich$_2$ dataset. Reducing $T1$ leads to
 comparatively \textit{strict} soft-threshold which will reduce 
 repetitions of instances in multiple canopies. For a fixed $T2$ this implies that 
-lower $T1$ will yield better canopy assignment. From Figure \ref{fig:bokulich_2_T1} we can say that 
+lower $T1$ will yield better canopy assignment. From Figure \ref{fig:bokulich_2_T1} we see that 
 when $T1$'s range is in 0.4 to 0.6 our proposed approach provides better 
 F-Scores. On the other hand, increasing $T2$ leads to comparatively \textit{relaxed} tight-threshold for canopies. As a result instances will be prematurely assigned to canopies without waiting for best match. From Figure \ref{fig:bokulich_2_T2} we note that 
-when $T2$'  is in between 0.25 to 0.35, 
+when $T2$  is in between 0.25 to 0.35, 
 our proposed approach achieves better F-Scores. Lowering 
 $T2$ may lead to higher run time since instances will continue to reappear 
 until the $T2$ threshold is satisfied.                   
@@ -1247,7 +1247,7 @@ until the $T2$ threshold is satisfied.
 We developed a greedy clustering algorithm 
 that scales to large metagenome sequence datasets. The strengths of our proposed approach is that it can be integrated as a pre-processing step
 with state-of-the-art expensive but accurate clustering algorithms allowing them to
-operate on real world datasets. 
+operate efficiently on real world datasets. 
 %
 Our approach 
 achieves efficiency 
