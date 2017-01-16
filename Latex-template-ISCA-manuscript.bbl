@@ -1,0 +1,197 @@
+\begin{thebibliography}{10}
+
+\bibitem{MARMinWise}
+Andrei~Z Broder, Moses Charikar, Alan~M Frieze, and Michael Mitzenmacher.
+\newblock Min-wise independent permutations.
+\newblock {\em Journal of Computer and System Sciences}, 60(3):630--659, 2000.
+
+\bibitem{MARCompost}
+Sourav Chatterji, Ichitaro Yamazaki, Zhaojun Bai, and Jonathan~A Eisen.
+\newblock Compostbin: A dna composition-based algorithm for binning
+  environmental shotgun reads.
+\newblock In {\em Annual International Conference on Research in Computational
+  Molecular Biology}, pages 17--28. Springer, 2008.
+
+\bibitem{qin2014alterations}
+Nan et~al.
+\newblock Alterations of the human gut microbiome in liver cirrhosis.
+\newblock {\em Nature}, 513(7516):59--64, 2014.
+
+\bibitem{MARLshRef2}
+Aristides Gionis, Piotr Indyk, and Rajeev Motwani.
+\newblock Similarity search in high dimensions via hashing.
+\newblock In {\em Proceedings of the 25th International Conference on Very
+  Large Data Bases}, VLDB '99, pages 518--529. Morgan Kaufmann Publishers Inc.,
+  1999.
+
+\bibitem{MARMetaChallenge}
+Teeling Hanno and Gl{\"o}ckner~Frank Oliver.
+\newblock Current opportunities and challenges in microbial metagenome
+  analysis—a bioinformatic perspective.
+\newblock {\em Briefings in bioinformatics}, 2012.
+
+\bibitem{indyk1998approximate}
+Piotr Indyk and Rajeev Motwani.
+\newblock Approximate nearest neighbors: towards removing the curse of
+  dimensionality.
+\newblock pages 604--613, 1998.
+
+\bibitem{MARCanopy}
+Andrew McCallum, Kamal Nigam, and Lyle~H. Ungar.
+\newblock Efficient clustering of high-dimensional data sets with application
+  to reference matching.
+\newblock In {\em Proceedings of the Sixth ACM SIGKDD International Conference
+  on Knowledge Discovery and Data Mining}, KDD '00, pages 169--178. ACM, 2000.
+
+\bibitem{MARToss}
+Tanaseichuk Olga, Borneman James, and Jiang Tao.
+\newblock Separating metagenomic short reads into genomes via clustering.
+\newblock {\em Algorithms for Molecular Biology}, 7(1):1, 2012.
+
+\bibitem{MARMihaiPop}
+Mihai Pop and Steven~L Salzberg.
+\newblock Bioinformatics challenges of new sequencing technology.
+\newblock {\em Trends in Genetics}, 24(3):142--149, 2008.
+
+\bibitem{MARMcMinH}
+Zeehasham Rasheed and Huzefa Rangwala.
+\newblock {\em MC-MinH: Metagenome Clustering using Minwise based Hashing},
+  chapter~74, pages 677--685.
+
+\bibitem{MARMetaLSH}
+Zeehasham Rasheed, Huzefa Rangwala, and Daniel Barbara.
+\newblock Efficient clustering of metagenomic sequences using locality
+  sensitive hashing.
+\newblock In {\em SDM}, pages 1023--1034. SIAM, 2012.
+
+\bibitem{MAROTU}
+\relax{Blaxter et al.}
+\newblock Defining operational taxonomic units using dna barcode data.
+\newblock {\em Philosophical Transactions of the Royal Society B: Biological
+  Sciences}, 360(1462):1935--1943, 2005.
+
+\bibitem{MARmockDatasetRef}
+\relax{Bokulich et al.}
+\newblock Quality-filtering vastly improves diversity estimates from illumina
+  amplicon sequencing.
+\newblock {\em Nat Methods}, 10:57--59, 2013.
+
+\bibitem{MARSumaclust}
+\relax{C. Mercier et al.}
+\newblock Sumatra and sumaclust: fast and exact comparison and clustering of
+  sequences [submitted for publication].
+\newblock 2014.
+
+\bibitem{MARQiime}
+\relax{Caporaso et al.}
+\newblock Qiime allows analysis of high-throughput community sequencing data.
+\newblock {\em Nat Meth}, 7(5):335--336, 2010.
+
+\bibitem{MAR16S}
+\relax{Chakravorty et al.}
+\newblock A detailed analysis of 16s ribosomal rna gene segments for the
+  diagnosis of pathogenic bacteria.
+\newblock {\em Journal of microbiological methods}, 69(2):330--339, 2007.
+
+\bibitem{MARbodySites}
+\relax{Costello et al.}
+\newblock Bacterial community variation in human body habitats across space and
+  time.
+\newblock {\em Science}, 326(5960):1694--1697, 2009.
+
+\bibitem{MARfaith1992conservation}
+\relax{Daniel P Faith}.
+\newblock Conservation evaluation and phylogenetic diversity.
+\newblock {\em Biological conservation}, 61(1):1--10, 1992.
+
+\bibitem{MARGreen1}
+\relax{DeSantis et al.}
+\newblock Greengenes, a chimera-checked 16s rrna gene database and workbench
+  compatible with arb.
+\newblock {\em Applied and environmental microbiology}, 72(7):5069--5072, 2006.
+
+\bibitem{MARuclust}
+\relax{Edgar Robert C.}
+\newblock Search and clustering orders of magnitude faster than blast.
+\newblock {\em Bioinformatics}, 26(19):2460--2461, 2010.
+
+\bibitem{MARopenDeNovo}
+\relax{Kopylova et al.}
+\newblock Open-source sequence clustering methods improve the state of the art.
+\newblock {\em mSystems}, 1(1), 2016.
+
+\bibitem{MARCDhit}
+\relax{Li Weizhong and Godzik Adam}.
+\newblock Cd-hit: a fast program for clustering and comparing large sets of
+  protein or nucleotide sequences.
+\newblock {\em Bioinformatics}, 22(13):1658--1659, 2006.
+
+\bibitem{MARSwarm2}
+\relax{Mah{\'e} et al.}
+\newblock Swarm v2: highly-scalable and high-resolution amplicon clustering.
+\newblock {\em PeerJ}, 3:e1420, 2015.
+
+\bibitem{MARcanadianSoil}
+\relax{Neufeld et al.}
+\newblock Open resource metagenomics: a model for sharing metagenomic
+  libraries.
+\newblock {\em Standards in Genomic Sciences}, 5:203--210, 2011.
+
+\bibitem{MAROtherMinH}
+\relax{Ondov et al.}
+\newblock Mash: fast genome and metagenome distance estimation using minhash.
+\newblock {\em bioRxiv}, 2016.
+
+\bibitem{MARSilva}
+\relax{Pruesse et al.}
+\newblock Silva: a comprehensive online resource for quality checked and
+  aligned ribosomal rna sequence data compatible with arb.
+\newblock {\em Nucleic acids research}, 35(21):7188--7196, 2007.
+
+\bibitem{MARHumanGut}
+\relax{Qin et al.}
+\newblock A human gut microbial gene catalogue established by metagenomic
+  sequencing.
+\newblock {\em Nature}, 464(7285):59--65, 2010.
+
+\bibitem{MARglobalSoil}
+\relax{Ramirez et al.}
+\newblock Biogeographic patterns in below-ground diversity in new york
+  city{\textquoteright}s central park are similar to those observed globally.
+\newblock {\em Proceedings of the Royal Society of London B: Biological
+  Sciences}, 281(1795), 2014.
+
+\bibitem{MARMothur}
+\relax{Schloss et al.}
+\newblock Introducing mothur: Open-source, platform-independent,
+  community-supported software for describing and comparing microbial
+  communities.
+\newblock {\em Applied and Environmental Microbiology}, 75(23):7537--7541,
+  2009.
+
+\bibitem{MARHumanMicro}
+\relax{Turnbaugh et al.}
+\newblock The human microbiome project: exploring the microbial part of
+  ourselves in a changing world.
+\newblock {\em Nature}, 449(7164):804, 2007.
+
+\bibitem{MARAbundant}
+\relax{Wu Yu-Wei} and \relax{Ye Yuzhen}.
+\newblock A novel abundance-based algorithm for binning metagenomic sequences
+  using l-tuples.
+\newblock {\em Journal of Computational Biology}, 18(3):523--534, 2011.
+
+\bibitem{MAROTUConsistant}
+Thomas~SB Schmidt, Jo{\~a}o F~Matias Rodrigues, and Christian~Von Mering.
+\newblock Ecological consistency of ssu rrna-based operational taxonomic units
+  at a global scale.
+\newblock {\em PLoS Comput Biol}, 10(4):e1003594, 2014.
+
+\bibitem{MARRdp}
+Qiong Wang, George~M Garrity, James~M Tiedje, and James~R Cole.
+\newblock Naive bayesian classifier for rapid assignment of rrna sequences into
+  the new bacterial taxonomy.
+\newblock {\em Applied and environmental microbiology}, 73(16):5261--5267,
+  2007.
+
+\end{thebibliography}

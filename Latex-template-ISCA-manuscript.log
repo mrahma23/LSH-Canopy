@@ -1,0 +1,571 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.1.21)  16 JAN 2017 21:42
+entering extended mode
+**Latex-template-ISCA-manuscript.tex
+(Latex-template-ISCA-manuscript.tex
+LaTeX2e <2014/05/01>
+Babel <3.9l> and hyphenation patterns for 68 languages loaded.
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\article.cls"
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\size10.clo"
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\titlesec\titlesec.sty"
+Package: titlesec 2011/12/15 v2.10.0 Sectioning titles
+\ttl@box=\box26
+\beforetitleunit=\skip43
+\aftertitleunit=\skip44
+\ttl@plus=\dimen103
+\ttl@minus=\dimen104
+\ttl@toksa=\toks14
+\titlewidth=\dimen105
+\titlewidthlast=\dimen106
+\titlewidthfirst=\dimen107
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip45
+
+For additional information on amsmath, use the `?' option.
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+Package: amstext 2000/06/29 v2.01
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks15
+\ex@=\dimen108
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen109
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count87
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count88
+\leftroot@=\count89
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count90
+\DOTSCASE@=\count91
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box27
+\strutbox@=\box28
+\big@size=\dimen110
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count92
+\c@MaxMatrixCols=\count93
+\dotsspace@=\muskip10
+\c@parentequation=\count94
+\dspbrk@lvl=\count95
+\tag@help=\toks16
+\row@=\count96
+\column@=\count97
+\maxfields@=\count98
+\andhelp@=\toks17
+\eqnshift@=\dimen111
+\alignsep@=\dimen112
+\tagshift@=\dimen113
+\tagwidth@=\dimen114
+\totwidth@=\dimen115
+\lineht@=\dimen116
+\@envbody=\toks18
+\multlinegap=\skip46
+\multlinetaggap=\skip47
+\mathdisplay@stack=\toks19
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\amscls\amsthm.sty"
+Package: amsthm 2009/07/02 v2.20.1
+\thm@style=\toks20
+\thm@bodyfont=\toks21
+\thm@headfont=\toks22
+\thm@notefont=\toks23
+\thm@headpunct=\toks24
+\thm@preskip=\skip48
+\thm@postskip=\skip49
+\thm@headsep=\skip50
+\dth@everypar=\toks25
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks26
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count99
+))
+\Gin@req@height=\dimen117
+\Gin@req@width=\dimen118
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\algorithm2e\algorithm2e.sty"
+Package: algorithm2e 2013/01/06 v5.00 algorithms environments
+\c@AlgoLine=\count100
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\xspace.sty"
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\ltxmisc\relsize.sty"
+Package: relsize 2003/07/04 ver 3.1
+)
+********************************************************
+Package `algorithm2e' Release 5.0 -- january 06 2013 --
+- algorithm2e-announce@lirmm.fr mailing list for announcement about releases
+- algorithm2e-discussion@lirmm.fr mailing list for discussion about package
+subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
+- Author: Christophe Fiorio (cfiorio@um2.fr)
+********************************************************
+\skiptotal=\skip51
+\skiplinenumber=\skip52
+\skiprule=\skip53
+\skiphlne=\skip54
+\skiptext=\skip55
+\skiplength=\skip56
+\algomargin=\skip57
+\skipalgocfslide=\skip58
+\algowidth=\dimen119
+\inoutsize=\dimen120
+\inoutindent=\dimen121
+\interspacetitleruled=\dimen122
+\interspacealgoruled=\dimen123
+\interspacetitleboxruled=\dimen124
+\algocf@inoutbox=\box29
+\algocf@inputbox=\box30
+\AlCapSkip=\skip59
+\AlCapHSkip=\skip60
+\algoskipindent=\skip61
+\algocf@nlbox=\box31
+\algocf@hangingbox=\box32
+\algocf@untilbox=\box33
+\algocf@skipuntil=\skip62
+\algocf@capbox=\box34
+\algoheightruledefault=\skip63
+\algoheightrule=\skip64
+\algotitleheightruledefault=\skip65
+\algotitleheightrule=\skip66
+\c@algocfline=\count101
+\c@algocfproc=\count102
+\c@algocf=\count103
+\algocf@algoframe=\box35
+\algocf@algobox=\box36
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\tools\array.sty"
+Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen125
+\extrarowheight=\dimen126
+\NC@list=\toks27
+\extratabsurround=\skip67
+\backup@length=\skip68
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\multirow\multirow.sty"
+\bigstrutjot=\dimen127
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\url\url.sty"
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\subfig\subfig.sty"
+Package: subfig 2005/06/28 ver: 1.3 subfig package
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\caption\caption3.sty"
+Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 57.
+\captionmargin=\dimen128
+\captionmargin@=\dimen129
+\captionwidth=\dimen130
+\caption@tempdima=\dimen131
+\caption@indent=\dimen132
+\caption@parindent=\dimen133
+\caption@hangindent=\dimen134
+)
+\c@KVtest=\count104
+\sf@farskip=\skip69
+\sf@captopadj=\dimen135
+\sf@capskip=\skip70
+\sf@nearskip=\skip71
+\c@subfigure=\count105
+\c@subfigure@save=\count106
+\c@lofdepth=\count107
+\c@subtable=\count108
+\c@subtable@save=\count109
+\c@lotdepth=\count110
+\sf@top=\skip72
+\sf@bottom=\skip73
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\romannum\romannum.sty"
+Package: romannum 2009/09/03 v1.0b roman numerals
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\stdclsdv\stdclsdv.sty"
+Package: stdclsdv 2009/09/04 v1.1a Sectional divisions
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\arydshln\arydshln.sty"
+Package: arydshln 2004/08/31 v1.71 
+\dashlinedash=\dimen136
+\dashlinegap=\dimen137
+\adl@box=\box37
+\adl@height=\dimen138
+\adl@heightsave=\dimen139
+\adl@depth=\dimen140
+\adl@depthsave=\dimen141
+\adl@finaldepth=\dimen142
+\adl@columns=\count111
+\adl@ncol=\count112
+\adl@currentcolumn=\count113
+\adl@currentcolumnsave=\count114
+\adl@totalheight=\count115
+\adl@totalheightsave=\count116
+\adl@dash=\count117
+\adl@gap=\count118
+\adl@cla=\count119
+\adl@clb=\count120
+\adl@everyvbox=\toks28
+\adl@LTpagetotal=\dimen143
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\subfloat\subfloat.sty"
+Package: subfloat 2003/08/21 version 2.14
+
+Package `subfloat', Version 2.14 of 2003/08/21.
+
+Package subfloat Warning: Numbers of floats not counted:
+(subfloat)                If you use one of the counters subfloatfiguremax or
+(subfloat)                subfloattablemax you will get strange error messages
+(subfloat)                containing \c@subfloatfiguremax or
+(subfloat)                \c@subfloattablemax:
+(subfloat)                Please switch on countmax or remove the code using
+(subfloat)                the counter then..
+
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\threeparttable\threeparttable.sty"
+Package: threeparttable 2003/06/13  v 3.0
+\@tempboxb=\box38
+)
+(Latex-template-ISCA-manuscript.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+
+("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count121
+\scratchdimen=\dimen144
+\scratchbox=\box39
+\nofMPsegments=\count122
+\nofMParguments=\count123
+\everyMPshowfont=\toks29
+\MPscratchCnt=\count124
+\MPscratchDim=\dimen145
+\MPnumerator=\count125
+\makeMPintoPDFobject=\count126
+\everyMPtoPDFconversion=\toks30
+)
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    Try loading font information for U+msa on input line 60.
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 60.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+Underfull \hbox (badness 1331) in paragraph at lines 68--69
+\OT1/cmr/m/n/10 canopies) us-ing lo-cal-ity sen-si-tive hash-ing. These
+ []
+
+
+Underfull \hbox (badness 3482) in paragraph at lines 68--69
+\OT1/cmr/m/n/10 se-quence clus-ter-ing al-go-rithms. This two-phase
+ []
+
+
+Underfull \hbox (badness 1107) in paragraph at lines 68--69
+\OT1/cmr/m/n/10 clustering al-go-rithm as a pre-processing phase for
+ []
+
+
+Underfull \hbox (badness 2564) in paragraph at lines 136--143
+[]\OT1/cmr/m/n/10 In the past decade sev-eral se-quence clus-ter-ing
+ []
+
+
+Underfull \hbox (badness 8094) in paragraph at lines 136--143
+\OT1/cmr/m/n/10 al.[[]] bench-marks var-i-ous ap-proaches in-clud-ing
+ []
+
+
+Underfull \hbox (badness 2865) in paragraph at lines 136--143
+\OT1/cmr/m/n/10 UCLUST[[]], SWARM[[]], SUMACLUST[[]] and
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
+
+
+]
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no ™ in font cmr10!
+
+<flowchart.pdf, id=13, 549.25201pt x 592.61403pt>
+File: flowchart.pdf Graphic file (type pdf)
+ <use flowchart.pdf>
+Package pdftex.def Info: flowchart.pdf used on input line 197.
+(pdftex.def)             Requested size: 239.39203pt x 284.53288pt.
+ [2 <./flowchart.pdf>]
+Underfull \hbox (badness 1137) in paragraph at lines 237--243
+[]\OT1/cmr/m/n/10 Each of the canopy-based par-ti-tions are fur-ther
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 237--243
+\OT1/cmr/m/n/10 clus-tered in par-al-lel and in-de-pen-dendtly with
+ []
+
+[3]
+Missing character: There is no â in font cmbx10!
+Missing character: There is no € in font cmbx10!
+Missing character: There is no ™ in font cmbx10!
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no ™ in font cmr10!
+
+Underfull \hbox (badness 2486) in paragraph at lines 382--386
+\OT1/cmr/m/n/10 Faiths phy-lo-ge-netic diversity[[]] com-bines all the
+ []
+
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no ™ in font cmr10!
+Missing character: There is no Ê in font cmr10!
+Missing character: There is no ¼ in font cmr10!
+[4]
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no ™ in font cmr10!
+
+Underfull \hbox (badness 1342) in paragraph at lines 463--471
+[]\OT1/cmr/m/n/10 Figures 2a[]-2b[] show the run-time of CC$[]$,
+ []
+
+
+Underfull \hbox (badness 1215) in paragraph at lines 463--471
+\OT1/cmr/m/n/10 CC$[]$ and CC$[]$ on the two large
+ []
+
+
+Underfull \hbox (badness 1173) in paragraph at lines 463--471
+\OT1/cmr/m/n/10 num-ber of pro-ces-sors re-duces the to-tal run time.
+ []
+
+
+Underfull \hbox (badness 2205) in paragraph at lines 463--471
+\OT1/cmr/m/n/10 Sig-nif-i-cant re-duc-tions in run time were ob-served
+ []
+
+<bokulich_2.pdf, id=85, 578.16pt x 433.62pt>
+File: bokulich_2.pdf Graphic file (type pdf)
+ <use bokulich_2.pdf>
+Package pdftex.def Info: bokulich_2.pdf used on input line 476.
+(pdftex.def)             Requested size: 119.69719pt x 89.77266pt.
+
+Overfull \hbox (6.66666pt too wide) in paragraph at lines 476--477
+[][] 
+ []
+
+<global_soil.pdf, id=86, 578.16pt x 433.62pt>
+File: global_soil.pdf Graphic file (type pdf)
+ <use global_soil.pdf>
+Package pdftex.def Info: global_soil.pdf used on input line 482.
+(pdftex.def)             Requested size: 119.69719pt x 89.77266pt.
+
+Overfull \hbox (6.66666pt too wide) in paragraph at lines 482--483
+[][] 
+ []
+
+Missing character: There is no â in font cmbx10!
+Missing character: There is no € in font cmbx10!
+Missing character: There is no ™ in font cmbx10!
+
+Overfull \hbox (3.17421pt too wide) in paragraph at lines 616--619
+[][]
+ []
+
+Missing character: There is no â in font cmr9!
+Missing character: There is no € in font cmr9!
+Missing character: There is no ™ in font cmr9!
+
+Underfull \hbox (badness 4608) in paragraph at lines 625--636
+[]\OT1/cmr/m/n/10 Table 4[] shows the per-for-mance of UCLUST,
+ []
+
+
+Underfull \hbox (badness 1975) in paragraph at lines 625--636
+\OT1/cmr/m/n/10 that F-scores ob-tained from a clus-ter-ing method
+ []
+
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no ™ in font cmr10!
+[5 <./bokulich_2.pdf> <./global_soil.pdf
+
+pdfTeX warning: pdflatex.exe (file ./global_soil.pdf): PDF inclusion: multiple 
+pdfs with page group included in a single page
+>] <bokulich_2_T1.pdf, id=187, 578.16pt x 433.62pt>
+File: bokulich_2_T1.pdf Graphic file (type pdf)
+ <use bokulich_2_T1.pdf>
+Package pdftex.def Info: bokulich_2_T1.pdf used on input line 662.
+(pdftex.def)             Requested size: 119.69719pt x 89.77266pt.
+
+Overfull \hbox (6.66666pt too wide) in paragraph at lines 662--663
+[][] 
+ []
+
+<bokulich_2_T2.pdf, id=188, 578.16pt x 433.62pt>
+File: bokulich_2_T2.pdf Graphic file (type pdf)
+ <use bokulich_2_T2.pdf>
+Package pdftex.def Info: bokulich_2_T2.pdf used on input line 668.
+(pdftex.def)             Requested size: 119.69719pt x 89.77266pt.
+
+Overfull \hbox (6.66666pt too wide) in paragraph at lines 668--669
+[][] 
+ []
+
+(Latex-template-ISCA-manuscript.bbl
+Underfull \hbox (badness 1237) in paragraph at lines 9--14
+[]\OT1/cmr/m/n/10 Sourav Chat-terji, Ichi-taro Ya-mazaki, Zhao-jun
+ []
+
+
+Underfull \hbox (badness 2875) in paragraph at lines 9--14
+\OT1/cmr/m/n/10 Bai, and Jonathan A Eisen.  Com-post-bin:
+ []
+
+[6 <./bokulich_2_T1.pdf> <./bokulich_2_T2.pdf
+
+pdfTeX warning: pdflatex.exe (file ./bokulich_2_T2.pdf): PDF inclusion: multipl
+e pdfs with page group included in a single page
+>]
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no ” in font cmr10!
+
+Underfull \hbox (badness 4156) in paragraph at lines 40--45
+\OT1/cmr/m/n/10 In \OT1/cmr/m/it/10 Pro-ceed-ings of the Sixth ACM SIGKDD
+ []
+
+
+Underfull \hbox (badness 2635) in paragraph at lines 57--60
+\OT1/cmr/m/it/10 MinH: Metagenome Clus-ter-ing us-ing Min-wise
+ []
+
+
+Underfull \hbox (badness 1163) in paragraph at lines 62--66
+\OT1/cmr/m/n/10 Bar-bara.  Ef-fi-cient clus-ter-ing of metage-nomic
+ []
+
+
+Underfull \hbox (badness 1264) in paragraph at lines 68--72
+\OT1/cmr/m/n/10 units us-ing dna bar-code data.  \OT1/cmr/m/it/10 Philo-soph-i-
+cal
+ []
+
+[7]
+Underfull \hbox (badness 2277) in paragraph at lines 165--171
+\OT1/cmr/m/n/10 ware for de-scrib-ing and com-par-ing mi-cro-bial
+ []
+
+
+Underfull \hbox (badness 1769) in paragraph at lines 179--183
+\OT1/cmr/m/n/10 based al-go-rithm for bin-ning metage-nomic se-
+ []
+
+) [8] (Latex-template-ISCA-manuscript.aux) ) 
+Here is how much of TeX's memory you used:
+ 5094 strings out of 493698
+ 70786 string characters out of 3144412
+ 200632 words of memory out of 3000000
+ 8351 multiletter control sequences out of 15000+200000
+ 13394 words of font info for 52 fonts, out of 3000000 for 9000
+ 1028 hyphenation exceptions out of 8191
+ 36i,13n,47p,963b,369s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.p
+fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Pr
+ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Fil
+es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
+ts/cm/cmr9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy
+10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C
+:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on Latex-template-ISCA-manuscript.pdf (8 pages, 515923 bytes).
+PDF statistics:
+ 343 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+
